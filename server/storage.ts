@@ -412,28 +412,149 @@ export class MemStorage implements IStorage {
         emojiCounts: { "🙏": 38, "❤️": 30, "🌟": 34 }
       },
 
-      // THURSDAY - Vishnu & Guru Worship
+      // THURSDAY - Lord Vishnu/Sai Baba/Brihaspati Dev Worship (Complete Categories)
       {
         id: "thu-1",
         day: "Thursday",
         category: "Mantras",
-        title: "Vishnu Mantra",
-        textEnglish: "Om Namo Bhagavate Vasudevaya\nOm Narsimhaya Namaha\nOm Govindaya Namaha\nOm Madhavaya Namaha",
-        textHindi: "ॐ नमो भगवते वासुदेवाय\nॐ नरसिंहाय नमः\nॐ गोविन्दाय नमः\nॐ माधवाय नमः",
-        translation: "I bow to Lord Vasudeva, to Narasimha, to Govinda, to Madhav - all forms of Lord Vishnu.",
+        title: "Vishnu Maha Mantra",
+        textEnglish: "Om Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya\nOm Namo Bhagavate Vasudevaya",
+        textHindi: "ॐ नमो भगवते वासुदेवाय\nॐ नमो भगवते वासुदेवाय\nॐ नमो भगवते वासुदेवाय\nॐ नमो भगवते वासुदेवाय",
+        translation: "I bow to Lord Vasudeva, the all-pervading divine consciousness, protector and sustainer of the universe.",
         deity: "Vishnu",
-        emojiCounts: { "🙏": 42, "❤️": 28, "🌟": 38 }
+        emojiCounts: { "🙏": 52, "❤️": 38, "🌟": 45 }
+      },
+      {
+        id: "thu-1b",
+        day: "Thursday",
+        category: "Mantras",
+        title: "Sai Baba Mantra",
+        textEnglish: "Om Sai Namo Namah\nOm Sai Namo Namah\nOm Sai Namo Namah\nOm Sai Namo Namah",
+        textHindi: "ॐ साईं नमो नमः\nॐ साईं नमो नमः\nॐ साईं नमो नमः\nॐ साईं नमो नमः",
+        translation: "I bow to Sai Baba, the compassionate saint who guides devotees on the path of truth and righteousness.",
+        deity: "Sai Baba",
+        emojiCounts: { "🙏": 48, "❤️": 35, "🌟": 42 }
+      },
+      {
+        id: "thu-1c",
+        day: "Thursday",
+        category: "Mantras",
+        title: "Brihaspati Mantra",
+        textEnglish: "Om Brihaspataye Namah\nOm Gurave Namah\nPushpendra Vahanam Tam\nBuddhyadi Gunam Ganadhyaksham",
+        textHindi: "ॐ बृहस्पतये नमः\nॐ गुरवे नमः\nपुष्पेन्द्र वाहनं तं\nबुद्ध्यादि गुणं गणाध्यक्षम्",
+        translation: "I bow to Brihaspati, the divine guru who rides the white elephant, bestower of wisdom and knowledge.",
+        deity: "Brihaspati",
+        emojiCounts: { "🙏": 45, "❤️": 32, "🌟": 38 }
       },
       {
         id: "thu-2",
         day: "Thursday",
+        category: "Chalisas",
+        title: "Vishnu Chalisa",
+        textEnglish: "Shantakaram Bhujagashayanam\nPadmanabham Suresham\nVishvadharam Gaganasadrisham\nMeghavarnam Shubhangam\n\nLakshmi Kantam Kamalanayanam\nYoginam Dhyanagamyam\nVande Vishnum Bhavabhayaharam\nSarvaloka Eknatham",
+        textHindi: "शान्ताकारं भुजगशयनं\nपद्मनाभं सुरेशम्\nविश्वाधारं गगनसदृशं\nमेघवर्णं शुभाङ्गम्\n\nलक्ष्मीकान्तं कमलनयनं\nयोगिनां ध्यानगम्यम्\nवन्दे विष्णुं भवभयहरं\nसर्वलोकैकनाथम्",
+        translation: "I worship Lord Vishnu, the peaceful one resting on the cosmic serpent, with lotus emerging from his navel, lord of gods. The supporter of the universe, sky-like, cloud-colored with auspicious form. Consort of Lakshmi, lotus-eyed, accessible through meditation by yogis. I bow to Vishnu, remover of worldly fears, the one lord of all worlds.",
+        deity: "Vishnu",
+        emojiCounts: { "🙏": 58, "❤️": 44, "🌟": 52 }
+      },
+      {
+        id: "thu-2b",
+        day: "Thursday",
+        category: "Chalisas",
+        title: "Sai Chalisa",
+        textEnglish: "Jai Jai Sai Mata Pita Hammare\nTum Bin Aur Na Koi Hamare\nSabka Malik Ek Tu Hi Hai\nSabpe Daya Dikhane Wala\n\nShirdi Mein Base Gaye Baba\nDhanya Dhanya Woh Gaon Hai\nJis Mitti Mein Base Tumhare\nCharan Paduka Ki Dhool Hai",
+        textHindi: "जय जय साईं माता-पिता हमारे\nतुम बिन और न कोई हमारे\nसबका मालिक एक तू ही है\nसबपे दया दिखाने वाला\n\nशिरडी में बसे गए बाबा\nधन्य धन्य वो गांव है\nजिस मिट्टी में बसे तुम्हारे\nचरण पादुका की धूल है",
+        translation: "Victory to Sai, our mother and father, without you we have no one else. You alone are the master of all, the one who shows compassion to everyone. Baba settled in Shirdi, blessed is that village whose soil is sanctified by the dust of your holy feet.",
+        deity: "Sai Baba",
+        emojiCounts: { "🙏": 55, "❤️": 42, "🌟": 48 }
+      },
+      {
+        id: "thu-3",
+        day: "Thursday",
+        category: "Aartis",
+        title: "Om Jai Jagdish Hare",
+        textEnglish: "Om Jai Jagdish Hare\nSwami Jai Jagdish Hare\nBhakt Jano Ke Sankat\nDas Jano Ke Sankat\nKshan Mein Dur Kare\nOm Jai Jagdish Hare\n\nJinka Naam Lene Se\nJinka Naam Lene Se\nPap Katat Hain\nAnjana Mata Ke Lala\nAnjan Mata Ke Lala\nGunanidhi Gun Gayen",
+        textHindi: "ॐ जय जगदीश हरे\nस्वामी जय जगदीश हरे\nभक्त जनों के संकट\nदास जनों के संकट\nक्षण में दूर करे\nॐ जय जगदीश हरे\n\nजिनका नाम लेने से\nजिनका नाम लेने से\nपाप कटत हैं\nअंजना माता के लाला\nअंजन माता के लाला\nगुणनिधि गुण गायें",
+        translation: "Victory to the Lord of the Universe who removes the troubles of devotees and servants in an instant. By taking whose name sins are destroyed, O treasure of virtues, we sing your glorious qualities.",
+        deity: "Vishnu",
+        emojiCounts: { "🙏": 50, "❤️": 38, "🌟": 44 }
+      },
+      {
+        id: "thu-3b",
+        day: "Thursday",
+        category: "Aartis",
+        title: "Aarti Sai Baba",
+        textEnglish: "Aarti Sai Baba Sowiyo\nBhakat Janan Ke Sankat\nPal Mein Dur Karo\nSabke Malakana\n\nTere Darshan Ko Aaye\nShirdi Mein Diwane\nLeke Prasadam Jaate\nSabhi Muraden Paate\nKripanidhi Mere Sai\nPalko Par Bithana",
+        textHindi: "आरती साईं बाबा सोवियो\nभक्त जनन के संकट\nपल में दूर करो\nसबके मलकाना\n\nतेरे दर्शन को आये\nशिरडी में दीवाने\nलेके प्रसादम् जाते\nसभी मुरादें पाते\nकृपानिधि मेरे साईं\nपलकों पर बिठाना",
+        translation: "We perform aarti of Sai Baba, O master of all, remove devotees' troubles in an instant. Devotees come to Shirdi for your darshan, and taking prasad, all their wishes are fulfilled. O treasure of compassion, my Sai, keep me close to your heart.",
+        deity: "Sai Baba",
+        emojiCounts: { "🙏": 48, "❤️": 36, "🌟": 42 }
+      },
+      {
+        id: "thu-4",
+        day: "Thursday",
+        category: "Kathas",
+        title: "Brihaspativar Vrat Katha",
+        textEnglish: "Once there lived a wealthy merchant who gradually lost his prosperity due to his arrogance and neglect of spiritual duties. His business declined, and his family faced hardships. His wise wife suggested observing the Thursday fast (Brihaspativar Vrat) dedicated to Lord Vishnu and Guru Brihaspati.\n\nEvery Thursday, the merchant would wake up early, bathe, wear yellow clothes, and visit the temple. He offered yellow flowers, bananas, yellow sweets, and chana dal to Lord Vishnu and lit a ghee lamp. He would fast throughout the day, listening to devotional stories and chanting Vishnu mantras.\n\nAfter months of sincere devotion and learning humility, Lord Vishnu blessed him with divine grace. Guru Brihaspati, pleased with his dedication to knowledge and dharma, began guiding his decisions. His lost wealth gradually returned, and his family experienced renewed prosperity.\n\nOne Thursday, while distributing prasad at the temple, he met a learned sage who taught him important business principles and spiritual wisdom. Following this guidance, his business not only recovered but flourished beyond his previous success.\n\nThe merchant realized that Thursday worship had brought him both material prosperity and spiritual wisdom. He continued the tradition with gratitude, always helping others and sharing his knowledge. His household became known for its prosperity, generosity, and devotion.\n\nThis story teaches us that Thursday worship brings divine blessings, spiritual wisdom, material prosperity, and guidance from teachers and mentors in our spiritual and worldly journey.",
+        textHindi: "एक बार एक धनवान व्यापारी था जो अपने अहंकार और आध्यात्मिक कर्तव्यों की उपेक्षा के कारण धीरे-धीरे अपनी समृद्धि खो रहा था। उसका व्यापार घट रहा था और उसका परिवार कठिनाइयों का सामना कर रहा था। उसकी बुद्धिमान पत्नी ने भगवान विष्णु और गुरु बृहस्पति को समर्पित गुरुवार का व्रत करने का सुझाव दिया।\n\nहर गुरुवार को व्यापारी सुबह जल्दी उठता, स्नान करता, पीले वस्त्र पहनता और मंदिर जाता। वह भगवान विष्णु को पीले फूल, केले, पीली मिठाइयां और चना दाल अर्पित करता और घी का दीपक जलाता। वह पूरे दिन उपवास रखता, भक्ति कथाएं सुनता और विष्णु मंत्र का जाप करता।\n\nकई महीनों की सच्ची भक्ति और विनम्रता सीखने के बाद, भगवान विष्णु ने उसे दिव्य कृपा प्रदान की। गुरु बृहस्पति, उसकी ज्ञान और धर्म के प्रति निष्ठा से प्रसन्न होकर, उसके निर्णयों का मार्गदर्शन करने लगे। उसका खोया हुआ धन धीरे-धीरे वापस आ गया और उसके परिवार ने नई समृद्धि का अनुभव किया।\n\nएक गुरुवार को मंदिर में प्रसाद बांटते समय, उसकी मुलाकात एक विद्वान संत से हुई जिसने उसे महत्वपूर्ण व्यापारिक सिद्धांत और आध्यात्मिक ज्ञान सिखाया। इस मार्गदर्शन का पालन करते हुए, उसका व्यापार न केवल ठीक हो गया बल्कि पहले की सफलता से भी कहीं अधिक फला-फूला।\n\nव्यापारी को एहसास हुआ कि गुरुवार की पूजा ने उसे भौतिक समृद्धि और आध्यात्मिक ज्ञान दोनों दिए हैं। उसने कृतज्ञता के साथ परंपरा जारी रखी, हमेशा दूसरों की मदद की और अपना ज्ञान साझा किया। उसका घर समृद्धि, उदारता और भक्ति के लिए प्रसिद्ध हो गया।\n\nयह कहानी हमें सिखाती है कि गुरुवार की पूजा दिव्य आशीर्वाद, आध्यात्मिक ज्ञान, भौतिक समृद्धि और हमारी आध्यात्मिक व भौतिक यात्रा में शिक्षकों और मार्गदर्शकों से दिशा प्रदान करती है।",
+        translation: "The story of how Thursday fasting brings divine blessings, spiritual wisdom, and material prosperity through devotion to Vishnu and Brihaspati.",
+        deity: "Vishnu",
+        emojiCounts: { "🙏": 35, "❤️": 28, "🌟": 32 }
+      },
+      {
+        id: "thu-5",
+        day: "Thursday",
         category: "Stotrams",
         title: "Vishnu Sahasranama",
-        textEnglish: "Vishvam Vishnur Vashatkaro\nBhuta-bhavya-bhavat-prabhuh\nBhutakrid Bhutabhrid Bhavo\nBhutatma Bhuta-bhavanah",
-        textHindi: "विश्वं विष्णुर्वषट्कारो\nभूत-भव्य-भवत्-प्रभुः\nभूतकृद् भूतभृद् भावो\nभूतात्मा भूत-भावनः",
-        translation: "The Universe, The All-Pervading, The Performer of Sacrifices, The Lord of Past, Present and Future.",
+        textEnglish: "Vishvam Vishnur Vashatkaro\nBhuta-bhavya-bhavat-prabhuh\nBhutakrid Bhutabhrid Bhavo\nBhutatma Bhuta-bhavanah\n\nPutatma Paramatma Cha\nMuktanam Parama Gatih\nAvyayah Purusha Sakshi\nKshetrajno Aksara Ishvarah",
+        textHindi: "विश्वं विष्णुर्वषट्कारो\nभूत-भव्य-भवत्-प्रभुः\nभूतकृद् भूतभृद् भावो\nभूतात्मा भूत-भावनः\n\nपूतात्मा परमात्मा च\nमुक्तानां परमा गतिः\nअव्ययः पुरुषः साक्षी\nक्षेत्रज्ञो अक्षर ईश्वरः",
+        translation: "The universe, Vishnu, the bestower of sacrificial offerings, lord of past, present and future. Creator of beings, sustainer of beings, existence itself, soul of beings, creator of beings. Pure soul, supreme soul, the ultimate destination of liberated souls. Imperishable, cosmic being, witness, knower of the field, immutable lord.",
         deity: "Vishnu",
-        emojiCounts: { "🙏": 55, "❤️": 45, "🌟": 50 }
+        emojiCounts: { "🙏": 62, "❤️": 48, "🌟": 55 }
+      },
+      {
+        id: "thu-5b",
+        day: "Thursday",
+        category: "Stotrams",
+        title: "Sai Baba Ashtotram",
+        textEnglish: "Om Sainathaya Namah\nOm Lakshmi Niwasaya Namah\nOm Satchit-anandaya Namah\nOm Shivasakya Namah\nOm Samarasaya Namah\nOm Samsara-tarakaya Namah\nOm Sarva-gnaya Namah\nOm Sadguruve Namah",
+        textHindi: "ॐ साईनाथाय नमः\nॐ लक्ष्मी निवासाय नमः\nॐ सच्चित्-आनन्दाय नमः\nॐ शिवसाक्याय नमः\nॐ समरसाय नमः\nॐ संसार-तारकाय नमः\nॐ सर्व-ज्ञाय नमः\nॐ सद्गुरवे नमः",
+        translation: "Salutations to Sai Natha, abode of Lakshmi, embodiment of existence-consciousness-bliss, powerful like Shiva, impartial to all, savior from worldly existence, omniscient, true guru.",
+        deity: "Sai Baba",
+        emojiCounts: { "🙏": 58, "❤️": 44, "🌟": 50 }
+      },
+      {
+        id: "thu-6",
+        day: "Thursday",
+        category: "Vrat Vidhi",
+        title: "Brihaspativar Vrat Vidhi",
+        textEnglish: "THURSDAY FAST PROCEDURE:\n\n1. Wake up early and take a purifying bath\n2. Wear yellow/golden colored clothes\n3. Set up altar with Vishnu and Sai Baba images\n4. Light ghee lamp or mustard oil diya\n5. Offer yellow flowers (marigold, turmeric flowers)\n6. Offer yellow fruits (bananas, yellow apples)\n7. Prepare chana dal (Bengal gram) as bhog\n8. Offer yellow sweets (besan laddoo, petha)\n9. Chant 'Om Namo Bhagavate Vasudevaya' 108 times\n10. Recite Vishnu Sahasranama or selected verses\n11. Fast completely or eat only yellow colored foods\n12. Avoid salt, grains (except chana dal), non-vegetarian food\n13. Break fast after sunset with prasad\n14. Listen to Vishnu/Sai stories and distribute prasad\n\nBENEFITS: Grants prosperity, wisdom, knowledge, removes financial difficulties, brings teacher's blessings, and spiritual growth.",
+        textHindi: "बृहस्पतिवार व्रत विधि:\n\n१. सुबह जल्दी उठकर शुद्धीकरण स्नान करें\n२. पीले/सुनहरे रंग के वस्त्र धारण करें\n३. विष्णु और साईं बाबा की मूर्तियों के साथ वेदी सजाएं\n४. घी का दीपक या सरसों के तेल का दिया जलाएं\n५. पीले फूल (गेंदा, हल्दी के फूल) चढ़ाएं\n६. पीले फल (केले, पीले सेब) अर्पित करें\n७. चना दाल को भोग के रूप में तैयार करें\n८. पीली मिठाइयां (बेसन लड्डू, पेठा) चढ़ाएं\n९. 'ॐ नमो भगवते वासुदेवाय' का १०८ बार जाप करें\n१०. विष्णु सहस्रनाम या चुने हुए श्लोकों का पाठ करें\n११. पूर्ण उपवास रखें या केवल पीले रंग का भोजन लें\n१२. नमक, अनाज (चना दाल को छोड़कर), मांसाहार से बचें\n१३. सूर्यास्त के बाद प्रसाद से व्रत तोड़ें\n१४. विष्णु/साईं की कथाएं सुनें और प्रसाद बांटें\n\nलाभ: समृद्धि, बुद्धि, ज्ञान प्रदान करता है, आर्थिक कठिनाइयों को दूर करता है, गुरु का आशीर्वाद और आध्यात्मिक वृद्धि लाता है।",
+        translation: "Complete procedure for observing Thursday fast dedicated to Lord Vishnu and Sai Baba for prosperity and wisdom.",
+        deity: "Vishnu",
+        emojiCounts: { "🙏": 48, "❤️": 36, "🌟": 42 }
+      },
+      {
+        id: "thu-7",
+        day: "Thursday",
+        category: "Extras",
+        title: "Significance of Yellow Color",
+        textEnglish: "YELLOW COLOR - SYMBOL OF KNOWLEDGE AND PROSPERITY\n\nYellow holds profound significance in Thursday worship, particularly for Lord Vishnu, Sai Baba, and Brihaspati Dev.\n\nSPIRITUAL SIGNIFICANCE:\n• Yellow represents knowledge, wisdom, and learning\n• Associated with planet Jupiter (Brihaspati/Guru)\n• Symbolizes prosperity, abundance, and good fortune\n• Represents divine light and spiritual illumination\n• Connected to solar energy and positive vibrations\n• Color of turmeric, considered sacred and purifying\n\nWHY YELLOW ON THURSDAYS:\n• Thursday is ruled by Jupiter (Brihaspati), planet of wisdom\n• Lord Vishnu's association with preservation and prosperity\n• Sai Baba often wore yellow/saffron robes\n• Yellow attracts divine blessings and positive energy\n• Enhances learning capacity and intellectual growth\n• Brings stability and material success\n\nYELLOW OFFERINGS:\n• Clothes: Wear yellow/golden garments\n• Flowers: Marigold, turmeric flowers, yellow roses\n• Food: Bananas, yellow sweets, turmeric rice\n• Chana dal (Bengal gram) - special Thursday offering\n• Yellow fruits and vegetables\n• Saffron milk or turmeric milk\n\nBENEFITS OF YELLOW:\n• Enhances concentration and memory\n• Attracts wealth and prosperity\n• Improves teacher-student relationships\n• Brings success in education and career\n• Removes obstacles in learning\n• Creates positive mental attitude\n• Strengthens connection with divine wisdom\n\nSCRIPTURAL REFERENCE:\nIn the Vishnu Purana, it's mentioned that offerings made in yellow color on Thursdays are especially dear to Lord Vishnu and bring rapid fulfillment of wishes related to knowledge and prosperity.\n\nWearing yellow and offering yellow items on Thursdays creates a powerful spiritual vibration that aligns us with cosmic wisdom and divine abundance.",
+        textHindi: "पीला रंग - ज्ञान और समृद्धि का प्रतीक\n\nगुरुवार की पूजा में पीले रंग का गहरा महत्व है, विशेषकर भगवान विष्णु, साईं बाबा और बृहस्पति देव के लिए।\n\nआध्यात्मिक महत्व:\n• पीला रंग ज्ञान, बुद्धि और विद्या का प्रतीक है\n• बृहस्पति ग्रह (गुरु) से जुड़ा हुआ है\n• समृद्धि, प्रचुरता और सौभाग्य का प्रतीक है\n• दिव्य प्रकाश और आध्यात्मिक प्रबोधन का प्रतिनिधित्व\n• सौर ऊर्जा और सकारात्मक कंपनों से जुड़ा है\n• हल्दी का रंग, जो पवित्र और शुद्धीकारक माना जाता है\n\nगुरुवार को पीला रंग क्यों:\n• गुरुवार बृहस्पति ग्रह द्वारा शासित है, जो बुद्धि का ग्रह है\n• भगवान विष्णु का संरक्षण और समृद्धि से संबंध\n• साईं बाबा अक्सर पीले/भगवा वस्त्र पहनते थे\n• पीला रंग दिव्य आशीर्वाद और सकारात्मक ऊर्जा आकर्षित करता है\n• सीखने की क्षमता और बौद्धिक विकास बढ़ाता है\n• स्थिरता और भौतिक सफलता लाता है\n\nपीले रंग के अर्पण:\n• वस्त्र: पीले/सुनहरे वस्त्र पहनें\n• फूल: गेंदा, हल्दी के फूल, पीले गुलाब\n• भोजन: केले, पीली मिठाइयां, हल्दी चावल\n• चना दाल - विशेष गुरुवारी अर्पण\n• पीले फल और सब्जियां\n• केसर दूध या हल्दी दूध\n\nपीले रंग के लाभ:\n• एकाग्रता और स्मृति बढ़ाता है\n• धन और समृद्धि आकर्षित करता है\n• गुरु-शिष्य संबंधों में सुधार करता है\n• शिक्षा और करियर में सफलता लाता है\n• विद्या में बाधाओं को दूर करता है\n• सकारात्मक मानसिक दृष्टिकोण पैदा करता है\n• दिव्य ज्ञान के साथ संबंध मजबूत करता है\n\nशास्त्रीय संदर्भ:\nविष्णु पुराण में उल्लेख है कि गुरुवार को पीले रंग में किए गए अर्पण भगवान विष्णु को विशेष रूप से प्रिय हैं और ज्ञान व समृद्धि संबंधी इच्छाओं की शीघ्र पूर्ति करते हैं।\n\nगुरुवार को पीले वस्त्र पहनना और पीली वस्तुओं का अर्पण एक शक्तिशाली आध्यात्मिक कंपन पैदा करता है जो हमें ब्रह्मांडीय ज्ञान और दिव्य प्रचुरता के साथ जोड़ता है।",
+        translation: "Complete guide to the spiritual significance of yellow color in Thursday worship and its divine benefits.",
+        deity: "Vishnu",
+        emojiCounts: { "🙏": 44, "❤️": 32, "🌟": 38 }
+      },
+      {
+        id: "thu-8",
+        day: "Thursday",
+        category: "Extras",
+        title: "Banana Tree Worship",
+        textEnglish: "BANANA TREE - SACRED SYMBOL OF PROSPERITY\n\nBanana tree (Kela Vriksha) holds special significance in Thursday worship and Hindu traditions, particularly connected to Lord Vishnu and Brihaspati.\n\nSPIRITUAL SIGNIFICANCE:\n• Banana tree represents fertility, abundance, and prosperity\n• Every part of the tree is useful - symbolizing completeness\n• Associated with Lord Vishnu as provider and sustainer\n• Connected to Goddess Lakshmi for wealth and fortune\n• Represents selfless service and generosity\n• Quick growth symbolizes rapid progress and success\n\nTHURSDAY CONNECTION:\n• Jupiter (Brihaspati) governs growth and expansion\n• Banana tree embodies these qualities perfectly\n• Yellow bananas align with Thursday's color significance\n• Offering bananas to Vishnu brings prosperity\n• Tree worship on Thursdays multiplies benefits\n\nWORSHIP RITUALS:\n1. Circumambulate the banana tree (Pradakshina)\n2. Offer water to the roots while chanting mantras\n3. Tie yellow thread around the trunk\n4. Light a lamp near the tree\n5. Offer yellow flowers and turmeric\n6. Place bananas and yellow sweets as offerings\n7. Pray for prosperity and abundance\n8. Touch the tree with reverence\n\nSPECIAL PRACTICES:\n• Plant a banana tree on Thursdays for good fortune\n• Water the tree daily with devotion\n• Use banana leaves for prasad distribution\n• Offer banana tree leaves to deities\n• Donate bananas to poor on Thursdays\n• Use banana flower in special pujas\n\nBENEFITS:\n• Removes financial difficulties\n• Brings fertility and family growth\n• Ensures abundant harvest and prosperity\n• Blesses with progeny and family happiness\n• Provides protection from negative energies\n• Grants rapid fulfillment of desires\n• Enhances business growth and success\n\nTRADITIONAL BELIEF:\nIt's believed that a household with a banana tree never faces scarcity. The tree is considered so auspicious that even its sight on Thursday mornings brings good luck for the entire day.\n\nWorshipping banana tree on Thursdays, especially during Kartik month, is said to bring blessings equivalent to performing elaborate yajnas and attracts Goddess Lakshmi's grace.",
+        textHindi: "केले का पेड़ - समृद्धि का पवित्र प्रतीक\n\nकेले का पेड़ (केला वृक्ष) गुरुवार की पूजा और हिंदू परंपराओं में विशेष महत्व रखता है, विशेषकर भगवान विष्णु और बृहस्पति से जुड़ा हुआ।\n\nआध्यात्मिक महत्व:\n• केले का पेड़ प्रजनन क्षमता, प्रचुरता और समृद्धि का प्रतीक है\n• पेड़ का हर हिस्सा उपयोगी है - पूर्णता का प्रतीक\n• भगवान विष्णु से जुड़ा है जो पालनकर्ता और पोषक हैं\n• धन और भाग्य के लिए देवी लक्ष्मी से संबंधित\n• निस्वार्थ सेवा और उदारता का प्रतिनिधित्व\n• तेज वृद्धि तीव्र प्रगति और सफलता का प्रतीक है\n\nगुरुवार से संबंध:\n• बृहस्पति (गुरु) ग्रह वृद्धि और विस्तार को नियंत्रित करता है\n• केले का पेड़ इन गुणों को पूर्ण रूप से दर्शाता है\n• पीले केले गुरुवार के रंग महत्व से मेल खाते हैं\n• विष्णु को केले अर्पित करने से समृद्धि आती है\n• गुरुवार को वृक्ष पूजा से लाभ कई गुना बढ़ जाता है\n\nपूजा अनुष्ठान:\n१. केले के पेड़ की परिक्रमा करें (प्रदक्षिणा)\n२. मंत्र जाप करते हुए जड़ों में जल अर्पित करें\n३. तने के चारों ओर पीला धागा बांधें\n४. पेड़ के पास दीपक जलाएं\n५. पीले फूल और हल्दी चढ़ाएं\n६. केले और पीली मिठाइयां अर्पण के रूप में रखें\n७. समृद्धि और प्रचुरता के लिए प्रार्थना करें\n८. श्रद्धा से पेड़ को स्पर्श करें\n\nविशेष अभ्यास:\n• सौभाग्य के लिए गुरुवार को केले का पेड़ लगाएं\n• प्रतिदिन भक्ति से पेड़ को पानी दें\n• प्रसाद वितरण के लिए केले के पत्ते का उपयोग करें\n• देवताओं को केले के पेड़ के पत्ते अर्पित करें\n• गुरुवार को गरीबों में केले दान करें\n• विशेष पूजा में केले के फूल का उपयोग करें\n\nलाभ:\n• आर्थिक कठिनाइयों को दूर करता है\n• प्रजनन क्षमता और पारिवारिक वृद्धि लाता है\n• भरपूर फसल और समृद्धि सुनिश्चित करता है\n• संतान और पारिवारिक खुशी का आशीर्वाद देता है\n• नकारात्मक ऊर्जाओं से सुरक्षा प्रदान करता है\n• इच्छाओं की तीव्र पूर्ति करता है\n• व्यापारिक वृद्धि और सफलता बढ़ाता है\n\nपारंपरिक मान्यता:\nऐसा माना जाता है कि जिस घर में केले का पेड़ होता है, वहां कभी अभाव नहीं होता। यह पेड़ इतना शुभ माना जाता है कि गुरुवार की सुबह इसके दर्शन मात्र से पूरे दिन के लिए सौभाग्य मिलता है।\n\nगुरुवार को केले के पेड़ की पूजा, विशेषकर कार्तिक महीने में, विस्तृत यज्ञ करने के समान लाभ देती है और देवी लक्ष्मी की कृपा आकर्षित करती है।",
+        translation: "Complete guide to the sacred significance of banana tree worship on Thursdays and its prosperity benefits.",
+        deity: "Vishnu",
+        emojiCounts: { "🙏": 42, "❤️": 34, "🌟": 38 }
       },
 
       // FRIDAY - Lakshmi & Devi Worship
