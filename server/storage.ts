@@ -557,76 +557,239 @@ export class MemStorage implements IStorage {
         emojiCounts: { "🙏": 42, "❤️": 34, "🌟": 38 }
       },
 
-      // FRIDAY - Lakshmi & Devi Worship
+      // FRIDAY - Goddess Lakshmi/Santoshi Maa/Durga Worship (Complete Categories)
       {
         id: "fri-1",
         day: "Friday",
         category: "Mantras",
-        title: "Lakshmi Mantra",
-        textEnglish: "Om Shreem Mahalakshmiyei Namaha\nOm Gam Shreem Gam Shreem\nGanapataye Shreem Namaha\nSarva Mangala Mangalye",
-        textHindi: "ॐ श्रीं महालक्ष्म्यै नमः\nॐ गं श्रीं गं श्रीं\nगणपतये श्रीं नमः\nसर्व मंगल मांगल्ये",
-        translation: "I bow to Goddess Mahalakshmi. Om, the auspicious one among all auspicious beings.",
+        title: "Mahalakshmi Mantra",
+        textEnglish: "Om Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah\nOm Shreem Mahalakshmiyei Namah",
+        textHindi: "ॐ श्रीं महालक्ष्म्यै नमः\nॐ श्रीं महालक्ष्म्यै नमः\nॐ श्रीं महालक्ष्म्यै नमः\nॐ श्रीं महालक्ष्म्यै नमः",
+        translation: "I bow to Goddess Mahalakshmi, the divine mother who bestows wealth, prosperity, and abundance upon her devotees.",
         deity: "Lakshmi",
-        emojiCounts: { "🙏": 48, "❤️": 35, "🌟": 42 }
+        emojiCounts: { "🙏": 52, "❤️": 40, "🌟": 46 }
+      },
+      {
+        id: "fri-1b",
+        day: "Friday",
+        category: "Mantras",
+        title: "Santoshi Maa Mantra",
+        textEnglish: "Jai Santoshi Maa\nJai Santoshi Maa\nJai Santoshi Maa\nJai Santoshi Maa",
+        textHindi: "जय संतोषी माँ\nजय संतोषी माँ\nजय संतोषी माँ\nजय संतोषी माँ",
+        translation: "Victory to Mother Santoshi, the goddess of satisfaction and contentment who fulfills all desires of her devotees.",
+        deity: "Santoshi Maa",
+        emojiCounts: { "🙏": 48, "❤️": 36, "🌟": 42 }
+      },
+      {
+        id: "fri-1c",
+        day: "Friday",
+        category: "Mantras",
+        title: "Durga Mantra",
+        textEnglish: "Om Dum Durgayei Namaha\nSarva Mangala Mangalye\nShive Sarvaartha Sadhike\nSharanye Tryambake Gauri\nNarayani Namostute",
+        textHindi: "ॐ दुं दुर्गायै नमः\nसर्व मंगला मांगल्ये\nशिवे सर्वार्थ साधिके\nशरण्ये त्र्यम्बके गौरि\nनारायणि नमोऽस्तुते",
+        translation: "I bow to Goddess Durga, the auspicious one among all auspicious beings, who fulfills all purposes. I salute you, O three-eyed Gauri, the refuge of all, O Narayani.",
+        deity: "Durga",
+        emojiCounts: { "🙏": 50, "❤️": 38, "🌟": 44 }
       },
       {
         id: "fri-2",
         day: "Friday",
-        category: "Aartis",
-        title: "Lakshmi Aarti",
-        textEnglish: "Om Jai Lakshmi Mata\nMaiya Jai Lakshmi Mata\nTumko Nisdin Dhyavat\nHara Vishnu Viridata",
-        textHindi: "ॐ जय लक्ष्मी माता\nमैया जय लक्ष्मी माता\nतुमको निसदिन ध्यावत\nहर विष्णु विरिदाता",
-        translation: "Victory to Mother Lakshmi! Day and night, Lord Vishnu and Lord Shiva meditate upon you.",
+        category: "Chalisas",
+        title: "Lakshmi Chalisa",
+        textEnglish: "Mata Lakshmi Gun Gaan\nKariye Param Sujaan\nJay Jagat Janani Mata\nJay Jagat Palak Data\n\nShvetambar Dhara Shubhra\nHastehi Kamal Yugala\nKamal Kanti Kamal Netra\nKamal Mukh Kar Kamala",
+        textHindi: "माता लक्ष्मी गुण गान\nकरिये परम सुजान\nजय जगत जननी माता\nजय जगत पालक दाता\n\nश्वेतांबर धारा शुभ्रा\nहस्तेहि कमल युगला\nकमल कान्ति कमल नेत्रा\nकमल मुख कर कमला",
+        translation: "We sing the glorious qualities of Mother Lakshmi with supreme wisdom. Victory to the mother of the world, victory to the nourisher and giver of the world. Adorned in white garments, holding lotus flowers in both hands, with lotus-like radiance, lotus eyes, lotus face, and lotus hands.",
         deity: "Lakshmi",
-        emojiCounts: { "🙏": 40, "❤️": 30, "🌟": 35 }
+        emojiCounts: { "🙏": 55, "❤️": 42, "🌟": 48 }
+      },
+      {
+        id: "fri-2b",
+        day: "Friday",
+        category: "Chalisas",
+        title: "Durga Chalisa",
+        textEnglish: "Namo Namo Durge Sukh Karni\nNamo Namo Ambe Dukh Harni\nNirgun Niroop Nirankar Hai\nSab Pe Kripa Dikhane Wali\n\nTu Hi Hai Mata Sherawali\nShakti Roopa Hai Bhawani\nAadi Shakti Hai Jagdambe\nTu Hi Jag Ki Rakhwali",
+        textHindi: "नमो नमो दुर्गे सुख करनी\nनमो नमो अम्बे दुःख हरनी\nनिर्गुण निरूप निरंकार है\nसब पे कृपा दिखाने वाली\n\nतू ही है माता शेरवाली\nशक्ति रूपा है भवानी\nआदि शक्ति है जगदम्बे\nतू ही जग की रखवाली",
+        translation: "I bow to Durga, the bestower of happiness, I bow to Amba, the remover of sorrows. She is beyond attributes, formless, and without form, the one who shows compassion to all. You are the mother who rides the lion, Bhavani in the form of power, the primordial energy Jagadamba, you are the protector of the world.",
+        deity: "Durga",
+        emojiCounts: { "🙏": 58, "❤️": 44, "🌟": 52 }
+      },
+      {
+        id: "fri-3",
+        day: "Friday",
+        category: "Aartis",
+        title: "Om Jai Lakshmi Mata",
+        textEnglish: "Om Jai Lakshmi Mata\nMaiya Jai Lakshmi Mata\nTumko Nisdin Dhyavat\nHara Vishnu Vidhata\nOm Jai Lakshmi Mata\n\nUma Rama Brahmani\nTum Hi Jag Mata\nSurya Chandra Dhyavat\nNarad Rishi Gata\nOm Jai Lakshmi Mata",
+        textHindi: "ॐ जय लक्ष्मी माता\nमैया जय लक्ष्मी माता\nतुमको निसदिन ध्यावत\nहर विष्णु विधाता\nॐ जय लक्ष्मी माता\n\nउमा राम ब्रह्माणी\nतुम ही जग माता\nसूर्य चन्द्र ध्यावत\nनारद ऋषि गाता\nॐ जय लक्ष्मी माता",
+        translation: "Victory to Mother Lakshmi! Day and night, Lord Shiva, Vishnu, and Brahma meditate upon you. Uma, Rama, and Brahmani - you are the mother of the world. The Sun and Moon meditate upon you, sage Narada sings your praise.",
+        deity: "Lakshmi",
+        emojiCounts: { "🙏": 50, "❤️": 38, "🌟": 44 }
+      },
+      {
+        id: "fri-3b",
+        day: "Friday",
+        category: "Aartis",
+        title: "Jai Ambe Gauri",
+        textEnglish: "Jai Jai Ambe Jai Jagdambe\nJay Jai Ambe Mata\nBhawani Ambe Jagdambe\nAdi Shakti Mata\n\nChamund Kaali Durga Mata\nShera Wali Mata\nRoop Saarisadhi Tumhara\nJagat Mata",
+        textHindi: "जय जय अम्बे जय जगदम्बे\nजय जय अम्बे माता\nभवानी अम्बे जगदम्बे\nआदि शक्ति माता\n\nचामुण्ड काली दुर्गा माता\nशेरा वाली माता\nरूप सारीसाधी तुम्हारा\nजगत माता",
+        translation: "Victory to Amba, victory to Jagadamba, victory to Mother Amba. Bhavani Amba Jagadamba, the primordial power mother. Chamunda, Kali, Durga Mata, the mother who rides the lion. Your forms are countless, O mother of the world.",
+        deity: "Durga",
+        emojiCounts: { "🙏": 48, "❤️": 36, "🌟": 42 }
+      },
+      {
+        id: "fri-4",
+        day: "Friday",
+        category: "Kathas",
+        title: "Santoshi Mata Vrat Katha",
+        textEnglish: "Once there lived a devoted woman named Satyavati who was facing many difficulties in her married life. Her mother-in-law treated her harshly, and her husband was away for work. She had heard about the miraculous powers of Santoshi Mata and decided to observe her Friday fast (Santoshi Mata Vrat).\n\nEvery Friday, Satyavati would wake up early, clean her house, and set up a small altar for Santoshi Mata. She would offer gur (jaggery) and chana (chickpeas), light a lamp, and pray with complete devotion. She would fast throughout the day, avoiding any sour food, and break her fast only after sunset.\n\nDuring her worship, she would pray: 'Oh Santoshi Mata, you are the goddess of satisfaction and contentment. Please bless my family with happiness and remove all obstacles from my life.' She continued this practice for 16 consecutive Fridays with unwavering faith.\n\nSlowly, miraculous changes began to happen. Her husband got a promotion and returned home. Her mother-in-law's heart softened, and she began treating Satyavati with love and respect. The family was blessed with prosperity and peace.\n\nOn the final Friday, Satyavati organized a special puja and invited other women to share the prasad of gur and chana. She shared the story of Santoshi Mata's grace and how her life had transformed through sincere devotion.\n\nThis story teaches us that Santoshi Mata, the goddess of contentment, listens to the prayers of her devotees and blesses them with family harmony, satisfaction, and fulfillment of righteous desires.",
+        textHindi: "एक बार सत्यवती नाम की एक भक्त महिला थी जो अपने विवाहित जीवन में कई कठिनाइयों का सामना कर रही थी। उसकी सास उसके साथ कठोरता से पेश आती थी और उसका पति काम के लिए बाहर गया हुआ था। उसने संतोषी माता की चमत्कारी शक्तियों के बारे में सुना था और उनका शुक्रवार का व्रत करने का निर्णय लिया।\n\nहर शुक्रवार को सत्यवती सुबह जल्दी उठती, अपना घर साफ करती और संतोषी माता के लिए एक छोटी वेदी सजाती। वह गुड़ और चना अर्पित करती, दीपक जलाती और पूर्ण भक्ति से प्रार्थना करती। वह पूरे दिन उपवास रखती, किसी भी खट्टे भोजन से बचती और केवल सूर्यास्त के बाद व्रत तोड़ती।\n\nअपनी पूजा के दौरान वह प्रार्थना करती: 'हे संतोषी माता, आप संतुष्टि और संतोष की देवी हैं। कृपया मेरे परिवार को खुशी का आशीर्वाद दें और मेरे जीवन से सभी बाधाओं को दूर करें।' उसने अटूट विश्वास के साथ लगातार 16 शुक्रवार तक यह अभ्यास जारी रखा।\n\nधीरे-धीरे चमत्कारी बदलाव होने लगे। उसके पति को पदोन्नति मिली और वह घर वापस आ गया। उसकी सास का हृदय नरम हो गया और वह सत्यवती के साथ प्रेम और सम्मान से पेश आने लगी। परिवार को समृद्धि और शांति का आशीर्वाद मिला।\n\nअंतिम शुक्रवार को सत्यवती ने विशेष पूजा का आयोजन किया और अन्य महिलाओं को गुड़ और चने का प्रसाद बांटने के लिए आमंत्रित किया। उसने संतोषी माता की कृपा की कहानी साझा की और बताया कि कैसे सच्ची भक्ति से उसका जीवन बदल गया था।\n\nयह कहानी हमें सिखाती है कि संतोषी माता, संतुष्टि की देवी, अपने भक्तों की प्रार्थनाएं सुनती हैं और उन्हें पारिवारिक सामंजस्य, संतुष्टि और धार्मिक इच्छाओं की पूर्ति का आशीर्वाद देती हैं।",
+        translation: "The story of how Santoshi Mata's Friday fast brings family harmony, contentment, and fulfillment of righteous desires through devotion.",
+        deity: "Santoshi Maa",
+        emojiCounts: { "🙏": 38, "❤️": 32, "🌟": 35 }
+      },
+      {
+        id: "fri-5",
+        day: "Friday",
+        category: "Stotrams",
+        title: "Kanakdhara Stotra",
+        textEnglish: "Angam Harer Pulakabhushanam\nPalashapriyam Bilva Patram\nSarva Devamaya Chordhva Pundram\nVande Devi Mahalakshmi",
+        textHindi: "अंगं हरेर्पुलकभूषणं\nपलाशप्रियं बिल्व पत्रम्\nसर्व देवमया चोर्ध्व पुण्ड्रम्\nवन्दे देवी महालक्ष्मी",
+        translation: "I worship Goddess Mahalakshmi, whose body ornaments cause Lord Hari to be filled with divine joy, who loves the palash flowers and bilva leaves, who encompasses all gods and has the sacred tilaka mark.",
+        deity: "Lakshmi",
+        emojiCounts: { "🙏": 60, "❤️": 46, "🌟": 53 }
+      },
+      {
+        id: "fri-5b",
+        day: "Friday",
+        category: "Stotrams",
+        title: "Durga Saptshati Excerpt",
+        textEnglish: "Ya Devi Sarva Bhuteshu\nShakti Rupena Samsthita\nNamastasyai Namastasyai\nNamastasyai Namo Namah\n\nYa Devi Sarva Bhuteshu\nMatru Rupena Samsthita\nNamastasyai Namastasyai\nNamastasyai Namo Namah",
+        textHindi: "या देवी सर्व भूतेषु\nशक्ति रूपेण संस्थिता\nनमस्तस्यै नमस्तस्यै\nनमस्तस्यै नमो नमः\n\nया देवी सर्व भूतेषु\nमातृ रूपेण संस्थिता\nनमस्तस्यै नमस्तस्यै\nनमस्तस्यै नमो नमः",
+        translation: "Salutations to that Goddess who abides in all beings in the form of power. Salutations to Her, salutations to Her, salutations to Her, I bow again and again. Salutations to that Goddess who abides in all beings in the form of mother.",
+        deity: "Durga",
+        emojiCounts: { "🙏": 62, "❤️": 48, "🌟": 55 }
+      },
+      {
+        id: "fri-6",
+        day: "Friday",
+        category: "Vrat Vidhi",
+        title: "Santoshi Mata Vrat Vidhi",
+        textEnglish: "FRIDAY FAST PROCEDURE:\n\n1. Wake up early and take a purifying bath\n2. Wear clean, preferably red or yellow clothes\n3. Set up altar with Santoshi Mata image\n4. Light 16 earthen lamps (diyas) with mustard oil\n5. Offer red flowers (red roses, hibiscus)\n6. Prepare offering of gur (jaggery) and chana (roasted chickpeas)\n7. Avoid all sour foods completely during the day\n8. Chant 'Jai Santoshi Maa' 108 times\n9. Read or listen to Santoshi Mata Vrat Katha\n10. Fast completely - no grains, salt, or regular meals\n11. Strictly avoid sour items like lemon, tamarind, pickles\n12. Break fast after sunset with gur-chana prasad\n13. Feed gur-chana to 8 young girls if possible\n14. Continue for 16 consecutive Fridays for complete benefit\n\nBENEFITS: Brings family harmony, contentment, fulfills desires, removes domestic troubles, and grants marital happiness.",
+        textHindi: "संतोषी माता व्रत विधि:\n\n१. सुबह जल्दी उठकर शुद्धीकरण स्नान करें\n२. स्वच्छ, अधिमानतः लाल या पीले वस्त्र पहनें\n३. संतोषी माता की मूर्ति के साथ वेदी सजाएं\n४. सरसों के तेल से १६ मिट्टी के दीपक जलाएं\n५. लाल फूल (लाल गुलाब, जवाकुसुम) चढ़ाएं\n६. गुड़ और चना (भुना हुआ) का भोग तैयार करें\n७. दिन भर सभी खट्टे खाद्य पदार्थों से पूर्णतः बचें\n८. 'जय संतोषी माँ' का १०८ बार जाप करें\n९. संतोषी माता व्रत कथा पढ़ें या सुनें\n१०. पूर्ण उपवास - अनाज, नमक या नियमित भोजन नहीं\n११. नींबू, इमली, अचार जैसी खट्टी चीजों से सख्त परहेज\n१२. सूर्यास्त के बाद गुड़-चने के प्रसाद से व्रत तोड़ें\n१३. यदि संभव हो तो ८ कुमारी कन्याओं को गुड़-चना खिलाएं\n१४. पूर्ण लाभ के लिए लगातार १६ शुक्रवार तक जारी रखें\n\nलाभ: पारिवारिक सामंजस्य, संतुष्टि, इच्छा पूर्ति, घरेलू समस्याओं का निवारण और वैवाहिक सुख प्रदान करता है।",
+        translation: "Complete procedure for observing Santoshi Mata's Friday fast for family harmony and contentment.",
+        deity: "Santoshi Maa",
+        emojiCounts: { "🙏": 50, "❤️": 38, "🌟": 44 }
+      },
+      {
+        id: "fri-7",
+        day: "Friday",
+        category: "Extras",
+        title: "Significance of Red Flowers",
+        textEnglish: "RED FLOWERS - SYMBOLS OF DIVINE FEMININE POWER\n\nRed flowers hold immense significance in Friday worship, particularly for Goddess Lakshmi, Santoshi Maa, and Durga.\n\nSPIRITUAL SIGNIFICANCE:\n• Red represents divine feminine energy (Shakti)\n• Symbolizes passion, love, and devotion\n• Associated with prosperity and abundance\n• Represents courage, strength, and protection\n• Color of blood - life force and vitality\n• Connected to Mars energy - power and determination\n\nWHY RED ON FRIDAYS:\n• Friday is ruled by Venus, planet of love and beauty\n• Red flowers please the Divine Mother\n• Represents the fierce protective aspect of goddesses\n• Attracts love, prosperity, and family harmony\n• Enhances feminine power and grace\n• Brings passion and enthusiasm in life\n\nRED FLOWER OFFERINGS:\n• Roses: Symbol of pure love and devotion\n• Hibiscus (Japa): Sacred to all goddesses\n• Red Lotus: Divine beauty and purity\n• Carnations: Deep affection and admiration\n• Red Marigolds: Prosperity and abundance\n• Poppies: Peaceful sleep and comfort\n\nBENEFITS OF RED FLOWERS:\n• Strengthens relationships and marriages\n• Attracts abundance and prosperity\n• Enhances beauty and charm\n• Provides protection from negative energies\n• Increases confidence and courage\n• Brings success in endeavors\n• Creates loving family atmosphere\n\nDECORATION GUIDELINES:\n• Use 16 red flowers for Santoshi Mata\n• Arrange in beautiful patterns around deity\n• Mix with yellow flowers for Lakshmi worship\n• Create garlands for special occasions\n• Float flowers in water bowls\n• Scatter petals during aarti\n\nSCRIPTURAL REFERENCE:\nIn the Devi Bhagavata Purana, it's mentioned that red flowers are especially dear to the Divine Mother and offering them on Fridays brings her immediate blessings and fulfillment of desires.\n\nRed flowers create a powerful spiritual vibration that awakens the divine feminine energy within us and connects us to the nurturing, protective power of the Universal Mother.",
+        textHindi: "लाल फूल - दिव्य स्त्री शक्ति के प्रतीक\n\nशुक्रवार की पूजा में लाल फूलों का अत्यधिक महत्व है, विशेषकर देवी लक्ष्मी, संतोषी माँ और दुर्गा के लिए।\n\nआध्यात्मिक महत्व:\n• लाल रंग दिव्य स्त्री ऊर्जा (शक्ति) का प्रतीक है\n• जुनून, प्रेम और भक्ति का प्रतीक है\n• समृद्धि और प्रचुरता से जुड़ा है\n• साहस, शक्ति और सुरक्षा का प्रतिनिधित्व करता है\n• रक्त का रंग - जीवन शक्ति और उत्साह\n• मंगल ऊर्जा से जुड़ा - शक्ति और दृढ़ संकल्प\n\nशुक्रवार को लाल रंग क्यों:\n• शुक्रवार शुक्र ग्रह द्वारा शासित है, प्रेम और सुंदरता का ग्रह\n• लाल फूल दिव्य माता को प्रसन्न करते हैं\n• देवियों के उग्र सुरक्षात्मक पहलू का प्रतिनिधित्व\n• प्रेम, समृद्धि और पारिवारिक सामंजस्य आकर्षित करता है\n• स्त्री शक्ति और अनुग्रह बढ़ाता है\n• जीवन में जुनून और उत्साह लाता है\n\nलाल फूलों के अर्पण:\n• गुलाब: शुद्ध प्रेम और भक्ति का प्रतीक\n• जवाकुसुम (जपा): सभी देवियों के लिए पवित्र\n• लाल कमल: दिव्य सुंदरता और पवित्रता\n• कार्नेशन: गहरा स्नेह और प्रशंसा\n• लाल गेंदा: समृद्धि और प्रचुरता\n• खसखस: शांतिपूर्ण नींद और आराम\n\nलाल फूलों के लाभ:\n• रिश्तों और विवाह को मजबूत बनाता है\n• प्रचुरता और समृद्धि आकर्षित करता है\n• सुंदरता और आकर्षण बढ़ाता है\n• नकारात्मक ऊर्जाओं से सुरक्षा प्रदान करता है\n• आत्मविश्वास और साहस बढ़ाता है\n• प्रयासों में सफलता लाता है\n• प्रेमपूर्ण पारिवारिक वातावरण बनाता है\n\nसजावट दिशानिर्देश:\n• संतोषी माता के लिए १६ लाल फूल उपयोग करें\n• देवता के चारों ओर सुंदर पैटर्न में व्यवस्थित करें\n• लक्ष्मी पूजा के लिए पीले फूलों के साथ मिलाएं\n• विशेष अवसरों के लिए माला बनाएं\n• पानी के कटोरे में फूल तैराएं\n• आरती के दौरान पंखुड़ियां बिखेरें\n\nशास्त्रीय संदर्भ:\nदेवी भागवत पुराण में उल्लेख है कि लाल फूल दिव्य माता को विशेष रूप से प्रिय हैं और शुक्रवार को इन्हें अर्पित करने से उनकी तत्काल कृपा और इच्छाओं की पूर्ति होती है।\n\nलाल फूल एक शक्तिशाली आध्यात्मिक कंपन पैदा करते हैं जो हमारे भीतर दिव्य स्त्री ऊर्जा को जगाता है और हमें सार्वभौमिक माता की पोषणकारी, सुरक्षात्मक शक्ति से जोड़ता है।",
+        translation: "Complete guide to the spiritual significance of red flowers in Friday goddess worship and their divine benefits.",
+        deity: "Lakshmi",
+        emojiCounts: { "🙏": 46, "❤️": 38, "🌟": 42 }
+      },
+      {
+        id: "fri-8",
+        day: "Friday",
+        category: "Extras",
+        title: "Lighting 16 Diyas Significance",
+        textEnglish: "SIXTEEN DIYAS - ILLUMINATING THE PATH TO PROSPERITY\n\nLighting 16 diyas (earthen lamps) on Fridays holds profound spiritual significance in goddess worship.\n\nSIGNIFICANCE OF NUMBER 16:\n• Represents completeness and wholeness\n• 16 phases of the moon (lunar calendar significance)\n• 16 Sanskrit vowels - complete divine sound\n• Age of divine perfection (16 years - Shodashi)\n• 16 petals of Anahata (heart) chakra\n• Symbol of fullness and abundance\n\nSPIRITUAL MEANING:\n• Light represents knowledge dispelling ignorance\n• Each diya removes different types of darkness\n• Fire element purifies and transforms\n• Represents the divine feminine light (Jyoti)\n• Creates positive vibrations and energy\n• Symbolizes hope and guidance\n\nBENEFITS OF 16 DIYAS:\n• Removes 16 types of negative influences\n• Attracts abundance and prosperity\n• Illuminates the path to success\n• Brings clarity to confused minds\n• Protects from evil eye and negativity\n• Enhances spiritual awareness\n• Creates sacred space for worship\n\nPROPER RITUAL:\n1. Use mustard oil or sesame oil\n2. Place diyas in circular pattern around deity\n3. Light them clockwise starting from east\n4. Keep them burning throughout the puja\n5. Pray for removal of darkness from all aspects of life\n6. Let them burn out naturally if possible\n7. Dispose of oil and wicks respectfully\n\nBEST LOCATIONS:\n• Around the main deity image\n• At entrance of home for protection\n• In corners to remove negative energy\n• Near Tulsi plant for extra blessings\n• On window sills to invite prosperity\n• In puja room for continuous divine presence\n\nSPECIAL OCCASIONS:\n• Every Friday for Santoshi Mata worship\n• During Navratri and Diwali festivals\n• On new moon days for extra purification\n• During difficult times for divine intervention\n• Before starting new ventures\n• During family celebrations and ceremonies\n\nThe tradition of lighting 16 diyas creates a powerful spiritual atmosphere that attracts divine blessings, removes obstacles, and fills the environment with positive energy and divine grace.",
+        textHindi: "सोलह दीपक - समृद्धि के मार्ग को प्रकाशित करना\n\nशुक्रवार को १६ दीपक (मिट्टी के दीए) जलाना देवी पूजा में गहरा आध्यात्मिक महत्व रखता है।\n\nसंख्या १६ का महत्व:\n• पूर्णता और संपूर्णता का प्रतिनिधित्व\n• चंद्रमा की १६ कलाएं (चंद्र कैलेंडर का महत्व)\n• १६ संस्कृत स्वर - पूर्ण दिव्य ध्वनि\n• दिव्य पूर्णता की आयु (१६ वर्ष - षोडशी)\n• अनाहत (हृदय) चक्र की १६ पंखुड़ियां\n• पूर्णता और प्रचुरता का प्रतीक\n\nआध्यात्मिक अर्थ:\n• प्रकाश अज्ञानता को दूर करने वाले ज्ञान का प्रतीक है\n• प्रत्येक दीपक विभिन्न प्रकार के अंधकार को दूर करता है\n• अग्नि तत्व शुद्ध करता है और रूपांतरित करता है\n• दिव्य स्त्री प्रकाश (ज्योति) का प्रतिनिधित्व\n• सकारात्मक कंपन और ऊर्जा पैदा करता है\n• आशा और मार्गदर्शन का प्रतीक है\n\n१६ दीपकों के लाभ:\n• १६ प्रकार के नकारात्मक प्रभावों को दूर करता है\n• प्रचुरता और समृद्धि आकर्षित करता है\n• सफलता के मार्ग को प्रकाशित करता है\n• भ्रमित मन में स्पष्टता लाता है\n• बुरी नजर और नकारात्मकता से सुरक्षा करता है\n• आध्यात्मिक जागरूकता बढ़ाता है\n• पूजा के लिए पवित्र स्थान बनाता है\n\nउचित अनुष्ठान:\n१. सरसों का तेल या तिल का तेल उपयोग करें\n२. देवता के चारों ओर वृत्ताकार पैटर्न में दीपक रखें\n३. पूर्व दिशा से शुरू करके दक्षिणावर्त जलाएं\n४. पूरी पूजा के दौरान उन्हें जलता रखें\n५. जीवन के सभी पहलुओं से अंधकार हटाने की प्रार्थना करें\n६. यदि संभव हो तो उन्हें प्राकृतिक रूप से बुझने दें\n७. तेल और बत्ती का सम्मानपूर्वक निपटान करें\n\nसर्वोत्तम स्थान:\n• मुख्य देवता की मूर्ति के चारों ओर\n• सुरक्षा के लिए घर के प्रवेश द्वार पर\n• नकारात्मक ऊर्जा हटाने के लिए कोनों में\n• अतिरिक्त आशीर्वाद के लिए तुलसी के पौधे के पास\n• समृद्धि आमंत्रित करने के लिए खिड़की की चौखटों पर\n• निरंतर दिव्य उपस्थिति के लिए पूजा कक्ष में\n\nविशेष अवसर:\n• संतोषी माता पूजा के लिए हर शुक्रवार\n• नवरात्रि और दिवाली त्योहारों के दौरान\n• अतिरिक्त शुद्धीकरण के लिए अमावस्या के दिन\n• कठिन समय में दिव्य हस्तक्षेप के लिए\n• नए उद्यम शुरू करने से पहले\n• पारिवारिक उत्सव और समारोह के दौरान\n\n१६ दीपक जलाने की परंपरा एक शक्तिशाली आध्यात्मिक वातावरण बनाती है जो दिव्य आशीर्वाद आकर्षित करती है, बाधाओं को दूर करती है, और वातावरण को सकारात्मक ऊर्जा और दिव्य कृपा से भर देती है।",
+        translation: "Complete guide to the spiritual significance of lighting 16 diyas on Fridays and their divine benefits.",
+        deity: "Santoshi Maa",
+        emojiCounts: { "🙏": 44, "❤️": 36, "🌟": 40 }
       },
 
-      // SATURDAY - Shani Dev Worship
+      // SATURDAY - Lord Shani/Hanuman/Kal Bhairav Worship (Complete Categories)
       {
         id: "sat-1",
         day: "Saturday",
         category: "Mantras",
-        title: "Shani Mantra",
-        textEnglish: "Om Sham Shanaischaraya Namaha\nNilanjana Samabhasam\nRavi Putram Yamagrajam\nChaya Martanda Sambhutam",
-        textHindi: "ॐ शं शनैश्चराय नमः\nनीलांजन समाभासं\nरवि पुत्रं यमाग्रजम्\nछाया मार्तण्ड संभूतम्",
-        translation: "I bow to Lord Shani, who appears like blue ointment, son of Sun god, elder brother of Yama, born from shadow and sun.",
+        title: "Shani Maha Mantra",
+        textEnglish: "Om Sham Shanaischaraya Namaha\nOm Sham Shanaischaraya Namaha\nOm Sham Shanaischaraya Namaha\nOm Sham Shanaischaraya Namaha",
+        textHindi: "ॐ शं शनैश्चराय नमः\nॐ शं शनैश्चराय नमः\nॐ शं शनैश्चराय नमः\nॐ शं शनैश्चराय नमः",
+        translation: "I bow to Lord Shani, the slow-moving planet, who teaches patience, justice, and the consequences of our actions.",
         deity: "Shani",
-        emojiCounts: { "🙏": 35, "❤️": 20, "🌟": 28 }
+        emojiCounts: { "🙏": 45, "❤️": 28, "🌟": 36 }
       },
       {
-        id: "sat-2",
-        day: "Saturday",
-        category: "Stotrams",
-        title: "Shani Stotra",
-        textEnglish: "Konastha Pingalo Babhrur\nKrishnango Raudro Antako\nYama Souri Shani Krurah\nPippaladenasutah Priyah",
-        textHindi: "कोणस्थ पिंगलो बभ्रुः\nकृष्णांगो रौद्रो अन्तकः\nयमः सौरिः शनिः क्रूरः\nपिप्पलादेनसुतः प्रियः",
-        translation: "Dwelling in corners, tawny, reddish-brown, dark-bodied, fierce destroyer, Yama, son of Sun, Shani the stern, dear son of sage Pippalada.",
-        deity: "Shani",
-        emojiCounts: { "🙏": 25, "❤️": 15, "🌟": 20 }
-      },
-
-      // SATURDAY - Shani Dev Worship
-      {
-        id: "sat-1",
+        id: "sat-1b",
         day: "Saturday",
         category: "Mantras",
-        title: "Shani Mantra",
-        textEnglish: "Om Sham Shanaischaraya Namaha\nNilanjana Samabhasam\nRavi Putram Yamagrajam\nChaya Martanda Sambhutam",
-        textHindi: "ॐ शं शनैश्चराय नमः\nनीलांजन समाभासं\nरवि पुत्रं यमाग्रजम्\nछाया मार्तण्ड संभूतम्",
-        translation: "I bow to Lord Shani, who appears like blue ointment, son of Sun god, elder brother of Yama, born from shadow and sun.",
-        deity: "Shani",
-        emojiCounts: { "🙏": 35, "❤️": 20, "🌟": 28 }
+        title: "Hanuman Mantra (Saturday)",
+        textEnglish: "Om Namo Hanumate Namah\nOm Namo Hanumate Namah\nOm Namo Hanumate Namah\nOm Namo Hanumate Namah",
+        textHindi: "ॐ नमो हनुमते नमः\nॐ नमो हनुमते नमः\nॐ नमो हनुमते नमः\nॐ नमो हनुमते नमः",
+        translation: "I bow to Lord Hanuman, the divine protector who grants strength, courage, and removes all obstacles and negative influences.",
+        deity: "Hanuman",
+        emojiCounts: { "🙏": 48, "❤️": 32, "🌟": 40 }
       },
       {
         id: "sat-2",
         day: "Saturday",
-        category: "Stotrams",
-        title: "Shani Stotra",
-        textEnglish: "Konastha Pingalo Babhrur\nKrishnango Raudro Antako\nYama Souri Shani Krurah\nPippaladenasutah Priyah",
-        textHindi: "कोणस्थ पिंगलो बभ्रुः\nकृष्णांगो रौद्रो अन्तकः\nयमः सौरिः शनिः क्रूरः\nपिप्पलादेनसुतः प्रियः",
-        translation: "Dwelling in corners, tawny, reddish-brown, dark-bodied, fierce destroyer, Yama, son of Sun, Shani the stern, dear son of sage Pippalada.",
+        category: "Chalisas",
+        title: "Shani Chalisa",
+        textEnglish: "Jai Jai Shri Shanidev Data\nKaraj Karo Hamaara\nJaaso Mangal Kali Ghadi\nTaaso Kahe Suvikara\n\nChaaya Putra Param Tumhara\nSurya Ki Aankh Sitaara\nNitya Dharma Path Par Chalne\nKo Sukh Sampati Ka Dwara",
+        textHindi: "जय जय श्री शनिदेव दाता\nकारज करो हमारा\nजाशो मंगल काली घड़ी\nताशो कहे सुविकारा\n\nछाया पुत्र परम तुम्हारा\nसूर्य की आँख सितारा\nनित्य धर्म पथ पर चलने\nको सुख संपत्ति का द्वारा",
+        translation: "Victory to Lord Shani, the great giver, accomplish our tasks. Even the inauspicious dark moments become auspicious by your grace. O supreme son of Chhaya (shadow), the pupil in Sun's eye, for those who walk on the righteous path daily, you are the doorway to happiness and prosperity.",
         deity: "Shani",
-        emojiCounts: { "🙏": 25, "❤️": 15, "🌟": 20 }
+        emojiCounts: { "🙏": 52, "❤️": 35, "🌟": 44 }
+      },
+      {
+        id: "sat-3",
+        day: "Saturday",
+        category: "Aartis",
+        title: "Aarti Shani Dev",
+        textEnglish: "Aarti Kari Shanidev Ki\nJo Koi Shish Niwaye\nTa Par Kripa Tumhari Hui\nSab Sankat Mit Jaye\n\nShanidev Sharanagat Aaye\nTera Darshan Paye\nNij Kar Mein Dandi Liye\nKaal Ko Harani Aaye",
+        textHindi: "आरती करी शनिदेव की\nजो कोई शीश निवाये\nता पर कृपा तुम्हारी हुई\nसब संकट मिट जाये\n\nशनिदेव शरणागत आये\nतेरा दर्शन पाये\nनिज कर में डंडी लिये\nकाल को हरणी आये",
+        translation: "We perform aarti of Shani Dev, whoever bows their head receives your grace and all troubles are removed. We come seeking refuge with Shani Dev, to receive your darshan. With staff in your hand, you come to remove the effects of time and destiny.",
+        deity: "Shani",
+        emojiCounts: { "🙏": 48, "❤️": 30, "🌟": 38 }
+      },
+      {
+        id: "sat-4",
+        day: "Saturday",
+        category: "Kathas",
+        title: "Shanivar Vrat Katha",
+        textEnglish: "Once there lived a blacksmith who was experiencing severe hardships due to the unfavorable period of Shani (Sade Sati). His business was failing, family members were falling ill, and debts were mounting. An elderly sage advised him to observe the Saturday fast (Shanivar Vrat) dedicated to Lord Shani with complete devotion.\n\nEvery Saturday, the blacksmith would wake up before dawn, bathe, wear black or dark blue clothes, and visit the Shani temple. He would light a mustard oil lamp, offer black til (sesame seeds), black urad dal, and iron items to Lord Shani. He would also feed crows with rice and bread, believing them to be messengers of Shani.\n\nDuring his worship, he would pray: 'O Lord Shani, you are the teacher of justice and patience. Please reduce the intensity of your testing period and grant me strength to bear the challenges with wisdom.' He continued this practice with unwavering faith for several months.\n\nSlowly, the devastating effects of Shani's influence began to diminish. His business started recovering, family health improved, and unexpected help came from various sources. He realized that Shani Dev was not his enemy but a strict teacher who was helping him burn his past negative karma.\n\nOne Saturday, while feeding crows near the Peepal tree, he met another devotee who offered him a partnership in a metalwork business. This collaboration brought him unprecedented success and prosperity. He understood that his sincere devotion and patience had pleased Lord Shani.\n\nThe blacksmith continued his Saturday worship throughout his life, always helping others who were going through difficult Shani periods. His story teaches us that with patience, devotion, and righteous conduct, even the most challenging planetary influences can be transformed into blessings.",
+        textHindi: "एक बार एक लोहार था जो शनि की प्रतिकूल अवधि (साढ़े साती) के कारण गंभीर कठिनाइयों का सामना कर रहा था। उसका व्यापार असफल हो रहा था, परिवार के सदस्य बीमार पड़ रहे थे, और कर्ज बढ़ रहे थे। एक वृद्ध संत ने उसे सलाह दी कि वह पूर्ण भक्ति के साथ भगवान शनि को समर्पित शनिवार का व्रत करे।\n\nहर शनिवार को लोहार भोर से पहले उठता, स्नान करता, काले या गहरे नीले वस्त्र पहनता और शनि मंदिर जाता। वह सरसों का तेल दीपक जलाता, भगवान शनि को काले तिल, काले उड़द दाल और लोहे की वस्तुएं अर्पित करता। वह कौवों को चावल और रोटी खिलाता भी था, उन्हें शनि का संदेशवाहक मानकर।\n\nअपनी पूजा के दौरान वह प्रार्थना करता: 'हे भगवान शनि, आप न्याय और धैर्य के शिक्षक हैं। कृपया अपनी परीक्षा अवधि की तीव्रता कम करें और मुझे बुद्धि के साथ चुनौतियों को सहन करने की शक्ति दें।' उसने कई महीनों तक अटूट श्रद्धा के साथ यह अभ्यास जारी रखा।\n\nधीरे-धीरे शनि के प्रभाव के विनाशकारी प्रभाव कम होने लगे। उसका व्यापार ठीक होने लगा, पारिवारिक स्वास्थ्य में सुधार हुआ, और विभिन्न स्रोतों से अप्रत्याशित सहायता आई। उसे एहसास हुआ कि शनि देव उसके शत्रु नहीं बल्कि एक कड़े शिक्षक थे जो उसके पिछले नकारात्मक कर्म जलाने में मदद कर रहे थे।\n\nएक शनिवार को पीपल के पेड़ के पास कौवों को खाना खिलाते समय, उसकी मुलाकात एक अन्य भक्त से हुई जिसने उसे धातु के काम के व्यापार में साझेदारी का प्रस्ताव दिया। इस सहयोग ने उसे अभूतपूर्व सफलता और समृद्धि दिलाई। उसे समझ आया कि उसकी सच्ची भक्ति और धैर्य ने भगवान शनि को प्रसन्न कर दिया था।\n\nलोहार ने अपने जीवन भर शनिवार की पूजा जारी रखी, हमेशा उन लोगों की मदद की जो कठिन शनि काल से गुजर रहे थे। उसकी कहानी हमें सिखाती है कि धैर्य, भक्ति और धर्मनिष्ठ आचरण के साथ, सबसे चुनौतीपूर्ण ग्रहों के प्रभाव को भी आशीर्वाद में बदला जा सकता है।",
+        translation: "The story of how Saturday fasting and devotion to Lord Shani transforms difficult planetary influences into blessings through patience and righteousness.",
+        deity: "Shani",
+        emojiCounts: { "🙏": 40, "❤️": 28, "🌟": 34 }
+      },
+      {
+        id: "sat-5",
+        day: "Saturday",
+        category: "Stotrams",
+        title: "Shani Stotra by Dashrath",
+        textEnglish: "Konastha Pingalo Babhrur\nKrishnango Raudro Antako\nYama Souri Shani Krurah\nPippaladenasutah Priyah\n\nSanaischaraya VidMahe\nSooryaputraya Dheemahi\nTanno Mandah Prachodayat\nShani Shanaischaraya Namah",
+        textHindi: "कोणस्थ पिंगलो बभ्रुः\nकृष्णांगो रौद्रो अन्तकः\nयमः सौरिः शनिः क्रूरः\nपिप्पलादेनसुतः प्रियः\n\nशनैश्चराय विद्महे\nसूर्यपुत्राय धीमहि\nतन्नो मन्दः प्रचोदयात्\nशनि शनैश्चराय नमः",
+        translation: "Dwelling in corners, tawny, reddish-brown, dark-bodied, fierce destroyer, Yama, son of Sun, Shani the stern, dear son of sage Pippalada. We know Shani the slow-moving one, we meditate upon the son of Sun, may that slow-moving one inspire us. Salutations to Shani, the slow-moving planet.",
+        deity: "Shani",
+        emojiCounts: { "🙏": 58, "❤️": 40, "🌟": 49 }
+      },
+      {
+        id: "sat-6",
+        day: "Saturday",
+        category: "Vrat Vidhi",
+        title: "Shanivar Vrat Vidhi",
+        textEnglish: "SATURDAY FAST PROCEDURE:\n\n1. Wake up before sunrise and take a purifying bath\n2. Wear black, dark blue, or dark-colored clothes\n3. Set up altar with Shani Dev and Hanuman images\n4. Light mustard oil lamp or sesame oil diya\n5. Offer black til (sesame seeds) and black urad dal\n6. Offer iron items like nails, horse shoe, or black stone\n7. Present blue or black flowers (if available)\n8. Chant 'Om Sham Shanaischaraya Namaha' 108 times\n9. Recite Shani Chalisa or Shani Stotra\n10. Fast completely or eat only once after sunset\n11. Avoid milk products, sweet items during fast\n12. Feed crows with rice, bread, or leftover food\n13. Worship Peepal tree by offering water\n14. Donate black items to poor (clothes, blankets, food)\n15. Break fast with simple vegetarian meal\n\nBENEFITS: Reduces negative effects of Shani, brings patience, justice, removes legal troubles, grants stability, and transforms challenges into wisdom.",
+        textHindi: "शनिवार व्रत विधि:\n\n१. सूर्योदय से पहले उठकर शुद्धीकरण स्नान करें\n२. काले, गहरे नीले या गहरे रंग के वस्त्र पहनें\n३. शनि देव और हनुमान की मूर्तियों के साथ वेदी सजाएं\n४. सरसों का तेल या तिल के तेल का दीपक जलाएं\n५. काले तिल और काले उड़द दाल अर्पित करें\n६. लोहे की वस्तुएं जैसे कील, घोड़े की नाल या काला पत्थर चढ़ाएं\n७. नीले या काले फूल अर्पित करें (यदि उपलब्ध हो)\n८. 'ॐ शं शनैश्चराय नमः' का १०८ बार जाप करें\n९. शनि चालीसा या शनि स्तोत्र का पाठ करें\n१०. पूर्ण उपवास रखें या सूर्यास्त के बाद केवल एक बार भोजन करें\n११. व्रत के दौरान दूध उत्पाद, मीठी वस्तुओं से बचें\n१२. कौवों को चावल, रोटी या बचा हुआ भोजन खिलाएं\n१३. पीपल के पेड़ की पूजा करें और जल अर्पित करें\n१४. गरीबों को काली वस्तुएं दान करें (वस्त्र, कंबल, भोजन)\n१५. सादे शाकाहारी भोजन से व्रत तोड़ें\n\nलाभ: शनि के नकारात्मक प्रभावों को कम करता है, धैर्य लाता है, न्याय दिलाता है, कानूनी समस्याओं को दूर करता है, स्थिरता प्रदान करता है, और चुनौतियों को ज्ञान में बदल देता है।",
+        translation: "Complete procedure for observing Saturday fast dedicated to Lord Shani for reducing negative planetary influences and gaining wisdom.",
+        deity: "Shani",
+        emojiCounts: { "🙏": 50, "❤️": 34, "🌟": 42 }
+      },
+      {
+        id: "sat-7",
+        day: "Saturday",
+        category: "Extras",
+        title: "Peepal Tree Worship",
+        textEnglish: "PEEPAL TREE - SACRED ABODE OF DIVINE ENERGIES\n\nPeepal tree (Ficus religiosa) holds immense significance in Saturday worship, particularly for Lord Shani and spiritual practices.\n\nSPIRITUAL SIGNIFICANCE:\n• Considered the most sacred tree in Hinduism\n• Believed to be the dwelling of Lord Vishnu, Brahma, and Shiva\n• Associated with Lord Buddha's enlightenment\n• Connected to Shani Dev and planetary influences\n• Represents longevity, wisdom, and spiritual growth\n• Releases maximum oxygen, purifying the environment\n\nSATURDAY CONNECTION:\n• Shani Dev is said to reside in Peepal trees\n• Worshipping on Saturdays reduces Shani's negative effects\n• Tree worship on this day multiplies spiritual benefits\n• Helps in overcoming obstacles and legal troubles\n• Provides protection from negative planetary influences\n• Enhances patience and wisdom\n\nWORSHIP RITUALS:\n1. Visit Peepal tree early morning on Saturday\n2. Circumambulate the tree 7 times clockwise\n3. Offer water to the roots while chanting mantras\n4. Tie sacred thread (Kalava) around the trunk\n5. Light mustard oil lamp near the tree\n6. Offer black til (sesame seeds) and flowers\n7. Pray for removal of obstacles and negative influences\n8. Touch the tree with reverence and seek blessings\n\nTRADITIONAL PRACTICES:\n• Pour water mixed with black til on roots\n• Offer rice and food items to birds and animals\n• Light incense sticks near the tree\n• Place iron items or coins as offerings\n• Meditate under the tree for spiritual benefits\n• Donate food or clothes to needy near the tree\n\nBENEFITS:\n• Reduces malefic effects of Saturn (Shani)\n• Brings patience and endurance\n• Resolves legal and property disputes\n• Provides mental peace and stability\n• Enhances spiritual awareness\n• Protects from enemies and negative energies\n• Grants longevity and good health\n• Improves karmic balance\n\nSCIENTIFIC BENEFITS:\n• Releases oxygen even at night\n• Purifies air and environment\n• Provides shade and cooling effect\n• Natural air purifier and stress reliever\n• Helps in respiratory health\n• Creates positive ions in atmosphere\n\nSCRIPTURAL REFERENCE:\nIn the Skanda Purana, it's mentioned that worshipping the Peepal tree on Saturdays with devotion can neutralize even the most severe planetary afflictions and grant divine protection.\n\nThe Peepal tree serves as a bridge between the earthly and divine realms, making it an powerful ally in spiritual practice and planetary remedies.",
+        textHindi: "पीपल का पेड़ - दिव्य ऊर्जाओं का पवित्र निवास\n\nपीपल का पेड़ (फाइकस रेलिजिओसा) शनिवार की पूजा में अत्यधिक महत्व रखता है, विशेषकर भगवान शनि और आध्यात्मिक प्रथाओं के लिए।\n\nआध्यात्मिक महत्व:\n• हिंदू धर्म में सबसे पवित्र पेड़ माना जाता है\n• भगवान विष्णु, ब्रह्मा और शिव का निवास स्थान माना जाता है\n• भगवान बुद्ध के ज्ञानप्राप्ति से जुड़ा है\n• शनि देव और ग्रहों के प्रभाव से संबंधित है\n• दीर्घायु, बुद्धि और आध्यात्मिक वृद्धि का प्रतीक है\n• अधिकतम ऑक्सीजन छोड़ता है, वातावरण को शुद्ध करता है\n\nशनिवार से संबंध:\n• शनि देव पीपल के पेड़ों में निवास करते हैं\n• शनिवार को पूजा करने से शनि के नकारात्मक प्रभाव कम होते हैं\n• इस दिन वृक्ष पूजा से आध्यात्मिक लाभ कई गुना बढ़ जाते हैं\n• बाधाओं और कानूनी समस्याओं से निपटने में मदद करता है\n• नकारात्मक ग्रहों के प्रभाव से सुरक्षा प्रदान करता है\n• धैर्य और बुद्धि बढ़ाता है\n\nपूजा अनुष्ठान:\n१. शनिवार को सुबह जल्दी पीपल के पेड़ के पास जाएं\n२. पेड़ की ७ बार दक्षिणावर्त परिक्रमा करें\n३. मंत्र जाप करते हुए जड़ों में जल अर्पित करें\n४. तने के चारों ओर पवित्र धागा (कलावा) बांधें\n५. पेड़ के पास सरसों का तेल दीपक जलाएं\n६. काले तिल और फूल अर्पित करें\n७. बाधाओं और नकारात्मक प्रभावों के निवारण की प्रार्थना करें\n८. श्रद्धा से पेड़ को स्पर्श करें और आशीर्वाद लें\n\nपारंपरिक अभ्यास:\n• जड़ों में काले तिल मिला पानी डालें\n• पक्षियों और जानवरों को चावल और भोजन अर्पित करें\n• पेड़ के पास अगरबत्ती जलाएं\n• लोहे की वस्तुएं या सिक्के अर्पण के रूप में रखें\n• आध्यात्मिक लाभ के लिए पेड़ के नीचे ध्यान करें\n• पेड़ के पास जरूरतमंदों को भोजन या वस्त्र दान करें\n\nलाभ:\n• शनि (शनि) के हानिकारक प्रभावों को कम करता है\n• धैर्य और सहनशीलता लाता है\n• कानूनी और संपत्ति विवादों का समाधान करता है\n• मानसिक शांति और स्थिरता प्रदान करता है\n• आध्यात्मिक जागरूकता बढ़ाता है\n• शत्रुओं और नकारात्मक ऊर्जाओं से सुरक्षा करता है\n• दीर्घायु और अच्छा स्वास्थ्य प्रदान करता है\n• कर्म संतुलन में सुधार करता है\n\nवैज्ञानिक लाभ:\n• रात में भी ऑक्सीजन छोड़ता है\n• हवा और वातावरण को शुद्ध करता है\n• छाया और शीतलता प्रदान करता है\n• प्राकृतिक वायु शुद्धीकरक और तनाव निवारक\n• श्वसन स्वास्थ्य में सहायक\n• वातावरण में सकारात्मक आयन बनाता है\n\nशास्त्रीय संदर्भ:\nस्कंद पुराण में उल्लेख है कि शनिवार को भक्ति के साथ पीपल के पेड़ की पूजा करने से सबसे गंभीर ग्रहों की पीड़ा भी शांत हो सकती है और दिव्य सुरक्षा मिल सकती है।\n\nपीपल का पेड़ पार्थिव और दिव्य क्षेत्रों के बीच एक सेतु का काम करता है, जो इसे आध्यात्मिक अभ्यास और ग्रह उपचार में एक शक्तिशाली सहयोगी बनाता है।",
+        translation: "Complete guide to the sacred significance of Peepal tree worship on Saturdays and its benefits for planetary remedies.",
+        deity: "Shani",
+        emojiCounts: { "🙏": 48, "❤️": 36, "🌟": 42 }
       }
     ];
 
