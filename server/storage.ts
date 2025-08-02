@@ -278,28 +278,138 @@ export class MemStorage implements IStorage {
         emojiCounts: { "🙏": 42, "❤️": 35, "🌟": 38 }
       },
 
-      // WEDNESDAY - Ganesha & Krishna Worship
+      // WEDNESDAY - Lord Krishna/Ganesha Worship (Complete Categories)
       {
         id: "wed-1",
         day: "Wednesday",
         category: "Mantras",
-        title: "Ganesha Mantra",
-        textEnglish: "Om Gam Ganapataye Namaha\nVakratunda Mahakaya\nSurya Koti Samaprabha\nNirvighnam Kuru Me Deva",
-        textHindi: "ॐ गं गणपतये नमः\nवक्रतुण्ड महाकाय\nसूर्य कोटि समप्रभ\nनिर्विघ्नं कुरु मे देव",
-        translation: "Om, I bow to Lord Ganesha. O curved-trunk, mighty-bodied one, with the brilliance of a million suns, please remove all obstacles from my path.",
+        title: "Ganesha Beej Mantra",
+        textEnglish: "Om Gan Ganapataye Namah\nOm Gan Ganapataye Namah\nOm Gan Ganapataye Namah\nOm Gan Ganapataye Namah",
+        textHindi: "ॐ गं गणपतये नमः\nॐ गं गणपतये नमः\nॐ गं गणपतये नमः\nॐ गं गणपतये नमः",
+        translation: "I bow to Lord Ganesha, the remover of obstacles and lord of new beginnings.",
         deity: "Ganesha",
-        emojiCounts: { "🙏": 45, "❤️": 35, "🌟": 40 }
+        emojiCounts: { "🙏": 48, "❤️": 35, "🌟": 42 }
+      },
+      {
+        id: "wed-1b",
+        day: "Wednesday",
+        category: "Mantras",
+        title: "Krishna Maha Mantra",
+        textEnglish: "Hare Krishna Hare Krishna\nKrishna Krishna Hare Hare\nHare Rama Hare Rama\nRama Rama Hare Hare",
+        textHindi: "हरे कृष्ण हरे कृष्ण\nकृष्ण कृष्ण हरे हरे\nहरे राम हरे राम\nराम राम हरे हरे",
+        translation: "The great chant for deliverance - calling upon Lord Krishna and Rama to remove all material suffering.",
+        deity: "Krishna",
+        emojiCounts: { "🙏": 52, "❤️": 40, "🌟": 46 }
       },
       {
         id: "wed-2",
         day: "Wednesday",
+        category: "Chalisas",
+        title: "Ganesh Chalisa",
+        textEnglish: "Jai Ganesh Girija Suvan\nMangal Mul Sujan\nKahat Ayodhya Das\nTum Dehu Karhu Kalyan\n\nJai Jai Jai Ganesh Gusain\nMangal Bharan Kari Gyan\nEkdant Dayavant\nChari Bhuj Var Daan",
+        textHindi: "जय गणेश गिरिजा सुवन\nमंगल मूल सुजान\nकहत अयोध्या दास\nतुम देहु करहु कल्याण\n\nजय जय जय गणेश गुसाईं\nमंगल भरन करि ज्ञान\nएकदंत दयावंत\nचारि भुज वर दान",
+        translation: "Victory to Ganesha, son of Parvati, the root of all auspiciousness and wisdom. Ayodhya Das says, you grant welfare and blessings. Victory to Lord Ganesha, filled with auspiciousness and knowledge, the compassionate one-tusked deity with four arms who grants boons.",
+        deity: "Ganesha",
+        emojiCounts: { "🙏": 55, "❤️": 42, "🌟": 48 }
+      },
+      {
+        id: "wed-2b",
+        day: "Wednesday",
+        category: "Chalisas",
+        title: "Krishna Chalisa",
+        textEnglish: "Bansi Bajat Akhand Anand Dhara\nAti Anup Rup Tribhuvan Sara\nIndira Ramini Hraday Basera\nAti Anand Kari Jas Uchara\n\nKanha Sundar Mukh Chandra Chaya\nBhru Bhang Madhur Mridu Maya\nVindavan Mein Dhenu Charai\nMohan Murat Man Mohani",
+        textHindi: "बंसी बजत अखंड आनंद धारा\nअति अनुप रूप त्रिभुवन सारा\nइंदिरा रमणी हृदय बसेरा\nअति आनंद करि जस उचारा\n\nकान्हा सुंदर मुख चंद्र छाया\nभ्रू भंग मधुर मृदु माया\nवृंदावन में धेनु चराई\nमोहन मूरत मन मोहनी",
+        translation: "The flute plays streams of eternal bliss, your incomparable form is the essence of the three worlds. You reside in the hearts of devotees like Lakshmi, and speaking your glories brings great joy. Beautiful Krishna with a moon-like face, your sweet and gentle eyebrow movements are enchanting. In Vrindavan you graze the cows, your captivating form enchants the mind.",
+        deity: "Krishna",
+        emojiCounts: { "🙏": 58, "❤️": 45, "🌟": 52 }
+      },
+      {
+        id: "wed-3",
+        day: "Wednesday",
         category: "Aartis",
-        title: "Ganga Aarti",
-        textEnglish: "Om Jai Gange Mata\nMaiya Jai Gange Mata\nJo Nar Tumko Dhyaata\nManokamana Paata",
-        textHindi: "ॐ जय गंगे माता\nमैया जय गंगे माता\nजो नर तुमको ध्याता\nमनोकामना पाता",
-        translation: "Victory to Mother Ganga! Those who meditate upon you, their heart's desires are fulfilled.",
-        deity: "Ganga",
-        emojiCounts: { "🙏": 38, "❤️": 25, "🌟": 32 }
+        title: "Jai Ganesh Jai Ganesh Deva",
+        textEnglish: "Jai Ganesh Jai Ganesh Jai Ganesh Deva\nMata Jaki Parvati Pita Mahadeva\nEkdant Dayavant Char Bhuja Dhari\nMathe Sindhur Sohe Muse Ki Savari\n\nPan Chadhe Phul Chadhe Aur Chadhe Meva\nLadduan Ka Bhog Lage Sant Kare Seva\nJai Ganesh Jai Ganesh Jai Ganesh Deva\nMata Jaki Parvati Pita Mahadeva",
+        textHindi: "जय गणेश जय गणेश जय गणेश देवा\nमाता जाकी पार्वती पिता महादेवा\nएकदंत दयावंत चार भुजा धारी\nमाथे सिंदूर सोहे मूसे की सवारी\n\nपान चढ़े फूल चढ़े और चढ़े मेवा\nलड्डुअन का भोग लगे संत करे सेवा\nजय गणेश जय गणेश जय गणेश देवा\nमाता जाकी पार्वती पिता महादेवा",
+        translation: "Victory to Lord Ganesha, whose mother is Parvati and father is Mahadeva (Shiva). The one-tusked, compassionate deity with four arms, with sindoor adorning his forehead and riding on a mouse. Betel leaves, flowers, and sweets are offered, laddoos are presented as bhog while saints perform service.",
+        deity: "Ganesha",
+        emojiCounts: { "🙏": 50, "❤️": 38, "🌟": 44 }
+      },
+      {
+        id: "wed-3b",
+        day: "Wednesday",
+        category: "Aartis",
+        title: "Om Jai Jagdish Hare",
+        textEnglish: "Om Jai Jagdish Hare\nSwami Jai Jagdish Hare\nBhakt Jano Ke Sankat\nDas Jano Ke Sankat\nKshan Mein Dur Kare\nOm Jai Jagdish Hare\n\nJo Dhyave Phal Pavel\nMan Kamna Gat Pavel\nSwami Man Kamna Gat Pavel\nDukh Vinashe Man Ka\nSwami Dukh Vinashe Man Ka\nSukh Sampati Ghar Aave\nKashti Se Nikal Jave\nOm Jai Jagdish Hare",
+        textHindi: "ॐ जय जगदीश हरे\nस्वामी जय जगदीश हरे\nभक्त जनों के संकट\nदास जनों के संकट\nक्षण में दूर करे\nॐ जय जगदीश हरे\n\nजो ध्यावे फल पावे\nमन कामना गत पावे\nस्वामी मन कामना गत पावे\nदुःख बिनाशे मन का\nस्वामी दुःख बिनाशे मन का\nसुख संपति घर आवे\nकष्टि से निकाल जावे\nॐ जय जगदीश हरे",
+        translation: "Victory to the Lord of the Universe, who removes the troubles of devotees and servants in an instant. Those who meditate upon you receive fruits, their heart's desires are fulfilled. You destroy mental sorrows and bring happiness and prosperity to homes, delivering from all troubles.",
+        deity: "Krishna",
+        emojiCounts: { "🙏": 48, "❤️": 36, "🌟": 42 }
+      },
+      {
+        id: "wed-4",
+        day: "Wednesday",
+        category: "Kathas",
+        title: "Budhwar Vrat Katha",
+        textEnglish: "Once there lived a merchant who was facing severe business losses and mental distress. His wise wife suggested observing the Wednesday fast (Budhwar Vrat) dedicated to Lord Ganesha and Lord Krishna for wisdom and prosperity.\n\nEvery Wednesday, the merchant would wake up early, bathe, and visit the temple. He would offer green grass (durva), bananas, modaks to Lord Ganesha, and tulsi leaves, butter, and sweets to Lord Krishna. He fasted throughout the day, consuming only fruits and milk.\n\nAfter months of sincere devotion, Lord Ganesha blessed him with wisdom to make right business decisions, while Lord Krishna granted him the clarity to see new opportunities. His failing business gradually recovered.\n\nOne Wednesday, while returning from the temple, he met an old friend who offered him a lucrative partnership. This partnership transformed his fortunes completely. Within a year, he became more prosperous than ever before.\n\nThe merchant realized that the combined blessings of Lord Ganesha (remover of obstacles) and Lord Krishna (provider of wisdom) had changed his destiny. He continued the Wednesday fasting tradition and always helped others in need.\n\nThis story teaches us that Wednesday worship brings wisdom, removes obstacles from our path, and opens doors to new opportunities and success.",
+        textHindi: "एक बार एक व्यापारी था जो गंभीर व्यापारिक हानि और मानसिक संकट का सामना कर रहा था। उसकी बुद्धिमान पत्नी ने सुझाव दिया कि वे ज्ञान और समृद्धि के लिए भगवान गणेश और भगवान कृष्ण को समर्पित बुधवार का व्रत करें।\n\nहर बुधवार को व्यापारी सुबह जल्दी उठता, स्नान करता, और मंदिर जाता। वह भगवान गणेश को दूर्वा घास, केले, मोदक चढ़ाता और भगवान कृष्ण को तुलसी के पत्ते, मक्खन और मिठाइयां अर्पित करता। वह पूरे दिन उपवास रखता, केवल फल और दूध का सेवन करता।\n\nकई महीनों की सच्ची भक्ति के बाद, भगवान गणेश ने उसे सही व्यापारिक निर्णय लेने की बुद्धि दी, जबकि भगवान कृष्ण ने उसे नए अवसर देखने की स्पष्टता प्रदान की। उसका असफल व्यापार धीरे-धीरे ठीक होने लगा।\n\nएक बुधवार को मंदिर से लौटते समय, उसकी मुलाकात एक पुराने मित्र से हुई जिसने उसे एक लाभदायक साझेदारी का प्रस्ताव दिया। इस साझेदारी ने उसके भाग्य को पूरी तरह बदल दिया। एक साल के भीतर वह पहले से कहीं अधिक समृद्ध हो गया।\n\nव्यापारी को एहसास हुआ कि भगवान गणेश (विघ्न हर्ता) और भगवान कृष्ण (ज्ञान दाता) के संयुक्त आशीर्वाद ने उसकी किस्मत बदल दी है। उसने बुधवार के उपवास की परंपरा जारी रखी और हमेशा जरूरतमंदों की मदद की।\n\nयह कहानी हमें सिखाती है कि बुधवार की पूजा बुद्धि लाती है, हमारे रास्ते से बाधाओं को हटाती है, और नए अवसरों और सफलता के दरवाजे खोलती है।",
+        translation: "The story of how Wednesday fasting brings wisdom, removes obstacles, and opens doors to prosperity through the combined blessings of Ganesha and Krishna.",
+        deity: "Ganesha",
+        emojiCounts: { "🙏": 32, "❤️": 28, "🌟": 30 }
+      },
+      {
+        id: "wed-5",
+        day: "Wednesday",
+        category: "Stotrams",
+        title: "Ganesha Atharvashirsha",
+        textEnglish: "Om Namaste Ganapataye\nTvameva Pratyaksham Tattvamasi\nTvameva Kevalam Kartasi\nTvameva Kevalam Dhartasi\nTvameva Kevalam Hartasi\nTvameva Sarvam Khalvidam Brahmasi\nTvam Sakshad Atmasi Nityam",
+        textHindi: "ॐ नमस्ते गणपतये\nत्वमेव प्रत्यक्षं तत्त्वमसि\nत्वमेव केवलं कर्तासि\nत्वमेव केवलं धर्तासि\nत्वमेव केवलं हर्तासि\nत्वमेव सर्वं खल्विदं ब्रह्मासि\nत्वं साक्षाद् आत्मासि नित्यम्",
+        translation: "Salutations to Lord Ganesha. You are the visible reality, you are the only creator, you are the only sustainer, you are the only destroyer. You are indeed all this - Brahman itself. You are the eternal soul manifest.",
+        deity: "Ganesha",
+        emojiCounts: { "🙏": 60, "❤️": 45, "🌟": 55 }
+      },
+      {
+        id: "wed-5b",
+        day: "Wednesday",
+        category: "Stotrams",
+        title: "Gopal Sahasranama",
+        textEnglish: "Krishna Govinda Hare Murare\nHe Natha Narayana Vasudeva\nGopala Gopana Vallabha Haraye\nNamah Krishna Yadunandana\n\nMuralidhara Giridhari Bala\nYashoda Nandana Devaki Putra\nVrindavana Chandra Radha Vallabha\nShyama Sundara Madhava Keshava",
+        textHindi: "कृष्ण गोविन्द हरे मुरारे\nहे नाथ नारायण वासुदेव \nगोपाल गोपन वल्लभ हरये\nनमः कृष्ण यदुनन्दन\n\nमुरलीधर गिरिधारी बाला\nयशोदा नन्दन देवकी पुत्र\nवृन्दावन चन्द्र राधा वल्लभ\nश्याम सुन्दर माधव केशव",
+        translation: "Krishna, Govinda, Hari, destroyer of demon Mura, O Lord Narayana Vasudeva. Protector of cows and cowherd boys, beloved Hari, salutations to Krishna, joy of Yadu dynasty. Flute-bearer, lifter of Govardhan mountain, beloved child of Yashoda and son of Devaki. Moon of Vrindavan, beloved of Radha, beautiful dark-complexioned Madhava Keshava.",
+        deity: "Krishna",
+        emojiCounts: { "🙏": 58, "❤️": 44, "🌟": 50 }
+      },
+      {
+        id: "wed-6",
+        day: "Wednesday",
+        category: "Vrat Vidhi",
+        title: "Budhwar Vrat Vidhi",
+        textEnglish: "WEDNESDAY FAST PROCEDURE:\n\n1. Wake up early, bathe and wear clean clothes\n2. Set up altar with Ganesha and Krishna images\n3. Light incense and diya\n4. Offer durva grass (21 blades) to Ganesha\n5. Offer bananas and modaks to Ganesha\n6. Offer tulsi leaves and butter to Krishna\n7. Chant 'Om Gan Ganapataye Namah' 108 times\n8. Chant 'Hare Krishna' mantra 108 times\n9. Read Ganesha Atharvashirsha\n10. Fast completely or eat only fruits/milk\n11. Avoid grains, salt, and regular meals\n12. Break fast after evening prayers\n13. Distribute prasad to family and neighbors\n\nBENEFITS: Grants wisdom, removes obstacles, brings success in business, enhances intellect, and provides clarity in decision-making.",
+        textHindi: "बुधवार व्रत विधि:\n\n१. सुबह जल्दी उठें, स्नान करें और स्वच्छ वस्त्र धारण करें\n२. गणेश और कृष्ण की मूर्तियों के साथ वेदी सजाएं\n३. धूप और दीपक जलाएं\n४. गणेश जी को दूर्वा घास (२१ तिनके) चढ़ाएं\n५. गणेश जी को केले और मोदक अर्पित करें\n६. कृष्ण जी को तुलसी के पत्ते और मक्खन अर्पित करें\n७. 'ॐ गं गणपतये नमः' का १०८ बार जाप करें\n८. 'हरे कृष्ण' मंत्र का १०८ बार जाप करें\n९. गणेश अथर्वशीर्ष का पाठ करें\n१०. पूर्ण उपवास रखें या केवल फल/दूध लें\n११. अनाज, नमक और नियमित भोजन से बचें\n१२. संध्या प्रार्थना के बाद व्रत तोड़ें\n१३. परिवार और पड़ोसियों में प्रसाद बांटें\n\nलाभ: बुद्धि प्रदान करता है, बाधाओं को दूर करता है, व्यापार में सफलता दिलाता है, बुद्धि बढ़ाता है, और निर्णय लेने में स्पष्टता प्रदान करता है।",
+        translation: "Complete procedure for observing Wednesday fast dedicated to Lord Ganesha and Krishna for wisdom and prosperity.",
+        deity: "Ganesha",
+        emojiCounts: { "🙏": 46, "❤️": 38, "🌟": 42 }
+      },
+      {
+        id: "wed-7",
+        day: "Wednesday",
+        category: "Extras",
+        title: "Durva Grass Significance",
+        textEnglish: "DURVA GRASS - GANESHA'S FAVORITE OFFERING\n\nDurva (Bermuda grass) is considered the most sacred offering to Lord Ganesha and holds immense spiritual significance.\n\nSIGNIFICANCE:\n• Durva represents longevity and prosperity\n• Its three blades symbolize the three gunas (Sattva, Rajas, Tamas)\n• Represents continuous growth and regeneration\n• Associated with fertility and abundance\n• Green color symbolizes life, growth, and freshness\n\nSPIRITUAL BENEFITS:\n• Offering durva removes obstacles and difficulties\n• Brings peace, prosperity, and good fortune\n• Enhances spiritual growth and wisdom\n• Provides protection from negative energies\n• Fulfills desires when offered with devotion\n• Grants longevity and good health\n\nPROPER OFFERING METHOD:\n1. Pluck fresh durva grass in the morning\n2. Select blades without damage or holes\n3. Wash gently with clean water\n4. Offer in odd numbers (usually 21 blades)\n5. Place gently on Ganesha's feet or trunk\n6. Chant 'Om Gan Ganapataye Namah' while offering\n7. Pray for removal of obstacles\n\nSCRIPTURAL REFERENCE:\nIn the Ganesha Purana, it's mentioned that Lord Ganesha is extremely pleased with durva offerings. Once, when demon Analasura troubled the gods, Lord Ganesha defeated him. The demon sought forgiveness and was transformed into durva grass, forever blessed to be Ganesha's favorite offering.\n\nOffering durva on Wednesdays is especially beneficial for students, businesspeople, and those seeking wisdom and success.",
+        textHindi: "दूर्वा घास - गणेश जी का प्रिय अर्पण\n\nदूर्वा (दूब घास) को भगवान गणेश का सबसे पवित्र अर्पण माना जाता है और इसका अत्यधिक आध्यात्मिक महत्व है।\n\nमहत्व:\n• दूर्वा दीर्घायु और समृद्धि का प्रतीक है\n• इसकी तीन पत्तियां तीन गुणों (सत्व, रजस्, तमस्) का प्रतीक हैं\n• निरंतर वृद्धि और पुनर्जनन का प्रतिनिधित्व करती है\n• प्रजनन क्षमता और प्रचुरता से जुड़ी है\n• हरा रंग जीवन, वृद्धि और ताजगी का प्रतीक है\n\nआध्यात्मिक लाभ:\n• दूर्वा अर्पित करने से बाधाएं और कठिनाइयां दूर होती हैं\n• शांति, समृद्धि और सौभाग्य लाती है\n• आध्यात्मिक वृद्धि और बुद्धि बढ़ाती है\n• नकारात्मक ऊर्जाओं से सुरक्षा प्रदान करती है\n• भक्ति से अर्पित करने पर मनोकामनाएं पूर्ण करती है\n• दीर्घायु और अच्छा स्वास्थ्य प्रदान करती है\n\nउचित अर्पण विधि:\n१. सुबह ताजी दूर्वा घास तोड़ें\n२. बिना क्षति या छेद वाली पत्तियां चुनें\n३. स्वच्छ जल से धीरे से धोएं\n४. विषम संख्या में अर्पित करें (आम तौर पर २१ तिनके)\n५. गणेश जी के चरणों या सूंड पर धीरे से रखें\n६. अर्पित करते समय 'ॐ गं गणपतये नमः' का जाप करें\n७. बाधाओं के निवारण के लिए प्रार्थना करें\n\nशास्त्रीय संदर्भ:\nगणेश पुराण में उल्लेख है कि भगवान गणेश दूर्वा के अर्पण से अत्यंत प्रसन्न होते हैं। एक बार जब दैत्य अनलासुर ने देवताओं को परेशान किया, तो भगवान गणेश ने उसे पराजित किया। दैत्य ने क्षमा मांगी और दूर्वा घास में रूपांतरित हो गया, हमेशा के लिए गणेश का प्रिय अर्पण बनने का आशीर्वाद पाया।\n\nबुधवार को दूर्वा अर्पित करना विशेषकर छात्रों, व्यापारियों और बुद्धि व सफलता चाहने वालों के लिए लाभकारी है।",
+        translation: "Complete guide to the sacred significance of durva grass in Ganesha worship and its spiritual benefits.",
+        deity: "Ganesha",
+        emojiCounts: { "🙏": 40, "❤️": 32, "🌟": 36 }
+      },
+      {
+        id: "wed-8", 
+        day: "Wednesday",
+        category: "Extras",
+        title: "Banana Offering Significance",
+        textEnglish: "BANANA - SYMBOL OF PROSPERITY AND DEVOTION\n\nBananas hold special significance in Hindu worship, particularly for Lord Ganesha and Lord Krishna.\n\nSIGNIFICANCE IN WORSHIP:\n• Banana represents fertility, prosperity, and abundance\n• Yellow color symbolizes knowledge, learning, and wisdom\n• Easy to digest, representing simplicity and purity\n• Available throughout the year, showing consistency in devotion\n• Sweet taste symbolizes the sweetness of divine love\n\nSPIRITUAL BENEFITS:\n• Offering bananas brings material prosperity\n• Enhances fertility and family happiness\n• Removes financial difficulties and poverty\n• Provides nourishment for both body and soul\n• Creates positive vibrations in the environment\n• Attracts divine blessings and grace\n\nPROPER OFFERING METHOD:\n1. Select fresh, ripe, unblemished bananas\n2. Wash them gently with clean water\n3. Arrange them beautifully before the deity\n4. Offer in odd numbers (usually 5, 7, or 11)\n5. Chant appropriate mantras while offering\n6. Pray for prosperity and wisdom\n7. Distribute as prasad after worship\n\nTYPES PREFERRED:\n• Small bananas (Elaichi bananas) - Lord Ganesha's favorite\n• Regular bananas - for general worship\n• Raw bananas - for specific rituals\n• Banana leaves - used as plates for prasad\n\nTRADITIONAL BELIEF:\nIt's believed that Lord Ganesha loves the sweetness of bananas, and offering them removes obstacles in education, business, and marriage. Krishna, in his childhood, was fond of all dairy products and fruits, making bananas a beloved offering.\n\nOffering bananas on Wednesdays, especially to Ganesha, is said to bring wisdom in studies, success in business ventures, and harmony in relationships.",
+        textHindi: "केला - समृद्धि और भक्ति का प्रतीक\n\nहिंदू पूजा में केले का विशेष महत्व है, विशेषकर भगवान गणेश और भगवान कृष्ण के लिए।\n\nपूजा में महत्व:\n• केला प्रजनन क्षमता, समृद्धि और प्रचुरता का प्रतीक है\n• पीला रंग ज्ञान, विद्या और बुद्धि का प्रतीक है\n• आसानी से पचने वाला, सादगी और शुद्धता का प्रतिनिधित्व\n• साल भर उपलब्ध, भक्ति में निरंतरता दिखाता है\n• मीठा स्वाद दिव्य प्रेम की मधुरता का प्रतीक है\n\nआध्यात्मिक लाभ:\n• केला अर्पित करने से भौतिक समृद्धि आती है\n• प्रजनन क्षमता और पारिवारिक खुशी बढ़ती है\n• आर्थिक कठिनाइयों और गरीबी को दूर करता है\n• शरीर और आत्मा दोनों के लिए पोषण प्रदान करता है\n• वातावरण में सकारात्मक कंपन पैदा करता है\n• दिव्य आशीर्वाद और कृपा आकर्षित करता है\n\nउचित अर्पण विधि:\n१. ताजे, पके, बिना दाग वाले केले चुनें\n२. उन्हें स्वच्छ जल से धीरे से धोएं\n३. देवता के सामने सुंदर तरीके से सजाएं\n४. विषम संख्या में अर्पित करें (आम तौर पर ५, ७ या ११)\n५. अर्पित करते समय उपयुक्त मंत्र जाप करें\n६. समृद्धि और बुद्धि के लिए प्रार्थना करें\n७. पूजा के बाद प्रसाद के रूप में बांटें\n\nपसंदीदा प्रकार:\n• छोटे केले (इलायची केले) - भगवान गणेश के प्रिय\n• नियमित केले - सामान्य पूजा के लिए\n• कच्चे केले - विशिष्ट अनुष्ठानों के लिए\n• केले के पत्ते - प्रसाद की थाली के रूप में उपयोग\n\nपारंपरिक मान्यता:\nऐसा माना जाता है कि भगवान गणेश केले की मिठास से प्रेम करते हैं, और इन्हें अर्पित करने से शिक्षा, व्यापार और विवाह में बाधाएं दूर होती हैं। कृष्ण बचपन में सभी डेयरी उत्पादों और फलों के शौकीन थे, जिससे केले एक प्रिय अर्पण बन गए।\n\nबुधवार को, विशेषकर गणेश जी को केले अर्पित करने से अध्ययन में बुद्धि, व्यापारिक उद्यमों में सफलता, और रिश्तों में सामंजस्य मिलता है।",
+        translation: "Complete guide to the significance of banana offerings in Hindu worship and their spiritual benefits.",
+        deity: "Ganesha",
+        emojiCounts: { "🙏": 38, "❤️": 30, "🌟": 34 }
       },
 
       // THURSDAY - Vishnu & Guru Worship
@@ -438,7 +548,7 @@ export class MemStorage implements IStorage {
 
   async getCategoriesByDay(day: string): Promise<string[]> {
     const dayContents = await this.getContentByDay(day);
-    const categories = [...new Set(dayContents.map(content => content.category))];
+    const categories = Array.from(new Set(dayContents.map(content => content.category)));
     return categories.sort();
   }
 
