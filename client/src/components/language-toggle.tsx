@@ -18,10 +18,12 @@ export default function LanguageToggle() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-4 py-2 glass-card rounded-full text-white hover:bg-white/30 transition-all duration-300"
+        className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-amber-400/20 to-orange-500/20 backdrop-blur-md rounded-full text-white hover:from-amber-400/30 hover:to-orange-500/30 transition-all duration-300 border border-white/20"
       >
-        <Globe className="w-4 h-4" />
-        <span>{currentLanguage?.name}</span>
+        <Globe className="w-4 h-4 text-amber-300" />
+        <span className="font-medium">
+          {language === 'hi' ? 'हिंदी' : 'English'}
+        </span>
         <ChevronDown className="w-3 h-3" />
       </button>
       
@@ -31,7 +33,7 @@ export default function LanguageToggle() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute right-0 top-full mt-2 w-32 glass-card rounded-xl shadow-xl overflow-hidden"
+            className="absolute right-0 top-full mt-2 w-32 glass-card rounded-xl shadow-xl overflow-hidden z-50"
           >
             {languages.map((lang) => (
               <button
@@ -54,7 +56,7 @@ export default function LanguageToggle() {
       {/* Click outside to close */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-[-1]"
+          className="fixed inset-0 z-10"
           onClick={() => setIsOpen(false)}
         />
       )}

@@ -85,7 +85,9 @@ export default function FeaturedContent({ selectedDay }: FeaturedContentProps) {
           </h4>
           
           <div className="bg-white/5 rounded-xl p-6 mb-4">
-            <p className="text-lg text-white/90 text-center leading-relaxed mb-4 whitespace-pre-line">
+            <p className={`text-lg text-white/90 text-center leading-relaxed mb-4 whitespace-pre-line ${
+              language === 'hi' ? 'hindi-font text-xl' : ''
+            }`}>
               {displayText}
             </p>
             

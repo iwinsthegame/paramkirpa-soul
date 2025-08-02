@@ -64,7 +64,11 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Noto Sans Devanagari', 'Devanagari', sans-serif;
+  }
+
+  .hindi-font {
+    font-family: 'Noto Sans Devanagari', 'Devanagari', 'Inter', sans-serif;
   }
 }
 

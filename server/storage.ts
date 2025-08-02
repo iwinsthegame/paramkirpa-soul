@@ -25,10 +25,21 @@ export class MemStorage implements IStorage {
   }
 
   private initializeContent() {
-    // Initialize with sample devotional content
+    // Initialize with sample devotional content for all days
     const sampleContents: Content[] = [
+      // Sunday
       {
         id: "1",
+        day: "Sunday",
+        category: "Mantras",
+        title: "Surya Mantra",
+        textEnglish: "Om Surya Bhaskaraya Namaha\nOm Utrabodhaya Namaha\nOm Loka Pradipaya Namaha\nOm Tejase Namaha",
+        textHindi: "ॐ सूर्य भास्कराय नमः\nॐ उत्रबोधाय नमः\nॐ लोक प्रदीपाय नमः\nॐ तेजसे नमः",
+        translation: "I bow to the Sun God, the illuminator, the awakener, the lamp of the world, the radiant one."
+      },
+      // Monday  
+      {
+        id: "2",
         day: "Monday",
         category: "Mantras",
         title: "Gayatri Mantra",
@@ -36,8 +47,9 @@ export class MemStorage implements IStorage {
         textHindi: "ॐ भूर्भुवः स्वः\nतत्सवितुर्वरेण्यं\nभर्गो देवस्य धीमहि\nधियो यो नः प्रचोदयात्",
         translation: "We meditate on the glory of the Creator who has created the Universe, who is worthy of worship, who is the embodiment of knowledge and light, who is the remover of sin and ignorance. May he enlighten our intellect."
       },
+      // Tuesday
       {
-        id: "2",
+        id: "3",
         day: "Tuesday",
         category: "Chalisas",
         title: "Hanuman Chalisa",
@@ -45,8 +57,9 @@ export class MemStorage implements IStorage {
         textHindi: "श्रीगुरु चरन सरोज रज\nनिज मन मुकुर सुधारि\nबरनउं रघुबर बिमल जसु\nजो दायक फल चारि",
         translation: "With the dust of Guru's Lotus feet, I clean the mirror of my mind and then narrate the sacred glory of Sri Ram Chandra, The Supreme among the Raghu dynasty. The giver of the four attainments of life."
       },
+      // Wednesday
       {
-        id: "3",
+        id: "4",
         day: "Wednesday",
         category: "Aartis",
         title: "Ganga Aarti",
@@ -54,14 +67,35 @@ export class MemStorage implements IStorage {
         textHindi: "ॐ जय गंगे माता\nमैया जय गंगे माता\nजो नर तुमको ध्याता\nमनोकामना पाता",
         translation: "Victory to Mother Ganga! Those who meditate upon you, their heart's desires are fulfilled."
       },
+      // Thursday
       {
-        id: "4",
+        id: "5",
         day: "Thursday",
         category: "Stotrams",
         title: "Vishnu Sahasranama",
         textEnglish: "Vishvam Vishnur Vashatkaro\nBhuta-bhavya-bhavat-prabhuh\nBhutakrid Bhutabhrid Bhavo\nBhutatma Bhuta-bhavanah",
         textHindi: "विश्वं विष्णुर्वषट्कारो\nभूत-भव्य-भवत्-प्रभुः\nभूतकृद् भूतभृद् भावो\nभूतात्मा भूत-भावनः",
         translation: "The Universe, The All-Pervading, The Performer of Sacrifices, The Lord of Past, Present and Future, The Creator of Elements, The Sustainer of Elements, The Existence, The Soul of Elements, The Contemplator of Elements."
+      },
+      // Friday
+      {
+        id: "6",
+        day: "Friday",
+        category: "Aartis",
+        title: "Lakshmi Aarti",
+        textEnglish: "Om Jai Lakshmi Mata\nMaiya Jai Lakshmi Mata\nTumko Nisdin Dhyavat\nHara Vishnu Viridata",
+        textHindi: "ॐ जय लक्ष्मी माता\nमैया जय लक्ष्मी माता\nतुमको निसदिन ध्यावत\nहर विष्णु विरिदाता",
+        translation: "Victory to Mother Lakshmi! Day and night, Lord Vishnu and Lord Shiva meditate upon you."
+      },
+      // Saturday  
+      {
+        id: "7",
+        day: "Saturday",
+        category: "Mantras",
+        title: "Shani Mantra",
+        textEnglish: "Om Shanaischaraya Namaha\nOm Suryaputraya Namaha\nOm Bhauma Graha Rakshine Namaha\nOm Shani Devaya Namaha",
+        textHindi: "ॐ शनैश्चराय नमः\nॐ सूर्यपुत्राय नमः\nॐ भौम ग्रह रक्षिणे नमः\nॐ शनि देवाय नमः",
+        translation: "I bow to Lord Shani, the slow-moving one, son of the Sun, protector from malefic planetary influences."
       }
     ];
 
