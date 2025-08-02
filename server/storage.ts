@@ -30,39 +30,149 @@ export class MemStorage implements IStorage {
   private initializeContent() {
     // Initialize with comprehensive devotional content for all days and categories
     const sampleContents: Content[] = [
-      // SUNDAY - Sun God Worship
+      // SUNDAY - Lord Surya/Vishnu Worship (Complete Categories)
       {
         id: "sun-1",
         day: "Sunday",
         category: "Mantras",
-        title: "Surya Gayatri Mantra",
-        textEnglish: "Om Bhaskaraya Vidmahe\nMahadyutikaraya Dhimahi\nTanno Adityah Prachodayat",
-        textHindi: "ॐ भास्कराय विद्महे\nमहाद्युतिकराय धीमहि\nतन्नो आदित्यः प्रचोदयात्",
-        translation: "We know the brilliant Sun, we meditate on the great effulgent one, may the Sun God inspire our understanding.",
+        title: "Surya Maha Mantra",
+        textEnglish: "Om Suryaya Namah\nOm Suryaya Namah\nOm Suryaya Namah\nOm Suryaya Namah",
+        textHindi: "ॐ सूर्याय नमः\nॐ सूर्याय नमः\nॐ सूर्याय नमः\nॐ सूर्याय नमः",
+        translation: "I bow to Lord Surya, the divine source of light, energy, and life who illuminates the world and grants vitality to all beings.",
         deity: "Surya",
-        emojiCounts: { "🙏": 15, "❤️": 8, "🌟": 12 }
+        emojiCounts: { "🙏": 55, "❤️": 42, "🌟": 48 }
+      },
+      {
+        id: "sun-1b",
+        day: "Sunday",
+        category: "Mantras",
+        title: "Vishnu Sunday Mantra",
+        textEnglish: "Om Namo Narayanaya\nOm Namo Narayanaya\nOm Namo Narayanaya\nOm Namo Narayanaya",
+        textHindi: "ॐ नमो नारायणाय\nॐ नमो नारायणाय\nॐ नमो नारायणाय\nॐ नमो नारायणाय",
+        translation: "I bow to Lord Narayana (Vishnu), the supreme preserver and protector of the universe who maintains cosmic order.",
+        deity: "Vishnu",
+        emojiCounts: { "🙏": 52, "❤️": 38, "🌟": 45 }
+      },
+      {
+        id: "sun-1c",
+        day: "Sunday",
+        category: "Mantras",
+        title: "Surya Gayatri Mantra",
+        textEnglish: "Om Bhaskaraya Vidmahe\nMahadyutikaraya Dhimahi\nTanno Adityah Prachodayat\nOm Suryaya Namah",
+        textHindi: "ॐ भास्कराय विद्महे\nमहाद्युतिकराय धीमहि\nतन्नो आदित्यः प्रचोदयात्\nॐ सूर्याय नमः",
+        translation: "We know the brilliant Sun, we meditate on the great effulgent one, may the Sun God inspire our understanding and enlighten our path.",
+        deity: "Surya",
+        emojiCounts: { "🙏": 58, "❤️": 44, "🌟": 51 }
       },
       {
         id: "sun-2",
         day: "Sunday",
-        category: "Aartis",
-        title: "Surya Aarti",
-        textEnglish: "Om Jai Surya Bhagawan\nHara Sab Ko Klesh Santan\nPrakash Karo Jagat Mein\nHara Andhakar Jeevan Mein",
-        textHindi: "ॐ जय सूर्य भगवान्\nहर सब को क्लेश संतान\nप्रकाश करो जगत में\nहर अंधकार जीवन में",
-        translation: "Victory to Lord Sun! Remove all troubles and sorrows, illuminate the world, dispel darkness from life.",
+        category: "Chalisas",
+        title: "Surya Chalisa",
+        textEnglish: "Kare Jai Jai Surya Bhanu\nBhakt Jan Ke Kaam Aanu\nDivakara Dinamani Kaha\nPrabhu Asur Sanhar Kaha\n\nBrahma Vishnu Shiv Trayi Mukti\nSurya Tehi Ki Shakti\nNirakar Niranjan Jyoti\nSurya Wahi Jag Jyoti",
+        textHindi: "करे जय जय सूर्य भानु\nभक्त जन के काम आनु\nदिवाकर दिनमणि कहा\nप्रभु असुर संहार कहा\n\nब्रह्मा विष्णु शिव त्रई मुक्ति\nसूर्य तेहि की शक्ति\nनिराकार निरंजन ज्योति\nसूर्य वही जग ज्योति",
+        translation: "Victory to Lord Surya Bhanu, come to help your devotees. Called Divakara (day-maker) and Dinamani (jewel of day), Lord who destroys demons. Brahma, Vishnu, Shiva - the trinity of liberation, Surya is their power. The formless, pure light, Surya is the light of the world.",
         deity: "Surya",
-        emojiCounts: { "🙏": 20, "❤️": 12, "🌟": 18 }
+        emojiCounts: { "🙏": 62, "❤️": 48, "🌟": 55 }
+      },
+      {
+        id: "sun-2b",
+        day: "Sunday",
+        category: "Chalisas",
+        title: "Vishnu Chalisa (Sunday)",
+        textEnglish: "Shantakaram Bhujagashayanam\nPadmanabham Suresham\nVishwadharam Gaganasadrisham\nMeghavarnam Shubhangam\n\nLakshmikantam Kamalnaynam\nYoginam Yogindram\nPranatahladakaram Tam\nVande Vishnum Bhavabhayaharam",
+        textHindi: "शान्ताकारं भुजगशयनं\nपद्मनाभं सुरेशं\nविश्वाधारं गगनसदृशं\nमेघवर्णं शुभाङ्गम्\n\nलक्ष्मीकान्तं कमलनयनं\nयोगिनं योगीन्द्रम्\nप्रणताह्लादकरं तं\nवन्दे विष्णुं भवभयहरम्",
+        translation: "I bow to Vishnu who is peaceful in appearance, lying on the serpent, lotus-naveled, lord of gods, supporter of the universe, sky-like, cloud-colored with auspicious form. Consort of Lakshmi, lotus-eyed, supreme among yogis, king of ascetics, who brings joy to devotees and removes the fear of worldly existence.",
+        deity: "Vishnu",
+        emojiCounts: { "🙏": 65, "❤️": 50, "🌟": 58 }
       },
       {
         id: "sun-3",
         day: "Sunday",
+        category: "Aartis",
+        title: "Om Jai Surya Dev",
+        textEnglish: "Om Jai Surya Dev Swami\nOm Jai Surya Dev\nTrailokyanath Prabhu\nTum Ho Jagat Ke Dev\nOm Jai Surya Dev\n\nBrahma Vishnu Mahesh Se\nJagat Banaya Tumne\nSapta Ashwa Rath Jute\nDishaon Ko Soha Tumne\nOm Jai Surya Dev",
+        textHindi: "ॐ जय सूर्य देव स्वामी\nॐ जय सूर्य देव\nत्रैलोक्यनाथ प्रभु\nतुम हो जगत के देव\nॐ जय सूर्य देव\n\nब्रह्मा विष्णु महेश से\nजगत बनाया तुमने\nसप्त अश्व रथ जुते\nदिशाओं को सोहा तुमने\nॐ जय सूर्य देव",
+        translation: "Victory to Lord Surya Dev, master of the three worlds, you are the god of the universe. With Brahma, Vishnu, and Mahesh you created the world. Your chariot is yoked with seven horses, you illuminate all directions. Victory to Surya Dev!",
+        deity: "Surya",
+        emojiCounts: { "🙏": 60, "❤️": 45, "🌟": 52 }
+      },
+      {
+        id: "sun-3b",
+        day: "Sunday",
+        category: "Aartis",
+        title: "Vishnu Aarti (Sunday)",
+        textEnglish: "Om Jai Jagdish Hare\nSwami Jai Jagdish Hare\nBhakt Jano Ke Sankat\nDas Jano Ke Sankat\nKshan Mein Door Kare\nOm Jai Jagdish Hare\n\nJo Dhyave Phal Paave\nDukh Bin Se Man Ka\nSwami Dukh Bin Se Man Ka\nSukh Sampati Ghar Aave\nKashta Mit Jaave\nOm Jai Jagdish Hare",
+        textHindi: "ॐ जय जगदीश हरे\nस्वामी जय जगदीश हरे\nभक्त जनों के संकट\nदास जनों के संकट\nक्षण में दूर करे\nॐ जय जगदीश हरे\n\nजो ध्यावे फल पावे\nदुःख बिन से मन का\nस्वामी दुःख बिन से मन का\nसुख संपत्ति घर आवे\nकष्ट मिट जावे\nॐ जय जगदीश हरे",
+        translation: "Victory to Lord of the Universe! The troubles of devotees and servants are removed in an instant. Those who meditate upon you receive fruits, sorrows of the mind are removed, happiness and prosperity come to the home, and sufferings are eliminated.",
+        deity: "Vishnu",
+        emojiCounts: { "🙏": 58, "❤️": 42, "🌟": 50 }
+      },
+      {
+        id: "sun-4",
+        day: "Sunday",
+        category: "Kathas",
+        title: "Ravivar Vrat Katha",
+        textEnglish: "Once there lived a devoted woman named Vrinda who faced many hardships in life. Her husband had lost his job, her children were falling ill frequently, and the family was struggling with poverty. An elderly woman advised her to observe the Sunday fast (Ravivar Vrat) dedicated to Lord Surya with complete faith.\n\nEvery Sunday, Vrinda would wake up before sunrise, take a purifying bath, and wear red or saffron clothes. She would prepare offerings of red flowers, jaggery, and wheat items for Lord Surya. At sunrise, she would face the east, offer water to the rising sun from a copper vessel, and chant 'Om Suryaya Namah' 108 times.\n\nDuring her worship, she would pray: 'O Lord Surya, you are the source of all energy and life. Please bless my family with health, prosperity, and remove the darkness of troubles from our lives.' She would fast completely during the day, eating only fruits and milk, and break her fast only after sunset.\n\nVrinda also practiced Surya Namaskar (sun salutations) every morning and spent time in sunrise meditation, absorbing the healing energy of the sun. She continued this sincere practice for several months with unwavering devotion.\n\nGradually, miraculous changes began to occur. Her husband received a new job opportunity, her children's health improved dramatically, and financial stability returned to the family. The positive energy from sun worship had transformed their entire household.\n\nOne Sunday, while performing her sun worship, a kind neighbor noticed her devotion and offered her husband a better position in his company. This led to unprecedented prosperity and success for the family.\n\nVrinda continued her Sunday worship throughout her life, always helping others understand the power of sun worship and the importance of maintaining a positive, energetic approach to life. Her story teaches us that Lord Surya blesses those who honor the source of life with sincere devotion.",
+        textHindi: "एक बार वृंदा नाम की एक भक्त महिला थी जो जीवन में कई कठिनाइयों का सामना कर रही थी। उसके पति की नौकरी चली गई थी, उसके बच्चे बार-बार बीमार पड़ रहे थे, और परिवार गरीबी से जूझ रहा था। एक बुजुर्ग महिला ने उसे सलाह दी कि वह पूर्ण श्रद्धा के साथ भगवान सूर्य को समर्पित रविवार का व्रत करे।\n\nहर रविवार को वृंदा सूर्योदय से पहले उठती, शुद्धीकरण स्नान करती और लाल या केसरिया वस्त्र पहनती। वह भगवान सूर्य के लिए लाल फूल, गुड़ और गेहूं की वस्तुओं का प्रसाद तैयार करती। सूर्योदय के समय वह पूर्व दिशा की ओर मुंह करके तांबे के बर्तन से उगते सूर्य को जल अर्पित करती और 'ॐ सूर्याय नमः' का १०८ बार जाप करती।\n\nअपनी पूजा के दौरान वह प्रार्थना करती: 'हे भगवान सूर्य, आप सभी ऊर्जा और जीवन के स्रोत हैं। कृपया मेरे परिवार को स्वास्थ्य, समृद्धि का आशीर्वाद दें और हमारे जीवन से समस्याओं का अंधकार दूर करें।' वह दिन भर पूर्ण उपवास रखती, केवल फल और दूध लेती, और सूर्यास्त के बाद ही व्रत तोड़ती।\n\nवृंदा हर सुबह सूर्य नमस्कार का अभ्यास भी करती और सूर्योदय के समय ध्यान में बैठकर सूर्य की उपचारात्मक ऊर्जा को अवशोषित करती। उसने अटूट भक्ति के साथ कई महीनों तक यह सच्चा अभ्यास जारी रखा।\n\nधीरे-धीरे चमत्कारी बदलाव होने लगे। उसके पति को नई नौकरी का अवसर मिला, उसके बच्चों का स्वास्थ्य नाटकीय रूप से सुधरा, और परिवार में वित्तीय स्थिरता वापस आई। सूर्य पूजा की सकारात्मक ऊर्जा ने उनके पूरे घर को बदल दिया था।\n\nएक रविवार जब वह अपनी सूर्य पूजा कर रही थी, एक दयालु पड़ोसी ने उसकी भक्ति देखी और उसके पति को अपनी कंपनी में बेहतर पद का प्रस्ताव दिया। इससे परिवार को अभूतपूर्व समृद्धि और सफलता मिली।\n\nवृंदा ने अपने जीवन भर रविवार की पूजा जारी रखी, हमेशा दूसरों को सूर्य पूजा की शक्ति और जीवन के प्रति सकारात्मक, ऊर्जावान दृष्टिकोण बनाए रखने के महत्व को समझाने में मदद की। उसकी कहानी हमें सिखाती है कि भगवान सूर्य उन लोगों को आशीर्वाद देते हैं जो सच्ची भक्ति के साथ जीवन के स्रोत का सम्मान करते हैं।",
+        translation: "The story of how Sunday fasting and devotion to Lord Surya brings health, prosperity, and positive energy through sincere sun worship.",
+        deity: "Surya",
+        emojiCounts: { "🙏": 45, "❤️": 38, "🌟": 42 }
+      },
+      {
+        id: "sun-5",
+        day: "Sunday",
         category: "Stotrams",
         title: "Aditya Hridayam",
-        textEnglish: "Aditya Hridayam Punyam\nSarva Shatru Vinashakam\nJayavaham Jape Nityam\nAkshayam Paramam Shivam",
-        textHindi: "आदित्य हृदयं पुण्यं\nसर्व शत्रु विनाशकम्\nजयावहं जपे नित्यं\nअक्षयं परमं शिवम्",
-        translation: "The sacred Aditya Hridayam destroys all enemies, brings victory when chanted daily, and grants eternal auspiciousness.",
+        textEnglish: "Aditya Hridayam Punyam\nSarva Shatru Vinashakam\nJayavaham Jape Nityam\nAkshayam Paramam Shivam\n\nSarva Mangala Mangalye\nShive Sarvaartha Sadhike\nSharanye Tryambake Gauri\nAditya Hridayam Param",
+        textHindi: "आदित्य हृदयं पुण्यं\nसर्व शत्रु विनाशकम्\nजयावहं जपे नित्यं\nअक्षयं परमं शिवम्\n\nसर्व मंगला मांगल्ये\nशिवे सर्वार्थ साधिके\nशरण्ये त्र्यम्बके गौरि\nआदित्य हृदयं परम्",
+        translation: "The sacred Aditya Hridayam is pure and holy, destroyer of all enemies, brings victory when chanted daily, eternal and supremely auspicious. Among all auspicious things, the most auspicious, accomplisher of all purposes, the supreme Aditya Hridayam grants refuge and protection.",
         deity: "Surya",
-        emojiCounts: { "🙏": 25, "❤️": 15, "🌟": 22 }
+        emojiCounts: { "🙏": 70, "❤️": 55, "🌟": 62 }
+      },
+      {
+        id: "sun-5b",
+        day: "Sunday",
+        category: "Stotrams",
+        title: "Vishnu Sahasranama (Sunday)",
+        textEnglish: "Vishwam Vishnur Vashatkaro\nBhuta Bhavya Bhavat Prabhuh\nBhutakrid Bhutabhrit Bhavo\nBhutatma Bhutatbhavana\n\nPurastat Puranam Punyam\nPunyakirtir Anaamayah\nManojava Kshamakarasya\nVishnu Sarva Gurupriya",
+        textHindi: "विश्वं विष्णुर्वषट्करो\nभूत भव्य भवत्प्रभुः\nभूतकृद्भूतभृत्भावो\nभूतात्मा भूतभावनः\n\nपुरस्तात्पुराणं पुण्यं\nपुण्यकीर्तिरनामयः\nमनोजव क्षमाकरस्य\nविष्णु सर्व गुरुप्रिय",
+        translation: "Vishnu is the universe, the all-pervading one, lord of past, present and future, creator and sustainer of beings, the soul of all beings. The ancient, pure, with holy fame, free from disease, swift as mind, patient and forgiving, Vishnu who is dear to all teachers.",
+        deity: "Vishnu",
+        emojiCounts: { "🙏": 68, "❤️": 52, "🌟": 60 }
+      },
+      {
+        id: "sun-6",
+        day: "Sunday",
+        category: "Vrat Vidhi",
+        title: "Ravivar Vrat Vidhi",
+        textEnglish: "SUNDAY FAST PROCEDURE:\n\n1. Wake up before sunrise and take a purifying bath\n2. Wear red, saffron, or bright-colored clothes\n3. Set up altar with Surya Dev and Vishnu images\n4. Use copper vessel for water offerings to sun\n5. Offer red flowers, jaggery, wheat items, and red sandalwood\n6. Face east during sunrise and offer water to sun\n7. Chant 'Om Suryaya Namah' 108 times\n8. Recite Surya Chalisa or Aditya Hridayam\n9. Practice Surya Namaskar (sun salutations)\n10. Fast with fruits, milk, and sattvic foods only\n11. Avoid salt, grains during strict fasting\n12. Spend time in sunrise meditation\n13. Donate red items to poor (clothes, food, blankets)\n14. Break fast after sunset with prasad\n15. Light ghee lamp in evening prayers\n\nBENEFITS: Enhances vitality, improves health, brings prosperity, increases positive energy, grants leadership qualities, and bestows divine protection.",
+        textHindi: "रविवार व्रत विधि:\n\n१. सूर्योदय से पहले उठकर शुद्धीकरण स्नान करें\n२. लाल, केसरिया या चमकदार रंग के वस्त्र पहनें\n३. सूर्य देव और विष्णु की मूर्तियों के साथ वेदी सजाएं\n४. सूर्य को जल अर्पण के लिए तांबे के बर्तन का उपयोग करें\n५. लाल फूल, गुड़, गेहूं की वस्तुएं और लाल चंदन अर्पित करें\n६. सूर्योदय के समय पूर्व दिशा की ओर मुंह करके सूर्य को जल अर्पित करें\n७. 'ॐ सूर्याय नमः' का १०८ बार जाप करें\n८. सूर्य चालीसा या आदित्य हृदयम् का पाठ करें\n९. सूर्य नमस्कार का अभ्यास करें\n१०. केवल फल, दूध और सात्विक भोजन के साथ व्रत रखें\n११. कड़े व्रत के दौरान नमक, अनाज से बचें\n१२. सूर्योदय के समय ध्यान में समय बिताएं\n१३. गरीबों को लाल वस्तुएं दान करें (वस्त्र, भोजन, कंबल)\n१४. सूर्यास्त के बाद प्रसाद से व्रत तोड़ें\n१५. शाम की प्रार्थना में घी का दीपक जलाएं\n\nलाभ: जीवन शक्ति बढ़ाता है, स्वास्थ्य में सुधार करता है, समृद्धि लाता है, सकारात्मक ऊर्जा बढ़ाता है, नेतृत्व गुण प्रदान करता है, और दिव्य सुरक्षा प्रदान करता है।",
+        translation: "Complete procedure for observing Sunday fast dedicated to Lord Surya for vitality, health, and positive energy.",
+        deity: "Surya",
+        emojiCounts: { "🙏": 55, "❤️": 42, "🌟": 48 }
+      },
+      {
+        id: "sun-7",
+        day: "Sunday",
+        category: "Extras",
+        title: "Sunrise Meditation Practice",
+        textEnglish: "SUNRISE MEDITATION - ABSORBING DIVINE SOLAR ENERGY\n\nSunrise meditation is a powerful spiritual practice that connects us directly with the life-giving energy of the sun.\n\nSPIRITUAL SIGNIFICANCE:\n• Sun represents consciousness, awareness, and divine light\n• Sunrise symbolizes new beginnings and spiritual awakening\n• Morning sunlight contains the purest form of solar energy\n• Connects us with cosmic rhythms and natural cycles\n• Activates the solar plexus chakra and enhances personal power\n• Represents the victory of light over darkness\n\nBENEFITS OF SUNRISE MEDITATION:\n• Increases vitamin D naturally\n• Enhances mental clarity and focus\n• Boosts energy levels and vitality\n• Improves mood and reduces depression\n• Strengthens immune system\n• Regulates circadian rhythms\n• Develops spiritual awareness\n• Cultivates gratitude and positivity\n\nMEDITATION TECHNIQUE:\n1. Find an open space facing east before sunrise\n2. Sit comfortably in cross-legged position or chair\n3. Keep spine straight and shoulders relaxed\n4. Close eyes and focus on breath initially\n5. As sun rises, gently open eyes and gaze softly\n6. Never look directly at the bright sun\n7. Visualize golden light entering your body\n8. Feel warmth and energy flowing through you\n9. Chant 'Om Suryaya Namah' silently or aloud\n10. Express gratitude for the gift of life and light\n11. Continue for 10-20 minutes\n12. End with palms together in prayer position\n\nCHAKRA ACTIVATION:\n• Solar Plexus (Manipura): Yellow light at stomach area\n• Heart Chakra (Anahata): Golden-green light in chest\n• Third Eye (Ajna): Bright white light between eyebrows\n• Crown Chakra (Sahasrara): Pure golden light at top of head\n\nVISUALIZATION PRACTICE:\n• Imagine yourself as a flower opening to sunlight\n• Visualize golden rays cleansing your entire being\n• See dark thoughts and negativity melting away\n• Feel yourself filling with pure, radiant energy\n• Connect with the universal source of life\n\nPRECAUTIONS:\n• Never stare directly at the bright sun\n• Use peripheral vision or closed eyes\n• Start with short sessions (5-10 minutes)\n• Gradually increase duration\n• Stop if you feel any eye discomfort\n• Best practiced during first hour after sunrise\n\nBEST TIMES:\n• 15 minutes before to 30 minutes after sunrise\n• Avoid when sun is too bright or high\n• Ideal during winter months when sun is gentler\n• Practice daily for consistent benefits\n\nSCRIPTURAL REFERENCE:\nThe Rigveda states: 'Udyann Aditya Rakshasa Hansi' - 'As the sun rises, it destroys all demons (negative energies).' This ancient wisdom emphasizes the purifying and protective power of sunrise meditation.\n\nRegular sunrise meditation creates a deep spiritual connection with the cosmic source of life, filling practitioners with divine energy, clarity, and inner peace.",
+        textHindi: "सूर्योदय ध्यान - दिव्य सौर ऊर्जा का अवशोषण\n\nसूर्योदय ध्यान एक शक्तिशाली आध्यात्मिक अभ्यास है जो हमें सूर्य की जीवनदायी ऊर्जा से सीधे जोड़ता है।\n\nआध्यात्मिक महत्व:\n• सूर्य चेतना, जागरूकता और दिव्य प्रकाश का प्रतिनिधित्व करता है\n• सूर्योदय नई शुरुआत और आध्यात्मिक जागृति का प्रतीक है\n• सुबह की धूप में सौर ऊर्जा का सबसे शुद्ध रूप होता है\n• हमें ब्रह्मांडीय लय और प्राकृतिक चक्रों से जोड़ता है\n• सोलर प्लेक्सस चक्र को सक्रिय करता है और व्यक्तिगत शक्ति बढ़ाता है\n• अंधकार पर प्रकाश की विजय का प्रतिनिधित्व करता है\n\nसूर्योदय ध्यान के लाभ:\n• प्राकृतिक रूप से विटामिन डी बढ़ाता है\n• मानसिक स्पष्टता और फोकस बढ़ाता है\n• ऊर्जा स्तर और जीवन शक्ति बढ़ाता है\n• मूड सुधारता है और अवसाद कम करता है\n• प्रतिरक्षा प्रणाली को मजबूत करता है\n• सर्कैडियन रिदम को नियंत्रित करता है\n• आध्यात्मिक जागरूकता विकसित करता है\n• कृतज्ञता और सकारात्मकता पैदा करता है\n\nध्यान तकनीक:\n१. सूर्योदय से पहले पूर्व दिशा की ओर मुंह करके खुली जगह खोजें\n२. पालथी मारकर या कुर्सी पर आराम से बैठें\n३. रीढ़ को सीधा और कंधों को आराम की स्थिति में रखें\n४. आंखें बंद करें और शुरू में सांस पर ध्यान दें\n५. जैसे ही सूर्य उगे, धीरे से आंखें खोलें और मृदु दृष्टि से देखें\n६. कभी भी तेज सूर्य को सीधे न देखें\n७. शरीर में प्रवेश करती सुनहरी रोशनी की कल्पना करें\n८. अपने अंदर गर्मी और ऊर्जा के प्रवाह को महसूस करें\n९. 'ॐ सूर्याय नमः' का मानसिक या स्वर में जाप करें\n१०. जीवन और प्रकाश के उपहार के लिए कृतज्ञता व्यक्त करें\n११. १०-२० मिनट तक जारी रखें\n१२. हथेलियों को प्रार्थना की मुद्रा में जोड़कर अंत करें\n\nचक्र सक्रियता:\n• सोलर प्लेक्सस (मणिपुर): पेट के क्षेत्र में पीली रोशनी\n• हृदय चक्र (अनाहत): छाती में सुनहरी-हरी रोशनी\n• तीसरी आंख (आज्ञा): भौंहों के बीच तेज सफेद रोशनी\n• मुकुट चक्र (सहस्रार): सिर के शीर्ष पर शुद्ध सुनहरी रोशनी\n\nदृश्यीकरण अभ्यास:\n• अपने आप को धूप में खुलने वाले फूल की तरह कल्पना करें\n• सुनहरी किरणों को अपने पूरे अस्तित्व को शुद्ध करते देखें\n• अंधकारमय विचारों और नकारात्मकता को पिघलते देखें\n• अपने आप को शुद्ध, चमकदार ऊर्जा से भरते महसूस करें\n• जीवन के सार्वभौमिक स्रोत से जुड़ाव महसूस करें\n\nसावधानियां:\n• कभी भी तेज सूर्य को सीधे न देखें\n• परिधीय दृष्टि या बंद आंखों का प्रयोग करें\n• छोटे सत्रों (५-१० मिनट) से शुरुआत करें\n• धीरे-धीरे अवधि बढ़ाएं\n• आंखों में कोई भी असुविधा महसूस हो तो रुक जाएं\n• सूर्योदय के पहले घंटे में अभ्यास सर्वोत्तम\n\nसर्वोत्तम समय:\n• सूर्योदय से १५ मिनट पहले से ३० मिनट बाद तक\n• जब सूर्य बहुत तेज या ऊंचा हो तो बचें\n• सर्दियों के महीनों में आदर्श जब सूर्य कोमल होता है\n• निरंतर लाभ के लिए दैनिक अभ्यास करें\n\nशास्त्रीय संदर्भ:\nऋग्वेद में उल्लेख है: 'उद्यन्न आदित्य राक्षस हंसी' - 'जैसे ही सूर्य उगता है, यह सभी राक्षसों (नकारात्मक ऊर्जाओं) को नष्ट कर देता है।' यह प्राचीन ज्ञान सूर्योदय ध्यान की शुद्धीकरण और सुरक्षात्मक शक्ति पर जोर देता है।\n\nनियमित सूर्योदय ध्यान जीवन के ब्रह्मांडीय स्रोत के साथ गहरा आध्यात्मिक संबंध बनाता है, साधकों को दिव्य ऊर्जा, स्पष्टता और आंतरिक शांति से भर देता है।",
+        translation: "Complete guide to sunrise meditation practice for absorbing divine solar energy and spiritual awakening.",
+        deity: "Surya",
+        emojiCounts: { "🙏": 52, "❤️": 40, "🌟": 46 }
+      },
+      {
+        id: "sun-8",
+        day: "Sunday",
+        category: "Extras",
+        title: "Surya Namaskar Benefits",
+        textEnglish: "SURYA NAMASKAR - THE COMPLETE SPIRITUAL AND PHYSICAL PRACTICE\n\nSurya Namaskar (Sun Salutation) is the most complete practice combining physical postures, breathing, and spiritual devotion.\n\nSPIRITUAL SIGNIFICANCE:\n• Honors the sun as the source of all life and energy\n• Integrates body, mind, and spirit in devotional practice\n• Represents the cyclical nature of life and cosmic rhythm\n• Activates all major chakras through sequential movements\n• Develops discipline, focus, and spiritual awareness\n• Connects practitioner with solar consciousness\n\nPHYSICAL BENEFITS:\n• Strengthens entire muscular system\n• Improves flexibility and posture\n• Enhances cardiovascular health\n• Boosts metabolism and aids weight management\n• Improves digestion and elimination\n• Increases lung capacity and breathing efficiency\n• Tones abdominal muscles and organs\n• Enhances blood circulation\n• Develops balance and coordination\n• Provides full-body workout in minimal time\n\nMENTAL AND EMOTIONAL BENEFITS:\n• Reduces stress, anxiety, and depression\n• Improves concentration and mental clarity\n• Develops patience and inner strength\n• Enhances mood and emotional stability\n• Increases self-confidence and self-awareness\n• Promotes better sleep patterns\n• Cultivates mindfulness and present-moment awareness\n• Builds mental resilience and adaptability\n\nSPIRITUAL BENEFITS:\n• Awakens inner solar energy (agni)\n• Purifies subtle energy channels (nadis)\n• Balances masculine (solar) and feminine (lunar) energies\n• Develops devotional attitude (bhakti)\n• Enhances pranic (life force) energy\n• Facilitates meditation and deeper spiritual states\n• Connects with cosmic consciousness\n• Develops gratitude and reverence for life\n\nTWELVE SACRED POSTURES:\n1. Pranamasana (Prayer Pose) - Gratitude and centering\n2. Hastauttanasana (Raised Arms) - Opening to divine energy\n3. Uttanasana (Forward Fold) - Surrendering ego\n4. Ashwa Sanchalanasana (Lunge) - Moving forward with faith\n5. Dandasana (Plank) - Developing strength and discipline\n6. Ashtanga Namaskara (Eight Limbs) - Complete surrender\n7. Bhujangasana (Cobra) - Awakening kundalini energy\n8. Adho Mukha Svanasana (Downward Dog) - Humility and grounding\n9. Ashwa Sanchalanasana (Lunge) - Balanced progress\n10. Uttanasana (Forward Fold) - Introspection and release\n11. Hastauttanasana (Raised Arms) - Receiving blessings\n12. Pranamasana (Prayer Pose) - Completion and gratitude\n\nMANTRAS FOR EACH POSTURE:\n1. Om Mitraya Namah (Friend to all)\n2. Om Ravaye Namah (Source of light)\n3. Om Suryaya Namah (Dispeller of darkness)\n4. Om Bhanave Namah (Illuminator)\n5. Om Khagaya Namah (Moving through sky)\n6. Om Pushne Namah (Nourisher)\n7. Om Hiranyagarbhaya Namah (Golden cosmic womb)\n8. Om Marichaye Namah (Ray of light)\n9. Om Adityaya Namah (Son of cosmic mother)\n10. Om Savitre Namah (Stimulator)\n11. Om Arkaya Namah (Praise-worthy)\n12. Om Bhaskaraya Namah (Enlightener)\n\nBEST PRACTICE TIMES:\n• Early morning facing east (most auspicious)\n• During sunrise for maximum spiritual benefit\n• Evening facing west (alternative time)\n• 6-12 rounds daily for beginners\n• 21-54+ rounds for advanced practitioners\n• Consistency more important than quantity\n\nGUIDELINES FOR PRACTICE:\n• Start slowly and build gradually\n• Synchronize breath with movement\n• Maintain awareness and devotion\n• Practice on empty stomach\n• Use yoga mat for stability\n• Modify poses according to ability\n• End with relaxation and gratitude\n\nCONTRAINDICATIONS:\n• High blood pressure (modify or avoid)\n• Heart conditions (consult physician)\n• Pregnancy (modified versions only)\n• Recent surgery or injuries\n• Severe arthritis or joint problems\n\nSCRIPTURAL REFERENCE:\nThe Surya Namaskar finds mention in various ancient texts including the Rig Veda and Surya Upanishad, emphasizing its role as both a physical practice and spiritual sadhana for connecting with the divine solar principle.\n\nRegular practice of Surya Namaskar creates a complete transformation - physical vitality, mental clarity, emotional balance, and spiritual awakening - making it the most comprehensive yogic practice for modern life.",
+        textHindi: "सूर्य नमस्कार - संपूर्ण आध्यात्मिक और शारीरिक अभ्यास\n\nसूर्य नमस्कार सबसे संपूर्ण अभ्यास है जो शारीरिक मुद्राओं, श्वास और आध्यात्मिक भक्ति को मिलाता है।\n\nआध्यात्मिक महत्व:\n• सूर्य को सभी जीवन और ऊर्जा के स्रोत के रूप में सम्मानित करता है\n• शरीर, मन और आत्मा को भक्ति अभ्यास में एकीकृत करता है\n• जीवन की चक्रीय प्रकृति और ब्रह्मांडीय लय का प्रतिनिधित्व करता है\n• अनुक्रमिक गतिविधियों के माध्यम से सभी प्रमुख चक्रों को सक्रिय करता है\n• अनुशासन, फोकस और आध्यात्मिक जागरूकता विकसित करता है\n• साधक को सौर चेतना से जोड़ता है\n\nशारीरिक लाभ:\n• संपूर्ण मांसपेशी तंत्र को मजबूत करता है\n• लचीलापन और मुद्रा में सुधार करता है\n• हृदय संबंधी स्वास्थ्य बढ़ाता है\n• चयापचय बढ़ाता है और वजन प्रबंधन में सहायक है\n• पाचन और उत्सर्जन में सुधार करता है\n• फेफड़ों की क्षमता और श्वास दक्षता बढ़ाता है\n• पेट की मांसपेशियों और अंगों को टोन करता है\n• रक्त संचार बढ़ाता है\n• संतुलन और समन्वय विकसित करता है\n• न्यूनतम समय में पूर्ण शरीर की कसरत प्रदान करता है\n\nमानसिक और भावनात्मक लाभ:\n• तनाव, चिंता और अवसाद कम करता है\n• एकाग्रता और मानसिक स्पष्टता में सुधार करता है\n• धैर्य और आंतरिक शक्ति विकसित करता है\n• मूड और भावनात्मक स्थिरता बढ़ाता है\n• आत्मविश्वास और आत्म-जागरूकता बढ़ाता है\n• बेहतर नींद के पैटर्न को बढ़ावा देता है\n• मानसिकता और वर्तमान क्षण जागरूकता पैदा करता है\n• मानसिक लचीलापन और अनुकूलनशीलता बनाता है\n\nआध्यात्मिक लाभ:\n• आंतरिक सौर ऊर्जा (अग्नि) जगाता है\n• सूक्ष्म ऊर्जा चैनलों (नाड़ियों) को शुद्ध करता है\n• पुरुष (सौर) और स्त्री (चंद्र) ऊर्जाओं को संतुलित करता है\n• भक्ति भावना विकसित करता है\n• प्राणिक (जीवन शक्ति) ऊर्जा बढ़ाता है\n• ध्यान और गहरी आध्यात्मिक अवस्थाओं को सुविधाजनक बनाता है\n• ब्रह्मांडीय चेतना से जुड़ाव बनाता है\n• जीवन के लिए कृतज्ञता और श्रद्धा विकसित करता है\n\nबारह पवित्र मुद्राएं:\n१. प्रणामासन (प्रार्थना मुद्रा) - कृतज्ञता और केंद्रीकरण\n२. हस्तउत्तानासन (हाथ उठाना) - दिव्य ऊर्जा के लिए खुलना\n३. उत्तानासन (आगे झुकना) - अहंकार का समर्पण\n४. अश्व संचालनासन (लंज) - श्रद्धा के साथ आगे बढ़ना\n५. दंडासन (प्लांक) - शक्ति और अनुशासन विकसित करना\n६. अष्टांग नमस्कार (आठ अंग) - पूर्ण समर्पण\n७. भुजंगासन (कोबरा) - कुंडलिनी ऊर्जा जगाना\n८. अधो मुख श्वानासन (नीचे की ओर कुत्ता) - विनम्रता और ग्राउंडिंग\n९. अश्व संचालनासन (लंज) - संतुलित प्रगति\n१०. उत्तानासन (आगे झुकना) - आत्मनिरीक्षण और मुक्ति\n११. हस्तउत्तानासन (हाथ उठाना) - आशीर्वाद प्राप्त करना\n१२. प्रणामासन (प्रार्थना मुद्रा) - पूर्णता और कृतज्ञता\n\nप्रत्येक मुद्रा के लिए मंत्र:\n१. ॐ मित्राय नमः (सभी के मित्र)\n२. ॐ रवये नमः (प्रकाश का स्रोत)\n३. ॐ सूर्याय नमः (अंधकार का नाश करने वाला)\n४. ॐ भानवे नमः (प्रकाशक)\n५. ॐ खगाय नमः (आकाश में गति करने वाला)\n६. ॐ पूष्णे नमः (पोषण करने वाला)\n७. ॐ हिरण्यगर्भाय नमः (स्वर्ण ब्रह्मांडीय गर्भ)\n८. ॐ मरीचये नमः (प्रकाश की किरण)\n९. ॐ आदित्याय नमः (ब्रह्मांडीय माता का पुत्र)\n१०. ॐ सवित्रे नमः (प्रेरणा देने वाला)\n११. ॐ अर्काय नमः (प्रशंसा योग्य)\n१२. ॐ भास्कराय नमः (ज्ञान प्रदाता)\n\nअभ्यास का सर्वोत्तम समय:\n• सुबह जल्दी पूर्व दिशा की ओर मुंह करके (सबसे शुभ)\n• अधिकतम आध्यात्मिक लाभ के लिए सूर्योदय के दौरान\n• शाम को पश्चिम दिशा की ओर मुंह करके (वैकल्पिक समय)\n• शुरुआती लोगों के लिए दैनिक ६-१२ चक्र\n• उन्नत साधकों के लिए २१-५४+ चक्र\n• मात्रा से निरंतरता अधिक महत्वपूर्ण\n\nअभ्यास के दिशानिर्देश:\n• धीरे-धीरे शुरू करें और क्रमशः बढ़ाएं\n• गति के साथ सांस का तालमेल बिठाएं\n• जागरूकता और भक्ति बनाए रखें\n• खाली पेट अभ्यास करें\n• स्थिरता के लिए योग मैट का उपयोग करें\n• क्षमता के अनुसार मुद्राओं को संशोधित करें\n• विश्राम और कृतज्ञता के साथ समाप्त करें\n\nप्रतिकूल संकेत:\n• उच्च रक्तचाप (संशोधित करें या बचें)\n• हृदय संबंधी समस्याएं (चिकित्सक से सलाह लें)\n• गर्भावस्था (केवल संशोधित संस्करण)\n• हाल की सर्जरी या चोटें\n• गंभीर गठिया या जोड़ों की समस्याएं\n\nशास्त्रीय संदर्भ:\nसूर्य नमस्कार का उल्लेख ऋग्वेद और सूर्य उपनिषद सहित विभिन्न प्राचीन ग्रंथों में मिलता है, जो दिव्य सौर सिद्धांत से जुड़ने के लिए शारीरिक अभ्यास और आध्यात्मिक साधना दोनों के रूप में इसकी भूमिका पर जोर देता है।\n\nसूर्य नमस्कार का नियमित अभ्यास पूर्ण रूपांतरण करता है - शारीरिक जीवन शक्ति, मानसिक स्पष्टता, भावनात्मक संतुलन और आध्यात्मिक जागृति - जो इसे आधुनिक जीवन के लिए सबसे व्यापक योगिक अभ्यास बनाता है।",
+        translation: "Complete guide to Surya Namaskar practice and its comprehensive physical, mental, and spiritual benefits.",
+        deity: "Surya",
+        emojiCounts: { "🙏": 60, "❤️": 48, "🌟": 54 }
       },
 
       // MONDAY - Lord Shiva Worship (Complete Categories)
