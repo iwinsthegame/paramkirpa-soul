@@ -4,11 +4,14 @@ import { z } from "zod";
 export const contentSchema = z.object({
   id: z.string(),
   day: z.enum(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]),
-  category: z.enum(["Mantras", "Chalisas", "Aartis", "Stotrams"]),
+  category: z.enum(["Mantras", "Chalisas", "Aartis", "Stotrams", "Kathas", "Vrat Vidhi"]),
   title: z.string(),
   textEnglish: z.string(),
   textHindi: z.string(),
   translation: z.string().optional(),
+  deity: z.string().optional(),
+  duration: z.string().optional(),
+  emojiCounts: z.record(z.number()).default({}),
 });
 
 export const insertContentSchema = contentSchema.omit({ id: true });

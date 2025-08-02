@@ -1,40 +1,94 @@
-export const createEmojiRain = (container: HTMLElement) => {
-  const emojis = ['🙏', '✨', '🌟', '💫', '🕯️', '🌸'];
+export const animateEmojiReaction = (element: HTMLElement) => {
+  // Create floating emoji animation
+  const emoji = element.querySelector('span')?.textContent || '✨';
   
-  for (let i = 0; i < 20; i++) {
+  const floatingEmoji = document.createElement('div');
+  floatingEmoji.textContent = emoji;
+  floatingEmoji.className = 'fixed pointer-events-none z-[100] text-2xl animate-bounce';
+  floatingEmoji.style.left = `${element.getBoundingClientRect().left + element.offsetWidth / 2}px`;
+  floatingEmoji.style.top = `${element.getBoundingClientRect().top}px`;
+  
+  document.body.appendChild(floatingEmoji);
+  
+  // Animate upward movement and fade out
+  floatingEmoji.animate([
+    { transform: 'translateY(0) scale(1)', opacity: 1 },
+    { transform: 'translateY(-60px) scale(1.5)', opacity: 0 }
+  ], {
+    duration: 1000,
+    easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+  });
+  
+  // Remove element after animation
+  setTimeout(() => {
+    document.body.removeChild(floatingEmoji);
+  }, 1000);
+  
+  // Add button pulse effect
+  element.animate([
+    { transform: 'scale(1)' },
+    { transform: 'scale(1.2)' },
+    { transform: 'scale(1)' }
+  ], {
+    duration: 300,
+    easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+  });
+};
+
+export const createEmojiRain = (container: HTMLElement) => {
+  const emojis = ['🙏', '✨', '💫', '🌟', '❤️', '🕉️'];
+  const emojiCount = 8;
+  
+  for (let i = 0; i < emojiCount; i++) {
     const emoji = document.createElement('div');
     emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
-    emoji.className = 'absolute text-2xl animate-emoji-rain pointer-events-none z-50';
-    emoji.style.left = Math.random() * 100 + '%';
-    emoji.style.animationDelay = Math.random() * 2 + 's';
+    emoji.className = 'fixed pointer-events-none z-[100] text-3xl animate-emoji-rain';
+    emoji.style.left = `${Math.random() * window.innerWidth}px`;
+    emoji.style.top = '-100px';
+    emoji.style.animationDelay = `${Math.random() * 2}s`;
     
     container.appendChild(emoji);
     
-    // Remove emoji after animation
+    // Remove after animation
     setTimeout(() => {
-      if (emoji.parentNode) {
-        emoji.parentNode.removeChild(emoji);
+      if (container.contains(emoji)) {
+        container.removeChild(emoji);
       }
-    }, 3000);
+    }, 3000 + Math.random() * 1000);
   }
 };
 
 export const createFloatingSphere = (container: HTMLElement) => {
   const sphere = document.createElement('div');
-  sphere.className = 'fixed top-1/2 left-1/2 w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full shadow-2xl animate-sphere-float pointer-events-none z-50 -translate-x-1/2 -translate-y-1/2';
+  sphere.className = 'fixed pointer-events-none z-[100] w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full opacity-0';
+  sphere.style.left = `${window.innerWidth / 2 - 16}px`;
+  sphere.style.top = `${window.innerHeight / 2 - 16}px`;
   
   container.appendChild(sphere);
   
+  // Animate sphere
+  sphere.animate([
+    { 
+      transform: 'scale(0) translateY(0)',
+      opacity: 0
+    },
+    { 
+      transform: 'scale(1.5) translateY(-100px)',
+      opacity: 1
+    },
+    { 
+      transform: 'scale(0.5) translateY(-200px)',
+      opacity: 0
+    }
+  ], {
+    duration: 2000,
+    easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+  });
+  
+  // Remove after animation
   setTimeout(() => {
-    if (sphere.parentNode) {
-      sphere.parentNode.removeChild(sphere);
+    if (container.contains(sphere)) {
+      container.removeChild(sphere);
     }
   }, 2000);
-};
-
-export const animateEmojiReaction = (element: HTMLElement) => {
-  element.style.transform = 'scale(1.2)';
-  setTimeout(() => {
-    element.style.transform = 'scale(1)';
-  }, 200);
 };

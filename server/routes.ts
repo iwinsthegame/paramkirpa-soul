@@ -84,6 +84,50 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // New Content API Routes
+  app.get("/api/v1/content/categories", async (req, res) => {
+    try {
+      const { day } = req.query;
+      if (!day) {
+        return res.status(400).json({ message: "Day parameter is required" });
+      }
+      
+      const categories = await storage.getCategoriesByDay(day as string);
+      res.json(categories);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch categories" });
+    }
+  });
+
+  app.get("/api/v1/content/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const content = await storage.getContentById(id);
+      if (!content) {
+        return res.status(404).json({ message: "Content not found" });
+      }
+      res.json(content);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch content" });
+    }
+  });
+
+  app.post("/api/v1/content/:id/react", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { emoji } = reactionSchema.parse({ prayerId: id, emoji: req.body.emoji });
+      
+      const updatedContent = await storage.updateContentReaction(id, emoji);
+      if (!updatedContent) {
+        return res.status(404).json({ message: "Content not found" });
+      }
+      
+      res.json(updatedContent);
+    } catch (error) {
+      res.status(400).json({ message: "Invalid reaction data" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
