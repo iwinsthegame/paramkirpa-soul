@@ -3,7 +3,7 @@ export type EmojiType = "🙏" | "❤️" | "🌟";
 export interface Content {
   id: string;
   day: "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday" | "Saturday" | "Sunday";
-  category: "Mantras" | "Chalisas" | "Aartis" | "Stotrams" | "Kathas" | "Vrat Vidhi";
+  category: "Mantras" | "Chalisas" | "Aartis" | "Stotrams" | "Kathas" | "Vrat Vidhi" | "Extras";
   title: string;
   textEnglish: string;
   textHindi: string;

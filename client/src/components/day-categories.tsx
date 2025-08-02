@@ -38,6 +38,11 @@ const categoryInfo: Record<string, { icon: string; gradient: string; description
     icon: "🕯️",
     gradient: "from-red-400 to-pink-500",
     description: "Fasting procedures"
+  },
+  "Extras": {
+    icon: "🔮",
+    gradient: "from-indigo-400 to-cyan-500",
+    description: "Special spiritual items"
   }
 };
 
