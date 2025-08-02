@@ -79,6 +79,19 @@
     animation: gradient 15s ease infinite;
   }
 
+  .krishna-gradient {
+    background: linear-gradient(135deg, 
+      hsl(220, 100%, 20%) 0%,
+      hsl(240, 80%, 25%) 15%,
+      hsl(180, 90%, 30%) 35%, 
+      hsl(120, 70%, 35%) 55%,
+      hsl(60, 85%, 45%) 75%,
+      hsl(30, 90%, 50%) 100%
+    );
+    background-size: 400% 400%;
+    animation: peacockGradient 20s ease infinite;
+  }
+
   .glass-card {
     backdrop-filter: blur(20px);
     background: rgba(255, 255, 255, 0.1);
@@ -165,6 +178,110 @@
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Krishna Peacock Feather Elements */
+  .peacock-eye {
+    background: radial-gradient(circle at center, 
+      hsl(240, 100%, 10%) 0%,
+      hsl(240, 80%, 30%) 20%,
+      hsl(180, 90%, 40%) 40%,
+      hsl(120, 70%, 50%) 60%,
+      hsl(60, 85%, 60%) 80%,
+      hsl(30, 90%, 70%) 100%
+    );
+    border-radius: 50%;
+    opacity: 0.15;
+    backdrop-filter: blur(2px);
+    animation: peacockEyePulse 12s ease-in-out infinite;
+  }
+
+  .peacock-eye-small {
+    background: radial-gradient(circle at center, 
+      hsl(220, 100%, 15%) 0%,
+      hsl(200, 80%, 35%) 30%,
+      hsl(160, 90%, 45%) 60%,
+      hsl(80, 85%, 55%) 100%
+    );
+    border-radius: 50%;
+    opacity: 0.12;
+    backdrop-filter: blur(1px);
+    animation: peacockEyePulse 10s ease-in-out infinite;
+  }
+
+  .peacock-feather {
+    background: linear-gradient(45deg,
+      hsl(240, 60%, 25%) 0%,
+      hsl(200, 70%, 35%) 25%,
+      hsl(160, 80%, 40%) 50%,
+      hsl(120, 70%, 45%) 75%,
+      hsl(80, 85%, 50%) 100%
+    );
+    border-radius: 50% 10% 50% 10%;
+    opacity: 0.1;
+    backdrop-filter: blur(1px);
+    transform: rotate(45deg);
+    animation: featherSway 15s ease-in-out infinite;
+  }
+
+  .krishna-flute {
+    background: linear-gradient(90deg,
+      hsl(30, 70%, 45%) 0%,
+      hsl(40, 80%, 55%) 50%,
+      hsl(50, 90%, 65%) 100%
+    );
+    border-radius: 8px;
+    opacity: 0.08;
+    backdrop-filter: blur(1px);
+    animation: fluteGlow 8s ease-in-out infinite;
+  }
+
+  @keyframes peacockGradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    25% {
+      background-position: 100% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75% {
+      background-position: 0% 100%;
+    }
+  }
+
+  @keyframes peacockEyePulse {
+    0%, 100% {
+      opacity: 0.15;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.25;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes featherSway {
+    0%, 100% {
+      transform: rotate(45deg) translateX(0);
+      opacity: 0.1;
+    }
+    50% {
+      transform: rotate(48deg) translateX(10px);
+      opacity: 0.18;
+    }
+  }
+
+  @keyframes fluteGlow {
+    0%, 100% {
+      opacity: 0.08;
+      filter: brightness(1);
+    }
+    50% {
+      opacity: 0.15;
+      filter: brightness(1.3);
+    }
   }
 
   .animate-sphere-float {
