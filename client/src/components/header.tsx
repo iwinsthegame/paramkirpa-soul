@@ -11,7 +11,7 @@ export default function Header() {
           <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
             <span className="text-white text-lg">🕉️</span>
           </div>
-          <h1 className="text-2xl font-bold text-white">{t('appName')}</h1>
+          <h1 className="text-2xl text-white font-extrabold">{t('appName')}</h1>
         </div>
         
         <div className="flex items-center space-x-4">
