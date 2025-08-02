@@ -8,7 +8,7 @@ interface DayCategoriesProps {
   onCategorySelect: (category: string) => void;
 }
 
-// 3D SVG Icons for Categories
+// Enhanced 3D SVG Icons for Categories
 const getSvgIcon = (category: string) => {
   const iconProps = "w-12 h-12";
   
@@ -19,16 +19,33 @@ const getSvgIcon = (category: string) => {
           <defs>
             <linearGradient id="om-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#FFD700" />
-              <stop offset="50%" stopColor="#FFA500" />
+              <stop offset="30%" stopColor="#FFA500" />
+              <stop offset="70%" stopColor="#FF8C00" />
               <stop offset="100%" stopColor="#FF6B35" />
             </linearGradient>
-            <filter id="om-shadow">
-              <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.3"/>
+            <radialGradient id="om-radial" cx="50%" cy="30%" r="70%">
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.4"/>
+              <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0"/>
+            </radialGradient>
+            <filter id="om-shadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="3" dy="4" stdDeviation="4" floodColor="#000000" floodOpacity="0.4"/>
+              <feDropShadow dx="1" dy="1" stdDeviation="1" floodColor="#FFD700" floodOpacity="0.6"/>
             </filter>
           </defs>
-          <circle cx="32" cy="32" r="28" fill="url(#om-gradient)" opacity="0.2" />
-          <path d="M20 25c-2 0-4 2-4 4s2 4 4 4c1 0 2-.5 3-1 0 2 1 4 3 4s4-2 4-4-2-4-4-4h-6zm12 8c2 0 4-2 4-4s-2-4-4-4-4 2-4 4 2 4 4 4zm-8 8c0-2 2-4 4-4s4 2 4 4-2 4-4 4-4-2-4-4z" fill="url(#om-gradient)" filter="url(#om-shadow)" />
-          <circle cx="32" cy="45" r="2" fill="url(#om-gradient)" />
+          <circle cx="32" cy="32" r="30" fill="url(#om-gradient)" opacity="0.1" />
+          
+          {/* Om Symbol - Enhanced 3D version */}
+          <g filter="url(#om-shadow)">
+            <path d="M18 28c-3 0-6 3-6 6s3 6 6 6c2 0 4-1 5-2.5 0 3 2 6 5 6s6-3 6-6-3-6-6-6c-1 0-2 0.5-3 1-1-2.5-3.5-4.5-7-4.5z" 
+                  fill="url(#om-gradient)" stroke="#FF4500" strokeWidth="0.5"/>
+            <path d="M32 40c3 0 6-3 6-6s-3-6-6-6-6 3-6 6 3 6 6 6z" 
+                  fill="url(#om-gradient)" stroke="#FF4500" strokeWidth="0.5"/>
+            <path d="M28 48c0-3 3-6 6-6s6 3 6 6-3 6-6 6-6-3-6-6z" 
+                  fill="url(#om-gradient)" stroke="#FF4500" strokeWidth="0.5"/>
+            <circle cx="34" cy="52" r="2.5" fill="url(#om-gradient)" stroke="#FF4500" strokeWidth="0.3"/>
+          </g>
+          
+          <ellipse cx="32" cy="32" rx="25" ry="20" fill="url(#om-radial)" />
         </svg>
       );
       
@@ -38,21 +55,40 @@ const getSvgIcon = (category: string) => {
           <defs>
             <linearGradient id="mala-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#8B5CF6" />
-              <stop offset="50%" stopColor="#EC4899" />
+              <stop offset="30%" stopColor="#A855F7" />
+              <stop offset="70%" stopColor="#EC4899" />
               <stop offset="100%" stopColor="#F97316" />
             </linearGradient>
-            <filter id="mala-shadow">
-              <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.3"/>
+            <radialGradient id="bead-highlight" cx="30%" cy="30%" r="40%">
+              <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.6"/>
+              <stop offset="100%" stopColor="#FFFFFF" stopOpacity="0"/>
+            </radialGradient>
+            <filter id="mala-shadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="2" dy="3" stdDeviation="4" floodColor="#000000" floodOpacity="0.4"/>
+              <feDropShadow dx="0" dy="0" stdDeviation="2" floodColor="#8B5CF6" floodOpacity="0.5"/>
             </filter>
           </defs>
-          <ellipse cx="32" cy="32" rx="24" ry="20" fill="url(#mala-gradient)" opacity="0.1" />
-          {[...Array(12)].map((_, i) => {
-            const angle = (i * 30) * Math.PI / 180;
+          
+          <ellipse cx="32" cy="32" rx="26" ry="22" fill="url(#mala-gradient)" opacity="0.1" />
+          
+          {/* Prayer beads in circular pattern */}
+          {[...Array(16)].map((_, i) => {
+            const angle = (i * 22.5) * Math.PI / 180;
             const x = 32 + 18 * Math.cos(angle);
             const y = 32 + 15 * Math.sin(angle);
-            return <circle key={i} cx={x} cy={y} r="3" fill="url(#mala-gradient)" filter="url(#mala-shadow)" />;
+            const size = i % 4 === 0 ? 3.5 : 2.8; // Varying bead sizes
+            return (
+              <g key={i}>
+                <circle cx={x} cy={y} r={size} fill="url(#mala-gradient)" filter="url(#mala-shadow)" />
+                <circle cx={x} cy={y} r={size * 0.6} fill="url(#bead-highlight)" />
+              </g>
+            );
           })}
-          <circle cx="32" cy="50" r="4" fill="url(#mala-gradient)" filter="url(#mala-shadow)" />
+          
+          {/* Central guru bead */}
+          <circle cx="32" cy="52" r="5" fill="url(#mala-gradient)" filter="url(#mala-shadow)" />
+          <circle cx="32" cy="52" r="3" fill="url(#bead-highlight)" />
+          <circle cx="30" cy="50" r="1.5" fill="#FFFFFF" opacity="0.8" />
         </svg>
       );
       
@@ -62,18 +98,47 @@ const getSvgIcon = (category: string) => {
           <defs>
             <linearGradient id="diya-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#FBBF24" />
-              <stop offset="50%" stopColor="#F59E0B" />
+              <stop offset="40%" stopColor="#F59E0B" />
+              <stop offset="80%" stopColor="#EA580C" />
               <stop offset="100%" stopColor="#DC2626" />
             </linearGradient>
-            <filter id="diya-shadow">
-              <feDropShadow dx="2" dy="2" stdDeviation="3" floodOpacity="0.3"/>
+            <radialGradient id="flame-gradient" cx="50%" cy="80%" r="60%">
+              <stop offset="0%" stopColor="#FEF3C7" />
+              <stop offset="30%" stopColor="#FBBF24" />
+              <stop offset="70%" stopColor="#F59E0B" />
+              <stop offset="100%" stopColor="#EA580C" />
+            </radialGradient>
+            <filter id="diya-shadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx="3" dy="4" stdDeviation="5" floodColor="#000000" floodOpacity="0.4"/>
+              <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#FBBF24" floodOpacity="0.6"/>
+            </filter>
+            <filter id="flame-glow">
+              <feGaussianBlur stdDeviation="2"/>
+              <feColorMatrix values="1 0.8 0 0 0  0 0.6 0 0 0  0 0 0 0 0  0 0 0 1 0"/>
             </filter>
           </defs>
-          <ellipse cx="32" cy="45" rx="20" ry="8" fill="url(#diya-gradient)" opacity="0.3" />
-          <ellipse cx="32" cy="42" rx="16" ry="6" fill="url(#diya-gradient)" filter="url(#diya-shadow)" />
-          <ellipse cx="40" cy="40" rx="3" ry="2" fill="url(#diya-gradient)" />
-          <path d="M32 15 Q35 20 32 30 Q29 20 32 15" fill="#FEF3C7" filter="url(#diya-shadow)" />
-          <ellipse cx="32" cy="35" rx="2" ry="1" fill="#FBBF24" />
+          
+          {/* Diya base shadow */}
+          <ellipse cx="32" cy="50" rx="22" ry="6" fill="#000000" opacity="0.2" />
+          
+          {/* Diya bowl */}
+          <ellipse cx="32" cy="46" rx="18" ry="7" fill="url(#diya-gradient)" filter="url(#diya-shadow)" />
+          <ellipse cx="32" cy="44" rx="15" ry="5" fill="url(#diya-gradient)" opacity="0.8" />
+          
+          {/* Diya spout */}
+          <ellipse cx="44" cy="42" rx="4" ry="2.5" fill="url(#diya-gradient)" />
+          <ellipse cx="46" cy="41" rx="2" ry="1.5" fill="url(#diya-gradient)" />
+          
+          {/* Wick */}
+          <rect x="46" y="38" width="1" height="4" fill="#8B4513" />
+          
+          {/* Flame */}
+          <path d="M47 25 Q50 30 47 35 Q44 30 47 25" fill="url(#flame-gradient)" filter="url(#flame-glow)" />
+          <path d="M47 28 Q49 31 47 34 Q45 31 47 28" fill="#FEF3C7" opacity="0.8" />
+          
+          {/* Oil surface */}
+          <ellipse cx="32" cy="43" rx="12" ry="3" fill="#F59E0B" opacity="0.6" />
+          <ellipse cx="32" cy="42" rx="8" ry="2" fill="#FBBF24" opacity="0.4" />
         </svg>
       );
       

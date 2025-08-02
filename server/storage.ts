@@ -177,39 +177,105 @@ export class MemStorage implements IStorage {
         emojiCounts: { "🙏": 32, "❤️": 28, "🌟": 25 }
       },
 
-      // TUESDAY - Hanuman Worship
+      // TUESDAY - Lord Hanuman Worship (Complete Categories)
       {
         id: "tue-1",
         day: "Tuesday",
         category: "Mantras",
         title: "Hanuman Beej Mantra",
-        textEnglish: "Om Hanumate Namaha\nOm Anjaneya Namaha\nOm Mahabalaya Namaha\nOm Vira Hanumate Namaha",
-        textHindi: "ॐ हनुमते नमः\nॐ आञ्जनेय नमः\nॐ महाबलाय नमः\nॐ वीर हनुमते नमः",
-        translation: "I bow to Hanuman, son of Anjana, the mighty one, the brave Hanuman.",
+        textEnglish: "Om Namo Hanumate Namah\nOm Namo Hanumate Namah\nOm Namo Hanumate Namah\nOm Namo Hanumate Namah",
+        textHindi: "ॐ नमो हनुमते नमः\nॐ नमो हनुमते नमः\nॐ नमो हनुमते नमः\nॐ नमो हनुमते नमः",
+        translation: "I bow to Lord Hanuman, the mighty devotee of Lord Rama, who grants strength and courage.",
         deity: "Hanuman",
-        emojiCounts: { "🙏": 40, "❤️": 30, "🌟": 35 }
+        emojiCounts: { "🙏": 50, "❤️": 35, "🌟": 45 }
+      },
+      {
+        id: "tue-1b",
+        day: "Tuesday",
+        category: "Mantras",
+        title: "Hanuman Gayatri Mantra",
+        textEnglish: "Om Anjaneyaya Vidmahe\nVayuputraya Dhimahi\nTanno Hanuman Prachodayat",
+        textHindi: "ॐ अञ्जनेयाय विदमहे\nवायुपुत्राय धीमहि\nतन्नो हनुमान् प्रचोदयात्",
+        translation: "We meditate on the son of Anjana, we contemplate on the son of the Wind God, may that Hanuman inspire us.",
+        deity: "Hanuman",
+        emojiCounts: { "🙏": 40, "❤️": 28, "🌟": 35 }
       },
       {
         id: "tue-2",
         day: "Tuesday",
         category: "Chalisas",
         title: "Hanuman Chalisa",
-        textEnglish: "Shri Guru Charan Saroj Raj\nNij Man Mukur Sudhari\nBarnau Raghubar Bimal Jasu\nJo Dayaku Phal Chari",
-        textHindi: "श्रीगुरु चरन सरोज रज\nनिज मन मुकुर सुधारि\nबरनउं रघुबर बिमल जसु\nजो दायक फल चारि",
-        translation: "With the dust of Guru's lotus feet, I clean the mirror of my mind and narrate the sacred glory of Sri Ram.",
+        textEnglish: "Shree Guru Charan Saroj Raj\nNij Manu Mukuru Sudhari\nBarnau Raghuvar Bimal Jasu\nJo Dayaku Phal Chari\n\nBuddhi Heen Tanu Janike\nSumirau Pavan Kumar\nBal Buddhi Vidya Dehu Mohi\nHarahu Kalesa Vikar",
+        textHindi: "श्रीगुरु चरण सरोज रज\nनिज मनु मुकुरु सुधारि\nबरनऊँ रघुबर बिमल जसु\nजो दायकु फल चारि\n\nबुद्धिहीन तनु जानिके\nसुमिरौं पवन-कुमार\nबल बुद्धि विद्या देहु मोहि\nहरहु कलेश बिकार",
+        translation: "With the dust of my Guru's lotus feet, I cleanse the mirror of my mind and describe the pure fame of Raghuvir, which bestows the four fruits of life. Knowing myself to be ignorant, I remember you, Son of the Wind. Grant me strength, wisdom and knowledge, and remove my afflictions and impurities.",
         deity: "Hanuman",
-        emojiCounts: { "🙏": 50, "❤️": 40, "🌟": 45 }
+        emojiCounts: { "🙏": 60, "❤️": 45, "🌟": 55 }
       },
       {
         id: "tue-3",
         day: "Tuesday",
-        category: "Kathas",
-        title: "Hanuman Birth Story",
-        textEnglish: "Long ago, Vayu, the wind god, fell in love with Anjana, a celestial apsara. Their union blessed the world with Hanuman, born with divine strength and unwavering devotion to Lord Rama. From childhood, Hanuman displayed extraordinary powers - he once leapt towards the sun thinking it was a fruit!",
-        textHindi: "बहुत समय पहले, वायु देव का अंजना नामक अप्सरा से प्रेम हुआ। उनके मिलन से हनुमान का जन्म हुआ, जो दिव्य शक्ति और राम भक्ति से भरे थे। बचपन से ही हनुमान में असाधारण शक्तियां थीं - एक बार उन्होंने सूर्य को फल समझकर उसकी ओर छलांग लगाई थी!",
-        translation: "The divine birth story of Hanuman and his extraordinary childhood displaying supernatural powers.",
+        category: "Aartis",
+        title: "Aarti Kije Hanuman Lala Ki",
+        textEnglish: "Aarti Kije Hanuman Lala Ki\nDushtdalan Raghunath Kala Ki\nJake Bal Se Girivar Kaanpe\nRog Dosh Jaki Nimesh Mein Jaanpe\n\nAnjani Putra Maha Baladata\nSantan Ke Prabhu Sadaa Sahayadata\nDe Vira Rasa Raghunath Gune Gaavo\nSankat Se Hanuman Chhudaavo",
+        textHindi: "आरती कीजै हनुमान लला की\nदुष्टदलन रघुनाथ कला की\nजाके बल से गिरिवर काँपे\nरोग दोष जाकी निमेष में जाँपे\n\nअंजनी पुत्र महा बलदाता\nसंतन के प्रभु सदा सहायदाता\nदे वीरा रसा रघुनाथ गुणे गावो\nसंकट से हनुमान छुड़ावो",
+        translation: "We perform aarti of beloved Hanuman, the destroyer of evil and manifestation of Lord Rama's power. By whose strength mountains tremble, whose presence removes diseases and afflictions in an instant. Son of Anjani, great giver of strength, eternal helper of devotees, give us courage to sing Rama's virtues and free us from troubles, O Hanuman.",
         deity: "Hanuman",
-        emojiCounts: { "🙏": 22, "❤️": 18, "🌟": 20 }
+        emojiCounts: { "🙏": 45, "❤️": 38, "🌟": 42 }
+      },
+      {
+        id: "tue-4",
+        day: "Tuesday",
+        category: "Kathas",
+        title: "Mangalvar Vrat Katha",
+        textEnglish: "There once lived a wealthy merchant who had lost all his fortune due to bad business decisions. His family was struggling with poverty and despair. His wife suggested observing the Tuesday fast (Mangalvar Vrat) dedicated to Lord Hanuman.\n\nEvery Tuesday, the merchant would fast, visit the Hanuman temple, and offer red flowers and sindoor to the deity. He would recite the Hanuman Chalisa with complete devotion and distribute prasad to the needy.\n\nAfter several months of sincere devotion, Lord Hanuman was pleased with his dedication. One Tuesday, while returning from the temple, the merchant found a rare gem on the road. When he sold it, he received enough money to restart his business.\n\nWithin a year, his business flourished beyond his expectations. The merchant realized that Lord Hanuman's blessings had transformed his life. He continued the Tuesday fasting tradition and lived prosperously ever after.\n\nThis story teaches us that sincere devotion to Lord Hanuman on Tuesdays brings strength, courage, and prosperity to overcome all difficulties in life.",
+        textHindi: "एक समय एक धनी व्यापारी रहता था जिसने गलत व्यापारिक निर्णयों के कारण अपनी सारी संपत्ति खो दी थी। उसका परिवार गरीबी और निराशा से जूझ रहा था। उसकी पत्नी ने सुझाव दिया कि वे भगवान हनुमान को समर्पित मंगलवार का व्रत करें।\n\nहर मंगलवार को व्यापारी उपवास करता, हनुमान मंदिर जाता, और देवता को लाल फूल और सिंदूर चढ़ाता। वह पूर्ण भक्ति से हनुमान चालीसा का पाठ करता और जरूरतमंदों में प्रसाद बांटता।\n\nकई महीनों की सच्ची भक्ति के बाद, भगवान हनुमान उसकी निष्ठा से प्रसन्न हुए। एक मंगलवार को मंदिर से लौटते समय व्यापारी को रास्ते में एक दुर्लभ रत्न मिला। जब उसने इसे बेचा तो उसे अपना व्यापार फिर से शुरू करने के लिए पर्याप्त पैसा मिला।\n\nएक साल के भीतर उसका व्यापार उसकी अपेक्षाओं से कहीं अधिक फला-फूला। व्यापारी को एहसास हुआ कि भगवान हनुमान के आशीर्वाद ने उसका जीवन बदल दिया है। उसने मंगलवार के उपवास की परंपरा जारी रखी और समृद्धि से जीवन बिताया।\n\nयह कहानी हमें सिखाती है कि मंगलवार को भगवान हनुमान की सच्ची भक्ति जीवन की सभी कठिनाइयों पर काबू पाने के लिए शक्ति, साहस और समृद्धि लाती है।",
+        translation: "The story of how Tuesday fasting and devotion to Lord Hanuman brings strength, courage, and prosperity to overcome life's challenges.",
+        deity: "Hanuman",
+        emojiCounts: { "🙏": 30, "❤️": 25, "🌟": 28 }
+      },
+      {
+        id: "tue-5",
+        day: "Tuesday",
+        category: "Stotrams",
+        title: "Bajrang Baan",
+        textEnglish: "Nirvighnam Kuru Me Deva\nSarva Karyeshu Sarvada\nNityam Bramhacharya Dehi\nVidyam Dehi Yasho Dehi\n\nShatru Budhi Vinashaya\nSarva Sampat Pradayaka\nSarva Mantra Swarupaya\nSarva Yantra Viduttama",
+        textHindi: "निर्विघ्नं कुरु मे देव\nसर्व कार्येषु सर्वदा\nनित्यं ब्रह्मचर्य देहि\nविद्यां देहि यशो देहि\n\nशत्रु बुद्धि विनाशाय\nसर्व संपत् प्रदायक\nसर्व मंत्र स्वरूपाय\nसर्व यंत्र विदुत्तम",
+        translation: "Remove all obstacles from my path, O Lord, in all my endeavors always. Grant me eternal celibacy, knowledge, and fame. Destroy the enemy's intellect, O giver of all prosperity, you who are the embodiment of all mantras and the best among all yantras.",
+        deity: "Hanuman",
+        emojiCounts: { "🙏": 65, "❤️": 50, "🌟": 60 }
+      },
+      {
+        id: "tue-6",
+        day: "Tuesday",
+        category: "Vrat Vidhi",
+        title: "Mangalvar Vrat Vidhi",
+        textEnglish: "TUESDAY FAST PROCEDURE:\n\n1. Wake up early and take a bath\n2. Wear red or orange colored clothes\n3. Visit Hanuman temple or set up home altar\n4. Offer red flowers, sindoor, and laddoos\n5. Light a diya with mustard oil\n6. Recite Hanuman Chalisa 7 times\n7. Chant 'Om Namo Hanumate Namah' 108 times\n8. Fast completely or eat only fruits\n9. Avoid grains, salt, and cooked meals\n10. Break fast after sunset with prasad\n11. Distribute laddoos to devotees\n12. Read Bajrang Baan for protection\n\nBENEFITS: Grants strength, courage, removes obstacles, protects from enemies, and brings success.",
+        textHindi: "मंगलवार व्रत विधि:\n\n१. सुबह जल्दी उठकर स्नान करें\n२. लाल या नारंगी रंग के वस्त्र धारण करें\n३. हनुमान मंदिर जाएं या घर में वेदी सजाएं\n४. लाल फूल, सिंदूर और लड्डू चढ़ाएं\n५. सरसों के तेल का दीपक जलाएं\n६. हनुमान चालीसा का ७ बार पाठ करें\n७. 'ॐ नमो हनुमते नमः' का १०८ बार जाप करें\n८. पूर्ण उपवास रखें या केवल फल लें\n९. अनाज, नमक और पका हुआ भोजन त्यागें\n१०. सूर्यास्त के बाद प्रसाद से व्रत तोड़ें\n११. भक्तों में लड्डू बांटें\n१२. सुरक्षा के लिए बजरंग बाण का पाठ करें\n\nलाभ: शक्ति, साहस प्रदान करता है, बाधाओं को दूर करता है, शत्रुओं से सुरक्षा और सफलता दिलाता है।",
+        translation: "Complete procedure for observing Tuesday fast dedicated to Lord Hanuman for strength and protection.",
+        deity: "Hanuman",
+        emojiCounts: { "🙏": 45, "❤️": 35, "🌟": 40 }
+      },
+      {
+        id: "tue-7",
+        day: "Tuesday",
+        category: "Extras",
+        title: "Importance of Sindoor",
+        textEnglish: "SINDOOR - THE SACRED VERMILLION\n\nSindoor (vermillion) holds special significance in Hanuman worship and Hindu traditions.\n\nSIGNIFICANCE IN HANUMAN WORSHIP:\n• Lord Hanuman loves sindoor as it represents devotion and surrender\n• Offering sindoor grants strength, courage, and protection\n• Red color symbolizes energy, power, and divine blessing\n• Hanuman applied sindoor all over his body to please Sita Mata\n\nSPIRITUAL BENEFITS:\n• Removes negative energies and evil eye\n• Provides protection from enemies and obstacles\n• Enhances courage and fearlessness\n• Brings prosperity and good fortune\n• Strengthens devotion and faith\n\nHOW TO OFFER:\n1. Apply sindoor on Hanuman's forehead and body\n2. Chant Hanuman mantras while offering\n3. Apply a small tilak on your own forehead\n4. Distribute sindoor prasad to devotees\n\nSCRIPTURAL REFERENCE:\nWhen Sita Mata applied sindoor on her forehead for Rama's long life, Hanuman thought if a little sindoor brings such blessings, then applying it all over would bring even greater blessings. This devotional act pleased both Rama and Sita immensely.\n\nOffering sindoor to Hanuman on Tuesdays is considered especially auspicious and fulfills all desires.",
+        textHindi: "सिंदूर - पवित्र सिन्दूर\n\nसिंदूर का हनुमान पूजा और हिंदू परंपराओं में विशेष महत्व है।\n\nहनुमान पूजा में महत्व:\n• भगवान हनुमान सिंदूर से प्रेम करते हैं क्योंकि यह भक्ति और समर्पण का प्रतीक है\n• सिंदूर चढ़ाने से शक्ति, साहस और सुरक्षा मिलती है\n• लाल रंग ऊर्जा, शक्ति और दिव्य आशीर्वाद का प्रतीक है\n• हनुमान जी ने सीता माता को प्रसन्न करने के लिए पूरे शरीर पर सिंदूर लगाया था\n\nआध्यात्मिक लाभ:\n• नकारात्मक ऊर्जाओं और बुरी नजर को हटाता है\n• शत्रुओं और बाधाओं से सुरक्षा प्रदान करता है\n• साहस और निर्भयता बढ़ाता है\n• समृद्धि और सौभाग्य लाता है\n• भक्ति और विश्वास को मजबूत करता है\n\nअर्पित करने की विधि:\n१. हनुमान जी के मस्तक और शरीर पर सिंदूर लगाएं\n२. सिंदूर चढ़ाते समय हनुमान मंत्र का जाप करें\n३. अपने मस्तक पर छोटा सा तिलक लगाएं\n४. भक्तों में सिंदूर प्रसाद बांटें\n\nशास्त्रीय संदर्भ:\nजब सीता माता ने राम जी की दीर्घायु के लिए अपने मस्तक पर सिंदूर लगाया, तो हनुमान जी ने सोचा कि यदि थोड़ा सा सिंदूर इतना आशीर्वाद देता है, तो पूरे शरीर पर लगाने से और भी अधिक आशीर्वाद मिलेगा। इस भक्ति भाव से राम और सीता दोनों अत्यंत प्रसन्न हुए।\n\nमंगलवार को हनुमान जी को सिंदूर चढ़ाना विशेष रूप से शुभ माना जाता है और सभी मनोकामनाओं को पूर्ण करता है।",
+        translation: "Complete guide to the sacred significance of sindoor in Hanuman worship and its spiritual benefits.",
+        deity: "Hanuman",
+        emojiCounts: { "🙏": 38, "❤️": 30, "🌟": 35 }
+      },
+      {
+        id: "tue-8",
+        day: "Tuesday",
+        category: "Extras",
+        title: "Laddoo Prasad Significance",
+        textEnglish: "LADDOO - HANUMAN'S FAVORITE PRASAD\n\nLaddoos are Lord Hanuman's most beloved offering and hold deep spiritual significance.\n\nWHY HANUMAN LOVES LADDOOS:\n• Round shape represents completeness and divine perfection\n• Sweet taste symbolizes the sweetness of devotion\n• Made with pure ingredients like ghee, flour, and jaggery\n• Represents the concentrated energy needed for spiritual practices\n• Associated with strength, as Hanuman is the embodiment of power\n\nSPIRITUAL SIGNIFICANCE:\n• Offering laddoos shows our pure love and devotion\n• Receiving laddoo prasad purifies mind and body\n• Eating with faith removes sins and negative karma\n• Distributing laddoos spreads divine blessings\n• Brings unity among devotees through shared prasad\n\nTYPES OF LADDOOS FOR HANUMAN:\n• Besan (gram flour) laddoos - most traditional\n• Motichoor laddoos - fine, delicate texture\n• Til (sesame) laddoos - especially on Tuesdays\n• Coconut laddoos - pure and sattvic\n• Dry fruit laddoos - rich in nutrients\n\nPROPER OFFERING METHOD:\n1. Prepare or buy fresh laddoos with pure intentions\n2. Place them beautifully before Hanuman's image\n3. Chant Hanuman mantras while offering\n4. Pray for strength, courage, and devotion\n5. Distribute prasad to family and devotees\n6. Eat with gratitude and faith\n\nBENEFITS:\n• Grants physical and mental strength\n• Removes obstacles and fears\n• Brings prosperity and success\n• Enhances devotional feelings\n• Creates positive energy in the environment\n\nTradition says that offering 5, 7, or 11 laddoos to Hanuman on Tuesdays fulfills all wishes and provides divine protection.",
+        textHindi: "लड्डू - हनुमान जी का प्रिय प्रसाद\n\nलड्डू भगवान हनुमान का सबसे प्रिय प्रसाद है और इसका गहरा आध्यात्मिक महत्व है।\n\nहनुमान जी को लड्डू क्यों प्रिय है:\n• गोल आकार पूर्णता और दिव्य सिद्धता का प्रतीक है\n• मिठास भक्ति की मधुरता का प्रतीक है\n• घी, आटा और गुड़ जैसी शुद्ध सामग्री से बना\n• आध्यात्मिक साधनाओं के लिए आवश्यक संकेंद्रित ऊर्जा का प्रतिनिधित्व\n• शक्ति से जुड़ा है, क्योंकि हनुमान शक्ति के अवतार हैं\n\nआध्यात्मिक महत्व:\n• लड्डू चढ़ाना हमारे शुद्ध प्रेम और भक्ति को दर्शाता है\n• लड्डू प्रसाद ग्रहण करने से मन और शरीर शुद्ध होता है\n• श्रद्धा से खाने पर पाप और नकारात्मक कर्म दूर होते हैं\n• लड्डू बांटने से दिव्य आशीर्वाद फैलता है\n• साझा प्रसाद के माध्यम से भक्तों में एकता आती है\n\nहनुमान जी के लिए लड्डू के प्रकार:\n• बेसन के लड्डू - सबसे पारंपरिक\n• मोतीचूर के लड्डू - बारीक, नाजुक बनावट\n• तिल के लड्डू - विशेषकर मंगलवार को\n• नारियल के लड्डू - शुद्ध और सात्विक\n• सूखे मेवों के लड्डू - पोषक तत्वों से भरपूर\n\nउचित अर्पण विधि:\n१. शुद्ध भावना से ताजे लड्डू तैयार करें या खरीदें\n२. उन्हें हनुमान जी की मूर्ति के सामने सुंदर तरीके से रखें\n३. अर्पित करते समय हनुमान मंत्र जाप करें\n४. शक्ति, साहस और भक्ति के लिए प्रार्थना करें\n५. परिवार और भक्तों में प्रसाद बांटें\n६. कृतज्ञता और श्रद्धा से ग्रहण करें\n\nलाभ:\n• शारीरिक और मानसिक शक्ति प्रदान करता है\n• बाधाओं और भय को दूर करता है\n• समृद्धि और सफलता लाता है\n• भक्ति भावना बढ़ाता है\n• वातावरण में सकारात्मक ऊर्जा का संचार करता है\n\nपरंपरा कहती है कि मंगलवार को हनुमान जी को ५, ७ या ११ लड्डू चढ़ाने से सभी इच्छाएं पूर्ण होती हैं और दिव्य सुरक्षा मिलती है।",
+        translation: "Complete guide to the significance of laddoo prasad in Hanuman worship and its spiritual benefits.",
+        deity: "Hanuman",
+        emojiCounts: { "🙏": 42, "❤️": 35, "🌟": 38 }
       },
 
       // WEDNESDAY - Ganesha & Krishna Worship
