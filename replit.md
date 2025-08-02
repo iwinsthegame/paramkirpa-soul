@@ -5,7 +5,7 @@ Paramkirpa is a full-stack spiritual devotional app built with React and Express
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
-Background theme: Krishna peacock feather theme with flowing blues, teals, greens, and golden colors.
+Background theme: Krishna peacock feather theme with static gradient from deep blue to teal - no animation, minimal floating element movement.
 
 # System Architecture
 

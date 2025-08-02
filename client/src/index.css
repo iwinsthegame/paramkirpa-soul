@@ -81,15 +81,14 @@
 
   .krishna-gradient {
     background: linear-gradient(135deg, 
-      hsl(220, 100%, 20%) 0%,
-      hsl(240, 80%, 25%) 15%,
-      hsl(180, 90%, 30%) 35%, 
-      hsl(120, 70%, 35%) 55%,
-      hsl(60, 85%, 45%) 75%,
-      hsl(30, 90%, 50%) 100%
+      hsl(240, 85%, 25%) 0%,
+      hsl(220, 80%, 35%) 20%,
+      hsl(200, 75%, 45%) 40%,
+      hsl(180, 70%, 50%) 60%,
+      hsl(160, 65%, 55%) 80%,
+      hsl(140, 60%, 60%) 100%
     );
-    background-size: 400% 400%;
-    animation: peacockGradient 20s ease infinite;
+    background-attachment: fixed;
   }
 
   .glass-card {
@@ -253,34 +252,34 @@
 
   @keyframes peacockEyePulse {
     0%, 100% {
-      opacity: 0.15;
+      opacity: 0.12;
       transform: scale(1);
     }
     50% {
-      opacity: 0.25;
-      transform: scale(1.1);
+      opacity: 0.16;
+      transform: scale(1.02);
     }
   }
 
   @keyframes featherSway {
     0%, 100% {
       transform: rotate(45deg) translateX(0);
-      opacity: 0.1;
+      opacity: 0.08;
     }
     50% {
-      transform: rotate(48deg) translateX(10px);
-      opacity: 0.18;
+      transform: rotate(46deg) translateX(3px);
+      opacity: 0.12;
     }
   }
 
   @keyframes fluteGlow {
     0%, 100% {
-      opacity: 0.08;
+      opacity: 0.06;
       filter: brightness(1);
     }
     50% {
-      opacity: 0.15;
-      filter: brightness(1.3);
+      opacity: 0.08;
+      filter: brightness(1.1);
     }
   }
 
