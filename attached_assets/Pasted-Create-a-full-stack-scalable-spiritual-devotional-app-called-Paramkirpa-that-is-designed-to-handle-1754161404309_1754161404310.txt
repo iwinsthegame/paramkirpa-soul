@@ -1,0 +1,105 @@
+Create a full-stack scalable spiritual devotional app called "Paramkirpa" that is designed to handle 10 million to 100 million users in the future. The app should be built using:
+
+🔹 Backend: Spring Boot (Java) with MongoDB (use MongoDB Atlas)  
+🔹 Frontend: React.js with Tailwind CSS  
+🔹 Clean folder structure (monolithic for MVP, modular for future microservices)
+
+---
+
+🛐 PURPOSE:
+- Provide day-wise categorized devotional content (Mantras, Chalisas, Aartis, Stotrams)
+- Allow users to post short anonymous prayers with emoji reactions (❤️ 🌟 🙏)
+- Toggle language between English and Hindi
+- Beautiful, calming design inspired by the Calm App
+- Future plan to add Rudraksh Store and Kids Devotional Reels
+
+---
+
+🔧 BACKEND REQUIREMENTS (Spring Boot + MongoDB):
+
+1. Modules:
+   - Devotional Content by Day & Category
+   - Prayer Wall (Anonymous Prayer + Emoji Reactions)
+   - Language Toggle
+
+2. Entities:
+   - Content: id, day, category, title, textEnglish, textHindi
+   - Prayer: id, text, emojiCounts (Map<String, Integer>), createdAt
+
+3. APIs:
+   - GET /api/v1/content?day=Monday&language=hi
+   - POST /api/v1/prayers
+   - GET /api/v1/prayers (with pagination)
+   - POST /api/v1/prayers/{id}/react (pass emoji)
+
+4. Features:
+   - Global exception handling
+   - DTO-based request/response models
+   - Enable CORS
+   - MongoDB index on (day, category, language)
+   - Stateless, scalable REST APIs
+   - Organized folder structure:
+     - `controller/`
+     - `service/`
+     - `model/`
+     - `dto/`
+     - `repository/`
+     - `config/`
+     - `exception/`
+
+5. Scalability Prep:
+   - Modularize code into logical domains (content, prayer, reaction)
+   - Write clean service interfaces (so modules can later be separated into microservices)
+   - Use pagination and filtering to reduce query load
+   - MongoDB should be cloud-hosted (MongoDB Atlas)
+
+---
+
+🎨 FRONTEND REQUIREMENTS (React.js + Tailwind CSS):
+
+1. Pages:
+   - Home page with day-wise tabs (Monday to Sunday)
+   - Category view (Mantras, Aartis, etc.)
+   - Prayer Wall
+   - Language toggle (English ↔ Hindi)
+
+2. Prayer Wall:
+   - Text input to post anonymous prayer
+   - Display prayers in feed
+   - Emoji buttons (❤️ 🌟 🙏) for reactions
+   - Show reaction counters
+   - After posting: show floating sphere, sparkle, and emoji rain
+
+3. UI Style:
+   - Inspired by Calm App
+   - Animated gradient background
+   - Glassmorphism cards
+   - Soft shadows, floating elements, smooth transitions
+   - Mobile-first responsive layout
+
+4. Folder Structure:
+   - `components/`: reusable UI
+   - `pages/`: Home, PrayerWall, Content
+   - `api/`: axios or fetch layer
+   - `utils/`: helpers
+
+5. Optional Libraries:
+   - Framer Motion or Lottie for animations
+   - React Router (optional)
+   - i18n for future multilingual support
+
+---
+
+🛡️ SCALABILITY:
+
+- Backend is monolithic for MVP, but each module should be cleanly separated and designed to be moved to microservices later (e.g., `prayer-service`, `content-service`)
+- Design APIs to be stateless and horizontally scalable
+- Use async loading and caching on frontend
+- Structure database and code for future scale-up (MongoDB sharding, Dockerization, API Gateway support)
+
+---
+
+Deliver:
+- Complete backend and frontend code
+- Modular and scalable project structure
+- Easy to deploy (Replit, Vercel, or Docker)
