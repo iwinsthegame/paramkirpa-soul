@@ -3,10 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Play, RotateCcw, Star, Sparkles, Heart } from 'lucide-react';
+import { Play, RotateCcw, Star, Sparkles, Heart, ArrowLeft } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
+import { Link } from 'wouter';
 import type { GameSession } from '@shared/schema';
 
 interface Coin {
@@ -84,18 +85,34 @@ export function DevotionalGame() {
   // Game mutations
   const saveScoreMutation = useMutation({
     mutationFn: async (gameData: GameSession) => {
-      return await apiRequest("/api/v1/game/score", {
+      const response = await fetch("/api/v1/game/score", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(gameData),
       });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      return response.json();
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
+      const accuracy = attempts > 0 ? Math.round((hits / attempts) * 100) : 0;
       toast({
-        title: "Score Saved!",
-        description: "Your devotional progress has been recorded.",
+        title: "Sacred Ritual Complete!",
+        description: `Score: ${score} | Accuracy: ${accuracy}% | Blessing Points: ${blessingPoints}`,
+      });
+    },
+    onError: (error) => {
+      console.error('Failed to save score:', error);
+      const accuracy = attempts > 0 ? Math.round((hits / attempts) * 100) : 0;
+      toast({
+        title: "Sacred Ritual Complete!",
+        description: `Score: ${score} | Accuracy: ${accuracy}% | Blessing Points: ${blessingPoints}`,
+        variant: "default",
       });
     },
   });
@@ -425,34 +442,48 @@ export function DevotionalGame() {
 
   const endGame = () => {
     setIsPlaying(false);
-    const accuracy = attempts > 0 ? Math.round((hits / attempts) * 100) : 0;
     
-    // Save score
-    saveScoreMutation.mutate({
-      score,
-      level,
-      hits,
-      attempts,
-      blessingPoints
-    });
-
-    toast({
-      title: "Sacred Ritual Complete!",
-      description: `Score: ${score} | Accuracy: ${accuracy}% | Blessing Points: ${blessingPoints}`,
-    });
+    // Save score only if there are attempts
+    if (attempts > 0) {
+      saveScoreMutation.mutate({
+        score,
+        level,
+        hits,
+        attempts,
+        blessingPoints
+      });
+    } else {
+      toast({
+        title: "Sacred Ritual Complete!",
+        description: "Thank you for participating in the devotional offering.",
+      });
+    }
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 p-4">
       <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-6">
-          <h1 className="text-4xl font-bold text-white mb-2">
-            🪙 Sacred Pond Offering 🪙
-          </h1>
-          <p className="text-lg text-purple-200">
-            Toss coins at the divine Charan Paduka and receive blessings
-          </p>
+        {/* Header with Back Button */}
+        <div className="flex items-center justify-between mb-6">
+          <Link href="/">
+            <Button 
+              variant="outline" 
+              size="lg"
+              className="border-purple-400/30 text-white hover:bg-purple-600/20"
+            >
+              <ArrowLeft className="mr-2 h-5 w-5" />
+              Back to Home
+            </Button>
+          </Link>
+          <div className="text-center">
+            <h1 className="text-4xl font-bold text-white mb-2">
+              🪙 Sacred Pond Offering 🪙
+            </h1>
+            <p className="text-lg text-purple-200">
+              Toss coins at the divine Charan Paduka and receive blessings
+            </p>
+          </div>
+          <div className="w-32"></div> {/* Spacer for centering */}
         </div>
 
         {/* Game Stats */}
