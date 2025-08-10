@@ -67,7 +67,7 @@ export function DevotionalGame() {
   const animationRef = useRef<number>();
   const [isPlaying, setIsPlaying] = useState(false);
   const [score, setScore] = useState(0);
-  const [level, setLevel] = useState(1);
+  const [level, setLevel] = useState(10);
   const [attempts, setAttempts] = useState(0);
   const [hits, setHits] = useState(0);
   const [blessingPoints, setBlessingPoints] = useState(0);
@@ -77,7 +77,7 @@ export function DevotionalGame() {
   const [particles, setParticles] = useState<Particle[]>([]);
   const [ripples, setRipples] = useState<Ripple[]>([]);
   const [targetPosition] = useState({ x: 400, y: 300 });
-  const [targetSize] = useState(60);
+  const [targetSize] = useState(35); // Smaller target for more difficulty
   const [gameStarted, setGameStarted] = useState(false);
   
   const { toast } = useToast();
@@ -266,37 +266,44 @@ export function DevotionalGame() {
     // Draw charan paduka
     drawCharanPaduka(ctx, targetPosition.x, targetPosition.y, targetSize);
 
-    // Update and draw ripples
+    // Update and draw ripples with enhanced water reflection
     setRipples(prev => prev.map(ripple => ({
       ...ripple,
-      radius: ripple.radius + 3,
-      opacity: Math.max(0, ripple.opacity - 0.03)
+      radius: ripple.radius + (4 + Math.sin(ripple.radius * 0.1)), // Varied ripple speed
+      opacity: Math.max(0, ripple.opacity - 0.025)
     })).filter(ripple => ripple.opacity > 0));
 
     ripples.forEach(ripple => {
-      ctx.strokeStyle = `rgba(255, 255, 255, ${ripple.opacity * 0.5})`;
-      ctx.lineWidth = 2;
-      ctx.beginPath();
-      ctx.arc(ripple.x, ripple.y, ripple.radius, 0, Math.PI * 2);
-      ctx.stroke();
+      // Draw multiple concentric ripples for realistic water effect
+      for (let i = 0; i < 3; i++) {
+        const rippleRadius = ripple.radius - (i * 15);
+        if (rippleRadius > 0) {
+          ctx.strokeStyle = `rgba(255, 255, 255, ${ripple.opacity * 0.3 * (1 - i * 0.3)})`;
+          ctx.lineWidth = 3 - i;
+          ctx.beginPath();
+          ctx.arc(ripple.x, ripple.y, rippleRadius, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+      }
     });
 
-    // Update and draw coins
+    // Update and draw coins with enhanced physics
     setCoins(prev => {
       const updated = prev.map(coin => {
+        // Enhanced physics simulation
         coin.x += coin.vx;
         coin.y += coin.vy;
-        coin.vy += 0.3; // gravity
-        coin.vx *= 0.98; // air resistance
-        coin.rotation += 0.2;
+        coin.vy += 0.4; // Stronger gravity for level 10
+        coin.vx *= 0.96; // More air resistance 
+        coin.rotation += 0.3 + coin.vx * 0.1; // Rotation based on velocity
 
-        // Check collision with charan paduka
+        // Check collision with charan paduka (smaller target for level 10)
         if (checkCollision(coin, targetPosition.x, targetPosition.y, targetSize)) {
           createParticles(coin.x, coin.y, true);
           createRipple(coin.x, coin.y);
-          setScore(prev => prev + (level * 10));
+          setScore(prev => prev + (level * 25)); // Higher score for level 10
           setHits(prev => prev + 1);
-          setBlessingPoints(prev => prev + 5);
+          setBlessingPoints(prev => prev + (level * 2));
           
           // Show blessing
           const randomBlessing = blessings[Math.floor(Math.random() * blessings.length)];
@@ -307,10 +314,23 @@ export function DevotionalGame() {
           return null; // Remove coin
         }
 
-        // Check if coin hits water
-        if (coin.y > height - 50) {
+        // Check if coin hits water with realistic reflection effects
+        if (coin.y > height - 60) {
+          // Create water splash particles
           createParticles(coin.x, coin.y, false);
+          
+          // Create multiple ripple effects for realism
           createRipple(coin.x, coin.y);
+          
+          // Add secondary ripples for water reflection effect
+          setTimeout(() => {
+            createRipple(coin.x + (Math.random() - 0.5) * 20, coin.y + (Math.random() - 0.5) * 10);
+          }, 100);
+          
+          setTimeout(() => {
+            createRipple(coin.x + (Math.random() - 0.5) * 30, coin.y + (Math.random() - 0.5) * 15);
+          }, 200);
+          
           return null; // Remove coin
         }
 
@@ -393,27 +413,53 @@ export function DevotionalGame() {
     const rect = canvas.getBoundingClientRect();
     const clickX = event.clientX - rect.left;
     const clickY = event.clientY - rect.top;
+    
+    // Scale coordinates to canvas size for accuracy
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const scaledX = clickX * scaleX;
+    const scaledY = clickY * scaleY;
 
-    // Calculate throwing trajectory
-    const startX = 100;
-    const startY = canvas.height - 100;
-    const dx = clickX - startX;
-    const dy = clickY - startY;
+    // Calculate realistic throwing trajectory with level 10 difficulty
+    const startX = canvas.width / 2; // Center drop point for realism
+    const startY = 60; // Higher drop point
+    const dx = scaledX - startX;
+    const dy = scaledY - startY;
     const distance = Math.sqrt(dx * dx + dy * dy);
-    const power = Math.min(distance / 10, 15);
+    
+    // Add wind resistance and unpredictability for level 10 difficulty
+    const windX = (Math.random() - 0.5) * 25; // Strong wind effect
+    const windY = (Math.random() - 0.5) * 15;
+    const powerVariation = 0.7 + Math.random() * 0.6; // Random power variation
+    const baseVelocity = Math.min(distance / 25, 8) * powerVariation;
 
     const coin: Coin = {
-      id: Date.now(),
+      id: Date.now() + Math.random(),
       x: startX,
       y: startY,
-      vx: (dx / distance) * power,
-      vy: (dy / distance) * power,
-      rotation: 0,
-      size: 12
+      vx: (dx / distance) * baseVelocity + windX * 0.2,
+      vy: Math.max(2, (dy / distance) * baseVelocity) + windY * 0.15,
+      rotation: Math.random() * Math.PI * 2,
+      size: 10 + Math.random() * 4, // Varied coin sizes
+      targetX: scaledX,
+      targetY: scaledY,
+      scale: 0.8 + Math.random() * 0.4,
+      opacity: 1,
+      phase: 'dropping'
     };
 
     setCoins(prev => [...prev, coin]);
     setAttempts(prev => prev + 1);
+
+    // Create anticipation ripple where user clicked
+    const anticipationRipple: Ripple = {
+      id: Date.now() - 1,
+      x: scaledX,
+      y: scaledY,
+      radius: 0,
+      opacity: 0.3
+    };
+    setRipples(prev => [...prev, anticipationRipple]);
   }, [isPlaying]);
 
   const startGame = () => {
