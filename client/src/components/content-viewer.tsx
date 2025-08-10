@@ -136,27 +136,83 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
             </motion.button>
           </div>
 
-          {/* Content */}
+          {/* Content - Ancient Manuscript Style */}
           <div className="p-6 overflow-y-auto max-h-[60vh] custom-scrollbar">
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-2 bg-amber-500/20 text-amber-300 rounded-full text-sm font-medium mb-4">
                 {t(content.category.toLowerCase().replace(' ', ''))}
               </span>
             </div>
             
-            <div className="bg-white/5 rounded-xl p-6 mb-6">
-              <p className={`text-lg text-white/90 leading-relaxed whitespace-pre-line ${
-                language === 'hi' ? 'hindi-font text-xl' : ''
-              }`}>
-                {displayText}
-              </p>
+            {/* Ancient Book Style Content Display */}
+            <div className="relative">
+              {/* Manuscript Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-50/10 to-orange-100/5 rounded-xl border-2 border-amber-400/20" />
+              <div className="absolute top-4 left-4 right-4 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent" />
+              
+              {/* Left margin decoration */}
+              <div className="absolute left-2 top-8 bottom-8 w-1 bg-gradient-to-b from-amber-400/40 via-orange-500/30 to-amber-400/40 rounded-full" />
+              
+              {/* Main Content */}
+              <div className="relative p-8 pl-12">
+                {/* Decorative Header */}
+                <div className="text-center mb-6">
+                  <div className="inline-flex items-center space-x-2 text-amber-400/80">
+                    <div className="w-8 h-px bg-gradient-to-r from-transparent to-amber-400/60" />
+                    <span className="text-2xl">॥</span>
+                    <div className="w-8 h-px bg-gradient-to-l from-transparent to-amber-400/60" />
+                  </div>
+                </div>
+
+                {/* Sanskrit/Hindi Text */}
+                <div className="mb-6">
+                  <p className={`text-lg text-amber-100/95 leading-relaxed whitespace-pre-line ${
+                    language === 'hi' ? 'hindi-font text-xl' : 'sanskrit-font'
+                  } text-center`} style={{
+                    fontFamily: language === 'hi' ? '"Noto Sans Devanagari", "Sanskrit 2003", serif' : '"Sanskrit 2003", "Noto Sans Devanagari", serif',
+                    lineHeight: '1.8',
+                    textShadow: '0 1px 2px rgba(0,0,0,0.3)'
+                  }}>
+                    {displayText}
+                  </p>
+                </div>
+
+                {/* Decorative Footer */}
+                <div className="text-center">
+                  <div className="inline-flex items-center space-x-2 text-amber-400/80">
+                    <div className="w-8 h-px bg-gradient-to-r from-transparent to-amber-400/60" />
+                    <span className="text-2xl">॥</span>
+                    <div className="w-8 h-px bg-gradient-to-l from-transparent to-amber-400/60" />
+                  </div>
+                </div>
+              </div>
             </div>
 
             {content.translation && (
-              <div className="bg-white/5 rounded-xl p-6 mb-6">
-                <h4 className="text-white/80 font-medium mb-3">Translation:</h4>
-                <p className="text-white/70 italic leading-relaxed">
+              <div className="mt-6 bg-white/5 rounded-xl p-6 border border-white/10">
+                <h4 className="text-amber-300 font-medium mb-3 flex items-center">
+                  <span className="mr-2">📖</span> 
+                  Translation & Significance:
+                </h4>
+                <p className="text-white/80 italic leading-relaxed text-sm">
                   {content.translation}
+                </p>
+              </div>
+            )}
+
+            {/* Additional Devotional Context */}
+            {(content.category === 'Chalisas' || content.category === 'Stotrams') && (
+              <div className="mt-4 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl p-4 border border-purple-400/20">
+                <div className="flex items-center text-purple-300 text-sm font-medium mb-2">
+                  <span className="mr-2">🕉️</span>
+                  Traditional Practice
+                </div>
+                <p className="text-purple-200/80 text-sm leading-relaxed">
+                  {content.category === 'Chalisas' 
+                    ? 'Recite daily in the morning or evening with devotion. Light a lamp or incense while chanting for enhanced spiritual benefits.'
+                    : 'This ancient Sanskrit hymn should be chanted with proper pronunciation and devotion, preferably during sunrise or sunset hours.'
+                  }
                 </p>
               </div>
             )}
