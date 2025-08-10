@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/hooks/use-language";
 import Home from "@/pages/home";
 import PrayerWall from "@/pages/prayer-wall";
+import DevotionalGamePage from "@/pages/devotional-game";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -13,6 +14,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/prayer-wall" component={PrayerWall} />
+      <Route path="/game" component={DevotionalGamePage} />
       <Route component={NotFound} />
     </Switch>
   );

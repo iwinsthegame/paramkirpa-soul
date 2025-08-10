@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import Header from "@/components/header";
 import FloatingBackground from "@/components/floating-background";
 import DayTabs from "@/components/day-tabs";
@@ -129,7 +130,18 @@ export default function Home() {
               transition={{ duration: 0.5, delay: 0.4 }}
             >
               <h3 className="text-2xl font-semibold text-white mb-4">{t('comingSoon')}</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                <Link href="/game">
+                  <motion.div 
+                    className="bg-white/5 rounded-xl p-6 cursor-pointer border border-purple-400/20 hover:border-purple-400/40 transition-colors"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="text-amber-400 text-3xl mb-3">🪙</div>
+                    <h4 className="text-lg font-semibold text-white mb-2">Sacred Pond Game</h4>
+                    <p className="text-white/70 text-sm">Toss coins at divine Charan Paduka</p>
+                  </motion.div>
+                </Link>
                 <motion.div 
                   className="bg-white/5 rounded-xl p-6"
                   whileHover={{ scale: 1.05 }}

@@ -1,7 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertPrayerSchema, reactionSchema } from "@shared/schema";
+import { insertPrayerSchema, reactionSchema, gameSessionSchema } from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Content API Routes
@@ -125,6 +125,32 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(updatedContent);
     } catch (error) {
       res.status(400).json({ message: "Invalid reaction data" });
+    }
+  });
+
+  // Game API Routes
+  app.post("/api/v1/game/score", async (req, res) => {
+    try {
+      const gameData = gameSessionSchema.parse(req.body);
+      const gameScore = await storage.saveGameScore({
+        userId: null, // Anonymous for now
+        score: gameData.score,
+        level: gameData.level,
+        blessingPoints: gameData.blessingPoints,
+      });
+      res.status(201).json(gameScore);
+    } catch (error) {
+      res.status(400).json({ message: "Invalid game data" });
+    }
+  });
+
+  app.get("/api/v1/game/leaderboard", async (req, res) => {
+    try {
+      const limit = parseInt(req.query.limit as string) || 10;
+      const leaderboard = await storage.getLeaderboard(limit);
+      res.json(leaderboard);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch leaderboard" });
     }
   });
 

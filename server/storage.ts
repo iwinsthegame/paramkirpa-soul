@@ -1,4 +1,4 @@
-import { type Content, type InsertContent, type Prayer, type InsertPrayer } from "@shared/schema";
+import { type Content, type InsertContent, type Prayer, type InsertPrayer, type GameScore, type InsertGameScore } from "@shared/schema";
 import { randomUUID } from "crypto";
 
 export interface IStorage {
@@ -15,15 +15,23 @@ export interface IStorage {
   getPrayers(page?: number, limit?: number): Promise<Prayer[]>;
   getPrayerById(id: string): Promise<Prayer | undefined>;
   updatePrayerReaction(prayerId: string, emoji: string): Promise<Prayer | undefined>;
+  
+  // Game methods
+  saveGameScore(gameScore: InsertGameScore): Promise<GameScore>;
+  getUserGameStats(userId: string): Promise<GameScore | undefined>;
+  updateUserStreak(userId: string): Promise<void>;
+  getLeaderboard(limit?: number): Promise<GameScore[]>;
 }
 
 export class MemStorage implements IStorage {
   private contents: Map<string, Content>;
   private prayers: Map<string, Prayer>;
+  private gameScores: Map<string, GameScore>;
 
   constructor() {
     this.contents = new Map();
     this.prayers = new Map();
+    this.gameScores = new Map();
     this.initializeContent();
   }
 
@@ -1001,6 +1009,77 @@ export class MemStorage implements IStorage {
     prayer.emojiCounts[emoji] = (prayer.emojiCounts[emoji] || 0) + 1;
     this.prayers.set(prayerId, prayer);
     return prayer;
+  }
+
+  // Game methods
+  async saveGameScore(gameScore: InsertGameScore): Promise<GameScore> {
+    const id = randomUUID();
+    const score: GameScore = {
+      id,
+      userId: gameScore.userId || null,
+      score: gameScore.score || 0,
+      level: gameScore.level || 1,
+      blessingPoints: gameScore.blessingPoints || 0,
+      streakDays: gameScore.streakDays || 0,
+      lastPlayedDate: gameScore.lastPlayedDate || new Date(),
+      createdAt: new Date(),
+    };
+    
+    // Update existing user score or create new one
+    if (gameScore.userId) {
+      const existingScore = Array.from(this.gameScores.values())
+        .find(s => s.userId === gameScore.userId);
+      
+      if (existingScore) {
+        // Update existing score with higher values
+        existingScore.score = Math.max(existingScore.score || 0, gameScore.score || 0);
+        existingScore.level = Math.max(existingScore.level || 1, gameScore.level || 1);
+        existingScore.blessingPoints = (existingScore.blessingPoints || 0) + (gameScore.blessingPoints || 0);
+        existingScore.lastPlayedDate = new Date();
+        this.gameScores.set(existingScore.id, existingScore);
+        return existingScore;
+      }
+    }
+    
+    this.gameScores.set(id, score);
+    return score;
+  }
+
+  async getUserGameStats(userId: string): Promise<GameScore | undefined> {
+    return Array.from(this.gameScores.values())
+      .find(score => score.userId === userId);
+  }
+
+  async updateUserStreak(userId: string): Promise<void> {
+    const userScore = await this.getUserGameStats(userId);
+    if (userScore) {
+      const today = new Date();
+      const lastPlayed = userScore.lastPlayedDate;
+      
+      if (lastPlayed) {
+        const daysDiff = Math.floor((today.getTime() - lastPlayed.getTime()) / (1000 * 60 * 60 * 24));
+        
+        if (daysDiff === 1) {
+          // Consecutive day - increment streak
+          userScore.streakDays = (userScore.streakDays || 0) + 1;
+        } else if (daysDiff > 1) {
+          // Streak broken - reset to 1
+          userScore.streakDays = 1;
+        }
+        // Same day - no change to streak
+      } else {
+        userScore.streakDays = 1;
+      }
+      
+      userScore.lastPlayedDate = today;
+      this.gameScores.set(userScore.id, userScore);
+    }
+  }
+
+  async getLeaderboard(limit = 10): Promise<GameScore[]> {
+    return Array.from(this.gameScores.values())
+      .sort((a, b) => (b.score || 0) - (a.score || 0))
+      .slice(0, limit);
   }
 }
 
