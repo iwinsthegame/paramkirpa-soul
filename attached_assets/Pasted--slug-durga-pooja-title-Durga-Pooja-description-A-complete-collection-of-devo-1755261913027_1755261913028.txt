@@ -1,0 +1,158 @@
+{
+  "slug": "durga-pooja",
+  "title": "Durga Pooja",
+  "description": "A complete collection of devotional content, rituals, and sacred texts for Durga Pooja.",
+  "hero_image": "/assets/pooja/durga.jpg",
+  "subsections": [
+    {
+      "name": "Aarti",
+      "contents": [
+        {
+          "lang": "hi",
+          "title": "दुर्गा आरती",
+          "content": "जय अम्बे गौरी, मैया जय श्यामा गौरी...",
+          "audio_url": "/audio/durga_aarti_hi.mp3"
+        },
+        {
+          "lang": "en",
+          "title": "Durga Aarti (English Transliteration)",
+          "content": "Jai Ambe Gauri, Maiya Jai Shyama Gauri...",
+          "audio_url": "/audio/durga_aarti_en.mp3"
+        },
+        {
+          "lang": "en",
+          "title": "Durga Aarti Meaning",
+          "content": "The Durga Aarti is a devotional hymn praising Goddess Durga..."
+        }
+      ]
+    },
+    {
+      "name": "Mantra",
+      "contents": [
+        {
+          "lang": "hi",
+          "title": "मूल मंत्र",
+          "content": "ॐ दुं दुर्गायै नमः"
+        },
+        {
+          "lang": "hi",
+          "title": "बीज मंत्र",
+          "content": "ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे"
+        },
+        {
+          "lang": "hi",
+          "title": "नवर्ण मंत्र",
+          "content": "ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे"
+        }
+      ]
+    },
+    {
+      "name": "Kavach",
+      "contents": [
+        {
+          "lang": "hi",
+          "title": "दुर्गा कवच",
+          "content": "ॐ नमश्चण्डिकायै..."
+        },
+        {
+          "lang": "en",
+          "title": "Durga Kavach (English Transliteration)",
+          "content": "Om Namash Chandikayai..."
+        }
+      ]
+    },
+    {
+      "name": "Siddhi",
+      "contents": [
+        {
+          "lang": "hi",
+          "title": "दुर्गा सिद्धि मंत्र",
+          "content": "ॐ ह्रीं दुर्गायै नमः"
+        },
+        {
+          "lang": "en",
+          "title": "Durga Siddhi Mantra (Meaning)",
+          "content": "This mantra is chanted to achieve spiritual and material success..."
+        }
+      ]
+    },
+    {
+      "name": "Kunjika Stotram",
+      "contents": [
+        {
+          "lang": "hi",
+          "title": "कुञ्जिका स्तोत्र",
+          "content": "ॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे..."
+        },
+        {
+          "lang": "en",
+          "title": "Kunjika Stotra (English Transliteration)",
+          "content": "Om Aim Hreem Kleem Chamundayai Vichche..."
+        }
+      ]
+    },
+    {
+      "name": "Stotra & Chalisa",
+      "contents": [
+        {
+          "lang": "hi",
+          "title": "दुर्गा स्तोत्र",
+          "content": "या देवी सर्वभूतेषु..."
+        },
+        {
+          "lang": "hi",
+          "title": "दुर्गा चालीसा",
+          "content": "नमो नमो दुर्गे सुख करनी..."
+        }
+      ]
+    },
+    {
+      "name": "Adhyaya",
+      "contents": [
+        {
+          "adhyaya": 1,
+          "lang": "hi",
+          "title": "प्रथम अध्याय - मधु-कैटभ वध",
+          "content": "ॐ ऋषिरुवाच..."
+        },
+        {
+          "adhyaya": 2,
+          "lang": "hi",
+          "title": "द्वितीय अध्याय - महिषासुर वध",
+          "content": "देव्युवाच..."
+        }
+      ]
+    },
+    {
+      "name": "Muhurat & Vidhi",
+      "contents": [
+        {
+          "lang": "hi",
+          "title": "पूजा मुहूर्त",
+          "content": "महानवमी: 07:00 AM - 09:30 AM"
+        },
+        {
+          "lang": "hi",
+          "title": "सामग्री सूची",
+          "content": "कलश, नारियल, लाल वस्त्र..."
+        },
+        {
+          "lang": "hi",
+          "title": "विधि",
+          "content": "स्नान करके पूजास्थल शुद्ध करें..."
+        }
+      ]
+    },
+    {
+      "name": "Bhajan & Kirtan",
+      "contents": [
+        {
+          "lang": "hi",
+          "title": "भजन - जय अम्बे गौरी",
+          "content": "जय अम्बे गौरी, मैया जय श्यामा गौरी...",
+          "audio_url": "/audio/jai_ambe_gauri.mp3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowLeft, BookOpen, Play, Star } from 'lucide-react';
+import { ArrowLeft, BookOpen, Play, Star, ChevronRight } from 'lucide-react';
 import { useQuery } from '@tanstack/react-query';
 import { Link, useRoute } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
@@ -169,35 +169,109 @@ export function PoojaDetailPage() {
               >
                 {content.length > 0 ? (
                   <div className="space-y-6">
-                    {content.map((item: PoojaContent, index: number) => (
-                      <Card key={item.id} className="glass-card border-purple-400/30">
-                        <CardContent className="p-6">
-                          <div className="flex items-center justify-between mb-4">
-                            <h3 className="text-xl font-semibold text-white">
-                              {item.title}
-                            </h3>
-                            {selectedType === 'adhyaya' && (
-                              <Badge variant="outline" className="border-amber-500 text-amber-500">
-                                Chapter {item.order}
-                              </Badge>
-                            )}
-                          </div>
-                          
-                          <div className="prose prose-invert max-w-none">
-                            <div className="text-white/90 leading-relaxed whitespace-pre-line">
-                              {language === 'hindi' ? item.textHindi : item.textEnglish}
+                    {selectedType === 'adhyaya' ? (
+                      // Special display for Adhyaya chapters
+                      <div className="grid gap-4">
+                        <div className="text-center mb-6">
+                          <h2 className="text-2xl font-bold text-foreground mb-2">
+                            दुर्गा सप्तशती - 13 अध्याय
+                          </h2>
+                          <p className="text-muted-foreground">
+                            Sacred chapters of Goddess Durga's divine glory
+                          </p>
+                        </div>
+                        
+                        <div className="grid gap-3">
+                          {content
+                            .sort((a: any, b: any) => (a.adhyaya || 0) - (b.adhyaya || 0))
+                            .map((item: PoojaContent, index: number) => (
+                            <motion.div
+                              key={item.id}
+                              initial={{ opacity: 0, y: 20 }}
+                              animate={{ opacity: 1, y: 0 }}
+                              transition={{ delay: index * 0.05 }}
+                              className="glass-card rounded-xl p-4 cursor-pointer hover:bg-accent/20 transition-colors"
+                              data-testid={`adhyaya-${(item as any).adhyaya}`}
+                            >
+                              <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                  <div className="flex items-center gap-3 mb-2">
+                                    <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                                      अध्याय {(item as any).adhyaya || index + 1}
+                                    </span>
+                                  </div>
+                                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                                    {item.title}
+                                  </h3>
+                                  <p className="text-muted-foreground text-sm leading-relaxed">
+                                    {item.translation}
+                                  </p>
+                                </div>
+                                <ChevronRight className="h-5 w-5 text-muted-foreground" />
+                              </div>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      // Regular display for other content types
+                      content.map((item: PoojaContent, index: number) => (
+                        <Card key={item.id} className="glass-card border-purple-400/30">
+                          <CardContent className="p-6">
+                            <div className="flex items-center justify-between mb-4">
+                              <h3 className="text-xl font-semibold text-foreground">
+                                {item.title}
+                              </h3>
                             </div>
                             
-                            {item.translation && language === 'hindi' && (
-                              <div className="mt-4 p-4 bg-white/5 rounded-lg border border-white/10">
-                                <h4 className="text-white/80 font-medium mb-2">Translation:</h4>
-                                <p className="text-white/70 text-sm">{item.translation}</p>
+                            <div className="prose prose-invert max-w-none">
+                              {item.textHindi && (
+                                <div className="mb-4">
+                                  <h4 className="text-sm font-medium text-muted-foreground mb-2">
+                                    Hindi Text
+                                  </h4>
+                                  <div className="text-foreground leading-relaxed whitespace-pre-line">
+                                    {item.textHindi}
+                                  </div>
+                                </div>
+                              )}
+                              
+                              {item.textEnglish && (
+                                <div className="mb-4">
+                                  <h4 className="text-sm font-medium text-muted-foreground mb-2">
+                                    English Transliteration
+                                  </h4>
+                                  <div className="text-foreground leading-relaxed whitespace-pre-line italic">
+                                    {item.textEnglish}
+                                  </div>
+                                </div>
+                              )}
+                              
+                              {item.translation && (
+                                <div className="mt-4 p-4 bg-muted/50 rounded-lg border border-border">
+                                  <h4 className="text-muted-foreground font-medium mb-2">Translation & Meaning:</h4>
+                                  <p className="text-muted-foreground text-sm">{item.translation}</p>
+                                </div>
+                              )}
+                            </div>
+                            
+                            {item.audioUrl && (
+                              <div className="mt-4">
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  className="w-full"
+                                  data-testid={`audio-${item.id}`}
+                                >
+                                  <span className="mr-2">🎵</span>
+                                  Play Audio
+                                </Button>
                               </div>
                             )}
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
+                          </CardContent>
+                        </Card>
+                      ))
+                    )}
                   </div>
                 ) : (
                   <div className="text-center text-white">
