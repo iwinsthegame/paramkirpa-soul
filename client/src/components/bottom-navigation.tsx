@@ -2,6 +2,7 @@ import { Home, PlayCircle, Calendar, Users, User, ShoppingCart } from 'lucide-re
 import { Link, useLocation } from 'wouter';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
+import { ThemeToggle } from '@/components/theme-toggle';
 
 const tabs = [
   { id: 'home', label: 'Home', icon: Home, path: '/' },
@@ -16,26 +17,33 @@ export function BottomNavigation() {
 
   return (
     <>
-      {/* Cart Floating Button */}
-      <Link href="/store">
-        <motion.div
-          className="fixed top-4 right-4 z-50"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <div className="glass-card rounded-full p-3 shadow-lg border border-purple-400/30">
-            <ShoppingCart className="h-6 w-6 text-white" />
-            <Badge className="absolute -top-2 -right-2 bg-red-500 text-white text-xs h-5 w-5 flex items-center justify-center rounded-full">
+      {/* Top Right Controls */}
+      <div className="fixed top-4 right-4 z-50 flex gap-3">
+        <ThemeToggle />
+        <Link href="/store">
+          <motion.div
+            className="glass-card rounded-xl p-3 shadow-lg"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            data-testid="cart-button"
+          >
+            <ShoppingCart className="h-5 w-5 text-primary" />
+            <Badge className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs h-5 w-5 flex items-center justify-center rounded-full">
               0
             </Badge>
-          </div>
-        </motion.div>
-      </Link>
+          </motion.div>
+        </Link>
+      </div>
 
-      {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 z-40">
-        <div className="glass-card border-t border-purple-400/20 px-2 py-2">
-          <div className="flex justify-around items-center max-w-md mx-auto">
+      {/* Enhanced Glassmorphism Bottom Navigation */}
+      <motion.div 
+        className="fixed bottom-0 left-0 right-0 z-40 p-4"
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
+      >
+        <div className="glass-card border border-white/20 px-2 py-3 mx-auto max-w-md rounded-2xl shadow-2xl">
+          <div className="flex justify-around items-center">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = location === tab.path || 
@@ -44,23 +52,38 @@ export function BottomNavigation() {
               return (
                 <Link key={tab.id} href={tab.path}>
                   <motion.div
-                    className={`flex flex-col items-center py-2 px-3 rounded-xl transition-colors ${
+                    className={`flex flex-col items-center py-2 px-3 rounded-xl transition-all duration-300 ${
                       isActive
-                        ? 'text-amber-400'
-                        : 'text-white/70 hover:text-white'
+                        ? 'text-primary'
+                        : 'text-foreground/70 hover:text-primary hover:bg-white/10'
                     }`}
                     whileTap={{ scale: 0.95 }}
+                    whileHover={{ scale: 1.05 }}
                     data-testid={`nav-${tab.id}`}
                   >
-                    <Icon className={`h-5 w-5 ${isActive ? 'text-amber-400' : ''}`} />
-                    <span className="text-xs mt-1 font-medium">{tab.label}</span>
+                    <motion.div
+                      className={`${isActive ? 'golden-glow p-2 rounded-xl shadow-lg' : ''}`}
+                      initial={false}
+                      animate={isActive ? { 
+                        scale: [1, 1.1, 1],
+                        rotate: [0, 5, -5, 0]
+                      } : {}}
+                      transition={{ duration: 0.4 }}
+                    >
+                      <Icon className={`h-5 w-5 ${isActive ? 'text-white' : ''}`} strokeWidth={isActive ? 2.5 : 2} />
+                    </motion.div>
+                    <span className={`text-xs mt-1 font-medium ${
+                      isActive ? 'font-semibold text-primary' : ''
+                    }`}>
+                      {tab.label}
+                    </span>
                   </motion.div>
                 </Link>
               );
             })}
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

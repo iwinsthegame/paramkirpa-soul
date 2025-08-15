@@ -60,25 +60,30 @@ export function ReelsPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center">
-        <div className="text-white">Loading reels...</div>
+      <div className="min-h-screen spiritual-gradient flex items-center justify-center">
+        <div className="glass-card p-8 rounded-2xl">
+          <div className="text-foreground font-medium">Loading reels...</div>
+          <div className="w-full bg-border rounded-full h-2 mt-4 overflow-hidden">
+            <div className="golden-glow h-full rounded-full animate-pulse"></div>
+          </div>
+        </div>
       </div>
     );
   }
 
   if (reels.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center">
-        <div className="text-center text-white">
-          <h2 className="text-2xl font-bold mb-4">No Reels Available</h2>
-          <p className="text-white/70">Check back later for devotional content</p>
+      <div className="min-h-screen spiritual-gradient flex items-center justify-center">
+        <div className="glass-card p-8 rounded-2xl text-center">
+          <h2 className="text-2xl font-bold mb-4 text-foreground">No Reels Available</h2>
+          <p className="text-muted-foreground">Check back later for devotional content</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen spiritual-gradient relative overflow-hidden">
       <AnimatePresence>
         <motion.div
           key={currentIndex}
@@ -88,7 +93,7 @@ export function ReelsPage() {
           exit={{ y: '-100%' }}
           transition={{ type: 'spring', damping: 30, stiffness: 300 }}
         >
-          <div className="relative h-full w-full flex items-center justify-center bg-black">
+          <div className="relative h-full w-full flex items-center justify-center bg-gradient-to-b from-black/50 to-black/80">
             {/* Video */}
             <video
               ref={(el) => (videoRefs.current[currentIndex] = el)}

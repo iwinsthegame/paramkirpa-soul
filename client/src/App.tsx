@@ -4,6 +4,7 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/hooks/use-language";
+import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingBackground } from "@/components/floating-background";
 import { BottomNavigation } from "@/components/bottom-navigation";
 
@@ -19,7 +20,7 @@ import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative spiritual-gradient">
       <FloatingBackground />
       
       <Switch>
@@ -41,14 +42,16 @@ function Router() {
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <LanguageProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </LanguageProvider>
-    </QueryClientProvider>
+    <ThemeProvider defaultTheme="light" storageKey="paramkirpa-ui-theme">
+      <QueryClientProvider client={queryClient}>
+        <LanguageProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </LanguageProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
 

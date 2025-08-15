@@ -16,16 +16,21 @@ export function PoojaPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 flex items-center justify-center">
-        <div className="text-white">Loading poojas...</div>
+      <div className="min-h-screen spiritual-gradient flex items-center justify-center">
+        <div className="glass-card p-8 rounded-2xl">
+          <div className="text-foreground font-medium">Loading poojas...</div>
+          <div className="w-full bg-border rounded-full h-2 mt-4 overflow-hidden">
+            <div className="golden-glow h-full rounded-full animate-pulse"></div>
+          </div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 pb-20">
+    <div className="min-h-screen spiritual-gradient pb-20">
       <div className="pt-8 px-4">
-        <h1 className="text-3xl font-bold text-white text-center mb-8">
+        <h1 className="text-3xl font-bold text-foreground text-center mb-8">
           🪔 Sacred Poojas 🪔
         </h1>
 
@@ -47,16 +52,16 @@ export function PoojaPage() {
                       />
                     )}
                     <div className="p-4">
-                      <h3 className="text-white font-semibold text-sm mb-2">
-                        {pooja.name}
+                      <h3 className="text-foreground font-semibold text-sm mb-2">
+                        {(pooja as any).name}
                       </h3>
-                      {pooja.description && (
-                        <p className="text-white/70 text-xs line-clamp-2">
-                          {pooja.description}
+                      {(pooja as any).description && (
+                        <p className="text-muted-foreground text-xs line-clamp-2">
+                          {(pooja as any).description}
                         </p>
                       )}
-                      {pooja.featured === 1 && (
-                        <Badge className="absolute top-2 right-2 bg-amber-500">
+                      {(pooja as any).featured === 1 && (
+                        <Badge className="absolute top-2 right-2 bg-primary">
                           <Star className="h-3 w-3" />
                         </Badge>
                       )}
@@ -68,10 +73,10 @@ export function PoojaPage() {
           ))}
         </div>
 
-        {poojas.length === 0 && (
-          <div className="text-center text-white mt-8">
-            <h2 className="text-xl font-bold mb-4">No Poojas Available</h2>
-            <p className="text-white/70">Check back later for spiritual content</p>
+        {(poojas as any[]).length === 0 && (
+          <div className="glass-card p-8 rounded-2xl text-center mt-8 max-w-md mx-auto">
+            <h2 className="text-xl font-bold mb-4 text-foreground">No Poojas Available</h2>
+            <p className="text-muted-foreground">Check back later for spiritual content</p>
           </div>
         )}
       </div>
