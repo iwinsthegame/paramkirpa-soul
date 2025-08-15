@@ -4,19 +4,38 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LanguageProvider } from "@/hooks/use-language";
+import { FloatingBackground } from "@/components/floating-background";
+import { BottomNavigation } from "@/components/bottom-navigation";
+
+// Pages
 import Home from "@/pages/home";
-import PrayerWall from "@/pages/prayer-wall";
+import { ReelsPage } from "@/pages/reels";
+import { PoojaPage, PoojaDetailPage } from "@/pages/pooja";
+import { CommunityPage } from "@/pages/community";
+import { ProfilePage } from "@/pages/profile";
+import { StorePage } from "@/pages/store";
 import DevotionalGamePage from "@/pages/devotional-game";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/prayer-wall" component={PrayerWall} />
-      <Route path="/game" component={DevotionalGamePage} />
-      <Route component={NotFound} />
-    </Switch>
+    <div className="min-h-screen relative">
+      <FloatingBackground />
+      
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/reels" component={ReelsPage} />
+        <Route path="/pooja" component={PoojaPage} />
+        <Route path="/pooja/:id" component={PoojaDetailPage} />
+        <Route path="/community" component={CommunityPage} />
+        <Route path="/profile" component={ProfilePage} />
+        <Route path="/store" component={StorePage} />
+        <Route path="/game" component={DevotionalGamePage} />
+        <Route component={NotFound} />
+      </Switch>
+      
+      <BottomNavigation />
+    </div>
   );
 }
 

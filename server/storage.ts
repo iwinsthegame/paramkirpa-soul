@@ -21,18 +21,39 @@ export interface IStorage {
   getUserGameStats(userId: string): Promise<GameScore | undefined>;
   updateUserStreak(userId: string): Promise<void>;
   getLeaderboard(limit?: number): Promise<GameScore[]>;
+  getGameLeaderboard(): Promise<any[]>;
+  
+  // Pooja operations
+  getPoojas(): Promise<any[]>;
+  getPoojaById(id: string): Promise<any>;
+  getPoojaContent(poojaId: string, type?: string): Promise<any[]>;
+  
+  // Reels operations
+  getReels(): Promise<any[]>;
+  incrementReelLikes(id: string): Promise<void>;
+  incrementReelViews(id: string): Promise<void>;
+  
+  // Community operations
+  getCommunityPosts(page: number, limit: number): Promise<any[]>;
+  createCommunityPost(post: any): Promise<any>;
+  upvoteCommunityPost(id: string): Promise<void>;
 }
 
 export class MemStorage implements IStorage {
   private contents: Map<string, Content>;
   private prayers: Map<string, Prayer>;
   private gameScores: Map<string, GameScore>;
+  private poojas: any[] = [];
+  private poojaContent: any[] = [];
+  private reels: any[] = [];
+  private communityPosts: any[] = [];
 
   constructor() {
     this.contents = new Map();
     this.prayers = new Map();
     this.gameScores = new Map();
     this.initializeContent();
+    this.initializeNewFeatures();
   }
 
   private initializeContent() {
@@ -1080,6 +1101,179 @@ export class MemStorage implements IStorage {
     return Array.from(this.gameScores.values())
       .sort((a, b) => (b.score || 0) - (a.score || 0))
       .slice(0, limit);
+  }
+
+  async getGameLeaderboard(): Promise<any[]> {
+    return Array.from(this.gameScores.values())
+      .sort((a, b) => (b.score || 0) - (a.score || 0))
+      .slice(0, 10);
+  }
+
+  private initializeNewFeatures() {
+    // Initialize Poojas
+    this.poojas = [
+      {
+        id: "durga-pooja",
+        name: "Durga Pooja",
+        description: "Worship of Goddess Durga for strength and protection",
+        imageUrl: "/api/placeholder/300/200",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "lakshmi-pooja",
+        name: "Lakshmi Pooja", 
+        description: "Worship of Goddess Lakshmi for prosperity and wealth",
+        imageUrl: "/api/placeholder/300/200",
+        featured: 0,
+        createdAt: new Date(),
+      },
+      {
+        id: "ganesha-pooja",
+        name: "Ganesha Pooja",
+        description: "Worship of Lord Ganesha for removing obstacles",
+        imageUrl: "/api/placeholder/300/200", 
+        featured: 1,
+        createdAt: new Date(),
+      }
+    ];
+
+    // Initialize Pooja Content
+    this.poojaContent = [
+      {
+        id: "durga-aarti-1",
+        poojaId: "durga-pooja",
+        type: "aarti",
+        title: "Durga Aarti",
+        textEnglish: "Jai Ambe Gauri, Maiya Jai Shyama Gauri\nTumko nisdin dhyavat, Hari Brahma Shivri\nMaiya jai jai...",
+        textHindi: "जय अम्बे गौरी, मैया जय श्यामा गौरी\nतुमको निशदिन ध्यावत, हरि ब्रह्मा शिवरी\nमैया जय जय...",
+        translation: "Victory to Mother Gauri, the fair-complexioned goddess...",
+        order: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "durga-mantra-1", 
+        poojaId: "durga-pooja",
+        type: "mantra",
+        title: "Durga Gayatri Mantra",
+        textEnglish: "Om Katyayanyai Vidmahe Kanyakumari Dhimahi\nTanno Durgih Prachodayat",
+        textHindi: "ॐ कात्यायन्यै विद्महे कन्याकुमारी धीमहि\nतन्नो दुर्गिः प्रचोदयात्",
+        translation: "We meditate on Goddess Katyayani, who is in the form of Kanyakumari...",
+        order: 1,
+        createdAt: new Date(),
+      }
+    ];
+
+    // Initialize Reels
+    this.reels = [
+      {
+        id: "reel-1",
+        title: "Morning Prayer Meditation",
+        description: "Start your day with this peaceful morning meditation",
+        videoUrl: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+        thumbnailUrl: "/api/placeholder/300/400",
+        duration: 60,
+        views: 1250,
+        likes: 89,
+        isActive: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "reel-2", 
+        title: "Krishna Bhajan",
+        description: "Beautiful Krishna bhajan for devotional mood",
+        videoUrl: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+        thumbnailUrl: "/api/placeholder/300/400",
+        duration: 45,
+        views: 890,
+        likes: 67,
+        isActive: 1,
+        createdAt: new Date(),
+      }
+    ];
+
+    // Initialize Community Posts
+    this.communityPosts = [
+      {
+        id: "post-1",
+        userId: null,
+        content: "Om Namah Shivaya. Seeking blessings for my family's health and happiness.",
+        isAnonymous: 1,
+        upvotes: 12,
+        type: "prayer",
+        createdAt: new Date(),
+      },
+      {
+        id: "post-2",
+        userId: null, 
+        content: "Grateful for all the divine grace in my life. May everyone find peace and joy.",
+        isAnonymous: 1,
+        upvotes: 8,
+        type: "prayer",
+        createdAt: new Date(),
+      }
+    ];
+  }
+
+  // Pooja operations
+  async getPoojas(): Promise<any[]> {
+    return this.poojas;
+  }
+
+  async getPoojaById(id: string): Promise<any> {
+    return this.poojas.find(pooja => pooja.id === id);
+  }
+
+  async getPoojaContent(poojaId: string, type?: string): Promise<any[]> {
+    let content = this.poojaContent.filter(item => item.poojaId === poojaId);
+    if (type) {
+      content = content.filter(item => item.type === type);
+    }
+    return content.sort((a, b) => a.order - b.order);
+  }
+
+  // Reels operations
+  async getReels(): Promise<any[]> {
+    return this.reels.filter(reel => reel.isActive === 1);
+  }
+
+  async incrementReelLikes(id: string): Promise<void> {
+    const reel = this.reels.find(r => r.id === id);
+    if (reel) {
+      reel.likes++;
+    }
+  }
+
+  async incrementReelViews(id: string): Promise<void> {
+    const reel = this.reels.find(r => r.id === id);
+    if (reel) {
+      reel.views++;
+    }
+  }
+
+  // Community operations
+  async getCommunityPosts(page: number = 1, limit: number = 20): Promise<any[]> {
+    const startIndex = (page - 1) * limit;
+    const endIndex = startIndex + limit;
+    return this.communityPosts.slice(startIndex, endIndex);
+  }
+
+  async createCommunityPost(post: any): Promise<any> {
+    const newPost = {
+      id: `post-${Date.now()}`,
+      ...post,
+      upvotes: 0,
+      createdAt: new Date(),
+    };
+    this.communityPosts.unshift(newPost);
+    return newPost;
+  }
+
+  async upvoteCommunityPost(id: string): Promise<void> {
+    const post = this.communityPosts.find(p => p.id === id);
+    if (post) {
+      post.upvotes++;
+    }
   }
 }
 

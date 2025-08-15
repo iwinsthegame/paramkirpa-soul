@@ -30,6 +30,8 @@ export const users = pgTable("users", {
   firstName: varchar("first_name"),
   lastName: varchar("last_name"),
   profileImageUrl: varchar("profile_image_url"),
+  role: varchar("role").default("USER"), // USER, ADMIN
+  coinBalance: integer("coin_balance").default(100), // Starting coins
   createdAt: timestamp("created_at").defaultNow(),
   updatedAt: timestamp("updated_at").defaultNow(),
 });
@@ -110,6 +112,140 @@ export type InsertContent = z.infer<typeof insertContentSchema>;
 export type Prayer = z.infer<typeof prayerSchema>;
 export type InsertPrayer = z.infer<typeof insertPrayerSchema>;
 export type Reaction = z.infer<typeof reactionSchema>;
+// Pooja Schema
+export const poojas = pgTable("poojas", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  name: varchar("name").notNull(),
+  description: text("description"),
+  imageUrl: varchar("image_url"),
+  featured: integer("featured").default(0), // 0 = false, 1 = true
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const poojaContent = pgTable("pooja_content", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  poojaId: varchar("pooja_id").references(() => poojas.id).notNull(),
+  type: varchar("type").notNull(), // aarti, mantra, kavach, siddhi, kunjika, adhyaya
+  title: varchar("title").notNull(),
+  textEnglish: text("text_english").notNull(),
+  textHindi: text("text_hindi").notNull(),
+  translation: text("translation"),
+  order: integer("order").default(1),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Reels Schema
+export const reels = pgTable("reels", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  title: varchar("title").notNull(),
+  description: text("description"),
+  videoUrl: varchar("video_url").notNull(),
+  thumbnailUrl: varchar("thumbnail_url"),
+  duration: integer("duration"), // in seconds
+  views: integer("views").default(0),
+  likes: integer("likes").default(0),
+  isActive: integer("is_active").default(1),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Community Posts (Enhanced Prayer Wall)
+export const communityPosts = pgTable("community_posts", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  userId: varchar("user_id").references(() => users.id),
+  content: text("content").notNull(),
+  isAnonymous: integer("is_anonymous").default(0),
+  upvotes: integer("upvotes").default(0),
+  type: varchar("type").default("prayer"), // prayer, discussion, question
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+export const communityComments = pgTable("community_comments", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  postId: varchar("post_id").references(() => communityPosts.id).notNull(),
+  userId: varchar("user_id").references(() => users.id),
+  content: text("content").notNull(),
+  isAnonymous: integer("is_anonymous").default(0),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Saved Content
+export const savedContent = pgTable("saved_content", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  userId: varchar("user_id").references(() => users.id).notNull(),
+  contentType: varchar("content_type").notNull(), // pooja, reel, post
+  contentId: varchar("content_id").notNull(),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Coin Transactions
+export const coinTransactions = pgTable("coin_transactions", {
+  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
+  userId: varchar("user_id").references(() => users.id).notNull(),
+  amount: integer("amount").notNull(), // positive for earning, negative for spending
+  type: varchar("type").notNull(), // game_reward, purchase, daily_bonus
+  description: text("description"),
+  createdAt: timestamp("created_at").defaultNow(),
+});
+
+// Zod Schemas
+export const poojaSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string().optional(),
+  imageUrl: z.string().optional(),
+  featured: z.number().default(0),
+  createdAt: z.date(),
+});
+
+export const poojaContentSchema = z.object({
+  id: z.string(),
+  poojaId: z.string(),
+  type: z.enum(["aarti", "mantra", "kavach", "siddhi", "kunjika", "adhyaya"]),
+  title: z.string(),
+  textEnglish: z.string(),
+  textHindi: z.string(),
+  translation: z.string().optional(),
+  order: z.number().default(1),
+  createdAt: z.date(),
+});
+
+export const reelSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string().optional(),
+  videoUrl: z.string(),
+  thumbnailUrl: z.string().optional(),
+  duration: z.number().optional(),
+  views: z.number().default(0),
+  likes: z.number().default(0),
+  isActive: z.number().default(1),
+  createdAt: z.date(),
+});
+
+export const communityPostSchema = z.object({
+  id: z.string(),
+  userId: z.string().optional(),
+  content: z.string(),
+  isAnonymous: z.number().default(0),
+  upvotes: z.number().default(0),
+  type: z.enum(["prayer", "discussion", "question"]).default("prayer"),
+  createdAt: z.date(),
+});
+
+export const insertPoojaSchema = poojaSchema.omit({ id: true, createdAt: true });
+export const insertPoojaContentSchema = poojaContentSchema.omit({ id: true, createdAt: true });
+export const insertReelSchema = reelSchema.omit({ id: true, createdAt: true });
+export const insertCommunityPostSchema = communityPostSchema.omit({ id: true, createdAt: true });
+
+export type Pooja = z.infer<typeof poojaSchema>;
+export type PoojaContent = z.infer<typeof poojaContentSchema>;
+export type Reel = z.infer<typeof reelSchema>;
+export type CommunityPost = z.infer<typeof communityPostSchema>;
+export type InsertPooja = z.infer<typeof insertPoojaSchema>;
+export type InsertPoojaContent = z.infer<typeof insertPoojaContentSchema>;
+export type InsertReel = z.infer<typeof insertReelSchema>;
+export type InsertCommunityPost = z.infer<typeof insertCommunityPostSchema>;
+
 export type GameSession = z.infer<typeof gameSessionSchema>;
 export type GameScore = z.infer<typeof gameScoreSchema>;
 export type InsertGameScore = z.infer<typeof insertGameScoreSchema>;

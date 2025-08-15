@@ -1,7 +1,15 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
-import { insertPrayerSchema, reactionSchema, gameSessionSchema } from "@shared/schema";
+import { 
+  insertPrayerSchema, 
+  reactionSchema, 
+  gameSessionSchema,
+  insertPoojaSchema,
+  insertPoojaContentSchema,
+  insertReelSchema,
+  insertCommunityPostSchema
+} from "@shared/schema";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Content API Routes
@@ -151,6 +159,146 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(leaderboard);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch leaderboard" });
+    }
+  });
+
+  // Pooja API Routes
+  app.get("/api/v1/poojas", async (req, res) => {
+    try {
+      const poojas = await storage.getPoojas();
+      res.json(poojas);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch poojas" });
+    }
+  });
+
+  app.get("/api/v1/poojas/:id", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const pooja = await storage.getPoojaById(id);
+      if (!pooja) {
+        return res.status(404).json({ message: "Pooja not found" });
+      }
+      res.json(pooja);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch pooja" });
+    }
+  });
+
+  app.get("/api/v1/poojas/:id/content", async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { type } = req.query;
+      const content = await storage.getPoojaContent(id, type as string);
+      res.json(content);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch pooja content" });
+    }
+  });
+
+  // Reels API Routes
+  app.get("/api/v1/reels", async (req, res) => {
+    try {
+      const reels = await storage.getReels();
+      res.json(reels);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch reels" });
+    }
+  });
+
+  app.post("/api/v1/reels/:id/like", async (req, res) => {
+    try {
+      const { id } = req.params;
+      await storage.incrementReelLikes(id);
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to like reel" });
+    }
+  });
+
+  app.post("/api/v1/reels/:id/view", async (req, res) => {
+    try {
+      const { id } = req.params;
+      await storage.incrementReelViews(id);
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to record view" });
+    }
+  });
+
+  // Community API Routes
+  app.get("/api/v1/community/posts", async (req, res) => {
+    try {
+      const page = parseInt(req.query.page as string) || 1;
+      const limit = parseInt(req.query.limit as string) || 20;
+      const posts = await storage.getCommunityPosts(page, limit);
+      res.json(posts);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch posts" });
+    }
+  });
+
+  app.post("/api/v1/community/posts", async (req, res) => {
+    try {
+      const validatedData = insertCommunityPostSchema.parse(req.body);
+      const post = await storage.createCommunityPost(validatedData);
+      res.status(201).json(post);
+    } catch (error) {
+      res.status(400).json({ message: "Invalid post data" });
+    }
+  });
+
+  app.post("/api/v1/community/posts/:id/upvote", async (req, res) => {
+    try {
+      const { id } = req.params;
+      await storage.upvoteCommunityPost(id);
+      res.json({ success: true });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to upvote post" });
+    }
+  });
+
+  // Games API Routes
+  app.get("/api/v1/games/wallet", async (req, res) => {
+    try {
+      // For now, return mock data - can be enhanced with user auth
+      res.json({ balance: 150 });
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch wallet" });
+    }
+  });
+
+  app.get("/api/v1/games/leaderboard", async (req, res) => {
+    try {
+      const leaderboard = await storage.getGameLeaderboard();
+      res.json(leaderboard);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch leaderboard" });
+    }
+  });
+
+  // User Profile Routes (mock for now)
+  app.get("/api/v1/user/saved", async (req, res) => {
+    try {
+      res.json([]); // Mock empty saved content
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch saved content" });
+    }
+  });
+
+  app.get("/api/v1/user/orders", async (req, res) => {
+    try {
+      res.json([]); // Mock empty orders
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch orders" });
+    }
+  });
+
+  app.get("/api/v1/user/coins", async (req, res) => {
+    try {
+      res.json({ balance: 100 }); // Mock coin balance
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch coin balance" });
     }
   });
 

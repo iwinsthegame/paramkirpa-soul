@@ -105,3 +105,5 @@ export default function FloatingBackground() {
     </>
   );
 }
+
+export { FloatingBackground };
