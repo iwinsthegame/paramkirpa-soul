@@ -1,0 +1,59 @@
+Objective: Restructure the paramkirpa-soul repo into an Instagram-style app with a persistent bottom navigation and clear sections for devotional content. Keep the existing backend/services where possible; extend them where needed. Build a clean, testable, production-ready feature set and provide seed data (Durga Pooja) so QA can validate flows.
+
+High-level layout (bottom nav — 5 tabs):
+
+Home — daily devotional content (Chalisa, Aarti, Mantra etc.)
+
+Reels — vertical short devotional videos (swipe up/down)
+
+Pooja — list of Pooja types (Durga, Diwali, Chhath, Janmashtami, Holi, Teej). Clicking a Pooja shows sub-sections (Aarti, Mantra, Kavach, Siddhi, Kunjika, One’s Rate, Adhyayas).
+
+Community — Prayer Wall (community posts) + Sacred Games hub (coin wallet, games, leaderboard). Future community items (polls, contests) should be pluggable here.
+
+Profile — user profile, saved content, settings, order history.
+
+Global UI affordance: Add a persistent Cart floating icon (top-right) that opens the Store (Pooja Kit). Keep Store as a global flow rather than a bottom tab so commerce is always 1-tap accessible.
+
+Functional requirements (summary)
+
+Bottom nav with tabs above, animated transitions, and responsive design.
+
+Pooja detail model supports sub-sections and multiple Adhyaya pages (1..N). Each content item supports Hindi & English toggles.
+
+Reels support: fullscreen vertical player, prefetch next video, lazy-loading, analytics events (views, plays).
+
+Community supports anonymous/signed prayer posts, upvotes, comments, moderation and Sacred Games with a coin wallet (earn/spend), leaderboard and basic game mechanics.
+
+Profile supports saved content (bookmarks), order history (from existing e-commerce), wallet balance, and settings.
+
+Backend APIs for Pooja listing/detail, Community (prayer posts, comments), Games (wallet, leaderboard), Reels, and integration with existing Store microservices.
+
+Admin content endpoints to create/update Pooja content (secure, role-based).
+
+Non-functional requirements
+
+Use React + Vite + Tailwind (keep glassmorphism + animated background style).
+
+react-router v6 for routing (tab routing + nested routes).
+
+Mobile-first, accessible (WCAG basic), internationalization support for Hindi + English.
+
+JWT auth with roles (USER, ADMIN).
+
+DB: PostgreSQL (use normalized tables). Use migrations and seed scripts.
+
+Video assets stored in S3 (or mock local storage in dev). Reels streams optimized for mobile.
+
+Unit + integration tests for new endpoints and critical frontend flows.
+
+Deliverables:
+
+Updated frontend folder structure & React components.
+
+Backend API endpoints, DTOs, DB schema and migration files.
+
+Seed script that inserts Durga Pooja fully (with sample Aarti, Mantra, and multiple Adhyaya entries).
+
+Instructions to run locally, run tests, and deploy.
+
+Short checklist for QA + acceptance criteria.
