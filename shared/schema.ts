@@ -166,6 +166,8 @@ export const poojaContent = pgTable("pooja_content", {
   textEnglish: text("text_english").notNull(),
   textHindi: text("text_hindi").notNull(),
   translation: text("translation"),
+  audioUrl: varchar("audio_url"),
+  adhyaya: integer("adhyaya"), // Chapter number for adhyaya type
   order: integer("order").default(1),
   createdAt: timestamp("created_at").defaultNow(),
 });
@@ -233,6 +235,7 @@ export const poojaSchema = z.object({
   createdAt: z.date(),
 });
 
+// Pooja Content Schema
 export const poojaContentSchema = z.object({
   id: z.string(),
   poojaId: z.string(),
@@ -241,29 +244,21 @@ export const poojaContentSchema = z.object({
   textEnglish: z.string(),
   textHindi: z.string(),
   translation: z.string().optional(),
-  order: z.number().default(1),
+  audioUrl: z.string().optional(),
+  adhyaya: z.number().optional(), // For chapter numbering
+  order: z.number(),
   createdAt: z.date(),
 });
 
-// Type definitions for all schemas
-export type Pooja = z.infer<typeof poojaSchema>;
-export type PoojaContent = z.infer<typeof poojaContentSchema>;
-export type Reel = z.infer<typeof reelSchema>;
-export type CommunityPost = z.infer<typeof communityPostSchema>;
-
-export type InsertPooja = z.infer<typeof insertPoojaSchema>;
-export type InsertPoojaContent = z.infer<typeof insertPoojaContentSchema>;
-export type InsertReel = z.infer<typeof insertReelSchema>;
-export type InsertCommunityPost = z.infer<typeof insertCommunityPostSchema>;
+export const insertPoojaSchema = poojaSchema.omit({ id: true, createdAt: true });
+export const insertPoojaContentSchema = poojaContentSchema.omit({ id: true, createdAt: true });
 
 export type Pooja = z.infer<typeof poojaSchema>;
-export type PoojaContent = z.infer<typeof poojaContentSchema>;
-export type Reel = z.infer<typeof reelSchema>;
-export type CommunityPost = z.infer<typeof communityPostSchema>;
 export type InsertPooja = z.infer<typeof insertPoojaSchema>;
+export type PoojaContent = z.infer<typeof poojaContentSchema>;
 export type InsertPoojaContent = z.infer<typeof insertPoojaContentSchema>;
-export type InsertReel = z.infer<typeof insertReelSchema>;
-export type InsertCommunityPost = z.infer<typeof insertCommunityPostSchema>;
+
+
 
 export type GameSession = z.infer<typeof gameSessionSchema>;
 export type GameScore = z.infer<typeof gameScoreSchema>;

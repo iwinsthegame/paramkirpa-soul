@@ -185,13 +185,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/v1/poojas/:id/content", async (req, res) => {
+  app.get("/api/v1/poojas/:id/content/:type", async (req, res) => {
     try {
-      const { id } = req.params;
-      const { type } = req.query;
-      const content = await storage.getPoojaContent(id, type as string);
+      const { id, type } = req.params;
+      const content = await storage.getPoojaContent(id, type);
       res.json(content);
     } catch (error) {
+      console.error("Error fetching pooja content:", error);
       res.status(500).json({ message: "Failed to fetch pooja content" });
     }
   });

@@ -10,7 +10,7 @@ import { useLanguage } from '@/hooks/use-language';
 import type { Pooja, PoojaContent } from '@shared/schema';
 
 export function PoojaPage() {
-  const { data: poojas = [], isLoading } = useQuery({
+  const { data: poojas = [], isLoading } = useQuery<Pooja[]>({
     queryKey: ['/api/v1/poojas'],
   });
 
@@ -89,13 +89,13 @@ export function PoojaDetailPage() {
   const [selectedType, setSelectedType] = useState<string>('aarti');
   const { language } = useLanguage();
 
-  const { data: pooja } = useQuery({
+  const { data: pooja } = useQuery<Pooja>({
     queryKey: [`/api/v1/poojas/${params?.id}`],
     enabled: !!params?.id,
   });
 
-  const { data: content = [] } = useQuery({
-    queryKey: [`/api/v1/poojas/${params?.id}/content`, selectedType],
+  const { data: content = [] } = useQuery<PoojaContent[]>({
+    queryKey: [`/api/v1/poojas/${params?.id}/content/${selectedType}`],
     enabled: !!params?.id,
   });
 
