@@ -112,6 +112,42 @@ export type InsertContent = z.infer<typeof insertContentSchema>;
 export type Prayer = z.infer<typeof prayerSchema>;
 export type InsertPrayer = z.infer<typeof insertPrayerSchema>;
 export type Reaction = z.infer<typeof reactionSchema>;
+
+// Reel Schema
+export const reelSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  description: z.string().optional(),
+  videoUrl: z.string(),
+  thumbnailUrl: z.string().optional(),
+  duration: z.number().optional(),
+  views: z.number().default(0),
+  likes: z.number().default(0),
+  isActive: z.number().default(1),
+  createdAt: z.date(),
+});
+
+export const insertReelSchema = reelSchema.omit({ id: true, views: true, likes: true, createdAt: true });
+
+export type Reel = z.infer<typeof reelSchema>;
+export type InsertReel = z.infer<typeof insertReelSchema>;
+
+// Community Post Schema  
+export const communityPostSchema = z.object({
+  id: z.string(),
+  userId: z.string().nullable(),
+  content: z.string(),
+  isAnonymous: z.number().default(1),
+  upvotes: z.number().default(0),
+  type: z.enum(["prayer", "question", "share"]).default("prayer"),
+  createdAt: z.date(),
+});
+
+export const insertCommunityPostSchema = communityPostSchema.omit({ id: true, upvotes: true, createdAt: true });
+
+export type CommunityPost = z.infer<typeof communityPostSchema>;
+export type InsertCommunityPost = z.infer<typeof insertCommunityPostSchema>;
+
 // Pooja Schema
 export const poojas = pgTable("poojas", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
@@ -134,7 +170,7 @@ export const poojaContent = pgTable("pooja_content", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-// Reels Schema
+// Reels table schema
 export const reels = pgTable("reels", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   title: varchar("title").notNull(),
@@ -148,14 +184,14 @@ export const reels = pgTable("reels", {
   createdAt: timestamp("created_at").defaultNow(),
 });
 
-// Community Posts (Enhanced Prayer Wall)
+// Community Posts table schema
 export const communityPosts = pgTable("community_posts", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   userId: varchar("user_id").references(() => users.id),
   content: text("content").notNull(),
-  isAnonymous: integer("is_anonymous").default(0),
+  isAnonymous: integer("is_anonymous").default(1),
   upvotes: integer("upvotes").default(0),
-  type: varchar("type").default("prayer"), // prayer, discussion, question
+  type: varchar("type").default("prayer"), // prayer, question, share
   createdAt: timestamp("created_at").defaultNow(),
 });
 
@@ -209,33 +245,16 @@ export const poojaContentSchema = z.object({
   createdAt: z.date(),
 });
 
-export const reelSchema = z.object({
-  id: z.string(),
-  title: z.string(),
-  description: z.string().optional(),
-  videoUrl: z.string(),
-  thumbnailUrl: z.string().optional(),
-  duration: z.number().optional(),
-  views: z.number().default(0),
-  likes: z.number().default(0),
-  isActive: z.number().default(1),
-  createdAt: z.date(),
-});
+// Type definitions for all schemas
+export type Pooja = z.infer<typeof poojaSchema>;
+export type PoojaContent = z.infer<typeof poojaContentSchema>;
+export type Reel = z.infer<typeof reelSchema>;
+export type CommunityPost = z.infer<typeof communityPostSchema>;
 
-export const communityPostSchema = z.object({
-  id: z.string(),
-  userId: z.string().optional(),
-  content: z.string(),
-  isAnonymous: z.number().default(0),
-  upvotes: z.number().default(0),
-  type: z.enum(["prayer", "discussion", "question"]).default("prayer"),
-  createdAt: z.date(),
-});
-
-export const insertPoojaSchema = poojaSchema.omit({ id: true, createdAt: true });
-export const insertPoojaContentSchema = poojaContentSchema.omit({ id: true, createdAt: true });
-export const insertReelSchema = reelSchema.omit({ id: true, createdAt: true });
-export const insertCommunityPostSchema = communityPostSchema.omit({ id: true, createdAt: true });
+export type InsertPooja = z.infer<typeof insertPoojaSchema>;
+export type InsertPoojaContent = z.infer<typeof insertPoojaContentSchema>;
+export type InsertReel = z.infer<typeof insertReelSchema>;
+export type InsertCommunityPost = z.infer<typeof insertCommunityPostSchema>;
 
 export type Pooja = z.infer<typeof poojaSchema>;
 export type PoojaContent = z.infer<typeof poojaContentSchema>;

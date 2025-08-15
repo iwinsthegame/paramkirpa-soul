@@ -11,23 +11,19 @@ export function ReelsPage() {
   const [isMuted, setIsMuted] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
 
-  const { data: reels = [], isLoading } = useQuery({
+  const { data: reels = [], isLoading } = useQuery<Reel[]>({
     queryKey: ['/api/v1/reels'],
   });
 
   const likeMutation = useMutation({
     mutationFn: async (reelId: string) => {
-      return apiRequest(`/api/v1/reels/${reelId}/like`, {
-        method: 'POST',
-      });
+      return apiRequest('POST', `/api/v1/reels/${reelId}/like`);
     },
   });
 
   const incrementViewMutation = useMutation({
     mutationFn: async (reelId: string) => {
-      return apiRequest(`/api/v1/reels/${reelId}/view`, {
-        method: 'POST',
-      });
+      return apiRequest('POST', `/api/v1/reels/${reelId}/view`);
     },
   });
 
