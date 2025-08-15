@@ -111,24 +111,31 @@ export function PoojaDetailPage() {
   if (!match) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 pb-20">
+    <div className="min-h-screen spiritual-gradient pb-20">
       <div className="pt-8 px-4">
         {/* Header */}
         <div className="flex items-center mb-6">
           <Link href="/pooja">
-            <Button variant="ghost" size="sm" className="text-white">
-              <ArrowLeft className="h-4 w-4 mr-2" />
-              Back
-            </Button>
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="glass-card px-4 py-2 rounded-xl cursor-pointer"
+              data-testid="back-button"
+            >
+              <div className="flex items-center text-foreground hover:text-primary transition-colors">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                <span className="font-medium">Back</span>
+              </div>
+            </motion.div>
           </Link>
         </div>
 
         {pooja && (
           <>
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold text-white mb-2">{pooja.name}</h1>
-              {pooja.description && (
-                <p className="text-white/70">{pooja.description}</p>
+              <h1 className="text-3xl font-bold text-foreground mb-2">{(pooja as any).name}</h1>
+              {(pooja as any).description && (
+                <p className="text-muted-foreground">{(pooja as any).description}</p>
               )}
             </div>
 
@@ -140,8 +147,8 @@ export function PoojaDetailPage() {
                   onClick={() => setSelectedType(type.id)}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                     selectedType === type.id
-                      ? 'bg-amber-500 text-white'
-                      : 'bg-white/10 text-white hover:bg-white/20'
+                      ? 'bg-primary text-primary-foreground'
+                      : 'glass-card text-foreground hover:bg-accent hover:text-accent-foreground'
                   }`}
                   data-testid={`tab-${type.id}`}
                 >
