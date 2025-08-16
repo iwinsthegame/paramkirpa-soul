@@ -3,68 +3,70 @@
 @tailwind utilities;
 
 :root {
-  /* Light Mode - Warm Cream & Saffron Theme */
-  --background: hsl(35, 100%, 98%);
-  --foreground: hsl(30, 15%, 15%);
-  --muted: hsl(42, 35%, 90%);
-  --muted-foreground: hsl(30, 8%, 45%);
-  --popover: hsl(40, 60%, 96%);
-  --popover-foreground: hsl(30, 15%, 15%);
-  --card: hsl(40, 60%, 96%);
-  --card-foreground: hsl(30, 15%, 15%);
-  --border: hsl(42, 25%, 88%);
-  --input: hsl(42, 25%, 88%);
-  --primary: hsl(35, 85%, 60%);
-  --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(340, 45%, 85%);
-  --secondary-foreground: hsl(30, 15%, 15%);
-  --accent: hsl(45, 100%, 70%);
-  --accent-foreground: hsl(30, 15%, 15%);
+  /* Royal Golden Glitter Theme */
+  --background: hsl(45, 70%, 96%);
+  --foreground: hsl(30, 25%, 8%);
+  --muted: hsl(45, 50%, 85%);
+  --muted-foreground: hsl(30, 20%, 35%);
+  --popover: hsl(48, 100%, 94%);
+  --popover-foreground: hsl(30, 25%, 8%);
+  --card: hsl(48, 80%, 92%);
+  --card-foreground: hsl(30, 25%, 8%);
+  --border: hsl(45, 40%, 75%);
+  --input: hsl(45, 40%, 75%);
+  --primary: hsl(51, 100%, 50%);
+  --primary-foreground: hsl(30, 25%, 8%);
+  --secondary: hsl(43, 74%, 49%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: hsl(45, 100%, 50%);
+  --accent-foreground: hsl(30, 25%, 8%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(35, 85%, 60%);
+  --ring: hsl(51, 100%, 50%);
   --radius: 1rem;
 
-  /* Spiritual Color Palette */
-  --saffron: hsl(35, 85%, 60%);
-  --lotus-pink: hsl(340, 45%, 75%);
-  --golden-glow: hsl(45, 100%, 70%);
-  --temple-orange: hsl(25, 95%, 65%);
-  --sacred-cream: hsl(40, 60%, 96%);
-  --warm-gradient-start: hsl(35, 100%, 98%);
-  --warm-gradient-end: hsl(35, 85%, 90%);
+  /* Royal Golden Palette */
+  --royal-gold: hsl(43, 74%, 49%);
+  --glitter-gold: hsl(51, 100%, 50%);
+  --champagne: hsl(48, 67%, 88%);
+  --bronze: hsl(30, 67%, 49%);
+  --amber: hsl(45, 100%, 50%);
+  --burnished-gold: hsl(48, 59%, 52%);
+  --warm-gradient-start: hsl(51, 100%, 95%);
+  --warm-gradient-end: hsl(45, 85%, 85%);
 }
 
 .dark {
-  /* Dark Mode - Midnight Blue & Gold Theme */
-  --background: hsl(225, 85%, 8%);
-  --foreground: hsl(45, 100%, 95%);
-  --muted: hsl(225, 50%, 18%);
+  /* Dark Mode - Royal Golden Glitter Theme */
+  --background: hsl(30, 25%, 8%);
+  --foreground: hsl(51, 100%, 95%);
+  --muted: hsl(30, 50%, 15%);
   --muted-foreground: hsl(45, 30%, 65%);
-  --popover: hsl(225, 70%, 12%);
-  --popover-foreground: hsl(45, 100%, 95%);
-  --card: hsl(225, 70%, 12%);
-  --card-foreground: hsl(45, 100%, 95%);
-  --border: hsl(225, 50%, 20%);
-  --input: hsl(225, 50%, 20%);
-  --primary: hsl(45, 100%, 70%);
-  --primary-foreground: hsl(225, 85%, 8%);
-  --secondary: hsl(340, 35%, 25%);
-  --secondary-foreground: hsl(45, 100%, 95%);
-  --accent: hsl(35, 85%, 60%);
-  --accent-foreground: hsl(225, 85%, 8%);
+  --popover: hsl(30, 40%, 10%);
+  --popover-foreground: hsl(51, 100%, 95%);
+  --card: hsl(30, 40%, 10%);
+  --card-foreground: hsl(51, 100%, 95%);
+  --border: hsl(45, 30%, 25%);
+  --input: hsl(45, 30%, 25%);
+  --primary: hsl(51, 100%, 60%);
+  --primary-foreground: hsl(30, 25%, 8%);
+  --secondary: hsl(43, 74%, 35%);
+  --secondary-foreground: hsl(51, 100%, 95%);
+  --accent: hsl(45, 100%, 55%);
+  --accent-foreground: hsl(30, 25%, 8%);
   --destructive: hsl(0, 75%, 55%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(45, 100%, 70%);
+  --ring: hsl(51, 100%, 60%);
 
-  /* Dark Spiritual Colors */
-  --saffron: hsl(35, 85%, 60%);
-  --lotus-pink: hsl(340, 35%, 45%);
-  --golden-glow: hsl(45, 100%, 75%);
-  --temple-orange: hsl(25, 85%, 55%);
-  --sacred-cream: hsl(225, 70%, 15%);
-  --dark-gradient-start: hsl(225, 85%, 8%);
-  --dark-gradient-end: hsl(240, 75%, 15%);
+  /* Dark Royal Golden Colors */
+  --royal-gold: hsl(43, 74%, 45%);
+  --glitter-gold: hsl(51, 100%, 65%);
+  --champagne: hsl(48, 40%, 25%);
+  --bronze: hsl(30, 67%, 35%);
+  --amber: hsl(45, 100%, 45%);
+  --burnished-gold: hsl(48, 59%, 40%);
+  --dark-gradient-start: hsl(30, 25%, 8%);
+  --dark-gradient-end: hsl(45, 40%, 12%);
 }
 
 @layer base {
@@ -183,12 +185,18 @@
   }
 
   .golden-glow {
-    background: linear-gradient(135deg, 
-      hsl(var(--golden-glow)) 0%, 
-      hsl(var(--saffron)) 50%, 
-      hsl(var(--lotus-pink)) 100%);
-    background-size: 200% 200%;
-    animation: gradient-flow 6s ease-in-out infinite;
+    background: linear-gradient(45deg, 
+      hsl(var(--glitter-gold)) 0%,
+      hsl(var(--royal-gold)) 25%,
+      hsl(var(--amber)) 50%,
+      hsl(var(--royal-gold)) 75%,
+      hsl(var(--glitter-gold)) 100%);
+    background-size: 400% 400%;
+    animation: royal-glitter 3s ease-in-out infinite;
+    box-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.6),
+      0 0 40px rgba(218, 165, 32, 0.4),
+      inset 0 0 20px rgba(255, 215, 0, 0.2);
   }
 
   @keyframes gradient-flow {
@@ -215,6 +223,120 @@
     }
     50% {
       transform: translateY(-20px);
+    }
+  }
+
+  /* Royal Golden Glitter Animations */
+  @keyframes royal-glitter {
+    0%, 100% { 
+      background-position: 0% 50%;
+      filter: hue-rotate(0deg) brightness(1) saturate(1);
+    }
+    25% { 
+      background-position: 100% 0%;
+      filter: hue-rotate(15deg) brightness(1.2) saturate(1.3);
+    }
+    50% { 
+      background-position: 100% 100%;
+      filter: hue-rotate(0deg) brightness(1.1) saturate(1.1);
+    }
+    75% { 
+      background-position: 0% 100%;
+      filter: hue-rotate(-15deg) brightness(1.2) saturate(1.3);
+    }
+  }
+
+  @keyframes royal-shimmer {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 200% 50%; }
+  }
+
+  @keyframes royal-border {
+    0%, 100% { 
+      border-image-source: linear-gradient(45deg, #ffd700, #daa520, #ffbf00, #daa520, #ffd700);
+      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.6));
+    }
+    50% { 
+      border-image-source: linear-gradient(45deg, #ffbf00, #ffd700, #daa520, #ffd700, #ffbf00);
+      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+    }
+  }
+
+  @keyframes golden-aura {
+    0%, 100% { 
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 1;
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes royal-float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% { 
+      transform: translateY(-15px) rotate(1deg);
+    }
+    66% { 
+      transform: translateY(-8px) rotate(-1deg);
+    }
+  }
+
+  @keyframes majestic-float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg) scale(1);
+    }
+    25% { 
+      transform: translateY(-20px) rotate(1deg) scale(1.02);
+    }
+    50% { 
+      transform: translateY(-10px) rotate(0deg) scale(1.01);
+    }
+    75% { 
+      transform: translateY(-15px) rotate(-1deg) scale(1.02);
+    }
+  }
+
+  @keyframes royal-button-glow {
+    0%, 100% { 
+      background-position: 0% 50%;
+      box-shadow: 
+        0 4px 15px rgba(218, 165, 32, 0.4),
+        0 0 20px rgba(255, 215, 0, 0.2);
+    }
+    50% { 
+      background-position: 100% 50%;
+      box-shadow: 
+        0 6px 20px rgba(218, 165, 32, 0.6),
+        0 0 30px rgba(255, 215, 0, 0.4);
+    }
+  }
+
+  @keyframes royal-aura {
+    0% { transform: rotate(0deg) scale(1); }
+    100% { transform: rotate(360deg) scale(1); }
+  }
+
+  @keyframes golden-sparkle {
+    0%, 100% { 
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    25% { 
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    50% { 
+      opacity: 0.9;
+      transform: scale(1.05);
+    }
+    75% { 
+      opacity: 1;
+      transform: scale(1.08);
     }
   }
 
