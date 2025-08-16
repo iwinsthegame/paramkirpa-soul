@@ -507,7 +507,7 @@ export function DevotionalGame() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 p-4">
+    <div className="min-h-screen spiritual-gradient p-4">
       <div className="max-w-6xl mx-auto">
         {/* Header with Back Button */}
         <div className="flex items-center justify-between mb-6">
@@ -586,7 +586,7 @@ export function DevotionalGame() {
                   <Button 
                     onClick={startGame}
                     size="lg"
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
+                    className="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700"
                   >
                     <Play className="mr-2 h-5 w-5" />
                     Start Sacred Ritual

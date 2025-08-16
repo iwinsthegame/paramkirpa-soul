@@ -23,7 +23,7 @@ const categories: CategoryInfo[] = [
     name: "Aartis",
     icon: "🔥",
     description: "Lamp worship songs",
-    gradient: "from-pink-400 to-blue-400"
+    gradient: "from-amber-400 to-yellow-400"
   },
   {
     name: "Stotrams",

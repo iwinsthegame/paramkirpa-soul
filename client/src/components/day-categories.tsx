@@ -413,7 +413,7 @@ const categoryInfo: Record<string, { gradient: string; description: string }> = 
     description: "Devotional hymns"
   },
   "Aartis": {
-    gradient: "from-pink-400 to-blue-400",
+    gradient: "from-amber-400 to-yellow-400",
     description: "Lamp worship songs"
   },
   "Stotrams": {
@@ -425,7 +425,7 @@ const categoryInfo: Record<string, { gradient: string; description: string }> = 
     description: "Divine stories"
   },
   "Vrat Vidhi": {
-    gradient: "from-red-400 to-pink-500",
+    gradient: "from-yellow-400 to-amber-500",
     description: "Fasting procedures"
   },
   "Extras": {

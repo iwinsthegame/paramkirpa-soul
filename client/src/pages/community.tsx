@@ -16,7 +16,7 @@ export function CommunityPage() {
   const [activeTab, setActiveTab] = useState('feed');
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 pb-20">
+    <div className="min-h-screen spiritual-gradient pb-20">
       <div className="pt-8 px-4">
         <h1 className="text-3xl font-bold text-white text-center mb-8">
           🤝 Community 🤝
@@ -201,7 +201,7 @@ function PrayerWallContent() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="text-white/70 hover:text-pink-400"
+                        className="text-white/70 hover:text-amber-400"
                       >
                         <Heart className="h-4 w-4 mr-1" />
                         Bless
@@ -266,7 +266,7 @@ function SacredGamesContent() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Card className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-purple-400/30">
+              <Card className="glass-card golden-glow border-amber-400/30">
                 <CardContent className="p-4 text-center">
                   <div className="text-4xl mb-2">🪙</div>
                   <h4 className="text-white font-medium mb-1">Sacred Pond</h4>

@@ -45,7 +45,7 @@ export function ProfilePage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 pb-20">
+    <div className="min-h-screen spiritual-gradient pb-20">
       <div className="pt-8 px-4">
         <div className="max-w-4xl mx-auto">
           {/* Profile Header */}
