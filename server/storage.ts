@@ -1124,7 +1124,7 @@ export class MemStorage implements IStorage {
         id: "lakshmi-pooja",
         name: "Lakshmi Pooja", 
         description: "Worship of Goddess Lakshmi for prosperity and wealth",
-        imageUrl: "/lakshmi-pooja.svg",
+        imageUrl: "/lakshmi-divine.jpg",
         featured: 0,
         createdAt: new Date(),
       },
