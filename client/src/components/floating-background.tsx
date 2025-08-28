@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 export default function FloatingBackground() {
   return (
     <>
-      {/* Krishna Peacock Feather Gradient Background */}
-      <div className="fixed inset-0 krishna-gradient -z-10" />
+      {/* Sakura Cherry Blossom Gradient Background */}
+      <div className="fixed inset-0 spiritual-gradient -z-10" />
       
-      {/* Floating Peacock Feather Elements */}
+      {/* Floating Sakura Cherry Blossom Elements */}
       <div className="fixed inset-0 -z-5 overflow-hidden">
-        {/* Large Peacock Feather Eye */}
+        {/* Large Sakura Blossom */}
         <motion.div
           className="absolute w-40 h-40 peacock-eye"
           style={{ top: "8rem", left: "5%" }}
@@ -23,7 +23,7 @@ export default function FloatingBackground() {
           }}
         />
         
-        {/* Medium Peacock Feather */}
+        {/* Medium Sakura Petal */}
         <motion.div
           className="absolute w-32 h-32 peacock-feather"
           style={{ top: "15rem", right: "8%" }}
@@ -39,7 +39,7 @@ export default function FloatingBackground() {
           }}
         />
         
-        {/* Small Peacock Eye */}
+        {/* Small Sakura Blossom */}
         <motion.div
           className="absolute w-24 h-24 peacock-eye-small"
           style={{ bottom: "12rem", left: "15%" }}
@@ -55,7 +55,7 @@ export default function FloatingBackground() {
           }}
         />
         
-        {/* Krishna Flute */}
+        {/* Sakura Branch */}
         <motion.div
           className="absolute w-28 h-6 krishna-flute"
           style={{ bottom: "8rem", right: "20%" }}
@@ -71,7 +71,7 @@ export default function FloatingBackground() {
           }}
         />
         
-        {/* Additional Peacock Eyes */}
+        {/* Additional Sakura Blossoms */}
         <motion.div
           className="absolute w-20 h-20 peacock-eye-small"
           style={{ top: "25rem", left: "70%" }}
