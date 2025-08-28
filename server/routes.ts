@@ -110,7 +110,34 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/v1/content/:id", async (req, res) => {
     try {
       const { id } = req.params;
-      const content = await storage.getContentById(id);
+      
+      // First try to get from main content storage
+      let content = await storage.getContentById(id);
+      
+      // If not found, check if it's pooja content
+      if (!content) {
+        const allPoojas = await storage.getPoojas();
+        for (const pooja of allPoojas) {
+          const poojaContent = await storage.getPoojaContent(pooja.id);
+          const foundContent = poojaContent.find(item => item.id === id);
+          if (foundContent && foundContent.textHindi && foundContent.textEnglish) {
+            // Convert pooja content to Content format
+            content = {
+              id: foundContent.id,
+              day: "Special",
+              category: foundContent.type || "Pooja",
+              title: foundContent.title,
+              textEnglish: foundContent.textEnglish,
+              textHindi: foundContent.textHindi,
+              translation: foundContent.translation,
+              deity: "Durga",
+              emojiCounts: { "🙏": 0, "❤️": 0, "🌟": 0 }
+            };
+            break;
+          }
+        }
+      }
+      
       if (!content) {
         return res.status(404).json({ message: "Content not found" });
       }
