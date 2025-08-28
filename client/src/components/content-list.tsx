@@ -118,7 +118,7 @@ export default function ContentList({ selectedDay, selectedCategory, onContentSe
                     {content.title}
                   </h4>
                   {content.deity && (
-                    <span className="ml-3 px-3 py-1 bg-amber-400/20 text-amber-300 rounded-full text-xs">
+                    <span className="ml-3 px-3 py-1 bg-primary/20 text-primary rounded-full text-xs">
                       {content.deity}
                     </span>
                   )}
@@ -145,7 +145,7 @@ export default function ContentList({ selectedDay, selectedCategory, onContentSe
                     </div>
                   </div>
                   <motion.div 
-                    className="flex items-center text-amber-400 text-sm"
+                    className="flex items-center text-primary text-sm"
                     whileHover={{ x: 5 }}
                   >
                     <span className="mr-1">Read</span>

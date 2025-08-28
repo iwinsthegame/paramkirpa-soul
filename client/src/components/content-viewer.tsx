@@ -95,7 +95,7 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
             <p className="text-white/70 mb-6">The requested content could not be loaded.</p>
             <button
               onClick={onClose}
-              className="px-6 py-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-lg hover:shadow-lg transition-all duration-300"
+              className="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:shadow-lg transition-all duration-300"
             >
               Close
             </button>
@@ -121,7 +121,7 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
             <div className="flex items-center space-x-4">
               <h2 className="text-2xl font-bold text-white">{content.title}</h2>
               {content.deity && (
-                <span className="px-3 py-1 bg-amber-400/20 text-amber-300 rounded-full text-sm">
+                <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">
                   {content.deity}
                 </span>
               )}
@@ -139,7 +139,7 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
           {/* Content - Ancient Manuscript Style */}
           <div className="p-6 overflow-y-auto max-h-[60vh] custom-scrollbar">
             <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-amber-500/20 text-amber-300 rounded-full text-sm font-medium mb-4">
+              <span className="inline-block px-4 py-2 bg-primary/20 text-primary rounded-full text-sm font-medium mb-4">
                 {t(content.category.toLowerCase().replace(' ', ''))}
               </span>
             </div>
@@ -147,27 +147,27 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
             {/* Ancient Book Style Content Display */}
             <div className="relative">
               {/* Manuscript Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-50/10 to-orange-100/5 rounded-xl border-2 border-amber-400/20" />
-              <div className="absolute top-4 left-4 right-4 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 h-px bg-gradient-to-r from-transparent via-amber-400/30 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl border-2 border-primary/20" />
+              <div className="absolute top-4 left-4 right-4 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
               
               {/* Left margin decoration */}
-              <div className="absolute left-2 top-8 bottom-8 w-1 bg-gradient-to-b from-amber-400/40 via-orange-500/30 to-amber-400/40 rounded-full" />
+              <div className="absolute left-2 top-8 bottom-8 w-1 bg-gradient-to-b from-primary/40 via-secondary/30 to-primary/40 rounded-full" />
               
               {/* Main Content */}
               <div className="relative p-8 pl-12">
                 {/* Decorative Header */}
                 <div className="text-center mb-6">
-                  <div className="inline-flex items-center space-x-2 text-amber-400/80">
-                    <div className="w-8 h-px bg-gradient-to-r from-transparent to-amber-400/60" />
+                  <div className="inline-flex items-center space-x-2 text-primary/80">
+                    <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary/60" />
                     <span className="text-2xl">॥</span>
-                    <div className="w-8 h-px bg-gradient-to-l from-transparent to-amber-400/60" />
+                    <div className="w-8 h-px bg-gradient-to-l from-transparent to-primary/60" />
                   </div>
                 </div>
 
                 {/* Sanskrit/Hindi Text */}
                 <div className="mb-6">
-                  <p className={`text-lg text-amber-100/95 leading-relaxed whitespace-pre-line ${
+                  <p className={`text-lg text-white/95 leading-relaxed whitespace-pre-line ${
                     language === 'hi' ? 'hindi-font text-xl' : 'sanskrit-font'
                   } text-center`} style={{
                     fontFamily: language === 'hi' ? '"Noto Sans Devanagari", "Sanskrit 2003", serif' : '"Sanskrit 2003", "Noto Sans Devanagari", serif',
@@ -180,10 +180,10 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
 
                 {/* Decorative Footer */}
                 <div className="text-center">
-                  <div className="inline-flex items-center space-x-2 text-amber-400/80">
-                    <div className="w-8 h-px bg-gradient-to-r from-transparent to-amber-400/60" />
+                  <div className="inline-flex items-center space-x-2 text-primary/80">
+                    <div className="w-8 h-px bg-gradient-to-r from-transparent to-primary/60" />
                     <span className="text-2xl">॥</span>
-                    <div className="w-8 h-px bg-gradient-to-l from-transparent to-amber-400/60" />
+                    <div className="w-8 h-px bg-gradient-to-l from-transparent to-primary/60" />
                   </div>
                 </div>
               </div>
@@ -191,7 +191,7 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
 
             {content.translation && (
               <div className="mt-6 bg-white/5 rounded-xl p-6 border border-white/10">
-                <h4 className="text-amber-300 font-medium mb-3 flex items-center">
+                <h4 className="text-primary font-medium mb-3 flex items-center">
                   <span className="mr-2">📖</span> 
                   Translation & Significance:
                 </h4>

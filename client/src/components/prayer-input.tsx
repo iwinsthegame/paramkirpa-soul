@@ -61,14 +61,14 @@ export default function PrayerInput() {
           value={prayerText}
           onChange={(e) => setPrayerText(e.target.value)}
           placeholder={t('sharePrayer')}
-          className="w-full h-32 p-4 glass-card rounded-xl text-white placeholder-white/60 resize-none focus:outline-none focus:ring-2 focus:ring-amber-400/50 transition-all duration-300"
+          className="w-full h-32 p-4 glass-card rounded-xl text-white placeholder-white/60 resize-none focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all duration-300"
           disabled={submitPrayerMutation.isPending}
         />
         <div className="absolute bottom-4 right-4">
           <motion.button
             onClick={handleSubmit}
             disabled={!prayerText.trim() || submitPrayerMutation.isPending}
-            className="px-6 py-2 bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-lg hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
+            className="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

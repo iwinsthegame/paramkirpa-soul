@@ -24,11 +24,11 @@ export function CommunityPage() {
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-4xl mx-auto">
           <TabsList className="grid w-full grid-cols-2 glass-card border-purple-400/30">
-            <TabsTrigger value="feed" className="data-[state=active]:bg-amber-500">
+            <TabsTrigger value="feed" className="data-[state=active]:bg-primary">
               <MessageSquare className="h-4 w-4 mr-2" />
               Prayer Wall
             </TabsTrigger>
-            <TabsTrigger value="games" className="data-[state=active]:bg-amber-500">
+            <TabsTrigger value="games" className="data-[state=active]:bg-primary">
               <Gamepad2 className="h-4 w-4 mr-2" />
               Sacred Games
             </TabsTrigger>
@@ -125,7 +125,7 @@ function PrayerWallContent() {
               <Button
                 type="submit"
                 disabled={!newPost.trim() || createPostMutation.isPending}
-                className="bg-amber-500 hover:bg-amber-600"
+                className="bg-primary hover:bg-primary/90"
                 data-testid="submit-post"
               >
                 {createPostMutation.isPending ? 'Sharing...' : 'Share Prayer'}
@@ -153,7 +153,7 @@ function PrayerWallContent() {
                   <CardContent className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center space-x-2">
-                        <div className="w-8 h-8 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center">
+                        <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
                           <span className="text-white text-sm font-bold">
                             {post.isAnonymous ? '🙏' : '👤'}
                           </span>
@@ -182,7 +182,7 @@ function PrayerWallContent() {
                         variant="ghost"
                         size="sm"
                         onClick={() => upvoteMutation.mutate(post.id)}
-                        className="text-white/70 hover:text-amber-400"
+                        className="text-white/70 hover:text-primary"
                         data-testid={`upvote-${post.id}`}
                       >
                         <ArrowUp className="h-4 w-4 mr-1" />
@@ -201,7 +201,7 @@ function PrayerWallContent() {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="text-white/70 hover:text-amber-400"
+                        className="text-white/70 hover:text-primary"
                       >
                         <Heart className="h-4 w-4 mr-1" />
                         Bless
@@ -246,8 +246,8 @@ function SacredGamesContent() {
               <p className="text-white/70 text-sm">Your spiritual currency</p>
             </div>
             <div className="flex items-center space-x-2">
-              <Coins className="h-6 w-6 text-amber-400" />
-              <span className="text-2xl font-bold text-amber-400">
+              <Coins className="h-6 w-6 text-primary" />
+              <span className="text-2xl font-bold text-primary">
                 {wallet?.balance || 100}
               </span>
             </div>
@@ -266,12 +266,12 @@ function SacredGamesContent() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Card className="glass-card golden-glow border-amber-400/30">
+              <Card className="glass-card sakura-glow border-primary/30">
                 <CardContent className="p-4 text-center">
                   <div className="text-4xl mb-2">🪙</div>
                   <h4 className="text-white font-medium mb-1">Sacred Pond</h4>
                   <p className="text-white/70 text-xs mb-3">Toss coins for blessings</p>
-                  <Button size="sm" className="bg-amber-500 hover:bg-amber-600">
+                  <Button size="sm" className="bg-primary hover:bg-primary/90">
                     Play Now
                   </Button>
                 </CardContent>
@@ -292,7 +292,7 @@ function SacredGamesContent() {
       <Card className="glass-card border-purple-400/30">
         <CardContent className="p-6">
           <div className="flex items-center mb-4">
-            <Trophy className="h-5 w-5 text-amber-400 mr-2" />
+            <Trophy className="h-5 w-5 text-primary mr-2" />
             <h3 className="text-white font-semibold">Leaderboard</h3>
           </div>
           
@@ -302,7 +302,7 @@ function SacredGamesContent() {
                 <div key={entry.id} className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <span className={`text-lg font-bold ${
-                      index === 0 ? 'text-amber-400' :
+                      index === 0 ? 'text-primary' :
                       index === 1 ? 'text-gray-300' :
                       index === 2 ? 'text-orange-400' : 'text-white/70'
                     }`}>
@@ -311,7 +311,7 @@ function SacredGamesContent() {
                     <span className="text-white">Anonymous Player</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="text-amber-400 font-medium">{entry.score}</span>
+                    <span className="text-primary font-medium">{entry.score}</span>
                     <span className="text-white/60 text-sm">pts</span>
                   </div>
                 </div>

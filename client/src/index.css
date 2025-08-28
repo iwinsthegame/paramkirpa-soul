@@ -3,70 +3,68 @@
 @tailwind utilities;
 
 :root {
-  /* Royal Golden Glitter Theme */
-  --background: hsl(45, 70%, 96%);
-  --foreground: hsl(30, 25%, 8%);
-  --muted: hsl(45, 50%, 85%);
-  --muted-foreground: hsl(30, 20%, 35%);
-  --popover: hsl(48, 100%, 94%);
-  --popover-foreground: hsl(30, 25%, 8%);
-  --card: hsl(48, 80%, 92%);
-  --card-foreground: hsl(30, 25%, 8%);
-  --border: hsl(45, 40%, 75%);
-  --input: hsl(45, 40%, 75%);
-  --primary: hsl(51, 100%, 50%);
-  --primary-foreground: hsl(30, 25%, 8%);
-  --secondary: hsl(43, 74%, 49%);
+  /* Sakura Cherry Blossom Theme */
+  --background: hsl(20, 41%, 94%);
+  --foreground: hsl(350, 23%, 40%);
+  --muted: hsl(20, 35%, 89%);
+  --muted-foreground: hsl(350, 15%, 50%);
+  --popover: hsl(20, 41%, 96%);
+  --popover-foreground: hsl(350, 23%, 40%);
+  --card: hsl(20, 35%, 92%);
+  --card-foreground: hsl(350, 23%, 40%);
+  --border: hsl(20, 30%, 85%);
+  --input: hsl(20, 30%, 85%);
+  --primary: hsl(349, 47%, 77%);
+  --primary-foreground: hsl(350, 23%, 40%);
+  --secondary: hsl(349, 47%, 70%);
   --secondary-foreground: hsl(0, 0%, 100%);
-  --accent: hsl(45, 100%, 50%);
-  --accent-foreground: hsl(30, 25%, 8%);
+  --accent: hsl(349, 47%, 77%);
+  --accent-foreground: hsl(350, 23%, 40%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(51, 100%, 50%);
+  --ring: hsl(349, 47%, 77%);
   --radius: 1rem;
 
-  /* Royal Golden Palette */
-  --royal-gold: hsl(43, 74%, 49%);
-  --glitter-gold: hsl(51, 100%, 50%);
-  --champagne: hsl(48, 67%, 88%);
-  --bronze: hsl(30, 67%, 49%);
-  --amber: hsl(45, 100%, 50%);
-  --burnished-gold: hsl(48, 59%, 52%);
-  --warm-gradient-start: hsl(51, 100%, 95%);
-  --warm-gradient-end: hsl(45, 85%, 85%);
+  /* Sakura Cherry Blossom Palette */
+  --sakura-cream: hsl(20, 41%, 94%);
+  --sakura-secondary: hsl(10, 30%, 84%);
+  --sakura-highlight: hsl(349, 47%, 77%);
+  --sakura-accent: hsl(349, 47%, 70%);
+  --sakura-text: hsl(350, 23%, 40%);
+  --sakura-gradient-start: hsl(20, 41%, 96%);
+  --sakura-gradient-end: hsl(10, 30%, 89%);
 }
 
 .dark {
-  /* Dark Mode - Royal Golden Glitter Theme */
-  --background: hsl(30, 25%, 8%);
-  --foreground: hsl(51, 100%, 95%);
-  --muted: hsl(30, 50%, 15%);
-  --muted-foreground: hsl(45, 30%, 65%);
-  --popover: hsl(30, 40%, 10%);
-  --popover-foreground: hsl(51, 100%, 95%);
-  --card: hsl(30, 40%, 10%);
-  --card-foreground: hsl(51, 100%, 95%);
-  --border: hsl(45, 30%, 25%);
-  --input: hsl(45, 30%, 25%);
-  --primary: hsl(51, 100%, 60%);
-  --primary-foreground: hsl(30, 25%, 8%);
-  --secondary: hsl(43, 74%, 35%);
-  --secondary-foreground: hsl(51, 100%, 95%);
-  --accent: hsl(45, 100%, 55%);
-  --accent-foreground: hsl(30, 25%, 8%);
+  /* Dark Mode - Sakura Cherry Blossom Theme */
+  --background: hsl(350, 23%, 12%);
+  --foreground: hsl(20, 41%, 94%);
+  --muted: hsl(350, 30%, 18%);
+  --muted-foreground: hsl(20, 25%, 75%);
+  --popover: hsl(350, 23%, 10%);
+  --popover-foreground: hsl(20, 41%, 94%);
+  --card: hsl(350, 23%, 15%);
+  --card-foreground: hsl(20, 41%, 94%);
+  --border: hsl(350, 20%, 25%);
+  --input: hsl(350, 20%, 25%);
+  --primary: hsl(349, 47%, 65%);
+  --primary-foreground: hsl(350, 23%, 12%);
+  --secondary: hsl(349, 47%, 55%);
+  --secondary-foreground: hsl(20, 41%, 94%);
+  --accent: hsl(349, 47%, 65%);
+  --accent-foreground: hsl(350, 23%, 12%);
   --destructive: hsl(0, 75%, 55%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(51, 100%, 60%);
+  --ring: hsl(349, 47%, 65%);
 
-  /* Dark Royal Golden Colors */
-  --royal-gold: hsl(43, 74%, 45%);
-  --glitter-gold: hsl(51, 100%, 65%);
-  --champagne: hsl(48, 40%, 25%);
-  --bronze: hsl(30, 67%, 35%);
-  --amber: hsl(45, 100%, 45%);
-  --burnished-gold: hsl(48, 59%, 40%);
-  --dark-gradient-start: hsl(30, 25%, 8%);
-  --dark-gradient-end: hsl(45, 40%, 12%);
+  /* Dark Sakura Cherry Blossom Colors */
+  --sakura-cream: hsl(350, 23%, 20%);
+  --sakura-secondary: hsl(349, 30%, 25%);
+  --sakura-highlight: hsl(349, 47%, 65%);
+  --sakura-accent: hsl(349, 47%, 55%);
+  --sakura-text: hsl(20, 41%, 90%);
+  --dark-gradient-start: hsl(350, 23%, 12%);
+  --dark-gradient-end: hsl(349, 30%, 18%);
 }
 
 @layer base {
@@ -78,8 +76,8 @@
     @apply font-sans antialiased bg-background text-foreground;
     font-family: 'Inter', 'Noto Sans Devanagari', 'Devanagari', sans-serif;
     background: linear-gradient(135deg, 
-      hsl(var(--warm-gradient-start)) 0%, 
-      hsl(var(--warm-gradient-end)) 100%);
+      hsl(var(--sakura-gradient-start)) 0%, 
+      hsl(var(--sakura-gradient-end)) 100%);
     min-height: 100vh;
     transition: all 0.3s ease;
   }
@@ -116,23 +114,23 @@
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: rgba(251, 191, 36, 0.3);
+    background: rgba(237, 151, 160, 0.4);
     border-radius: 4px;
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: rgba(251, 191, 36, 0.5);
+    background: rgba(224, 124, 142, 0.6);
   }
 }
 
 @layer utilities {
   .spiritual-gradient {
     background: linear-gradient(135deg, 
-      hsl(var(--warm-gradient-start)) 0%, 
-      hsl(var(--warm-gradient-end)) 50%,
-      hsl(var(--royal-gold)) 100%);
+      hsl(var(--sakura-gradient-start)) 0%, 
+      hsl(var(--sakura-gradient-end)) 50%,
+      hsl(var(--sakura-highlight)) 100%);
     background-size: 400% 400%;
-    animation: royal-glitter 15s ease infinite;
+    animation: sakura-shimmer 15s ease infinite;
     position: relative;
   }
 
@@ -144,20 +142,23 @@
     right: 0;
     bottom: 0;
     background: radial-gradient(circle at 20% 80%, 
-      rgba(255, 215, 0, 0.1) 0%, 
+      rgba(237, 151, 160, 0.15) 0%, 
       transparent 50%),
       radial-gradient(circle at 80% 20%, 
-      rgba(218, 165, 32, 0.1) 0%, 
-      transparent 50%);
+      rgba(224, 124, 142, 0.15) 0%, 
+      transparent 50%),
+      radial-gradient(circle at 50% 50%, 
+      rgba(247, 235, 224, 0.1) 0%, 
+      transparent 70%);
     pointer-events: none;
-    animation: golden-sparkle 6s ease-in-out infinite;
+    animation: sakura-petals 8s ease-in-out infinite;
   }
 
   .dark .spiritual-gradient {
     background: linear-gradient(135deg, 
       hsl(var(--dark-gradient-start)) 0%, 
       hsl(var(--dark-gradient-end)) 50%,
-      hsl(var(--royal-gold)) 100%);
+      hsl(var(--sakura-highlight)) 100%);
   }
 
   .krishna-gradient {
@@ -172,51 +173,51 @@
     background-attachment: fixed;
   }
 
-  /* Royal Golden Glassmorphism Effects */
+  /* Sakura Cherry Blossom Glassmorphism Effects */
   .glass {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    background: rgba(255, 215, 0, 0.1);
-    border: 1px solid rgba(218, 165, 32, 0.3);
-    box-shadow: 0 8px 32px rgba(218, 165, 32, 0.15);
+    background: rgba(247, 235, 224, 0.25);
+    border: 1px solid rgba(237, 151, 160, 0.3);
+    box-shadow: 0 8px 32px rgba(224, 124, 142, 0.15);
   }
 
   .glass-card {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    background: rgba(255, 215, 0, 0.08);
-    border: 1px solid rgba(218, 165, 32, 0.2);
-    box-shadow: 0 4px 24px rgba(218, 165, 32, 0.1);
-    border-radius: 1rem;
+    background: rgba(247, 235, 224, 0.2);
+    border: 1px solid rgba(237, 151, 160, 0.25);
+    box-shadow: 0 4px 24px rgba(224, 124, 142, 0.12), 0 0 0 1px rgba(247, 235, 224, 0.1);
+    border-radius: 1.5rem;
     transition: all 0.3s ease;
   }
 
   .glass-card:hover {
-    background: rgba(255, 215, 0, 0.12);
-    box-shadow: 0 8px 32px rgba(218, 165, 32, 0.2);
-    transform: translateY(-2px);
+    background: rgba(247, 235, 224, 0.3);
+    box-shadow: 0 8px 32px rgba(224, 124, 142, 0.2), 0 0 0 1px rgba(237, 151, 160, 0.3);
+    transform: translateY(-3px);
   }
 
   .glass-card-dark {
     backdrop-filter: blur(20px);
-    background: rgba(255, 215, 0, 0.05);
-    border: 1px solid rgba(218, 165, 32, 0.15);
-    box-shadow: 0 8px 32px rgba(184, 134, 11, 0.3);
+    background: rgba(247, 235, 224, 0.1);
+    border: 1px solid rgba(237, 151, 160, 0.2);
+    box-shadow: 0 8px 32px rgba(166, 100, 102, 0.3);
   }
 
-  .golden-glow {
+  .sakura-glow {
     background: linear-gradient(45deg, 
-      hsl(var(--glitter-gold)) 0%,
-      hsl(var(--royal-gold)) 25%,
-      hsl(var(--amber)) 50%,
-      hsl(var(--royal-gold)) 75%,
-      hsl(var(--glitter-gold)) 100%);
+      hsl(var(--sakura-highlight)) 0%,
+      hsl(var(--sakura-accent)) 25%,
+      hsl(var(--sakura-secondary)) 50%,
+      hsl(var(--sakura-accent)) 75%,
+      hsl(var(--sakura-highlight)) 100%);
     background-size: 400% 400%;
-    animation: royal-glitter 3s ease-in-out infinite;
+    animation: sakura-shimmer 3s ease-in-out infinite;
     box-shadow: 
-      0 0 20px rgba(255, 215, 0, 0.6),
-      0 0 40px rgba(218, 165, 32, 0.4),
-      inset 0 0 20px rgba(255, 215, 0, 0.2);
+      0 0 20px rgba(237, 151, 160, 0.4),
+      0 0 40px rgba(224, 124, 142, 0.3),
+      inset 0 0 20px rgba(247, 235, 224, 0.2);
   }
 
   @keyframes gradient-flow {
@@ -246,23 +247,42 @@
     }
   }
 
-  /* Royal Golden Glitter Animations */
-  @keyframes royal-glitter {
+  /* Sakura Cherry Blossom Animations */
+  @keyframes sakura-shimmer {
     0%, 100% { 
       background-position: 0% 50%;
-      filter: hue-rotate(0deg) brightness(1) saturate(1);
+      filter: hue-rotate(0deg) brightness(1) saturate(1.1);
     }
     25% { 
       background-position: 100% 0%;
-      filter: hue-rotate(15deg) brightness(1.2) saturate(1.3);
+      filter: hue-rotate(5deg) brightness(1.1) saturate(1.2);
     }
     50% { 
       background-position: 100% 100%;
-      filter: hue-rotate(0deg) brightness(1.1) saturate(1.1);
+      filter: hue-rotate(0deg) brightness(1.05) saturate(1.15);
     }
     75% { 
       background-position: 0% 100%;
-      filter: hue-rotate(-15deg) brightness(1.2) saturate(1.3);
+      filter: hue-rotate(-5deg) brightness(1.1) saturate(1.2);
+    }
+  }
+
+  @keyframes sakura-petals {
+    0%, 100% { 
+      opacity: 0.8;
+      transform: scale(1) rotate(0deg);
+    }
+    25% { 
+      opacity: 1;
+      transform: scale(1.02) rotate(1deg);
+    }
+    50% { 
+      opacity: 0.9;
+      transform: scale(1.01) rotate(0deg);
+    }
+    75% { 
+      opacity: 1;
+      transform: scale(1.02) rotate(-1deg);
     }
   }
 

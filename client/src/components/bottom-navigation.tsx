@@ -62,7 +62,7 @@ export function BottomNavigation() {
                     data-testid={`nav-${tab.id}`}
                   >
                     <motion.div
-                      className={`${isActive ? 'golden-glow p-2 rounded-xl shadow-lg' : ''}`}
+                      className={`${isActive ? 'sakura-glow p-2 rounded-xl shadow-lg' : ''}`}
                       initial={false}
                       animate={isActive ? { 
                         scale: [1, 1.1, 1],

@@ -11,7 +11,7 @@ const categories: CategoryInfo[] = [
     name: "Mantras",
     icon: "🙏",
     description: "Sacred chants for peace",
-    gradient: "from-amber-400 to-orange-500"
+    gradient: "from-primary to-secondary"
   },
   {
     name: "Chalisas",
@@ -23,7 +23,7 @@ const categories: CategoryInfo[] = [
     name: "Aartis",
     icon: "🔥",
     description: "Lamp worship songs",
-    gradient: "from-amber-400 to-yellow-400"
+    gradient: "from-primary to-accent"
   },
   {
     name: "Stotrams",

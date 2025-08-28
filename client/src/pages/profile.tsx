@@ -54,7 +54,7 @@ export function ProfilePage() {
               <div className="flex items-center space-x-4">
                 <Avatar className="h-16 w-16">
                   <AvatarImage src={user?.profileImageUrl} alt={user?.firstName} />
-                  <AvatarFallback className="bg-gradient-to-br from-amber-400 to-orange-500 text-white">
+                  <AvatarFallback className="bg-gradient-to-br from-primary to-secondary text-white">
                     {user?.firstName?.[0] || 'U'}
                   </AvatarFallback>
                 </Avatar>
@@ -67,8 +67,8 @@ export function ProfilePage() {
                   
                   {coinBalance && (
                     <div className="flex items-center mt-2 space-x-2">
-                      <Coins className="h-4 w-4 text-amber-400" />
-                      <span className="text-amber-400 font-medium">{coinBalance.balance} Sacred Coins</span>
+                      <Coins className="h-4 w-4 text-primary" />
+                      <span className="text-primary font-medium">{coinBalance.balance} Sacred Coins</span>
                     </div>
                   )}
                 </div>
@@ -84,14 +84,14 @@ export function ProfilePage() {
           {/* Tabs */}
           <Tabs value={activeTab} onValueChange={setActiveTab}>
             <TabsList className="grid w-full grid-cols-3 glass-card border-purple-400/30">
-              <TabsTrigger value="overview" className="data-[state=active]:bg-amber-500">
+              <TabsTrigger value="overview" className="data-[state=active]:bg-primary">
                 Overview
               </TabsTrigger>
-              <TabsTrigger value="saved" className="data-[state=active]:bg-amber-500">
+              <TabsTrigger value="saved" className="data-[state=active]:bg-primary">
                 <Bookmark className="h-4 w-4 mr-2" />
                 Saved
               </TabsTrigger>
-              <TabsTrigger value="settings" className="data-[state=active]:bg-amber-500">
+              <TabsTrigger value="settings" className="data-[state=active]:bg-primary">
                 <Settings className="h-4 w-4 mr-2" />
                 Settings
               </TabsTrigger>
@@ -104,7 +104,7 @@ export function ProfilePage() {
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-white font-semibold">Recent Orders</h3>
-                      <ShoppingBag className="h-5 w-5 text-amber-400" />
+                      <ShoppingBag className="h-5 w-5 text-primary" />
                     </div>
                     
                     {orderHistory.length > 0 ? (
@@ -115,7 +115,7 @@ export function ProfilePage() {
                               <p className="text-white text-sm font-medium">{order.item}</p>
                               <p className="text-white/60 text-xs">{order.date}</p>
                             </div>
-                            <span className="text-amber-400 font-medium">₹{order.amount}</span>
+                            <span className="text-primary font-medium">₹{order.amount}</span>
                           </div>
                         ))}
                       </div>
@@ -145,7 +145,7 @@ export function ProfilePage() {
                       </div>
                       <div className="flex justify-between">
                         <span className="text-white/70">Devotion Streak</span>
-                        <span className="text-amber-400 font-medium">🔥 5 days</span>
+                        <span className="text-primary font-medium">🔥 5 days</span>
                       </div>
                     </div>
                   </CardContent>
@@ -196,7 +196,7 @@ export function ProfilePage() {
                     <div className="space-y-4">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
-                          <Languages className="h-5 w-5 text-amber-400" />
+                          <Languages className="h-5 w-5 text-primary" />
                           <div>
                             <p className="text-white font-medium">Language</p>
                             <p className="text-white/60 text-sm">
@@ -213,7 +213,7 @@ export function ProfilePage() {
                       
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
-                          <Bell className="h-5 w-5 text-amber-400" />
+                          <Bell className="h-5 w-5 text-primary" />
                           <div>
                             <p className="text-white font-medium">Notifications</p>
                             <p className="text-white/60 text-sm">Prayer reminders & updates</p>
@@ -229,9 +229,9 @@ export function ProfilePage() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center space-x-3">
                           {darkMode ? (
-                            <Moon className="h-5 w-5 text-amber-400" />
+                            <Moon className="h-5 w-5 text-primary" />
                           ) : (
-                            <Sun className="h-5 w-5 text-amber-400" />
+                            <Sun className="h-5 w-5 text-primary" />
                           )}
                           <div>
                             <p className="text-white font-medium">Dark Mode</p>

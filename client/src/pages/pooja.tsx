@@ -20,7 +20,7 @@ export function PoojaPage() {
         <div className="glass-card p-8 rounded-2xl">
           <div className="text-foreground font-medium">Loading poojas...</div>
           <div className="w-full bg-border rounded-full h-2 mt-4 overflow-hidden">
-            <div className="golden-glow h-full rounded-full animate-pulse"></div>
+            <div className="sakura-glow h-full rounded-full animate-pulse"></div>
           </div>
         </div>
       </div>

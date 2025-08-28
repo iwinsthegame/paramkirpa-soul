@@ -125,11 +125,11 @@ export function StorePage() {
         </div>
 
         {/* Featured Banner */}
-        <Card className="glass-card border-amber-400/30 mb-6 bg-gradient-to-r from-amber-500/10 to-orange-500/10">
+        <Card className="glass-card border-primary/30 mb-6 bg-gradient-to-r from-primary/10 to-secondary/10">
           <CardContent className="p-6 text-center">
-            <h2 className="text-2xl font-bold text-amber-400 mb-2">✨ Special Offer ✨</h2>
+            <h2 className="text-2xl font-bold text-primary mb-2">✨ Special Offer ✨</h2>
             <p className="text-white/80 mb-4">Get 25% off on all Durga Pooja kits this week!</p>
-            <Badge className="bg-amber-500 text-white">Limited Time</Badge>
+            <Badge className="bg-primary text-white">Limited Time</Badge>
           </CardContent>
         </Card>
 
@@ -148,7 +148,7 @@ export function StorePage() {
               >
                 <Card className="glass-card border-purple-400/30 overflow-hidden h-full">
                   {kit.featured && (
-                    <Badge className="absolute top-2 left-2 z-10 bg-amber-500">
+                    <Badge className="absolute top-2 left-2 z-10 bg-primary">
                       <Star className="h-3 w-3 mr-1" />
                       Featured
                     </Badge>
@@ -183,7 +183,7 @@ export function StorePage() {
                               key={i}
                               className={`h-4 w-4 ${
                                 i < Math.floor(kit.rating)
-                                  ? 'text-amber-400 fill-current'
+                                  ? 'text-primary fill-current'
                                   : 'text-gray-400'
                               }`}
                             />
@@ -221,7 +221,7 @@ export function StorePage() {
                       {/* Price */}
                       <div className="flex items-center justify-between mb-4">
                         <div>
-                          <span className="text-2xl font-bold text-amber-400">
+                          <span className="text-2xl font-bold text-primary">
                             ₹{kit.price}
                           </span>
                           <span className="text-white/50 text-sm line-through ml-2">
@@ -263,7 +263,7 @@ export function StorePage() {
                           ) : (
                             <Button
                               onClick={() => addToCart(kit.id)}
-                              className="w-full bg-amber-500 hover:bg-amber-600"
+                              className="w-full bg-primary hover:bg-primary/90"
                               data-testid={`add-to-cart-${kit.id}`}
                             >
                               Add to Cart
@@ -298,16 +298,16 @@ export function StorePage() {
             animate={{ opacity: 1, y: 0 }}
             className="fixed bottom-20 left-4 right-4 z-30"
           >
-            <Card className="glass-card border-amber-400/30 bg-gradient-to-r from-amber-500/20 to-orange-500/20">
+            <Card className="glass-card border-primary/30 bg-gradient-to-r from-primary/20 to-secondary/20">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-white font-medium">
                       {getTotalItems()} item{getTotalItems() > 1 ? 's' : ''} in cart
                     </p>
-                    <p className="text-amber-400 font-bold text-lg">₹{getTotalPrice()}</p>
+                    <p className="text-primary font-bold text-lg">₹{getTotalPrice()}</p>
                   </div>
-                  <Button className="bg-amber-500 hover:bg-amber-600" data-testid="checkout-button">
+                  <Button className="bg-primary hover:bg-primary/90" data-testid="checkout-button">
                     Checkout
                   </Button>
                 </div>

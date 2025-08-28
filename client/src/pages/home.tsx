@@ -137,7 +137,7 @@ export default function Home() {
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="text-amber-400 text-3xl mb-3">🪙</div>
+                    <div className="text-primary text-3xl mb-3">🪙</div>
                     <h4 className="text-lg font-semibold text-white mb-2">Sacred Pond Game</h4>
                     <p className="text-white/70 text-sm">Toss coins at divine Charan Paduka</p>
                   </motion.div>
@@ -147,7 +147,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="text-amber-400 text-3xl mb-3">💎</div>
+                  <div className="text-primary text-3xl mb-3">💎</div>
                   <h4 className="text-lg font-semibold text-white mb-2">{t('rudrakshStore')}</h4>
                   <p className="text-white/70 text-sm">{t('authenticItems')}</p>
                 </motion.div>
@@ -156,7 +156,7 @@ export default function Home() {
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="text-amber-400 text-3xl mb-3">👶</div>
+                  <div className="text-primary text-3xl mb-3">👶</div>
                   <h4 className="text-lg font-semibold text-white mb-2">{t('kidsReels')}</h4>
                   <p className="text-white/70 text-sm">{t('spiritualContent')}</p>
                 </motion.div>
