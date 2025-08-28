@@ -1116,7 +1116,7 @@ export class MemStorage implements IStorage {
         id: "durga-pooja",
         name: "Durga Pooja",
         description: "Worship of Goddess Durga for strength and protection",
-        imageUrl: "/durga-pooja.svg",
+        imageUrl: "/durga-maa.jpg",
         featured: 1,
         createdAt: new Date(),
       },
