@@ -60,7 +60,7 @@ export const createEmojiRain = (container: HTMLElement) => {
 
 export const createFloatingSphere = (container: HTMLElement) => {
   const sphere = document.createElement('div');
-  sphere.className = 'fixed pointer-events-none z-[100] w-8 h-8 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full opacity-0';
+  sphere.className = 'fixed pointer-events-none z-[100] w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-full opacity-0';
   sphere.style.left = `${window.innerWidth / 2 - 16}px`;
   sphere.style.top = `${window.innerHeight / 2 - 16}px`;
   

@@ -304,7 +304,7 @@ function SacredGamesContent() {
                     <span className={`text-lg font-bold ${
                       index === 0 ? 'text-primary' :
                       index === 1 ? 'text-gray-300' :
-                      index === 2 ? 'text-orange-400' : 'text-white/70'
+                      index === 2 ? 'text-accent' : 'text-white/70'
                     }`}>
                       #{index + 1}
                     </span>

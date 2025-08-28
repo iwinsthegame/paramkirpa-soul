@@ -405,7 +405,7 @@ const getSvgIcon = (category: string) => {
 
 const categoryInfo: Record<string, { gradient: string; description: string }> = {
   "Mantras": {
-    gradient: "from-amber-400 to-orange-500",
+    gradient: "from-primary to-secondary",
     description: "Sacred chants for peace"
   },
   "Chalisas": {
@@ -413,7 +413,7 @@ const categoryInfo: Record<string, { gradient: string; description: string }> = 
     description: "Devotional hymns"
   },
   "Aartis": {
-    gradient: "from-amber-400 to-yellow-400",
+    gradient: "from-primary to-accent",
     description: "Lamp worship songs"
   },
   "Stotrams": {
@@ -425,7 +425,7 @@ const categoryInfo: Record<string, { gradient: string; description: string }> = 
     description: "Divine stories"
   },
   "Vrat Vidhi": {
-    gradient: "from-yellow-400 to-amber-500",
+    gradient: "from-accent to-primary",
     description: "Fasting procedures"
   },
   "Extras": {

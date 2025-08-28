@@ -303,7 +303,7 @@
     }
   }
 
-  @keyframes golden-aura {
+  @keyframes sakura-aura {
     0%, 100% { 
       opacity: 0.6;
       transform: scale(1);
@@ -361,7 +361,7 @@
     100% { transform: rotate(360deg) scale(1); }
   }
 
-  @keyframes golden-sparkle {
+  @keyframes sakura-sparkle {
     0%, 100% { 
       opacity: 0.8;
       transform: scale(1);

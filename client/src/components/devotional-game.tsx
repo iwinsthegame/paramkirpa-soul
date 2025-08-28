@@ -586,7 +586,7 @@ export function DevotionalGame() {
                   <Button 
                     onClick={startGame}
                     size="lg"
-                    className="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700"
+                    className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
                   >
                     <Play className="mr-2 h-5 w-5" />
                     Start Sacred Ritual
@@ -597,7 +597,7 @@ export function DevotionalGame() {
               {isPlaying && (
                 <div className="absolute top-6 left-6">
                   <p className="text-white text-sm bg-black/50 px-3 py-1 rounded">
-                    Click to toss coin towards the golden Charan Paduka
+                    Click to toss coin towards the sacred Charan Paduka
                   </p>
                 </div>
               )}
@@ -622,7 +622,7 @@ export function DevotionalGame() {
             <Button 
               onClick={endGame}
               size="lg"
-              className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700"
+              className="bg-gradient-to-r from-secondary to-destructive hover:from-secondary/90 hover:to-destructive/90"
             >
               <Star className="mr-2 h-5 w-5" />
               Complete Ritual
@@ -657,7 +657,7 @@ export function DevotionalGame() {
                   <p className="text-purple-300 text-sm">{currentBlessing.hindi}</p>
                   <div className="flex justify-center gap-1 mt-3">
                     {[...Array(5)].map((_, i) => (
-                      <Sparkles key={i} className="h-4 w-4 text-yellow-400" />
+                      <Sparkles key={i} className="h-4 w-4 text-primary" />
                     ))}
                   </div>
                 </CardContent>
@@ -671,14 +671,14 @@ export function DevotionalGame() {
           <Card className="glass-card">
             <CardContent className="p-6">
               <h3 className="text-xl font-semibold text-white mb-4 flex items-center">
-                <Star className="mr-2 h-5 w-5 text-yellow-400" />
+                <Star className="mr-2 h-5 w-5 text-primary" />
                 Sacred Leaderboard
               </h3>
               <div className="space-y-2">
                 {leaderboard.slice(0, 5).map((entry: any, index: number) => (
                   <div key={entry.id} className="flex justify-between items-center py-2 px-3 bg-purple-600/20 rounded">
                     <div className="flex items-center gap-3">
-                      <Badge variant="outline" className="bg-yellow-400/20 text-yellow-300">
+                      <Badge variant="outline" className="bg-primary/20 text-primary">
                         #{index + 1}
                       </Badge>
                       <span className="text-white">Anonymous Devotee</span>

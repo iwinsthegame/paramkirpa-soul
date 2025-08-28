@@ -18,9 +18,9 @@ export default function LanguageToggle() {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-amber-400/20 to-orange-500/20 backdrop-blur-md rounded-full text-white hover:from-amber-400/30 hover:to-orange-500/30 transition-all duration-300 border border-white/20"
+        className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-md rounded-full text-white hover:from-primary/30 hover:to-secondary/30 transition-all duration-300 border border-white/20"
       >
-        <Globe className="w-4 h-4 text-amber-300" />
+        <Globe className="w-4 h-4 text-primary" />
         <span className="font-medium">
           {language === 'hi' ? 'हिंदी' : 'English'}
         </span>

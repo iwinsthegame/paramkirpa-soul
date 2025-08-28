@@ -8,7 +8,7 @@ export default function Header() {
     <header className="relative z-10 glass-card">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+          <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
             <span className="text-white text-lg">🕉️</span>
           </div>
           <h1 className="text-2xl text-white font-extrabold">{t('appName')}</h1>
@@ -21,7 +21,7 @@ export default function Header() {
               onClick={() => setLanguage('en')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 language === 'en' 
-                  ? 'bg-amber-400 text-black shadow-lg' 
+                  ? 'bg-primary text-white shadow-lg' 
                   : 'text-white/70 hover:text-white hover:bg-white/10'
               }`}
             >
@@ -31,7 +31,7 @@ export default function Header() {
               onClick={() => setLanguage('hi')}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 language === 'hi' 
-                  ? 'bg-amber-400 text-black shadow-lg' 
+                  ? 'bg-primary text-white shadow-lg' 
                   : 'text-white/70 hover:text-white hover:bg-white/10'
               }`}
             >
