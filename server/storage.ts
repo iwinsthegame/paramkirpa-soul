@@ -1132,7 +1132,7 @@ export class MemStorage implements IStorage {
         id: "ganesha-pooja",
         name: "Ganesha Pooja",
         description: "Worship of Lord Ganesha for removing obstacles",
-        imageUrl: "/ganesh-pooja.svg", 
+        imageUrl: "/ganesh-cherry.jpg", 
         featured: 1,
         createdAt: new Date(),
       }
