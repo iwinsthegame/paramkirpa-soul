@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/use-language';
+import ContentViewer from '@/components/content-viewer';
 import type { Pooja, PoojaContent } from '@shared/schema';
 
 export function PoojaPage() {
@@ -87,6 +88,7 @@ export function PoojaPage() {
 export function PoojaDetailPage() {
   const [match, params] = useRoute('/pooja/:id');
   const [selectedType, setSelectedType] = useState<string>('aarti');
+  const [selectedContentId, setSelectedContentId] = useState<string | null>(null);
   const { language } = useLanguage();
 
   const { data: pooja } = useQuery<Pooja>({
@@ -192,6 +194,7 @@ export function PoojaDetailPage() {
                               transition={{ delay: index * 0.05 }}
                               className="glass-card rounded-xl p-4 cursor-pointer hover:bg-accent/20 transition-colors"
                               data-testid={`adhyaya-${(item as any).adhyaya}`}
+                              onClick={() => setSelectedContentId(item.id)}
                             >
                               <div className="flex items-start justify-between">
                                 <div className="flex-1">
@@ -285,6 +288,14 @@ export function PoojaDetailPage() {
           </>
         )}
       </div>
+      
+      {/* Content Viewer Modal */}
+      {selectedContentId && (
+        <ContentViewer
+          contentId={selectedContentId}
+          onClose={() => setSelectedContentId(null)}
+        />
+      )}
     </div>
   );
 }
