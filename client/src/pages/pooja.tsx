@@ -49,7 +49,7 @@ export function PoojaPage() {
                       <img
                         src={pooja.imageUrl}
                         alt={pooja.name}
-                        className="w-full h-32 object-cover"
+                        className="w-full h-32 object-cover mt-[55px] mb-[55px] pl-[55px] pr-[55px]"
                       />
                     )}
                     <div className="p-4">
@@ -173,7 +173,7 @@ export function PoojaDetailPage() {
                   <div className="space-y-6">
                     {selectedType === 'adhyaya' ? (
                       // Special display for Adhyaya chapters
-                      <div className="grid gap-4">
+                      (<div className="grid gap-4">
                         <div className="text-center mb-6">
                           <h2 className="text-2xl font-bold text-foreground mb-2">
                             दुर्गा सप्तशती - 13 अध्याय
@@ -182,7 +182,6 @@ export function PoojaDetailPage() {
                             Sacred chapters of Goddess Durga's divine glory
                           </p>
                         </div>
-                        
                         <div className="grid gap-3">
                           {content
                             .sort((a: any, b: any) => (a.adhyaya || 0) - (b.adhyaya || 0))
@@ -215,10 +214,10 @@ export function PoojaDetailPage() {
                             </motion.div>
                           ))}
                         </div>
-                      </div>
+                      </div>)
                     ) : (
                       // Regular display for other content types
-                      content.map((item: PoojaContent, index: number) => (
+                      (content.map((item: PoojaContent, index: number) => (
                         <Card key={item.id} className="glass-card border-purple-400/30">
                           <CardContent className="p-6">
                             <div className="flex items-center justify-between mb-4">
@@ -273,7 +272,7 @@ export function PoojaDetailPage() {
                             )}
                           </CardContent>
                         </Card>
-                      ))
+                      )))
                     )}
                   </div>
                 ) : (
@@ -288,7 +287,6 @@ export function PoojaDetailPage() {
           </>
         )}
       </div>
-      
       {/* Content Viewer Modal */}
       {selectedContentId && (
         <ContentViewer
