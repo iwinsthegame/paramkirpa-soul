@@ -49,7 +49,7 @@ export function PoojaPage() {
                       <img
                         src={pooja.imageUrl}
                         alt={pooja.name}
-                        className="w-full h-32 object-cover mt-[55px] mb-[55px] pl-[55px] pr-[55px]"
+                        className="w-full h-32 object-cover mt-[0px] mb-[0px] pl-[0px] pr-[0px]"
                       />
                     )}
                     <div className="p-4">
