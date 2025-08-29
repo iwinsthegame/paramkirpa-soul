@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MessageSquare, Gamepad2, Trophy, Coins, Heart, MessageCircle, ArrowUp } from 'lucide-react';
+import { Link } from 'wouter';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -58,11 +59,7 @@ function PrayerWallContent() {
 
   const createPostMutation = useMutation({
     mutationFn: async (postData: { content: string; isAnonymous: boolean }) => {
-      return apiRequest('/api/v1/community/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(postData),
-      });
+      return apiRequest('POST', '/api/v1/community/posts', postData);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/v1/community/posts'] });
@@ -76,9 +73,7 @@ function PrayerWallContent() {
 
   const upvoteMutation = useMutation({
     mutationFn: async (postId: string) => {
-      return apiRequest(`/api/v1/community/posts/${postId}/upvote`, {
-        method: 'POST',
-      });
+      return apiRequest('POST', `/api/v1/community/posts/${postId}/upvote`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/v1/community/posts'] });
@@ -141,7 +136,7 @@ function PrayerWallContent() {
       ) : (
         <div className="space-y-4">
           <AnimatePresence>
-            {posts.map((post: CommunityPost) => (
+            {(posts as CommunityPost[]).map((post: CommunityPost) => (
               <motion.div
                 key={post.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -213,7 +208,7 @@ function PrayerWallContent() {
             ))}
           </AnimatePresence>
           
-          {posts.length === 0 && (
+          {(posts as CommunityPost[]).length === 0 && (
             <div className="text-center text-white py-8">
               <MessageSquare className="h-16 w-16 mx-auto mb-4 text-white/50" />
               <h3 className="text-lg font-semibold mb-2">No prayers yet</h3>
@@ -248,7 +243,7 @@ function SacredGamesContent() {
             <div className="flex items-center space-x-2">
               <Coins className="h-6 w-6 text-primary" />
               <span className="text-2xl font-bold text-primary">
-                {wallet?.balance || 100}
+                {(wallet as any)?.balance || 100}
               </span>
             </div>
           </div>
@@ -271,9 +266,11 @@ function SacredGamesContent() {
                   <div className="text-4xl mb-2">🪙</div>
                   <h4 className="text-white font-medium mb-1">Sacred Pond</h4>
                   <p className="text-white/70 text-xs mb-3">Toss coins for blessings</p>
-                  <Button size="sm" className="bg-primary hover:bg-primary/90">
-                    Play Now
-                  </Button>
+                  <Link href="/game">
+                    <Button size="sm" className="bg-primary hover:bg-primary/90">
+                      Play Now
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </motion.div>
@@ -296,9 +293,9 @@ function SacredGamesContent() {
             <h3 className="text-white font-semibold">Leaderboard</h3>
           </div>
           
-          {leaderboard.length > 0 ? (
+          {(leaderboard as any[]).length > 0 ? (
             <div className="space-y-3">
-              {leaderboard.slice(0, 10).map((entry: any, index: number) => (
+              {(leaderboard as any[]).slice(0, 10).map((entry: any, index: number) => (
                 <div key={entry.id} className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <span className={`text-lg font-bold ${
