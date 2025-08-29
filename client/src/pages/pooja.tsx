@@ -105,6 +105,7 @@ export function PoojaDetailPage() {
 
   const contentTypes = [
     { id: 'aarti', label: 'Aarti', icon: '🪔' },
+    { id: 'chalisa', label: 'Chalisa', icon: '📿' },
     { id: 'mantra', label: 'Mantra', icon: '🕉️' },
     { id: 'kavach', label: 'Kavach', icon: '🛡️' },
     { id: 'siddhi', label: 'Siddhi', icon: '✨' },
