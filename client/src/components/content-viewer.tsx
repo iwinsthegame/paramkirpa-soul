@@ -5,6 +5,7 @@ import { X, Share2, Play, Heart, Star } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { animateEmojiReaction } from "@/lib/animations";
 import type { Content, EmojiType } from "@/types";
+import { useEffect } from "react";
 
 interface ContentViewerProps {
   contentId: string;
@@ -14,6 +15,11 @@ interface ContentViewerProps {
 export default function ContentViewer({ contentId, onClose }: ContentViewerProps) {
   const { t, language } = useLanguage();
   const queryClient = useQueryClient();
+
+  // Auto-scroll to top when modal opens
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [contentId]);
 
   const { data: content, isLoading } = useQuery({
     queryKey: ['/api/v1/content', contentId],
