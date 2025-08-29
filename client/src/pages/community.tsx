@@ -18,7 +18,7 @@ export function CommunityPage() {
   
   return (
     <div className="min-h-screen spiritual-gradient pb-20">
-      <div className="pt-8 px-4 max-w-6xl mx-auto">
+      <div className="pt-8 px-4">
         <h1 className="text-3xl font-bold text-white text-center mb-8">
           🤝 Community 🤝
         </h1>
