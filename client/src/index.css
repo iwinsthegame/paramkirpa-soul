@@ -557,4 +557,88 @@
   .animate-sphere-float {
     animation: sphereFloat 2s ease-out forwards;
   }
+
+  /* Flowing Water Animation */
+  .flowing-water {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(135, 206, 235, 0.3) 25%, 
+      rgba(173, 216, 230, 0.5) 50%, 
+      rgba(135, 206, 235, 0.3) 75%, 
+      transparent 100%);
+    background-size: 200% 100%;
+    animation: water-flow 3s linear infinite;
+  }
+
+  .water-wave-1 {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 255, 255, 0.1) 50%, 
+      transparent 100%);
+    background-size: 150% 100%;
+    animation: wave-1 2s ease-in-out infinite;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .water-wave-2 {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255, 255, 255, 0.05) 50%, 
+      transparent 100%);
+    background-size: 120% 100%;
+    animation: wave-2 2.5s ease-in-out infinite reverse;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .water-wave-3 {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(173, 216, 230, 0.2) 50%, 
+      transparent 100%);
+    background-size: 180% 100%;
+    animation: wave-3 1.8s ease-in-out infinite;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+}
+
+@keyframes water-flow {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+@keyframes wave-1 {
+  0%, 100% {
+    background-position: -50% 0%;
+  }
+  50% {
+    background-position: 150% 0%;
+  }
+}
+
+@keyframes wave-2 {
+  0%, 100% {
+    background-position: 150% 0%;
+  }
+  50% {
+    background-position: -50% 0%;
+  }
+}
+
+@keyframes wave-3 {
+  0%, 100% {
+    background-position: -80% 0%;
+  }
+  50% {
+    background-position: 180% 0%;
+  }
 }

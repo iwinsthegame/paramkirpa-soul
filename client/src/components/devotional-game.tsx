@@ -9,6 +9,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { apiRequest } from '@/lib/queryClient';
 import { Link } from 'wouter';
 import type { GameSession } from '@shared/schema';
+import cherryLakeImage from '@assets/mark-tegethoff-NMLv5HQZnK4-unsplash_1756499329696.jpg';
 
 interface Coin {
   id: number;
@@ -687,6 +688,34 @@ export function DevotionalGame() {
               )}
             </CardContent>
           </Card>
+          
+          {/* Flowing Water Effect */}
+          <div className="relative w-full h-16 overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-400/40 to-blue-600/60">
+              <div className="flowing-water h-full w-full relative">
+                <div className="absolute inset-0 opacity-60">
+                  <div className="water-wave-1"></div>
+                  <div className="water-wave-2"></div>
+                  <div className="water-wave-3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Cherry Blossom Lake Scene */}
+          <div className="relative w-full h-64 rounded-lg overflow-hidden shadow-2xl">
+            <img 
+              src={cherryLakeImage} 
+              alt="Cherry Blossom Lake" 
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+            <div className="absolute bottom-4 left-4">
+              <p className="text-white text-sm bg-black/50 px-3 py-1 rounded backdrop-blur-sm">
+                🌸 Sacred waters flow into the eternal cherry blossom lake 🌸
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Game Controls */}
