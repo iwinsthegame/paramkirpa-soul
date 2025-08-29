@@ -227,7 +227,7 @@ export function PoojaDetailPage() {
                               </h3>
                             </div>
                             
-                            <div className="prose prose-invert max-w-none">
+                            <div className="prose prose-invert max-w-none text-center">
                               {item.textHindi && (
                                 <div className="mb-4">
                                   <h4 className="text-sm font-medium text-muted-foreground mb-2">
