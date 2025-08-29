@@ -217,62 +217,98 @@ export function PoojaDetailPage() {
                       </div>)
                     ) : (
                       // Regular display for other content types
-                      (content.map((item: PoojaContent, index: number) => (
-                        <Card key={item.id} className="glass-card border-purple-400/30">
-                          <CardContent className="p-6">
-                            <div className="flex items-center justify-between mb-4">
-                              <h3 className="text-xl font-semibold text-foreground">
+                      (content.map((item: PoojaContent, index: number) => {
+                        // Special royal styling for Durga Aarti
+                        const isDurgaAarti = item.title?.includes('दुर्गा आरती') || item.title?.includes('Durga Aarti');
+                        
+                        return (
+                        <Card key={item.id} className={isDurgaAarti ? 
+                          "royal-maharaja-card border-amber-500/50 shadow-2xl" : 
+                          "glass-card border-purple-400/30"}>
+                          <CardContent className={isDurgaAarti ? "royal-card-content p-8" : "p-6"}>
+                            <div className={`flex items-center justify-between mb-6 ${isDurgaAarti ? 'royal-header' : ''}`}>
+                              <h3 className={isDurgaAarti ? 
+                                "text-3xl font-serif text-amber-100 royal-title" : 
+                                "text-xl font-semibold text-foreground"}>
+                                {isDurgaAarti && <span className="text-amber-400 mr-2">👑</span>}
                                 {item.title}
+                                {isDurgaAarti && <span className="text-amber-400 ml-2">👑</span>}
                               </h3>
                             </div>
                             
-                            <div className="prose prose-invert max-w-none">
+                            <div className={isDurgaAarti ? "royal-prose max-w-none" : "prose prose-invert max-w-none"}>
                               {item.textHindi && (
-                                <div className="mb-4">
-                                  <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                                    Hindi Text
+                                <div className={isDurgaAarti ? "royal-hindi-section mb-8" : "mb-4"}>
+                                  <h4 className={isDurgaAarti ? 
+                                    "text-lg font-serif text-amber-300 mb-4 royal-section-title" : 
+                                    "text-sm font-medium text-muted-foreground mb-2"}>
+                                    {isDurgaAarti && "✨ "}
+                                    {isDurgaAarti ? "देवनागरी श्लोक" : "Hindi Text"}
+                                    {isDurgaAarti && " ✨"}
                                   </h4>
-                                  <div className="text-foreground leading-relaxed whitespace-pre-line">
+                                  <div className={isDurgaAarti ? 
+                                    "royal-hindi-text text-amber-50 leading-loose whitespace-pre-line font-serif text-lg" : 
+                                    "text-foreground leading-relaxed whitespace-pre-line"}>
                                     {item.textHindi}
                                   </div>
                                 </div>
                               )}
                               
                               {item.textEnglish && (
-                                <div className="mb-4">
-                                  <h4 className="text-sm font-medium text-muted-foreground mb-2">
+                                <div className={isDurgaAarti ? "royal-english-section mb-8" : "mb-4"}>
+                                  <h4 className={isDurgaAarti ? 
+                                    "text-lg font-serif text-amber-300 mb-4 royal-section-title" : 
+                                    "text-sm font-medium text-muted-foreground mb-2"}>
+                                    {isDurgaAarti && "🎵 "}
                                     English Transliteration
+                                    {isDurgaAarti && " 🎵"}
                                   </h4>
-                                  <div className="text-foreground leading-relaxed whitespace-pre-line italic">
+                                  <div className={isDurgaAarti ? 
+                                    "royal-english-text text-amber-100 leading-relaxed whitespace-pre-line italic font-serif" : 
+                                    "text-foreground leading-relaxed whitespace-pre-line italic"}>
                                     {item.textEnglish}
                                   </div>
                                 </div>
                               )}
                               
                               {item.translation && (
-                                <div className="mt-4 p-4 bg-muted/50 rounded-lg border border-border">
-                                  <h4 className="text-muted-foreground font-medium mb-2">Translation & Meaning:</h4>
-                                  <p className="text-muted-foreground text-sm">{item.translation}</p>
+                                <div className={isDurgaAarti ? 
+                                  "royal-translation-section mt-6 p-6 bg-gradient-to-br from-amber-900/40 to-red-900/40 rounded-xl border-2 border-amber-400/30" : 
+                                  "mt-4 p-4 bg-muted/50 rounded-lg border border-border"}>
+                                  <h4 className={isDurgaAarti ? 
+                                    "text-amber-300 font-serif text-lg mb-4" : 
+                                    "text-muted-foreground font-medium mb-2"}>
+                                    {isDurgaAarti && "🔱 "}
+                                    Translation & {isDurgaAarti ? "Divine " : ""}Meaning
+                                    {isDurgaAarti && " 🔱"}
+                                  </h4>
+                                  <p className={isDurgaAarti ? 
+                                    "text-amber-50 leading-relaxed font-serif" : 
+                                    "text-muted-foreground text-sm"}>{item.translation}</p>
                                 </div>
                               )}
                             </div>
                             
                             {item.audioUrl && (
-                              <div className="mt-4">
+                              <div className="mt-6">
                                 <Button
-                                  variant="outline"
-                                  size="sm"
-                                  className="w-full"
+                                  variant={isDurgaAarti ? "default" : "outline"}
+                                  size={isDurgaAarti ? "lg" : "sm"}
+                                  className={isDurgaAarti ? 
+                                    "w-full royal-audio-button bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-700 hover:to-amber-600 text-amber-50 font-serif text-lg shadow-lg border-2 border-amber-400/50" : 
+                                    "w-full"}
                                   data-testid={`audio-${item.id}`}
                                 >
-                                  <span className="mr-2">🎵</span>
-                                  Play Audio
+                                  <span className="mr-2">{isDurgaAarti ? '🎶' : '🎵'}</span>
+                                  {isDurgaAarti ? 'Divine Recitation' : 'Play Audio'}
+                                  {isDurgaAarti && <span className="ml-2">🎶</span>}
                                 </Button>
                               </div>
                             )}
                           </CardContent>
                         </Card>
-                      )))
+                        );
+                      }))
                     )}
                   </div>
                 ) : (

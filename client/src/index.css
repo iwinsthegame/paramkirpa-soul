@@ -642,3 +642,142 @@
     background-position: 180% 0%;
   }
 }
+
+/* Royal Maharaja Styling for Durga Aarti */
+.royal-maharaja-card {
+  background: linear-gradient(135deg, 
+    rgba(120, 53, 15, 0.9) 0%, 
+    rgba(153, 27, 27, 0.85) 25%, 
+    rgba(120, 53, 15, 0.9) 50%, 
+    rgba(153, 27, 27, 0.85) 75%, 
+    rgba(92, 25, 25, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  border: 3px solid rgba(251, 191, 36, 0.4);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(251, 191, 36, 0.1),
+    inset 0 1px 0 rgba(251, 191, 36, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.royal-maharaja-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f59e0b' fill-opacity='0.08'%3E%3Cpath d='M30 0v60M0 30h60M30 0L0 30l30 30 30-30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.royal-card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.royal-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.royal-title::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  border-radius: 8px;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.royal-section-title {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid rgba(251, 191, 36, 0.3);
+  padding-bottom: 8px;
+  margin-bottom: 16px !important;
+}
+
+.royal-hindi-text {
+  background: rgba(251, 245, 235, 0.05);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-family: 'Times New Roman', serif;
+}
+
+.royal-english-text {
+  background: rgba(251, 245, 235, 0.03);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  font-family: 'Times New Roman', serif;
+}
+
+.royal-translation-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.royal-translation-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(251, 191, 36, 0.1) 0%, transparent 50%, rgba(251, 191, 36, 0.1) 100%);
+  opacity: 0.6;
+}
+
+.royal-audio-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.royal-audio-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+}
+
+.royal-audio-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.royal-audio-button:hover::before {
+  left: 100%;
+}
+
+@keyframes royal-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.5);
+  }
+}
+
+.royal-maharaja-card:hover {
+  animation: royal-glow 2s ease-in-out infinite;
+}
