@@ -156,11 +156,12 @@ export function DevotionalGame() {
     }
     ctx.closePath();
     
-    // Water gradient fill
+    // Cherry blossom themed water gradient
     const waterGradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.max(radiusX, radiusY));
-    waterGradient.addColorStop(0, 'rgba(0, 150, 200, 0.9)');
-    waterGradient.addColorStop(0.6, 'rgba(0, 120, 180, 0.95)');
-    waterGradient.addColorStop(1, 'rgba(0, 80, 120, 0.98)');
+    waterGradient.addColorStop(0, 'rgba(255, 240, 245, 0.8)');
+    waterGradient.addColorStop(0.3, 'rgba(255, 192, 203, 0.85)');
+    waterGradient.addColorStop(0.7, 'rgba(219, 112, 147, 0.9)');
+    waterGradient.addColorStop(1, 'rgba(176, 82, 121, 0.95)');
     
     ctx.fillStyle = waterGradient;
     ctx.fill();
@@ -370,8 +371,18 @@ export function DevotionalGame() {
         coin.vx *= 0.96; // More air resistance 
         coin.rotation += 0.3 + coin.vx * 0.1; // Rotation based on velocity
 
-        // Check collision with charan paduka (smaller target for level 10)
-        if (checkCollision(coin, targetPosition.x, targetPosition.y, targetSize)) {
+        // Check collision with charan paduka (enhanced collision detection)
+        const coinCenterX = coin.x;
+        const coinCenterY = coin.y;
+        const targetCenterX = targetPosition.x;
+        const targetCenterY = targetPosition.y;
+        const dx = coinCenterX - targetCenterX;
+        const dy = coinCenterY - targetCenterY;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const coinRadius = coin.size || 10;
+        const hitRadius = targetSize + coinRadius;
+        
+        if (distance <= hitRadius) {
           createParticles(coin.x, coin.y, true);
           createRipple(coin.x, coin.y);
           setScore(prev => prev + (level * 25)); // Higher score for level 10
@@ -387,16 +398,16 @@ export function DevotionalGame() {
           return null; // Remove coin
         }
 
-        // Check if coin hits water (inside oval pond)
-        const centerX = width / 2;
-        const centerY = height / 2;
-        const radiusX = width * 0.4;
-        const radiusY = height * 0.35;
-        const dx = (coin.x - centerX) / radiusX;
-        const dy = (coin.y - centerY) / radiusY;
-        const distanceFromCenter = Math.sqrt(dx * dx + dy * dy);
+        // Check if coin hits water (inside oval pond boundary)
+        const pondCenterX = width / 2;
+        const pondCenterY = height / 2;
+        const pondRadiusX = width * 0.4;
+        const pondRadiusY = height * 0.35;
+        const pondDx = (coin.x - pondCenterX) / pondRadiusX;
+        const pondDy = (coin.y - pondCenterY) / pondRadiusY;
+        const pondDistance = Math.sqrt(pondDx * pondDx + pondDy * pondDy);
         
-        if (distanceFromCenter >= 1) {
+        if (pondDistance >= 0.95) {
           // Create water splash particles
           createParticles(coin.x, coin.y, false);
           
