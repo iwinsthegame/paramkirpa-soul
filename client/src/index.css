@@ -75,12 +75,14 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     font-family: 'Inter', 'Noto Sans Devanagari', 'Devanagari', sans-serif;
-    /* Cherry Blossom Background */
-    background-image: url('/bg-sakura.jpg');
-    background-size: cover;
-    background-position: center;
+    /* Optimized Cherry Blossom Gradient Background */
+    background: linear-gradient(135deg, 
+      hsl(var(--sakura-light)) 0%, 
+      hsl(var(--sakura-medium)) 25%, 
+      hsl(var(--sakura-dark)) 50%, 
+      hsl(var(--peacock-blue)) 75%, 
+      hsl(var(--peacock-teal)) 100%);
     background-attachment: fixed;
-    background-repeat: no-repeat;
     min-height: 100vh;
     transition: all 0.3s ease;
   }
