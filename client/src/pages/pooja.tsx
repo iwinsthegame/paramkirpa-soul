@@ -6,6 +6,7 @@ import { Link, useRoute } from 'wouter';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useLanguage } from '@/hooks/use-language';
 import ContentViewer from '@/components/content-viewer';
 import type { Pooja, PoojaContent } from '@shared/schema';
@@ -89,6 +90,7 @@ export function PoojaDetailPage() {
   const [match, params] = useRoute('/pooja/:id');
   const [selectedType, setSelectedType] = useState<string>('aarti');
   const [selectedContentId, setSelectedContentId] = useState<string | null>(null);
+  const [selectedView, setSelectedView] = useState<Record<string, string>>({});
   const { language } = useLanguage();
 
   const { data: pooja } = useQuery<Pooja>({
@@ -218,46 +220,74 @@ export function PoojaDetailPage() {
                     ) : (
                       // Regular display for other content types
                       (content.map((item: PoojaContent, index: number) => {
+                        const currentView = selectedView[item.id] || 'hindi';
+                        
+                        const getViewOptions = () => {
+                          const options = [];
+                          if (item.textHindi) options.push({ value: 'hindi', label: 'Hindi Text' });
+                          if (item.textEnglish) options.push({ value: 'english', label: 'English Transliteration' });
+                          if (item.translation) options.push({ value: 'translation', label: 'Translation & Meaning' });
+                          return options;
+                        };
+                        
+                        const renderContent = () => {
+                          switch (currentView) {
+                            case 'hindi':
+                              return item.textHindi ? (
+                                <div className="text-foreground leading-relaxed whitespace-pre-line">
+                                  {item.textHindi}
+                                </div>
+                              ) : null;
+                            case 'english':
+                              return item.textEnglish ? (
+                                <div className="text-foreground leading-relaxed whitespace-pre-line italic">
+                                  {item.textEnglish}
+                                </div>
+                              ) : null;
+                            case 'translation':
+                              return item.translation ? (
+                                <div className="p-4 bg-muted/50 rounded-lg border border-border">
+                                  <p className="text-muted-foreground text-sm">{item.translation}</p>
+                                </div>
+                              ) : null;
+                            default:
+                              return null;
+                          }
+                        };
+                        
                         return (
                         <Card key={item.id} className="glass-card border-purple-400/30">
                           <CardContent className="p-6">
                             <div className="text-center mb-6">
-                              <h3 className="text-xl font-semibold text-foreground">
+                              <h3 className="text-xl font-semibold text-foreground mb-4">
                                 {item.title}
                               </h3>
+                              
+                              {/* Content Type Selector */}
+                              <div className="flex justify-center mb-4">
+                                <Select
+                                  value={currentView}
+                                  onValueChange={(value) => 
+                                    setSelectedView(prev => ({ ...prev, [item.id]: value }))
+                                  }
+                                  data-testid={`content-selector-${item.id}`}
+                                >
+                                  <SelectTrigger className="w-64">
+                                    <SelectValue placeholder="Select content type" />
+                                  </SelectTrigger>
+                                  <SelectContent>
+                                    {getViewOptions().map((option) => (
+                                      <SelectItem key={option.value} value={option.value}>
+                                        {option.label}
+                                      </SelectItem>
+                                    ))}
+                                  </SelectContent>
+                                </Select>
+                              </div>
                             </div>
                             
                             <div className="prose prose-invert max-w-none text-center">
-                              {item.textHindi && (
-                                <div className="mb-4">
-                                  <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                                    Hindi Text
-                                  </h4>
-                                  <div className="text-foreground leading-relaxed whitespace-pre-line">
-                                    {item.textHindi}
-                                  </div>
-                                </div>
-                              )}
-                              
-                              {item.textEnglish && (
-                                <div className="mb-4">
-                                  <h4 className="text-sm font-medium text-muted-foreground mb-2">
-                                    English Transliteration
-                                  </h4>
-                                  <div className="text-foreground leading-relaxed whitespace-pre-line italic">
-                                    {item.textEnglish}
-                                  </div>
-                                </div>
-                              )}
-                              
-                              {item.translation && (
-                                <div className="mt-4 p-4 bg-muted/50 rounded-lg border border-border">
-                                  <h4 className="text-muted-foreground font-medium mb-2">
-                                    Translation & Meaning
-                                  </h4>
-                                  <p className="text-muted-foreground text-sm">{item.translation}</p>
-                                </div>
-                              )}
+                              {renderContent()}
                             </div>
                             
                             {item.audioUrl && (
