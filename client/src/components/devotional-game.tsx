@@ -156,12 +156,12 @@ export function DevotionalGame() {
     }
     ctx.closePath();
     
-    // Cherry blossom themed water gradient
+    // Natural water gradient
     const waterGradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.max(radiusX, radiusY));
-    waterGradient.addColorStop(0, 'rgba(255, 240, 245, 0.8)');
-    waterGradient.addColorStop(0.3, 'rgba(255, 192, 203, 0.85)');
-    waterGradient.addColorStop(0.7, 'rgba(219, 112, 147, 0.9)');
-    waterGradient.addColorStop(1, 'rgba(176, 82, 121, 0.95)');
+    waterGradient.addColorStop(0, 'rgba(173, 216, 230, 0.8)');
+    waterGradient.addColorStop(0.3, 'rgba(135, 206, 235, 0.85)');
+    waterGradient.addColorStop(0.7, 'rgba(70, 130, 180, 0.9)');
+    waterGradient.addColorStop(1, 'rgba(25, 25, 112, 0.95)');
     
     ctx.fillStyle = waterGradient;
     ctx.fill();
@@ -286,7 +286,9 @@ export function DevotionalGame() {
     const dx = coin.x - targetX;
     const dy = coin.y - targetY;
     const distance = Math.sqrt(dx * dx + dy * dy);
-    return distance < targetRadius;
+    // Make hit detection more generous
+    const hitRadius = targetRadius * 1.2; // 20% larger hit area
+    return distance < hitRadius;
   }, []);
 
   const createParticles = useCallback((x: number, y: number, isHit: boolean) => {
@@ -371,18 +373,8 @@ export function DevotionalGame() {
         coin.vx *= 0.96; // More air resistance 
         coin.rotation += 0.3 + coin.vx * 0.1; // Rotation based on velocity
 
-        // Check collision with charan paduka (enhanced collision detection)
-        const coinCenterX = coin.x;
-        const coinCenterY = coin.y;
-        const targetCenterX = targetPosition.x;
-        const targetCenterY = targetPosition.y;
-        const dx = coinCenterX - targetCenterX;
-        const dy = coinCenterY - targetCenterY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const coinRadius = coin.size || 10;
-        const hitRadius = targetSize + coinRadius;
-        
-        if (distance <= hitRadius) {
+        // Check collision with charan paduka (simple and reliable)
+        if (checkCollision(coin, targetPosition.x, targetPosition.y, targetSize)) {
           createParticles(coin.x, coin.y, true);
           createRipple(coin.x, coin.y);
           setScore(prev => prev + (level * 25)); // Higher score for level 10
