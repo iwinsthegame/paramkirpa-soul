@@ -696,7 +696,6 @@ export function DevotionalGame() {
                 <div className="absolute inset-0 opacity-60">
                   <div className="water-wave-1"></div>
                   <div className="water-wave-2"></div>
-                  <div className="water-wave-3"></div>
                 </div>
               </div>
             </div>
