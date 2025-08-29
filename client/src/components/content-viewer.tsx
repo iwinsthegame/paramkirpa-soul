@@ -16,9 +16,18 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
   const { t, language } = useLanguage();
   const queryClient = useQueryClient();
 
-  // Auto-scroll to top when modal opens
+  // Auto-scroll to top and prevent body scroll when modal opens
   useEffect(() => {
+    // Scroll to top smoothly
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    // Prevent body scroll when modal is open
+    document.body.style.overflow = 'hidden';
+    
+    // Cleanup: restore body scroll when modal closes
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
   }, [contentId]);
 
   const { data: content, isLoading } = useQuery({
@@ -56,7 +65,7 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
   if (isLoading) {
     return (
       <AnimatePresence>
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center p-4 pt-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -90,7 +99,7 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
   if (!content) {
     return (
       <AnimatePresence>
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center p-4 pt-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -115,7 +124,7 @@ export default function ContentViewer({ contentId, onClose }: ContentViewerProps
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-start justify-center p-4 pt-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
