@@ -85,7 +85,7 @@ export function StorePage() {
 
   return (
     <div className="min-h-screen spiritual-gradient pb-20">
-      <div className="pt-8 px-4">
+      <div className="pt-8 px-4 max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <Link href="/">

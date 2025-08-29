@@ -20,20 +20,22 @@ import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <div className="min-h-screen relative spiritual-gradient">
+    <div className="min-h-screen relative spiritual-gradient flex flex-col items-center">
       <FloatingBackground />
       
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route path="/reels" component={ReelsPage} />
-        <Route path="/pooja" component={PoojaPage} />
-        <Route path="/pooja/:id" component={PoojaDetailPage} />
-        <Route path="/community" component={CommunityPage} />
-        <Route path="/profile" component={ProfilePage} />
-        <Route path="/store" component={StorePage} />
-        <Route path="/game" component={DevotionalGamePage} />
-        <Route component={NotFound} />
-      </Switch>
+      <div className="w-full max-w-7xl mx-auto flex-1">
+        <Switch>
+          <Route path="/" component={Home} />
+          <Route path="/reels" component={ReelsPage} />
+          <Route path="/pooja" component={PoojaPage} />
+          <Route path="/pooja/:id" component={PoojaDetailPage} />
+          <Route path="/community" component={CommunityPage} />
+          <Route path="/profile" component={ProfilePage} />
+          <Route path="/store" component={StorePage} />
+          <Route path="/game" component={DevotionalGamePage} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
       
       <BottomNavigation />
     </div>

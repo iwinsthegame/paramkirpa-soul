@@ -30,7 +30,7 @@ export function PoojaPage() {
 
   return (
     <div className="min-h-screen spiritual-gradient pb-20">
-      <div className="pt-8 px-4">
+      <div className="pt-8 px-4 max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-foreground text-center mb-8">
           🪔 Sacred Poojas 🪔
         </h1>

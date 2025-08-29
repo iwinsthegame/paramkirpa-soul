@@ -83,17 +83,18 @@ export function ReelsPage() {
   }
 
   return (
-    <div className="min-h-screen spiritual-gradient relative overflow-hidden">
-      <AnimatePresence>
-        <motion.div
-          key={currentIndex}
-          className="absolute inset-0"
-          initial={{ y: '100%' }}
-          animate={{ y: '0%' }}
-          exit={{ y: '-100%' }}
-          transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-        >
-          <div className="relative h-full w-full flex items-center justify-center bg-gradient-to-b from-black/50 to-black/80">
+    <div className="min-h-screen spiritual-gradient relative overflow-hidden flex items-center justify-center">
+      <div className="max-w-md w-full h-full">
+        <AnimatePresence>
+          <motion.div
+            key={currentIndex}
+            className="absolute inset-0"
+            initial={{ y: '100%' }}
+            animate={{ y: '0%' }}
+            exit={{ y: '-100%' }}
+            transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+          >
+            <div className="relative h-full w-full flex items-center justify-center bg-gradient-to-b from-black/50 to-black/80">
             {/* Video */}
             <video
               ref={(el) => (videoRefs.current[currentIndex] = el)}
@@ -211,6 +212,7 @@ export function ReelsPage() {
           </div>
         </motion.div>
       </AnimatePresence>
+      </div>
     </div>
   );
 }

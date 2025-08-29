@@ -46,7 +46,7 @@ export function ProfilePage() {
 
   return (
     <div className="min-h-screen spiritual-gradient pb-20">
-      <div className="pt-8 px-4">
+      <div className="pt-8 px-4 max-w-6xl mx-auto">
         <div className="max-w-4xl mx-auto">
           {/* Profile Header */}
           <Card className="glass-card border-purple-400/30 mb-6">
