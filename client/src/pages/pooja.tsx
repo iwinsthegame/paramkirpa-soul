@@ -221,7 +221,7 @@ export function PoojaDetailPage() {
                         return (
                         <Card key={item.id} className="glass-card border-purple-400/30">
                           <CardContent className="p-6">
-                            <div className="flex items-center justify-between mb-6">
+                            <div className="text-center mb-6">
                               <h3 className="text-xl font-semibold text-foreground">
                                 {item.title}
                               </h3>
