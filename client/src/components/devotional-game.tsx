@@ -129,31 +129,99 @@ export function DevotionalGame() {
 
   // Game physics and rendering
   const drawWaterSurface = useCallback((ctx: CanvasRenderingContext2D, width: number, height: number) => {
-    // Water gradient
-    const waterGradient = ctx.createLinearGradient(0, 0, 0, height);
-    waterGradient.addColorStop(0, 'rgba(0, 100, 150, 0.8)');
-    waterGradient.addColorStop(0.5, 'rgba(0, 150, 200, 0.9)');
-    waterGradient.addColorStop(1, 'rgba(0, 80, 120, 0.95)');
+    // Draw oval-shaped pond with zig-zag edges
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const radiusX = width * 0.4;
+    const radiusY = height * 0.35;
+    
+    // Create zig-zag oval path
+    ctx.beginPath();
+    const segments = 60;
+    for (let i = 0; i <= segments; i++) {
+      const angle = (i / segments) * Math.PI * 2;
+      const baseX = centerX + Math.cos(angle) * radiusX;
+      const baseY = centerY + Math.sin(angle) * radiusY;
+      
+      // Add zig-zag variation
+      const zigzag = Math.sin(angle * 8) * 15 + Math.cos(angle * 12) * 8;
+      const x = baseX + Math.cos(angle) * zigzag;
+      const y = baseY + Math.sin(angle) * zigzag;
+      
+      if (i === 0) {
+        ctx.moveTo(x, y);
+      } else {
+        ctx.lineTo(x, y);
+      }
+    }
+    ctx.closePath();
+    
+    // Water gradient fill
+    const waterGradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.max(radiusX, radiusY));
+    waterGradient.addColorStop(0, 'rgba(0, 150, 200, 0.9)');
+    waterGradient.addColorStop(0.6, 'rgba(0, 120, 180, 0.95)');
+    waterGradient.addColorStop(1, 'rgba(0, 80, 120, 0.98)');
     
     ctx.fillStyle = waterGradient;
-    ctx.fillRect(0, 0, width, height);
+    ctx.fill();
+    
+    // Add pond border with natural stone effect
+    ctx.strokeStyle = 'rgba(101, 67, 33, 0.8)';
+    ctx.lineWidth = 4;
+    ctx.stroke();
+    
+    // Save the clipping region for cherry blossoms inside pond
+    ctx.save();
+    ctx.clip();
 
-    // Floating lotus petals
-    ctx.fillStyle = 'rgba(255, 182, 193, 0.7)';
-    for (let i = 0; i < 5; i++) {
-      const x = (i * 150 + Math.sin(Date.now() * 0.001 + i) * 20) % width;
-      const y = 100 + Math.cos(Date.now() * 0.0015 + i) * 30;
+    // Floating cherry blossoms scattered throughout the pond
+    const time = Date.now() * 0.001;
+    for (let i = 0; i < 15; i++) {
+      const angle = (i * 2.4) + time * 0.5;
+      const distance = (Math.sin(time + i) * 0.3 + 0.7) * Math.min(radiusX, radiusY) * 0.8;
+      const x = centerX + Math.cos(angle) * distance;
+      const y = centerY + Math.sin(angle) * distance * 0.7;
+      
+      // Cherry blossom petals
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(Math.sin(time + i) * 0.5);
+      
+      // Draw 5 petals
+      for (let petal = 0; petal < 5; petal++) {
+        ctx.save();
+        ctx.rotate((petal * Math.PI * 2) / 5);
+        
+        // Petal gradient
+        const petalGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 8);
+        petalGradient.addColorStop(0, 'rgba(255, 182, 193, 0.9)');
+        petalGradient.addColorStop(0.7, 'rgba(255, 105, 180, 0.8)');
+        petalGradient.addColorStop(1, 'rgba(219, 112, 147, 0.6)');
+        
+        ctx.fillStyle = petalGradient;
+        ctx.beginPath();
+        ctx.ellipse(0, -4, 3, 6, 0, 0, Math.PI * 2);
+        ctx.fill();
+        
+        ctx.restore();
+      }
+      
+      // Center of cherry blossom
+      ctx.fillStyle = 'rgba(255, 215, 0, 0.8)';
       ctx.beginPath();
-      ctx.ellipse(x, y, 8, 15, Math.sin(Date.now() * 0.002 + i) * 0.5, 0, Math.PI * 2);
+      ctx.arc(0, 0, 1.5, 0, Math.PI * 2);
       ctx.fill();
+      
+      ctx.restore();
     }
+    
+    ctx.restore(); // Restore clipping
 
     // Diya lamps around the pond
-    ctx.fillStyle = 'rgba(255, 215, 0, 0.9)';
     for (let i = 0; i < 4; i++) {
       const angle = (i * Math.PI * 0.5) + Math.sin(Date.now() * 0.003) * 0.1;
-      const x = width/2 + Math.cos(angle) * 350;
-      const y = height/2 + Math.sin(angle) * 250;
+      const x = centerX + Math.cos(angle) * (radiusX + 60);
+      const y = centerY + Math.sin(angle) * (radiusY + 40);
       
       // Diya base
       ctx.beginPath();
@@ -319,8 +387,16 @@ export function DevotionalGame() {
           return null; // Remove coin
         }
 
-        // Check if coin hits water with realistic reflection effects
-        if (coin.y > height - 60) {
+        // Check if coin hits water (inside oval pond)
+        const centerX = width / 2;
+        const centerY = height / 2;
+        const radiusX = width * 0.4;
+        const radiusY = height * 0.35;
+        const dx = (coin.x - centerX) / radiusX;
+        const dy = (coin.y - centerY) / radiusY;
+        const distanceFromCenter = Math.sqrt(dx * dx + dy * dy);
+        
+        if (distanceFromCenter >= 1) {
           // Create water splash particles
           createParticles(coin.x, coin.y, false);
           
