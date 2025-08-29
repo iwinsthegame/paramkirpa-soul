@@ -18,6 +18,11 @@ interface Coin {
   vy: number;
   rotation: number;
   size: number;
+  targetX?: number;
+  targetY?: number;
+  scale?: number;
+  opacity?: number;
+  phase?: string;
 }
 
 interface Particle {
@@ -675,7 +680,7 @@ export function DevotionalGame() {
                 Sacred Leaderboard
               </h3>
               <div className="space-y-2">
-                {leaderboard.slice(0, 5).map((entry: any, index: number) => (
+                {(leaderboard as any[]).slice(0, 5).map((entry: any, index: number) => (
                   <div key={entry.id} className="flex justify-between items-center py-2 px-3 bg-purple-600/20 rounded">
                     <div className="flex items-center gap-3">
                       <Badge variant="outline" className="bg-primary/20 text-primary">
