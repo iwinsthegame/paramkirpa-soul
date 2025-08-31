@@ -44,7 +44,7 @@ function Router() {
 
 function App() {
   return (
-    <ThemeProvider storageKey="paramkirpa-ui-theme">
+    <ThemeProvider>
       <QueryClientProvider client={queryClient}>
         <LanguageProvider>
           <TooltipProvider>
