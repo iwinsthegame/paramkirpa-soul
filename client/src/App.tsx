@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingBackground } from "@/components/floating-background";
 import { BottomNavigation } from "@/components/bottom-navigation";
 import { PWAInstallPrompt } from "@/components/pwa-install-prompt";
+import { PWADebug } from "@/components/pwa-debug";
 
 // Pages
 import Home from "@/pages/home";
@@ -38,6 +39,7 @@ function Router() {
       
       <BottomNavigation />
       <PWAInstallPrompt />
+      {process.env.NODE_ENV === 'development' && <PWADebug />}
     </div>
   );
 }
