@@ -16,17 +16,17 @@ export function BottomNavigation() {
 
   return (
     <>
-      {/* Top Right Controls */}
-      <div className="fixed top-4 right-4 z-50 flex gap-3">
+      {/* Top Right Controls - Responsive positioning */}
+      <div className="fixed top-4 right-4 z-50 flex gap-3 md:top-6 md:right-6">
         <Link href="/store">
           <motion.div
-            className="glass-card rounded-xl p-3 shadow-lg"
+            className="glass-card rounded-xl p-2 md:p-3 shadow-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             data-testid="cart-button"
           >
-            <ShoppingCart className="h-5 w-5 text-primary" />
-            <Badge className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs h-5 w-5 flex items-center justify-center rounded-full">
+            <ShoppingCart className="h-4 w-4 md:h-5 md:w-5 text-primary" />
+            <Badge className="absolute -top-1 -right-1 md:-top-2 md:-right-2 bg-primary text-primary-foreground text-xs h-4 w-4 md:h-5 md:w-5 flex items-center justify-center rounded-full text-[10px] md:text-xs">
               0
             </Badge>
           </motion.div>

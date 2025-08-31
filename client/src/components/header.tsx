@@ -15,27 +15,27 @@ export default function Header() {
         </div>
         
         <div className="flex items-center space-x-4">
-          {/* Language Switch Toggle */}
-          <div className="flex items-center bg-white/10 rounded-full p-1 border border-white/20 ml-[44px] mr-[44px]">
+          {/* Language Switch Toggle - Responsive */}
+          <div className="flex items-center bg-white/10 rounded-full p-1 border border-white/20 md:ml-[44px] md:mr-[44px]">
             <button
               onClick={() => setLanguage('en')}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-2 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
                 language === 'en' 
                   ? 'bg-primary text-white shadow-lg' 
                   : 'text-white/70 hover:text-white hover:bg-white/10'
               }`}
             >
-              English
+              EN
             </button>
             <button
               onClick={() => setLanguage('hi')}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+              className={`px-2 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
                 language === 'hi' 
                   ? 'bg-primary text-white shadow-lg' 
                   : 'text-white/70 hover:text-white hover:bg-white/10'
               }`}
             >
-              हिंदी
+              हिं
             </button>
           </div>
         </div>
