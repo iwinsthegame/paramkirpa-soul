@@ -16,7 +16,7 @@ export default function Header() {
         
         <div className="flex items-center space-x-4">
           {/* Language Switch Toggle - Responsive */}
-          <div className="flex items-center bg-white/10 rounded-full p-0.5 md:p-1 border border-white/20">
+          <div className="flex items-center bg-white/10 rounded-full p-0.5 md:p-1 border border-white/20 ml-[55px] mr-[55px] pt-[0px] pb-[0px] pl-[0px] pr-[0px] mt-[9px] mb-[9px]">
             <button
               onClick={() => setLanguage('en')}
               className={`px-2 md:px-4 py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 ${
