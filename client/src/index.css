@@ -3,40 +3,7 @@
 @tailwind utilities;
 
 :root {
-  /* Sakura Cherry Blossom Theme */
-  --background: hsl(20, 41%, 94%);
-  --foreground: hsl(350, 23%, 40%);
-  --muted: hsl(20, 35%, 89%);
-  --muted-foreground: hsl(350, 15%, 50%);
-  --popover: hsl(20, 41%, 96%);
-  --popover-foreground: hsl(350, 23%, 40%);
-  --card: hsl(20, 35%, 92%);
-  --card-foreground: hsl(350, 23%, 40%);
-  --border: hsl(20, 30%, 85%);
-  --input: hsl(20, 30%, 85%);
-  --primary: hsl(349, 47%, 77%);
-  --primary-foreground: hsl(350, 23%, 40%);
-  --secondary: hsl(349, 47%, 70%);
-  --secondary-foreground: hsl(0, 0%, 100%);
-  --accent: hsl(349, 47%, 77%);
-  --accent-foreground: hsl(350, 23%, 40%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(349, 47%, 77%);
-  --radius: 1rem;
-
-  /* Sakura Cherry Blossom Palette */
-  --sakura-cream: hsl(20, 41%, 94%);
-  --sakura-secondary: hsl(10, 30%, 84%);
-  --sakura-highlight: hsl(349, 47%, 77%);
-  --sakura-accent: hsl(349, 47%, 70%);
-  --sakura-text: hsl(350, 23%, 40%);
-  --sakura-gradient-start: hsl(20, 41%, 96%);
-  --sakura-gradient-end: hsl(10, 30%, 89%);
-}
-
-.dark {
-  /* Dark Mode - Sakura Cherry Blossom Theme */
+  /* Dark Mode - Sakura Cherry Blossom Theme (Default) */
   --background: hsl(350, 23%, 12%);
   --foreground: hsl(20, 41%, 94%);
   --muted: hsl(350, 30%, 18%);
@@ -56,6 +23,7 @@
   --destructive: hsl(0, 75%, 55%);
   --destructive-foreground: hsl(0, 0%, 100%);
   --ring: hsl(349, 47%, 65%);
+  --radius: 1rem;
 
   /* Dark Sakura Cherry Blossom Colors */
   --sakura-cream: hsl(350, 23%, 20%);
@@ -75,22 +43,13 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
     font-family: 'Inter', 'Noto Sans Devanagari', 'Devanagari', sans-serif;
-    /* Optimized Cherry Blossom Gradient Background */
-    background: linear-gradient(135deg, 
-      hsl(var(--sakura-light)) 0%, 
-      hsl(var(--sakura-medium)) 25%, 
-      hsl(var(--sakura-dark)) 50%, 
-      hsl(var(--peacock-blue)) 75%, 
-      hsl(var(--peacock-teal)) 100%);
-    background-attachment: fixed;
-    min-height: 100vh;
-    transition: all 0.3s ease;
-  }
-
-  .dark body {
+    /* Dark Cherry Blossom Gradient Background */
     background: linear-gradient(135deg, 
       hsl(var(--dark-gradient-start)) 0%, 
       hsl(var(--dark-gradient-end)) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    transition: all 0.3s ease;
   }
 
   .hindi-font {

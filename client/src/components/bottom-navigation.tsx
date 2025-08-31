@@ -2,7 +2,6 @@ import { Home, PlayCircle, Calendar, Users, User, ShoppingCart } from 'lucide-re
 import { Link, useLocation } from 'wouter';
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
-import { ThemeToggle } from '@/components/theme-toggle';
 
 const tabs = [
   { id: 'home', label: 'Home', icon: Home, path: '/' },
@@ -19,7 +18,6 @@ export function BottomNavigation() {
     <>
       {/* Top Right Controls */}
       <div className="fixed top-4 right-4 z-50 flex gap-3">
-        <ThemeToggle />
         <Link href="/store">
           <motion.div
             className="glass-card rounded-xl p-3 shadow-lg"
