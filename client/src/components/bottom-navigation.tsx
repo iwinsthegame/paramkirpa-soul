@@ -17,7 +17,7 @@ export function BottomNavigation() {
   return (
     <>
       {/* Top Right Controls - Responsive positioning */}
-      <div className="fixed top-4 right-4 z-50 flex gap-3 md:top-6 md:right-6">
+      <div className="fixed top-16 right-2 z-50 flex gap-3 md:top-6 md:right-6">
         <Link href="/store">
           <motion.div
             className="glass-card rounded-xl p-2 md:p-3 shadow-lg"
