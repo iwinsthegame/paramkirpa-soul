@@ -10,6 +10,8 @@ export function ReelsPage() {
   const [isPlaying, setIsPlaying] = useState(true);
   const [isMuted, setIsMuted] = useState(false);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   const { data: reels = [], isLoading } = useQuery<Reel[]>({
     queryKey: ['/api/v1/reels'],
@@ -54,6 +56,51 @@ export function ReelsPage() {
     }
   };
 
+  // Minimum distance for a swipe
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientY);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientY);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+
+    const distance = touchStart - touchEnd;
+    const isUpSwipe = distance > minSwipeDistance;
+    const isDownSwipe = distance < -minSwipeDistance;
+
+    if (isUpSwipe) {
+      handleSwipe('up');
+    } else if (isDownSwipe) {
+      handleSwipe('down');
+    }
+  };
+
+  // Handle keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        handleSwipe('down');
+      } else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+        e.preventDefault();
+        handleSwipe('up');
+      } else if (e.key === ' ') {
+        e.preventDefault();
+        setIsPlaying(!isPlaying);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isPlaying, currentIndex, reels.length]);
+
   const handleLike = (reelId: string) => {
     likeMutation.mutate(reelId);
   };
@@ -83,7 +130,12 @@ export function ReelsPage() {
   }
 
   return (
-    <div className="min-h-screen spiritual-gradient relative overflow-hidden">
+    <div 
+      className="min-h-screen spiritual-gradient relative overflow-hidden"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       <AnimatePresence>
         <motion.div
           key={currentIndex}
@@ -109,10 +161,25 @@ export function ReelsPage() {
 
             {/* Overlay Controls */}
             <div className="absolute inset-0 flex">
-              {/* Left side - tap to go back */}
+              {/* Left side - tap to go back, center to pause/play */}
               <div 
-                className="flex-1 flex items-center justify-start pl-4"
-                onClick={() => handleSwipe('down')}
+                className="flex-1 flex items-center justify-center"
+                onClick={(e) => {
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const width = rect.width;
+                  
+                  if (x < width * 0.3) {
+                    // Left third - previous reel
+                    handleSwipe('down');
+                  } else if (x > width * 0.7) {
+                    // Right third - next reel  
+                    handleSwipe('up');
+                  } else {
+                    // Center - play/pause
+                    setIsPlaying(!isPlaying);
+                  }
+                }}
               >
                 {!isPlaying && (
                   <motion.div
@@ -195,19 +262,39 @@ export function ReelsPage() {
               </div>
             </div>
 
+            {/* Navigation hints */}
+            <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
+              <div className="text-white/60 text-xs text-center bg-black/30 px-3 py-1 rounded-full">
+                Swipe ↑↓ or tap sides to navigate
+              </div>
+            </div>
+
             {/* Swipe indicators */}
             <div className="absolute right-2 top-1/2 transform -translate-y-1/2">
               <div className="flex flex-col space-y-2">
                 {reels.map((_: any, idx: number) => (
                   <div
                     key={idx}
-                    className={`w-1 h-8 rounded-full ${
+                    className={`w-1 h-8 rounded-full transition-colors ${
                       idx === currentIndex ? 'bg-white' : 'bg-white/30'
                     }`}
+                    onClick={() => setCurrentIndex(idx)}
                   />
                 ))}
               </div>
             </div>
+
+            {/* Previous/Next visual hints */}
+            {currentIndex > 0 && (
+              <div className="absolute left-4 top-1/2 transform -translate-y-1/2 opacity-30">
+                <div className="text-white text-xs">←</div>
+              </div>
+            )}
+            {currentIndex < reels.length - 1 && (
+              <div className="absolute right-16 top-1/2 transform -translate-y-1/2 opacity-30">
+                <div className="text-white text-xs">→</div>
+              </div>
+            )}
           </div>
         </motion.div>
       </AnimatePresence>
