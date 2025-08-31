@@ -16,17 +16,17 @@ export function BottomNavigation() {
 
   return (
     <>
-      {/* Top Right Controls - Responsive positioning */}
-      <div className="fixed top-16 right-2 z-50 flex gap-3 md:top-6 md:right-6">
+      {/* Top Right Controls - Desktop only */}
+      <div className="hidden md:flex fixed top-6 right-6 z-50 gap-3">
         <Link href="/store">
           <motion.div
-            className="glass-card rounded-xl p-2 md:p-3 shadow-lg"
+            className="glass-card rounded-xl p-3 shadow-lg"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            data-testid="cart-button"
+            data-testid="cart-button-desktop"
           >
-            <ShoppingCart className="h-4 w-4 md:h-5 md:w-5 text-primary" />
-            <Badge className="absolute -top-1 -right-1 md:-top-2 md:-right-2 bg-primary text-primary-foreground text-xs h-4 w-4 md:h-5 md:w-5 flex items-center justify-center rounded-full text-[10px] md:text-xs">
+            <ShoppingCart className="h-5 w-5 text-primary" />
+            <Badge className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs h-5 w-5 flex items-center justify-center rounded-full">
               0
             </Badge>
           </motion.div>
@@ -41,7 +41,23 @@ export function BottomNavigation() {
         transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
       >
         <div className="glass-card border border-white/20 px-2 py-3 mx-auto max-w-md rounded-2xl shadow-2xl">
-          <div className="flex justify-around items-center">
+          <div className="flex justify-around items-center relative">
+            {/* Mobile Cart Button */}
+            <div className="absolute -top-16 -right-4 md:hidden">
+              <Link href="/store">
+                <motion.div
+                  className="glass-card rounded-xl p-3 shadow-lg"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  data-testid="cart-button-mobile"
+                >
+                  <ShoppingCart className="h-5 w-5 text-primary" />
+                  <Badge className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs h-5 w-5 flex items-center justify-center rounded-full">
+                    0
+                  </Badge>
+                </motion.div>
+              </Link>
+            </div>
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = location === tab.path || 
