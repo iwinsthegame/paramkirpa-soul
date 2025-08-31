@@ -12,15 +12,31 @@ import ContentViewer from '@/components/content-viewer';
 import type { Pooja, PoojaContent } from '@shared/schema';
 
 export function PoojaPage() {
-  const { data: poojas = [], isLoading } = useQuery<Pooja[]>({
-    queryKey: ['/api/v1/poojas'],
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  
+  const { data: categories = [], isLoading: categoriesLoading } = useQuery<any[]>({
+    queryKey: ['/api/v1/pooja/categories'],
   });
+
+  const { data: poojas = [], isLoading: poojasLoading } = useQuery<Pooja[]>({
+    queryKey: ['/api/v1/poojas', selectedCategory],
+    queryFn: async () => {
+      const url = selectedCategory === 'all' 
+        ? '/api/v1/poojas' 
+        : `/api/v1/poojas?category=${selectedCategory}`;
+      const response = await fetch(url);
+      if (!response.ok) throw new Error('Failed to fetch poojas');
+      return response.json();
+    }
+  });
+
+  const isLoading = categoriesLoading || poojasLoading;
 
   if (isLoading) {
     return (
       <div className="min-h-screen spiritual-gradient flex items-center justify-center">
         <div className="glass-card p-8 rounded-2xl">
-          <div className="text-foreground font-medium">Loading poojas...</div>
+          <div className="text-foreground font-medium">Loading Sacred Poojas...</div>
           <div className="w-full bg-border rounded-full h-2 mt-4 overflow-hidden">
             <div className="sakura-glow h-full rounded-full animate-pulse"></div>
           </div>
@@ -30,56 +46,167 @@ export function PoojaPage() {
   }
 
   return (
-    <div className="min-h-screen spiritual-gradient pb-20">
+    <div className="min-h-screen spiritual-gradient pb-24">
       <div className="pt-8 px-4">
-        <h1 className="text-3xl font-bold text-foreground text-center mb-8">
-          🪔 Sacred Poojas 🪔
-        </h1>
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold text-foreground mb-2">
+            🕉️ Sacred Poojas & Festivals 🕉️
+          </h1>
+          <p className="text-muted-foreground text-lg">
+            Complete Hindu Festival & Devotional Guide
+          </p>
+        </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-          {poojas.map((pooja: Pooja) => (
-            <Link key={pooja.id} href={`/pooja/${pooja.id}`}>
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="relative"
-              >
-                <Card className="glass-card border-purple-400/30 overflow-hidden">
-                  <CardContent className="p-0">
-                    {pooja.imageUrl && (
-                      <img
-                        src={pooja.imageUrl}
-                        alt={pooja.name}
-                        className="w-full h-32 object-cover mt-[0px] mb-[0px] pl-[0px] pr-[0px]"
-                      />
-                    )}
-                    <div className="p-4">
-                      <h3 className="text-foreground font-semibold text-sm mb-2">
-                        {(pooja as any).name}
-                      </h3>
-                      {(pooja as any).description && (
-                        <p className="text-muted-foreground text-xs line-clamp-2">
-                          {(pooja as any).description}
-                        </p>
-                      )}
-                      {(pooja as any).featured === 1 && (
-                        <Badge className="absolute top-2 right-2 bg-primary">
-                          <Star className="h-3 w-3" />
-                        </Badge>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            </Link>
+        {/* Category Filter Tabs */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8 max-w-4xl mx-auto">
+          <motion.button
+            key="all"
+            onClick={() => setSelectedCategory('all')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+              selectedCategory === 'all'
+                ? 'glass-card border-primary/50 text-primary shadow-lg'
+                : 'glass-card border-white/20 text-foreground/70 hover:text-primary hover:border-primary/30'
+            }`}
+            data-testid={`category-all`}
+          >
+            <div className="flex items-center gap-2">
+              <span>🎊</span>
+              <span>All Festivals</span>
+            </div>
+          </motion.button>
+          
+          {categories.map((category) => (
+            <motion.button
+              key={category.id}
+              onClick={() => setSelectedCategory(category.id)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-4 py-3 rounded-xl text-sm font-medium transition-all ${
+                selectedCategory === category.id
+                  ? 'glass-card border-primary/50 text-primary shadow-lg'
+                  : 'glass-card border-white/20 text-foreground/70 hover:text-primary hover:border-primary/30'
+              }`}
+              data-testid={`category-${category.id}`}
+            >
+              <div className="flex items-center gap-2">
+                <span>{category.icon}</span>
+                <span className="hidden sm:inline">{category.name.replace(/^[🕉️🌸🌿🪔]\s*/, '')}</span>
+                <span className="sm:hidden">{category.name.split(' ')[0]}</span>
+              </div>
+            </motion.button>
           ))}
         </div>
 
-        {(poojas as any[]).length === 0 && (
-          <div className="glass-card p-8 rounded-2xl text-center mt-8 max-w-md mx-auto">
-            <h2 className="text-xl font-bold mb-4 text-foreground">No Poojas Available</h2>
-            <p className="text-muted-foreground">Check back later for spiritual content</p>
-          </div>
+        {/* Selected Category Description */}
+        {selectedCategory !== 'all' && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="glass-card p-6 rounded-2xl mb-8 max-w-2xl mx-auto text-center"
+          >
+            {categories.find(cat => cat.id === selectedCategory) && (
+              <>
+                <h2 className="text-xl font-bold text-foreground mb-2">
+                  {categories.find(cat => cat.id === selectedCategory)?.name}
+                </h2>
+                <p className="text-muted-foreground">
+                  {categories.find(cat => cat.id === selectedCategory)?.description}
+                </p>
+              </>
+            )}
+          </motion.div>
+        )}
+
+        {/* Poojas Grid */}
+        <AnimatePresence mode="wait">
+          <motion.div 
+            key={selectedCategory}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto"
+          >
+            {poojas.map((pooja: Pooja) => (
+              <Link key={pooja.id} href={`/pooja/${pooja.id}`}>
+                <motion.div
+                  whileHover={{ scale: 1.03, y: -5 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="relative group"
+                  data-testid={`pooja-card-${pooja.id}`}
+                >
+                  <Card className="glass-card border-purple-400/30 overflow-hidden hover:border-primary/50 transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <CardContent className="p-0">
+                      {pooja.imageUrl && (
+                        <div className="relative overflow-hidden">
+                          <img
+                            src={pooja.imageUrl}
+                            alt={pooja.name}
+                            className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                        </div>
+                      )}
+                      <div className="p-5">
+                        <h3 className="text-foreground font-bold text-base mb-2 group-hover:text-primary transition-colors">
+                          {(pooja as any).name}
+                        </h3>
+                        {(pooja as any).description && (
+                          <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
+                            {(pooja as any).description}
+                          </p>
+                        )}
+                        
+                        {/* Category Badge */}
+                        {(pooja as any).category && (
+                          <Badge 
+                            variant="outline" 
+                            className="mb-2 text-xs border-primary/30 text-primary/80"
+                          >
+                            {categories.find(cat => cat.id === (pooja as any).category)?.icon} {' '}
+                            {categories.find(cat => cat.id === (pooja as any).category)?.name.replace(/^[🕉️🌸🌿🪔]\s*/, '').split(' ')[0]}
+                          </Badge>
+                        )}
+                        
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center text-muted-foreground text-xs">
+                            <BookOpen className="h-3 w-3 mr-1" />
+                            <span>Read More</span>
+                          </div>
+                          <ChevronRight className="h-4 w-4 text-primary/60 group-hover:text-primary transition-colors" />
+                        </div>
+                      </div>
+                      
+                      {(pooja as any).featured === 1 && (
+                        <Badge className="absolute top-3 right-3 bg-primary/90 hover:bg-primary">
+                          <Star className="h-3 w-3" />
+                        </Badge>
+                      )}
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </Link>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Empty State */}
+        {poojas.length === 0 && !isLoading && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="glass-card p-8 rounded-2xl text-center mt-8 max-w-md mx-auto"
+          >
+            <h2 className="text-xl font-bold mb-4 text-foreground">No Poojas Found</h2>
+            <p className="text-muted-foreground">
+              {selectedCategory === 'all' 
+                ? 'Check back later for spiritual content' 
+                : 'No festivals found in this category'}
+            </p>
+          </motion.div>
         )}
       </div>
     </div>

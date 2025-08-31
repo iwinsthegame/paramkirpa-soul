@@ -192,10 +192,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Pooja API Routes
   app.get("/api/v1/poojas", async (req, res) => {
     try {
-      const poojas = await storage.getPoojas();
+      const { category } = req.query;
+      let poojas;
+      
+      if (category) {
+        poojas = await storage.getPoojasByCategory(category as string);
+      } else {
+        poojas = await storage.getPoojas();
+      }
+      
       res.json(poojas);
     } catch (error) {
       res.status(500).json({ message: "Failed to fetch poojas" });
+    }
+  });
+  
+  // Get all pooja categories
+  app.get("/api/v1/pooja/categories", async (req, res) => {
+    try {
+      const categories = await storage.getPoojaCategories();
+      res.json(categories);
+    } catch (error) {
+      res.status(500).json({ message: "Failed to fetch pooja categories" });
     }
   });
 

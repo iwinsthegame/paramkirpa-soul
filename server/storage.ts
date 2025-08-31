@@ -25,6 +25,8 @@ export interface IStorage {
   
   // Pooja operations
   getPoojas(): Promise<any[]>;
+  getPoojasByCategory(category: string): Promise<any[]>;
+  getPoojaCategories(): Promise<any[]>;
   getPoojaById(id: string): Promise<any>;
   getPoojaContent(poojaId: string, type?: string): Promise<any[]>;
   
@@ -44,6 +46,7 @@ export class MemStorage implements IStorage {
   private prayers: Map<string, Prayer>;
   private gameScores: Map<string, GameScore>;
   private poojas: any[] = [];
+  private poojaCategories: any[] = [];
   private poojaContent: any[] = [];
   private reels: any[] = [];
   private communityPosts: any[] = [];
@@ -53,6 +56,7 @@ export class MemStorage implements IStorage {
     this.prayers = new Map();
     this.gameScores = new Map();
     this.initializeContent();
+    this.initializePoojaCategories();
     this.initializeNewFeatures();
   }
 
@@ -1109,30 +1113,236 @@ export class MemStorage implements IStorage {
       .slice(0, 10);
   }
 
-  private initializeNewFeatures() {
-    // Initialize Poojas
-    this.poojas = [
+  private initializePoojaCategories() {
+    // Define pooja categories with Hindu festival structure
+    this.poojaCategories = [
       {
-        id: "durga-pooja",
-        name: "Durga Pooja",
-        description: "Worship of Goddess Durga for strength and protection",
-        imageUrl: "/durga-maa.jpg",
+        id: "major-festivals",
+        name: "🕉️ Major Hindu Festivals",
+        description: "Grand celebrations and major Hindu festivals",
+        icon: "🕉️",
+        color: "from-orange-500 to-red-600"
+      },
+      {
+        id: "women-centric",
+        name: "🌸 Women-Centric Poojas",
+        description: "Special rituals and fasting for women",
+        icon: "🌸", 
+        color: "from-pink-500 to-purple-600"
+      },
+      {
+        id: "seasonal",
+        name: "🌿 Seasonal & Harvest Festivals",
+        description: "Celebrating nature and seasonal transitions",
+        icon: "🌿",
+        color: "from-green-500 to-teal-600"
+      },
+      {
+        id: "devotional-days",
+        name: "🪔 Devotional Days",
+        description: "Special days for spiritual devotion",
+        icon: "🪔",
+        color: "from-yellow-500 to-orange-600"
+      }
+    ];
+  }
+
+  private initializeNewFeatures() {
+    // Initialize Comprehensive Sacred Poojas & Hindu Festivals
+    this.poojas = [
+      // 🕉️ MAJOR HINDU FESTIVALS
+      {
+        id: "chhath-pooja",
+        name: "Chhath Pooja",
+        description: "Sun God worship ritual, especially popular in Bihar and U.P.",
+        imageUrl: "/chhath-sun.jpg",
+        category: "major-festivals",
         featured: 1,
         createdAt: new Date(),
       },
       {
-        id: "lakshmi-pooja",
-        name: "Lakshmi Pooja", 
-        description: "Worship of Goddess Lakshmi for prosperity and wealth",
-        imageUrl: "/lakshmi-divine.jpg",
+        id: "diwali-lakshmi-pooja",
+        name: "Diwali Lakshmi Pooja",
+        description: "Festival of lights with worship of Goddess Lakshmi & Lord Ganesha",
+        imageUrl: "/diwali-lakshmi.jpg",
+        category: "major-festivals", 
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "navratri-durga-pooja",
+        name: "Navratri / Durga Pooja",
+        description: "Nine days of devotion to Maa Durga with dance and celebration",
+        imageUrl: "/navratri-durga.jpg",
+        category: "major-festivals",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "maha-shivratri",
+        name: "Maha Shivratri",
+        description: "Great night of Lord Shiva with fasting and night-long prayers",
+        imageUrl: "/maha-shivratri.jpg",
+        category: "major-festivals",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "krishna-janmashtami",
+        name: "Krishna Janmashtami",
+        description: "Celebration of Lord Krishna's birth with midnight prayers",
+        imageUrl: "/krishna-janmashtami.jpg",
+        category: "major-festivals",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "ram-navami",
+        name: "Ram Navami",
+        description: "Birth celebration of Lord Ram with bhajans and processions",
+        imageUrl: "/ram-navami.jpg",
+        category: "major-festivals",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "ganesh-chaturthi",
+        name: "Ganesh Chaturthi",
+        description: "Ganpati worship and grand visarjan celebrations",
+        imageUrl: "/ganesh-chaturthi.jpg",
+        category: "major-festivals",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "kali-pooja",
+        name: "Kali Pooja",
+        description: "Worship of Goddess Kali, especially popular in Bengal during Diwali",
+        imageUrl: "/kali-pooja.jpg",
+        category: "major-festivals",
+        featured: 0,
+        createdAt: new Date(),
+      },
+      
+      // 🌸 WOMEN-CENTRIC & FASTING POOJAS
+      {
+        id: "karwa-chauth",
+        name: "Karwa Chauth",
+        description: "Married women's fasting ritual for husband's long life",
+        imageUrl: "/karwa-chauth.jpg",
+        category: "women-centric",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "teej-festival",
+        name: "Teej Festival",
+        description: "Dedicated to Goddess Parvati for marital bliss and happiness",
+        imageUrl: "/teej-festival.jpg",
+        category: "women-centric",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "vat-savitri-vrat",
+        name: "Vat Savitri Vrat",
+        description: "Women's fast under banyan tree for husband's well-being",
+        imageUrl: "/vat-savitri.jpg",
+        category: "women-centric",
         featured: 0,
         createdAt: new Date(),
       },
       {
-        id: "ganesha-pooja",
-        name: "Ganesha Pooja",
-        description: "Worship of Lord Ganesha for removing obstacles",
-        imageUrl: "/ganesh-cherry.jpg", 
+        id: "hartalika-teej",
+        name: "Hartalika Teej",
+        description: "Popular North Indian festival for unmarried girls and women",
+        imageUrl: "/hartalika-teej.jpg",
+        category: "women-centric",
+        featured: 0,
+        createdAt: new Date(),
+      },
+      
+      // 🌿 SEASONAL & HARVEST FESTIVALS
+      {
+        id: "makar-sankranti",
+        name: "Makar Sankranti",
+        description: "Sun transition festival with kite flying and harvest celebration",
+        imageUrl: "/makar-sankranti.jpg",
+        category: "seasonal",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "pongal-tamil",
+        name: "Pongal (Tamil Nadu)",
+        description: "Tamil harvest festival with rice and jaggery preparation",
+        imageUrl: "/pongal-festival.jpg",
+        category: "seasonal",
+        featured: 0,
+        createdAt: new Date(),
+      },
+      {
+        id: "onam-kerala",
+        name: "Onam (Kerala)",
+        description: "King Mahabali welcome festival with Vishnu worship",
+        imageUrl: "/onam-kerala.jpg",
+        category: "seasonal",
+        featured: 0,
+        createdAt: new Date(),
+      },
+      {
+        id: "baisakhi-festival",
+        name: "Baisakhi",
+        description: "Sikh New Year and harvest festival with community celebration",
+        imageUrl: "/baisakhi.jpg",
+        category: "seasonal",
+        featured: 0,
+        createdAt: new Date(),
+      },
+      
+      // 🪔 OTHER IMPORTANT DEVOTIONAL DAYS
+      {
+        id: "hanuman-jayanti",
+        name: "Hanuman Jayanti",
+        description: "Birth celebration of Lord Hanuman with strength prayers",
+        imageUrl: "/hanuman-jayanti.jpg",
+        category: "devotional-days",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "raksha-bandhan",
+        name: "Raksha Bandhan",
+        description: "Brother-sister festival with sacred thread and protection prayers",
+        imageUrl: "/raksha-bandhan.jpg",
+        category: "devotional-days",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "guru-purnima",
+        name: "Guru Purnima",
+        description: "Worship and gratitude towards teachers and spiritual gurus",
+        imageUrl: "/guru-purnima.jpg",
+        category: "devotional-days",
+        featured: 0,
+        createdAt: new Date(),
+      },
+      {
+        id: "sharad-purnima",
+        name: "Sharad Purnima",
+        description: "Full moon worship with special focus on Goddess Lakshmi",
+        imageUrl: "/sharad-purnima.jpg",
+        category: "devotional-days",
+        featured: 0,
+        createdAt: new Date(),
+      },
+      {
+        id: "ekadashi-vrats",
+        name: "Ekadashi Vrats",
+        description: "Special fasting days for Lord Vishnu devotees (twice monthly)",
+        imageUrl: "/ekadashi-vrat.jpg",
+        category: "devotional-days",
         featured: 1,
         createdAt: new Date(),
       }
@@ -1502,6 +1712,14 @@ export class MemStorage implements IStorage {
   // Pooja operations
   async getPoojas(): Promise<any[]> {
     return this.poojas;
+  }
+
+  async getPoojasByCategory(category: string): Promise<any[]> {
+    return this.poojas.filter(pooja => pooja.category === category);
+  }
+
+  async getPoojaCategories(): Promise<any[]> {
+    return this.poojaCategories;
   }
 
   async getPoojaById(id: string): Promise<any> {

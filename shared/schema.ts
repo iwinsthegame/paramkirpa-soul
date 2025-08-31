@@ -154,6 +154,7 @@ export const poojas = pgTable("poojas", {
   name: varchar("name").notNull(),
   description: text("description"),
   imageUrl: varchar("image_url"),
+  category: varchar("category").notNull(), // major-festivals, women-centric, seasonal, devotional-days
   featured: integer("featured").default(0), // 0 = false, 1 = true
   createdAt: timestamp("created_at").defaultNow(),
 });
@@ -231,6 +232,7 @@ export const poojaSchema = z.object({
   name: z.string(),
   description: z.string().optional(),
   imageUrl: z.string().optional(),
+  category: z.enum(["major-festivals", "women-centric", "seasonal", "devotional-days"]),
   featured: z.number().default(0),
   createdAt: z.date(),
 });
@@ -251,6 +253,17 @@ export const poojaContentSchema = z.object({
 });
 
 export const insertPoojaSchema = poojaSchema.omit({ id: true, createdAt: true });
+
+// Pooja Category Schema
+export const poojaCategorySchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  description: z.string(),
+  icon: z.string(),
+  color: z.string(),
+});
+
+export type PoojaCategory = z.infer<typeof poojaCategorySchema>;
 export const insertPoojaContentSchema = poojaContentSchema.omit({ id: true, createdAt: true });
 
 export type Pooja = z.infer<typeof poojaSchema>;
