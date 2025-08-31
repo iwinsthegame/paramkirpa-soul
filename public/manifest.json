@@ -1,0 +1,63 @@
+{
+  "name": "Paramkirpa - Spiritual Devotion",
+  "short_name": "Paramkirpa",
+  "description": "Complete Hindu spiritual app with festival content, mantras, prayers, and devotional reels",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#1e40af",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["lifestyle", "education", "entertainment"],
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today's Pooja",
+      "short_name": "Pooja",
+      "description": "View today's spiritual content",
+      "url": "/pooja",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Devotional Reels",
+      "short_name": "Reels",
+      "description": "Watch spiritual reels and stories",
+      "url": "/reels",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Community Prayers",
+      "short_name": "Prayers",
+      "description": "Share and read community prayers",
+      "url": "/community",
+      "icons": [{ "src": "/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}

@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/hooks/use-language";
 import { ThemeProvider } from "@/components/theme-provider";
 import { FloatingBackground } from "@/components/floating-background";
 import { BottomNavigation } from "@/components/bottom-navigation";
+import { PWAInstallPrompt } from "@/components/pwa-install-prompt";
 
 // Pages
 import Home from "@/pages/home";
@@ -36,13 +37,14 @@ function Router() {
       </Switch>
       
       <BottomNavigation />
+      <PWAInstallPrompt />
     </div>
   );
 }
 
 function App() {
   return (
-    <ThemeProvider defaultTheme="light" storageKey="paramkirpa-ui-theme">
+    <ThemeProvider storageKey="paramkirpa-ui-theme">
       <QueryClientProvider client={queryClient}>
         <LanguageProvider>
           <TooltipProvider>
