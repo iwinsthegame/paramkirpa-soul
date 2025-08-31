@@ -20,7 +20,7 @@ import NotFound from "@/pages/not-found";
 
 function Router() {
   return (
-    <div className="min-h-screen relative spiritual-gradient">
+    <div className="min-h-screen spiritual-gradient">
       <FloatingBackground />
       
       <Switch>

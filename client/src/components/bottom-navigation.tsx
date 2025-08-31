@@ -35,7 +35,7 @@ export function BottomNavigation() {
 
       {/* Enhanced Glassmorphism Bottom Navigation */}
       <motion.div 
-        className="fixed bottom-0 left-0 right-0 z-40 p-4"
+        className="fixed bottom-0 left-0 right-0 z-[9999] p-4"
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, type: "spring", stiffness: 300 }}
