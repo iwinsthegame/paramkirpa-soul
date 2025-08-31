@@ -57,29 +57,40 @@ export function ReelsPage() {
   };
 
   // Minimum distance for a swipe
-  const minSwipeDistance = 50;
+  const minSwipeDistance = 30;
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientY);
+    e.preventDefault(); // Prevent default scrolling
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientY);
+    e.preventDefault(); // Prevent default scrolling
   };
 
-  const onTouchEnd = () => {
+  const onTouchEnd = (e: React.TouchEvent) => {
+    e.preventDefault();
     if (!touchStart || !touchEnd) return;
 
     const distance = touchStart - touchEnd;
     const isUpSwipe = distance > minSwipeDistance;
     const isDownSwipe = distance < -minSwipeDistance;
 
-    if (isUpSwipe) {
+    console.log('Swipe detected:', { distance, isUpSwipe, isDownSwipe, touchStart, touchEnd });
+
+    if (isUpSwipe && currentIndex < reels.length - 1) {
+      console.log('Going to next reel');
       handleSwipe('up');
-    } else if (isDownSwipe) {
+    } else if (isDownSwipe && currentIndex > 0) {
+      console.log('Going to previous reel');
       handleSwipe('down');
     }
+    
+    // Reset touch values
+    setTouchStart(null);
+    setTouchEnd(null);
   };
 
   // Handle keyboard navigation
@@ -131,10 +142,11 @@ export function ReelsPage() {
 
   return (
     <div 
-      className="min-h-screen spiritual-gradient relative overflow-hidden"
+      className="min-h-screen spiritual-gradient relative overflow-hidden touch-none select-none"
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
+      style={{ touchAction: 'none' }}
     >
       <AnimatePresence>
         <motion.div
@@ -263,10 +275,28 @@ export function ReelsPage() {
             </div>
 
             {/* Navigation hints */}
-            <div className="absolute top-4 left-1/2 transform -translate-x-1/2">
-              <div className="text-white/60 text-xs text-center bg-black/30 px-3 py-1 rounded-full">
-                Swipe ↑↓ or tap sides to navigate
+            <div className="absolute top-4 left-1/2 transform -translate-x-1/2 z-10">
+              <div className="text-white/60 text-xs text-center bg-black/50 px-3 py-1 rounded-full">
+                Swipe ↑↓ or tap sides to navigate • {currentIndex + 1}/{reels.length}
               </div>
+            </div>
+
+            {/* Simple navigation buttons for debugging */}
+            <div className="absolute top-20 left-1/2 transform -translate-x-1/2 flex space-x-4 z-10">
+              <button 
+                onClick={() => handleSwipe('down')}
+                disabled={currentIndex === 0}
+                className="bg-white/20 text-white px-3 py-1 rounded disabled:opacity-50"
+              >
+                ← Prev
+              </button>
+              <button 
+                onClick={() => handleSwipe('up')}
+                disabled={currentIndex === reels.length - 1}
+                className="bg-white/20 text-white px-3 py-1 rounded disabled:opacity-50"
+              >
+                Next →
+              </button>
             </div>
 
             {/* Swipe indicators */}
