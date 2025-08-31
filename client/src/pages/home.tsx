@@ -62,7 +62,7 @@ export default function Home() {
       <FloatingBackground />
       <Header />
       
-      <main className="relative z-10 max-w-6xl mx-auto px-4 py-8">
+      <main className="relative z-10 max-w-6xl mx-auto px-4 py-8 pb-24">
         {/* Day Tabs - Always visible */}
         <DayTabs 
           selectedDay={selectedDay} 

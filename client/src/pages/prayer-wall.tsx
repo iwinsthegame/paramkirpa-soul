@@ -13,7 +13,7 @@ export default function PrayerWall() {
       <FloatingBackground />
       <Header />
       
-      <main className="relative z-10 max-w-4xl mx-auto px-4 py-8">
+      <main className="relative z-10 max-w-4xl mx-auto px-4 py-8 pb-24">
         <motion.div 
           className="glass-card rounded-2xl p-8 shadow-xl"
           initial={{ opacity: 0, y: 20 }}
