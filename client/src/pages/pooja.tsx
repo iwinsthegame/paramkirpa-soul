@@ -230,15 +230,37 @@ export function PoojaDetailPage() {
     enabled: !!params?.id,
   });
 
-  const contentTypes = [
-    { id: 'aarti', label: 'Aarti', icon: '🪔' },
-    { id: 'chalisa', label: 'Chalisa', icon: '📿' },
-    { id: 'mantra', label: 'Mantra', icon: '🕉️' },
-    { id: 'kavach', label: 'Kavach', icon: '🛡️' },
-    { id: 'siddhi', label: 'Siddhi', icon: '✨' },
-    { id: 'kunjika', label: 'Kunjika', icon: '🔑' },
-    { id: 'adhyaya', label: 'Adhyaya', icon: '📖' },
-  ];
+  // Define content types based on pooja type
+  const getContentTypes = (poojaId: string) => {
+    if (poojaId === 'durga-pooja') {
+      return [
+        { id: 'aarti', label: 'Aarti', icon: '🪔' },
+        { id: 'chalisa', label: 'Chalisa', icon: '📿' },
+        { id: 'mantra', label: 'Mantra', icon: '🕉️' },
+        { id: 'kavach', label: 'Kavach', icon: '🛡️' },
+        { id: 'siddhi', label: 'Siddhi', icon: '✨' },
+        { id: 'kunjika', label: 'Kunjika', icon: '🔑' },
+        { id: 'adhyaya', label: 'Adhyaya', icon: '📖' },
+      ];
+    } else if (poojaId === 'chhath-pooja') {
+      return [
+        { id: 'aarti', label: 'Aarti', icon: '🪔' },
+        { id: 'chalisa', label: 'Chalisa', icon: '📿' },
+        { id: 'geet', label: 'Geet', icon: '🎵' },
+        { id: 'mantra', label: 'Mantra', icon: '🕉️' },
+      ];
+    } else {
+      // Default content types for other festivals
+      return [
+        { id: 'aarti', label: 'Aarti', icon: '🪔' },
+        { id: 'chalisa', label: 'Chalisa', icon: '📿' },
+        { id: 'mantra', label: 'Mantra', icon: '🕉️' },
+        { id: 'geet', label: 'Geet', icon: '🎵' },
+      ];
+    }
+  };
+  
+  const contentTypes = getContentTypes(params?.id || '');
 
   if (!match) return null;
 
