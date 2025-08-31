@@ -1170,6 +1170,15 @@ export class MemStorage implements IStorage {
         createdAt: new Date(),
       },
       {
+        id: "durga-pooja",
+        name: "Durga Pooja",
+        description: "Worship of Goddess Durga for strength and protection",
+        imageUrl: "/durga-maa.jpg",
+        category: "major-festivals",
+        featured: 1,
+        createdAt: new Date(),
+      },
+      {
         id: "navratri-durga-pooja",
         name: "Navratri / Durga Pooja",
         description: "Nine days of devotion to Maa Durga with dance and celebration",
@@ -1606,6 +1615,31 @@ export class MemStorage implements IStorage {
         translation: "Chapter 13 - The Glory of the Goddess: Sage Markandeya concludes that the Universal Mother, praised thus by the gods, destroyer of demons, grants fearlessness and welfare to the three worlds. The Goddess instructs to worship her daily with various auspicious mantras and to recite the seven hundred verses that destroy all troubles. Thus concludes the sacred Durga Saptashati. Om Peace Peace Peace.",
         adhyaya: 13,
         order: 13,
+        createdAt: new Date(),
+      },
+      
+      // Navratri Durga Pooja Content - Duplicate key content for Navratri celebration
+      {
+        id: "navratri-aarti-1",
+        poojaId: "navratri-durga-pooja",
+        type: "aarti",
+        title: "नवरात्रि दुर्गा आरती",
+        textHindi: "जय अम्बे गौरी, मैया जय श्यामा गौरी।\nतुमको निशदिन ध्यावत, हरि ब्रह्मा शिवरी॥\n\nमांग सिंदूर विराजत, टीको मृगमद को।\nउज्जवल से दोऊ नैना, चंद्रबदन नीको॥\n\nकनक समान कलेवर, रक्ताम्बर राजै।\nरक्तपुष्प गलमाला, कंठन पर साजै॥",
+        textEnglish: "Jai Ambe Gauri, Maiya Jai Shyama Gauri\nTumko nisdin dhyavat, Hari Brahma Shivri\n\nMaang sindoor viraajat, teeko mrigmad ko\nUjjwal se dou naina, chandrabadan neeko\n\nKanak samaan kalever, raktambar rajai\nRaktapushp galamala, kanthan par sajai",
+        translation: "Victory to Mother Gauri! This sacred aarti is sung during the nine nights of Navratri to invoke the blessings of Goddess Durga in her various divine forms.",
+        audioUrl: "/audio/navratri_durga_aarti.mp3",
+        order: 1,
+        createdAt: new Date(),
+      },
+      {
+        id: "navratri-mantra-1",
+        poojaId: "navratri-durga-pooja",
+        type: "mantra",
+        title: "नवरात्रि मूल मंत्र",
+        textHindi: "ॐ दुं दुर्गायै नमः\nॐ ऐं ह्रीं क्लीं चामुण्डायै विच्चे",
+        textEnglish: "Om Dum Durgayai Namah\nOm Aim Hreem Kleem Chamundayai Vichche",
+        translation: "Sacred mantras for Navratri - invoking Goddess Durga's divine protection and blessings during the nine-day festival",
+        order: 1,
         createdAt: new Date(),
       }
     ];
