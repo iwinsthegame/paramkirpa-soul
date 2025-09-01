@@ -1,6 +1,12 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/use-language";
-import type { CategoryInfo } from "@/types";
+
+interface CategoryInfo {
+  name: string;
+  icon: string;
+  description: string;
+  gradient: string;
+}
 
 interface ContentCategoriesProps {
   onCategorySelect: (category: string) => void;
@@ -9,7 +15,7 @@ interface ContentCategoriesProps {
 const categories: CategoryInfo[] = [
   {
     name: "Mantras",
-    icon: "🙏",
+    icon: "/mantras-logo.png",
     description: "Sacred chants for peace",
     gradient: "from-primary to-secondary"
   },
@@ -51,7 +57,11 @@ export default function ContentCategories({ onCategorySelect }: ContentCategorie
             transition={{ delay: index * 0.1 }}
           >
             <div className={`flex items-center justify-center w-16 h-16 bg-gradient-to-br ${category.gradient} rounded-2xl mb-4 mx-auto shadow-lg`}>
-              <span className="text-white text-2xl">{category.icon}</span>
+              {category.icon.startsWith('/') ? (
+                <img src={category.icon} alt={category.name} className="w-10 h-10 object-contain" />
+              ) : (
+                <span className="text-white text-2xl">{category.icon}</span>
+              )}
             </div>
             <h3 className="text-lg font-semibold text-white text-center mb-2">
               {t(category.name.toLowerCase())}
