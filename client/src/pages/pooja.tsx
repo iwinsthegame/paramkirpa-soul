@@ -391,8 +391,8 @@ export function PoojaDetailPage() {
                                                /^[प्रअअसनयतमकगदशहरजभवलसिचएवध]/.test(line) ||
                                                /[्]/.test(line) && !/[है|की|में|से|को|का|के|और|तथा|जो|वह|यह|इस|उस|एक]/.test(line);
                               
-                              // Apply readable dark green color for kavach content
-                              const textColor = selectedType === 'kavach' ? '#2d5a27' : '';
+                              // Apply white color for kavach content
+                              const textColor = selectedType === 'kavach' ? '#ffffff' : '';
                               
                               if (isSanskrit) {
                                 return (
@@ -419,14 +419,14 @@ export function PoojaDetailPage() {
                               ) : null;
                             case 'english':
                               return item.textEnglish ? (
-                                <div className={`${selectedType === 'kavach' ? '' : 'text-foreground'} leading-relaxed whitespace-pre-line text-lg`} style={{ fontFamily: 'Open Sans, sans-serif', ...(selectedType === 'kavach' ? { color: '#2d5a27' } : {}) }}>
+                                <div className={`${selectedType === 'kavach' ? '' : 'text-foreground'} leading-relaxed whitespace-pre-line text-lg`} style={{ fontFamily: 'Open Sans, sans-serif', ...(selectedType === 'kavach' ? { color: '#ffffff' } : {}) }}>
                                   {item.textEnglish}
                                 </div>
                               ) : null;
                             case 'translation':
                               return item.translation ? (
                                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
-                                  <p className={`${selectedType === 'kavach' ? '' : 'text-muted-foreground'} text-base`} style={{ fontFamily: 'Open Sans, sans-serif', ...(selectedType === 'kavach' ? { color: '#2d5a27' } : {}) }}>{item.translation}</p>
+                                  <p className={`${selectedType === 'kavach' ? '' : 'text-muted-foreground'} text-base`} style={{ fontFamily: 'Open Sans, sans-serif', ...(selectedType === 'kavach' ? { color: '#ffffff' } : {}) }}>{item.translation}</p>
                                 </div>
                               ) : null;
                             default:
