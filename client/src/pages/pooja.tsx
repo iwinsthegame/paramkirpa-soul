@@ -73,7 +73,6 @@ export function PoojaPage() {
             data-testid={`category-all`}
           >
             <div className="flex items-center gap-2">
-              <span>🎊</span>
               <span>All Festivals</span>
             </div>
           </motion.button>
