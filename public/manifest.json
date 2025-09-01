@@ -1,7 +1,7 @@
 {
-  "name": "Paramkirpa - Spiritual Devotion",
-  "short_name": "Paramkirpa",
-  "description": "Complete Hindu spiritual app with festival content, mantras, prayers, and devotional reels",
+  "name": "Kirpa - Spiritual Grace",
+  "short_name": "Kirpa",
+  "description": "Your daily spiritual companion with mantras, prayers, festivals, and divine blessings",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f172a",
@@ -24,9 +24,9 @@
       "purpose": "any"
     },
     {
-      "src": "/durga-pooja.jpg",
+      "src": "/kirpa-logo.png",
       "sizes": "512x512",
-      "type": "image/jpeg",
+      "type": "image/png",
       "purpose": "any"
     }
   ],

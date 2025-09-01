@@ -8,8 +8,8 @@ export default function Header() {
     <header className="relative z-10 glass-card">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg">
-            <span className="text-white text-lg">🕉️</span>
+          <div className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
+            <img src="/kirpa-logo.png" alt="Kirpa Logo" className="w-full h-full object-cover" />
           </div>
           <h1 className="text-2xl text-white font-extrabold">{t('appName')}</h1>
         </div>
