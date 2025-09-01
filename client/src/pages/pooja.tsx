@@ -50,9 +50,7 @@ export function PoojaPage() {
       <div className="pt-8 px-4">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-foreground mb-2">
-            🕉️ Sacred Poojas & Festivals 🕉️
-          </h1>
+          <h1 className="text-4xl font-bold text-foreground mb-2">🕉️ Festivals 🕉️</h1>
           <p className="text-muted-foreground text-lg">Devotional Guide</p>
         </div>
 
