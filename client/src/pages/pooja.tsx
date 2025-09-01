@@ -397,13 +397,13 @@ export function PoojaDetailPage() {
                               
                               if (isSanskrit) {
                                 return (
-                                  <div key={index} className={`${selectedType === 'kavach' ? '' : 'text-amber-400'} font-medium leading-relaxed mb-1`} style={selectedType === 'kavach' ? { color: textColor } : {}}>
+                                  <div key={index} className="font-medium leading-relaxed mb-1" style={{ color: '#ffffff' }}>
                                     {line}
                                   </div>
                                 );
                               } else {
                                 return (
-                                  <div key={index} className={`${selectedType === 'kavach' ? '' : 'text-foreground'} leading-relaxed mb-1`} style={selectedType === 'kavach' ? { color: textColor } : {}}>
+                                  <div key={index} className="leading-relaxed mb-1" style={{ color: '#ffffff' }}>
                                     {line}
                                   </div>
                                 );
