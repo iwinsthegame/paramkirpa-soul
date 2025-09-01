@@ -1,6 +1,6 @@
 # Overview
 
-Kirpa is a full-stack spiritual devotional app built with React and Express/Node.js. The application provides day-wise categorized devotional content (Mantras, Chalisas, Aartis, Stotrams) and allows users to post anonymous prayers with emoji reactions. The app features language toggle between English and Hindi and is designed with a calming spiritual interface inspired by meditation apps.
+Paramkirpa is a full-stack spiritual devotional app built with React and Express/Node.js. The application provides day-wise categorized devotional content (Mantras, Chalisas, Aartis, Stotrams) and allows users to post anonymous prayers with emoji reactions. The app features language toggle between English and Hindi and is designed with a calming spiritual interface inspired by meditation apps.
 
 # User Preferences
 

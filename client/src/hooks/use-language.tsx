@@ -12,7 +12,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 const translations = {
   en: {
-    appName: "Kirpa",
+    appName: "Paramkirpa",
     dailyDevotions: "Daily Devotions",
     prayerWall: "Prayer Wall",
     mantras: "Mantras",
@@ -35,7 +35,7 @@ const translations = {
     spiritualContent: "Spiritual content for children"
   },
   hi: {
-    appName: "कृपा",
+    appName: "परमकृपा",
     dailyDevotions: "दैनिक भक्ति",
     prayerWall: "प्रार्थना दीवार",
     mantras: "मंत्र",
