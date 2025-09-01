@@ -8,7 +8,6 @@ export default function Header() {
     <header className="relative z-10 glass-card">
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
-          <img src="/festival-om-black-logo.png" alt="Om Symbol" className="w-8 object-contain" />
           <div className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg overflow-hidden">
             <img src="/kirpa-logo.png" alt="Kirpa Logo" className="w-full h-full object-cover" />
           </div>
