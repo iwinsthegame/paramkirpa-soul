@@ -12,7 +12,6 @@ export default function Header() {
             <img src="/kirpa-logo.png" alt="Kirpa Logo" className="w-full h-full object-cover" />
           </div>
           <h1 className="text-2xl text-white font-extrabold">{t('appName')}</h1>
-          <img src="/festival-om-black-logo.png" alt="Om Symbol" className="w-8 object-contain" />
         </div>
         
         <div className="flex items-center space-x-4">
