@@ -383,20 +383,20 @@ export function PoojaDetailPage() {
                           switch (currentView) {
                             case 'hindi':
                               return item.textHindi ? (
-                                <div className="text-foreground leading-relaxed whitespace-pre-line">
+                                <div className="text-foreground leading-relaxed whitespace-pre-line text-lg">
                                   {item.textHindi}
                                 </div>
                               ) : null;
                             case 'english':
                               return item.textEnglish ? (
-                                <div className="text-foreground leading-relaxed whitespace-pre-line italic">
+                                <div className="text-foreground leading-relaxed whitespace-pre-line italic text-lg">
                                   {item.textEnglish}
                                 </div>
                               ) : null;
                             case 'translation':
                               return item.translation ? (
                                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
-                                  <p className="text-muted-foreground text-sm">{item.translation}</p>
+                                  <p className="text-muted-foreground text-base">{item.translation}</p>
                                 </div>
                               ) : null;
                             default:
