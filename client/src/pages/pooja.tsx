@@ -53,9 +53,7 @@ export function PoojaPage() {
           <h1 className="text-4xl font-bold text-foreground mb-2">
             🕉️ Sacred Poojas & Festivals 🕉️
           </h1>
-          <p className="text-muted-foreground text-lg">
-            Complete Hindu Festival & Devotional Guide
-          </p>
+          <p className="text-muted-foreground text-lg">Devotional Guide</p>
         </div>
 
         {/* Category Filter Tabs */}
