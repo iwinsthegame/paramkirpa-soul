@@ -389,14 +389,14 @@ export function PoojaDetailPage() {
                               ) : null;
                             case 'english':
                               return item.textEnglish ? (
-                                <div className="text-foreground leading-relaxed whitespace-pre-line italic text-lg">
+                                <div className="text-foreground leading-relaxed whitespace-pre-line italic text-lg" style={{ fontFamily: 'Open Sans, sans-serif' }}>
                                   {item.textEnglish}
                                 </div>
                               ) : null;
                             case 'translation':
                               return item.translation ? (
                                 <div className="p-4 bg-muted/50 rounded-lg border border-border">
-                                  <p className="text-muted-foreground text-base">{item.translation}</p>
+                                  <p className="text-muted-foreground text-base" style={{ fontFamily: 'Open Sans, sans-serif' }}>{item.translation}</p>
                                 </div>
                               ) : null;
                             default:
