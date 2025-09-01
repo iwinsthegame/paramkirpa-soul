@@ -374,6 +374,7 @@ export function PoojaDetailPage() {
                         const getViewOptions = () => {
                           const options = [];
                           if (item.textHindi) options.push({ value: 'hindi', label: 'Hindi Text' });
+                          if (item.textHindi) options.push({ value: 'sanskrit', label: 'Sanskrit Text' });
                           if (item.textEnglish) options.push({ value: 'english', label: 'English Transliteration' });
                           if (item.translation) options.push({ value: 'translation', label: 'Translation & Meaning' });
                           return options;
@@ -415,6 +416,16 @@ export function PoojaDetailPage() {
                               return item.textHindi ? (
                                 <div className="text-lg">
                                   {formatHindiContent(item.textHindi)}
+                                </div>
+                              ) : null;
+                            case 'sanskrit':
+                              return item.textHindi ? (
+                                <div className="text-lg">
+                                  {item.textHindi.split('\n').map((line, index) => (
+                                    <div key={index} className={`${selectedType === 'kavach' ? '' : 'text-amber-400'} font-medium leading-relaxed mb-1`} style={selectedType === 'kavach' ? { color: '#ffffff' } : {}}>
+                                      {line}
+                                    </div>
+                                  ))}
                                 </div>
                               ) : null;
                             case 'english':
