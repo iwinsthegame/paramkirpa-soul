@@ -109,8 +109,8 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h3 className="text-2xl font-semibold text-foreground mb-6 text-center flex items-center justify-center space-x-2">
-                <span className="text-primary">🙏</span>
+              <h3 className="text-2xl font-semibold text-foreground mb-6 text-center flex items-center justify-center space-x-3">
+                <img src="/prayer-wall-logo.png" alt="Prayer Wall" className="w-8 h-8 object-contain" />
                 <span>{t('prayerWall')}</span>
               </h3>
               

@@ -21,7 +21,7 @@ export default function PrayerWall() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-3xl font-bold text-white mb-8 text-center flex items-center justify-center space-x-3">
-            <span className="text-primary">🙏</span>
+            <img src="/prayer-wall-logo.png" alt="Prayer Wall" className="w-10 h-10 object-contain" />
             <span>{t('prayerWall')}</span>
           </h1>
           
