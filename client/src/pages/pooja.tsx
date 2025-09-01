@@ -380,11 +380,38 @@ export function PoojaDetailPage() {
                         };
                         
                         const renderContent = () => {
+                          // Function to detect and style Sanskrit verses vs Hindi explanations
+                          const formatHindiContent = (text: string) => {
+                            const lines = text.split('\n');
+                            return lines.map((line, index) => {
+                              // Detect Sanskrit lines (contain specific Sanskrit characters or patterns)
+                              const isSanskrit = /[॥।]/.test(line) || 
+                                               /^[ॐ]/.test(line) || 
+                                               /॥\d+॥$/.test(line) ||
+                                               /^[प्रअअसनयतमकगदशहरजभवलसिचएवध]/.test(line) ||
+                                               /[्]/.test(line) && !/[है|की|में|से|को|का|के|और|तथा|जो|वह|यह|इस|उस|एक]/.test(line);
+                              
+                              if (isSanskrit) {
+                                return (
+                                  <div key={index} className="text-amber-400 font-medium leading-relaxed mb-1">
+                                    {line}
+                                  </div>
+                                );
+                              } else {
+                                return (
+                                  <div key={index} className="text-foreground leading-relaxed mb-1">
+                                    {line}
+                                  </div>
+                                );
+                              }
+                            });
+                          };
+
                           switch (currentView) {
                             case 'hindi':
                               return item.textHindi ? (
-                                <div className="text-foreground leading-relaxed whitespace-pre-line text-lg">
-                                  {item.textHindi}
+                                <div className="text-lg">
+                                  {formatHindiContent(item.textHindi)}
                                 </div>
                               ) : null;
                             case 'english':

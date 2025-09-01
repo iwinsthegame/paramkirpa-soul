@@ -1417,10 +1417,95 @@ export class MemStorage implements IStorage {
         id: "durga-kavach-1",
         poojaId: "durga-pooja",
         type: "kavach",
-        title: "दुर्गा कवच",
-        textHindi: "ॐ नमश्चण्डिकायै\nॐ अस्य श्री चण्डी कवचस्य नारायण ऋषिः\nअनुष्टुप् छन्दः श्री चामुण्डा देवता\nअङ्गन्यासे विनियोगः\n\nॐ चण्डिका धार्यते मूर्ध्नि\nललाटे कात्यायनी तथा\nकरालिनी भ्रुवोर्मध्ये\nभगमालिनी च नासिके\n\nकामाक्षी नेत्रयोर्मध्ये\nशङ्करी च कपोलयोः\nदन्तेषु दन्तधावनी च\nजिह्वायां तु सरस्वती\n\nकण्ठे तु भद्रकाली च\nकूर्मरूपा च हृत्स्थले\nकामिनी नाभिदेशे च\nगुह्येश्वरी गुह्यस्थले",
-        textEnglish: "Om Namash Chandikayai\nOm Asya Shri Chandi Kavachasya Narayana Rishih\nAnushhtup Chhandah Shri Chamunda Devata\nAngannyase Viniyogah\n\nOm Chandika Dharyte Moordhni\nLalate Katyayani Tatha\nKaralini Bhruvormadhye\nBhagamalini Cha Nasike\n\nKamakshi Netrayor Madhye\nShankari Cha Kapolayoh\nDanteshu Dantadhavani Cha\nJihvayam Tu Saraswati\n\nKanthe Tu Bhadrakali Cha\nKurmaroopa Cha Hritsthale\nKamini Nabhideshe Cha\nGuhyeshwari Guhyasthale",
-        translation: "This is the protective armor (kavach) of Goddess Chandi. Various forms of the Divine Mother are invoked to protect different parts of the body, creating a spiritual shield of divine protection.",
+        title: "दुर्गा कवच - संपूर्ण",
+        textHindi: `ॐ नमश्चण्डिकायै।
+ॐ यद्गुह्यं परमं लोके सर्वरक्षाकरं नृणाम्।
+यन्न कस्य चिदाख्यातं तन्मे ब्रूहि पितामह॥1॥
+
+॥मार्कण्डेय उवाच॥
+मार्कण्डेय जी ने कहा हे पितामह! जो इस संसार में परम गोपनीय तथा मनुष्यों की सब प्रकार से रक्षा करने वाला है और जो अब तक आपने दूसरे किसी के सामने प्रकट नहीं किया हो, ऐसा कोई साधन मुझे बताइए।
+
+॥ब्रह्मोवाच॥
+अस्ति गुह्यतमं विप्रा सर्वभूतोपकारकम्।
+दिव्यास्तु कवचं पुण्यं तच्छृणुष्वा महामुने॥2॥
+ब्रह्मन्! ऐसा साधन तो एक देवी का कवच ही है, जो गोपनीय से भी परम गोपनीय, पवित्र तथा सम्पूर्ण प्राणियों का उपकार करनेवाला है। महामुने! उसे श्रवण करो।
+
+प्रथमं शैलपुत्री च द्वितीयं ब्रह्मचारिणी।
+तृतीयं चन्द्रघण्टेति कूष्माण्डेति चतुर्थकम्॥3॥
+प्रथम नाम शैलपुत्री है, दूसरी मूर्तिका नाम ब्रह्मचारिणी है। तीसरा स्वरूप चन्द्रघण्टा के नामसे प्रसिद्ध है। चौथी मूर्ति को कूष्माण्डा कहते हैं।
+
+पचमं स्कन्दमातेति षष्ठं कात्यायनीति च
+सप्तमं कालरात्रीति महागौरीति चाष्टमम्॥4॥
+पाँचवीं दुर्गा का नाम स्कन्दमाता है। देवी के छठे रूप को कात्यायनी कहते हैं। सातवाँ कालरात्रि और आठवाँ स्वरूप महागौरी के नाम से प्रसिद्ध है।
+
+नवमं सिद्धिदात्री च नव दुर्गाः प्रकीर्तिताः।
+उक्तान्येतानि नामानि ब्रह्मणैव महात्मना॥5॥
+नवीं दुर्गा का नाम सिद्धिदात्री है।  ये सब नाम सर्वज्ञ महात्मा वेदभगवान् के द्वारा ही प्रतिपादित हुए हैं।
+
+अग्निना दह्यमानस्तु शत्रुमध्ये गतो रणे।
+विषमे दुर्गमे चैव भयार्ताः शरणं गताः॥6॥
+जो मनुष्य अग्नि में जल रहा हो, रणभूमि में शत्रुओं से घिर गया हो, विषम संकट में फँस गया हो तथा इस प्रकार भय से आतुर होकर जो भगवती दुर्गा की शरण में प्राप्त हुए हों, उनका कभी कोई अमंगल नहीं होता।
+
+न तेषां जायते किंचिदशुभं रणसंकटे।
+नापदं तस्य पश्यामि शोकदुःखभयं न ही॥7॥
+युद्ध समय संकट में पड़ने पर भी उनके ऊपर कोई विपत्ति नहीं दिखाई देती।  उनके शोक, दु:ख और भय की प्राप्ति नहीं होती।
+
+यैस्तु भक्त्या स्मृता नूनं तेषां वृद्धिः प्रजायते।
+ये त्वां स्मरन्ति देवेशि रक्षसे तान्न संशयः॥8॥
+जिन्होंने भक्तिपूर्वक देवी का स्मरण किया है, उनका निश्चय ही अभ्युदय होता है। देवेश्वरि! जो तुम्हारा चिन्तन करते हैं, उनकी तुम नि:सन्देह रक्षा करती हो।
+
+प्रेतसंस्था तु चामुण्डा वाराही महिषासना।
+ऐन्द्री गजसमारूढा वैष्णवी गरुडासना॥9॥
+चामुण्डादेवी प्रेत पर आरूढ़ होती हैं। वाराही भैंसे पर सवारी करती हैं।  ऐन्द्री का वाहन ऐरावत हाथी है।  वैष्णवी देवी गरुड़ पर ही आसन जमाती हैं।
+
+माहेश्वरी वृषारूढा कौमारी शिखिवाहना।
+लक्ष्मी: पद्मासना देवी पद्महस्ता हरिप्रिया॥10॥
+माहेश्वरी वृषभ पर आरूढ़ होती हैं। कौमारी का मयूर है। भगवान् विष्णु की प्रियतमा लक्ष्मीदेवी कमल के आसन पर विराजमान हैं,और हाथों में कमल धारण किये हुए हैं।
+
+त्राहि मां देवि दुष्प्रेक्ष्ये शत्रूणां भयवर्धिनि। प्राच्यां रक्षतु मामैन्द्रि आग्नेय्यामग्निदेवता॥ 17॥
+दक्षिणेऽवतु वाराही नैऋत्यां खड्गधारिणी। प्रतीच्यां वारुणी रक्षेद् वायव्यां मृगवाहिनी॥ 18॥
+
+तुम्हारी और देखना भी कठिन है। शत्रुओं का भय बढ़ाने वाली जगदम्बिक मेरी रक्षा करो। पूर्व दिशा में ऐन्द्री मेरी रक्षा करे। अग्निकोण में अग्निशक्ति,दक्षिण दिशा में वाराही तथा नैर्ऋत्यकोण में खड्गधारिणी मेरी रक्षा करे।
+
+नमस्तेऽस्तु महारौद्रे महाघोरपराक्रमे।
+महाबले महोत्साहे महाभयविनाशिनि॥16॥
+
+महान् रौद्ररूप, अत्यन्त घोर पराक्रम, महान् बल और महान् उत्साह वाली देवी तुम महान् भय का नाश करने वाली हो,तुम्हें नमस्कार है।`,
+        textEnglish: `Om Namash Chandikayai
+Om Yad Guhyam Paramam Loke Sarva Rakshakaram Nrinam
+Yan Na Kasya Chid Akhyatam Tan Me Bruhi Pitamaha
+
+Markandeya Uvacha
+Markandey ji ne kaha he pitamah! jo is sansar mein param gopniya tatha manushyon ki sab prakar se raksha karne wala hai aur jo ab tak aapne dusre kisi ke samne prakat nahin kiya ho, aisa koi sadhan mujhe bataiye.
+
+Brahmovacha
+Asti Guhyatamam Vipra Sarva Bhutopakarkam
+Divyastu Kavacham Punyam Tachhrunushva Mahamune
+
+Brahman! aisa sadhan to ek devi ka kavach hi hai, jo gopniya se bhi param gopniya, pavitra tatha sampurna praniyon ka upkar karne wala hai. Mahamune! use shravan karo.
+
+Prathamam Shailaputri Cha Dvitiyam Brahmacharini
+Tritiyam Chandraghanteti Kushmandeti Chaturthakam
+
+Pratham naam Shailaputri hai, dusri murtika naam Brahmacharini hai. Tisra swarup Chandraghanta ke namse prasiddh hai. Chauthi murti ko Kushmanda kehte hain.
+
+Pachamam Skandamateti Shashtham Katyayanieti Cha
+Saptamam Kalaratrieti Mahagaurieti Chashtamam
+
+Panchwi Durga ka naam Skandamata hai. Devi ke chhthe rup ko Katyayani kehte hain. Satwaan Kalaratri aur aathwaan swarup Mahagauri ke naam se prasiddh hai.
+
+Trahi Mam Devi Dushprekshye Shatroonam Bhayavardhini
+Prachyam Rakshatu Mamaidri Agneyaam Agnidevata
+Dakshine Avatu Varahi Nairritayam Khadgadharini
+Pratichyam Varuni Rakshed Vayavyam Mrigavahini
+
+Tumhari aur dekhna bhi kathin hai. Shatruon ka bhay badhane wali jagadambika meri raksha karo. Purva disha mein Aindri meri raksha kare. Agnikone mein Agnishakti, dakshin disha mein Varahi tatha Nairritya kone mein khadgadharini meri raksha kare.
+
+Namaste Astu Maharaudre Mahaghoraparakrame
+Mahabale Mahotsahe Mahabhayavinashini
+
+Mahan raudrarup, atyant ghor parakram, mahan bal aur mahan utsah wali devi tum mahan bhay ka nash karne wali ho, tumhein namaskaar hai.`,
+        translation: "This is the complete Durga Kavach (Divine Armor of Goddess Durga), a powerful protective prayer that invokes the nine forms of Goddess Durga and seeks divine protection from all directions. The kavach provides spiritual armor against all negative forces and ensures the devotee's safety and well-being. Regular recitation with devotion grants divine protection and blessings.",
         order: 1,
         createdAt: new Date(),
       },
