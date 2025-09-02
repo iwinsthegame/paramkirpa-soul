@@ -12,6 +12,7 @@ import { Switch } from '@/components/ui/switch';
 import { apiRequest, queryClient } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
 import type { CommunityPost } from '@shared/schema';
+import prayBlossomLogo from '@assets/Pray Blossom Wellness Brand Logo (1)_1756773472230.png';
 
 export function CommunityPage() {
   const [activeTab, setActiveTab] = useState('feed');
@@ -21,7 +22,7 @@ export function CommunityPage() {
       <div className="pt-8 px-4">
         <div className="text-center mb-8">
           <img 
-            src="/attached_assets/Pray Blossom Wellness Brand Logo (1)_1756773472230.png" 
+            src={prayBlossomLogo} 
             alt="Pray Blossom Community" 
             className="mx-auto w-24 h-24 mb-4"
           />
