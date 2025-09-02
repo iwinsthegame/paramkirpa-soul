@@ -18,6 +18,7 @@ import { CommunityPage } from "@/pages/community";
 import { ProfilePage } from "@/pages/profile";
 import { StorePage } from "@/pages/store";
 import DevotionalGamePage from "@/pages/devotional-game";
+import DigitalMalaPage from "@/pages/digital-mala";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -34,6 +35,7 @@ function Router() {
         <Route path="/profile" component={ProfilePage} />
         <Route path="/store" component={StorePage} />
         <Route path="/game" component={DevotionalGamePage} />
+        <Route path="/mala" component={DigitalMalaPage} />
         <Route component={NotFound} />
       </Switch>
       

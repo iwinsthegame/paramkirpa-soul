@@ -281,12 +281,24 @@ function SacredGamesContent() {
               </Card>
             </motion.div>
 
-            {/* Coming Soon Games */}
-            <div className="bg-white/5 rounded-lg p-4 text-center border border-white/10">
-              <div className="text-4xl mb-2">🔮</div>
-              <h4 className="text-white font-medium mb-1">More Games</h4>
-              <p className="text-white/70 text-xs">Coming Soon</p>
-            </div>
+            {/* Digital Mala Game */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Card className="glass-card sakura-glow border-primary/30">
+                <CardContent className="p-4 text-center">
+                  <div className="text-4xl mb-2">📿</div>
+                  <h4 className="text-white font-medium mb-1">Digital Mala</h4>
+                  <p className="text-white/70 text-xs mb-3">Japa meditation with 108 beads</p>
+                  <Link href="/mala">
+                    <Button size="sm" className="bg-primary hover:bg-primary/90">
+                      Start Japa
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            </motion.div>
           </div>
         </CardContent>
       </Card>
