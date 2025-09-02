@@ -587,7 +587,6 @@ export function DevotionalGame() {
             <div className="absolute inset-0 bg-gradient-to-b from-blue-400/40 to-blue-600/60">
               <div className="flowing-water h-full w-full relative">
                 <div className="absolute inset-0 opacity-60">
-                  <div className="water-wave-1"></div>
                 </div>
               </div>
             </div>
