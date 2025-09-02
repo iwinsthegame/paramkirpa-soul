@@ -130,114 +130,22 @@ export function DevotionalGame() {
 
   // Game physics and rendering
   const drawWaterSurface = useCallback((ctx: CanvasRenderingContext2D, width: number, height: number) => {
-    // Draw oval-shaped pond with zig-zag edges
+    // Draw simple rectangular pond
     const centerX = width / 2;
     const centerY = height / 2;
-    const radiusX = width * 0.4;
-    const radiusY = height * 0.35;
+    const pondWidth = width * 0.6;
+    const pondHeight = height * 0.5;
+    const pondX = centerX - pondWidth / 2;
+    const pondY = centerY - pondHeight / 2;
     
-    // Create zig-zag oval path
-    ctx.beginPath();
-    const segments = 60;
-    for (let i = 0; i <= segments; i++) {
-      const angle = (i / segments) * Math.PI * 2;
-      const baseX = centerX + Math.cos(angle) * radiusX;
-      const baseY = centerY + Math.sin(angle) * radiusY;
-      
-      // Add zig-zag variation
-      const zigzag = Math.sin(angle * 8) * 15 + Math.cos(angle * 12) * 8;
-      const x = baseX + Math.cos(angle) * zigzag;
-      const y = baseY + Math.sin(angle) * zigzag;
-      
-      if (i === 0) {
-        ctx.moveTo(x, y);
-      } else {
-        ctx.lineTo(x, y);
-      }
-    }
-    ctx.closePath();
+    // Draw rectangle pond
+    ctx.fillStyle = 'rgba(100, 149, 237, 0.8)'; // Simple blue water
+    ctx.fillRect(pondX, pondY, pondWidth, pondHeight);
     
-    // Natural water gradient
-    const waterGradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, Math.max(radiusX, radiusY));
-    waterGradient.addColorStop(0, 'rgba(173, 216, 230, 0.8)');
-    waterGradient.addColorStop(0.3, 'rgba(135, 206, 235, 0.85)');
-    waterGradient.addColorStop(0.7, 'rgba(70, 130, 180, 0.9)');
-    waterGradient.addColorStop(1, 'rgba(25, 25, 112, 0.95)');
-    
-    ctx.fillStyle = waterGradient;
-    ctx.fill();
-    
-    // Add pond border with natural stone effect
+    // Add simple border
     ctx.strokeStyle = 'rgba(101, 67, 33, 0.8)';
-    ctx.lineWidth = 4;
-    ctx.stroke();
-    
-    // Save the clipping region for cherry blossoms inside pond
-    ctx.save();
-    ctx.clip();
-
-    // Floating cherry blossoms scattered throughout the pond
-    const time = Date.now() * 0.001;
-    for (let i = 0; i < 15; i++) {
-      const angle = (i * 2.4) + time * 0.5;
-      const distance = (Math.sin(time + i) * 0.3 + 0.7) * Math.min(radiusX, radiusY) * 0.8;
-      const x = centerX + Math.cos(angle) * distance;
-      const y = centerY + Math.sin(angle) * distance * 0.7;
-      
-      // Cherry blossom petals
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(Math.sin(time + i) * 0.5);
-      
-      // Draw 5 petals
-      for (let petal = 0; petal < 5; petal++) {
-        ctx.save();
-        ctx.rotate((petal * Math.PI * 2) / 5);
-        
-        // Petal gradient
-        const petalGradient = ctx.createRadialGradient(0, 0, 0, 0, 0, 8);
-        petalGradient.addColorStop(0, 'rgba(255, 182, 193, 0.9)');
-        petalGradient.addColorStop(0.7, 'rgba(255, 105, 180, 0.8)');
-        petalGradient.addColorStop(1, 'rgba(219, 112, 147, 0.6)');
-        
-        ctx.fillStyle = petalGradient;
-        ctx.beginPath();
-        ctx.ellipse(0, -4, 3, 6, 0, 0, Math.PI * 2);
-        ctx.fill();
-        
-        ctx.restore();
-      }
-      
-      // Center of cherry blossom
-      ctx.fillStyle = 'rgba(255, 215, 0, 0.8)';
-      ctx.beginPath();
-      ctx.arc(0, 0, 1.5, 0, Math.PI * 2);
-      ctx.fill();
-      
-      ctx.restore();
-    }
-    
-    ctx.restore(); // Restore clipping
-
-    // Diya lamps around the pond
-    for (let i = 0; i < 4; i++) {
-      const angle = (i * Math.PI * 0.5) + Math.sin(Date.now() * 0.003) * 0.1;
-      const x = centerX + Math.cos(angle) * (radiusX + 60);
-      const y = centerY + Math.sin(angle) * (radiusY + 40);
-      
-      // Diya base
-      ctx.beginPath();
-      ctx.ellipse(x, y, 12, 8, 0, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(139, 69, 19, 0.8)';
-      ctx.fill();
-      
-      // Flame
-      const flameHeight = 15 + Math.sin(Date.now() * 0.01 + i) * 3;
-      ctx.beginPath();
-      ctx.ellipse(x, y - flameHeight/2, 4, flameHeight, 0, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255, ${140 + Math.sin(Date.now() * 0.02 + i) * 20}, 0, 0.9)`;
-      ctx.fill();
-    }
+    ctx.lineWidth = 3;
+    ctx.strokeRect(pondX, pondY, pondWidth, pondHeight);
   }, []);
 
   const drawCharanPaduka = useCallback((ctx: CanvasRenderingContext2D, x: number, y: number, size: number) => {
