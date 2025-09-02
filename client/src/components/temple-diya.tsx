@@ -7,6 +7,7 @@ import { Input } from '@/components/ui/input';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Flame, Calendar, Star, Heart, RotateCcw, Plus } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import diyaLogo from '@assets/Untitled design_1756776193077.png';
 
 interface Diya {
   id: number;
@@ -172,7 +173,11 @@ export function TempleDiya({ className = '' }: { className?: string }) {
         <CardContent className="p-6">
           {/* Header */}
           <div className="text-center mb-6">
-            <h2 className="text-2xl font-bold text-white mb-2">🏛️ Sacred Temple</h2>
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <img src={diyaLogo} alt="Sacred Diya" className="w-8 h-8" />
+              <h2 className="text-2xl font-bold text-white">Sacred Temple</h2>
+              <img src={diyaLogo} alt="Sacred Diya" className="w-8 h-8" />
+            </div>
             <p className="text-purple-200">Light the diyas and offer your prayers</p>
           </div>
 

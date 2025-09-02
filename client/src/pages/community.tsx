@@ -13,6 +13,7 @@ import { apiRequest, queryClient } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
 import type { CommunityPost } from '@shared/schema';
 import prayBlossomLogo from '@assets/Pray Blossom Wellness Brand Logo (1)_1756773472230.png';
+import diyaLogo from '@assets/Untitled design_1756776193077.png';
 
 export function CommunityPage() {
   const [activeTab, setActiveTab] = useState('feed');
@@ -307,7 +308,7 @@ function SacredGamesContent() {
             >
               <Card className="glass-card sakura-glow border-primary/30">
                 <CardContent className="p-4 text-center">
-                  <div className="text-4xl mb-2">🏛️</div>
+                  <img src={diyaLogo} alt="Temple Diya" className="w-12 h-12 mx-auto mb-2" />
                   <h4 className="text-white font-medium mb-1">Temple Diyas</h4>
                   <p className="text-white/70 text-xs mb-3">Light diyas and offer prayers</p>
                   <Link href="/temple">
