@@ -261,7 +261,7 @@ function SacredGamesContent() {
         <CardContent className="p-6">
           <h3 className="text-white font-semibold mb-4">Sacred Games</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Sacred Pond Game */}
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -294,6 +294,25 @@ function SacredGamesContent() {
                   <Link href="/mala">
                     <Button size="sm" className="bg-primary hover:bg-primary/90">
                       Start Japa
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            </motion.div>
+
+            {/* Temple Diya Game */}
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Card className="glass-card sakura-glow border-primary/30">
+                <CardContent className="p-4 text-center">
+                  <div className="text-4xl mb-2">🏛️</div>
+                  <h4 className="text-white font-medium mb-1">Temple Diyas</h4>
+                  <p className="text-white/70 text-xs mb-3">Light diyas and offer prayers</p>
+                  <Link href="/temple">
+                    <Button size="sm" className="bg-primary hover:bg-primary/90">
+                      Light Diyas
                     </Button>
                   </Link>
                 </CardContent>

@@ -19,6 +19,7 @@ import { ProfilePage } from "@/pages/profile";
 import { StorePage } from "@/pages/store";
 import DevotionalGamePage from "@/pages/devotional-game";
 import DigitalMalaPage from "@/pages/digital-mala";
+import TempleDiyaPage from "@/pages/temple-diya";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -36,6 +37,7 @@ function Router() {
         <Route path="/store" component={StorePage} />
         <Route path="/game" component={DevotionalGamePage} />
         <Route path="/mala" component={DigitalMalaPage} />
+        <Route path="/temple" component={TempleDiyaPage} />
         <Route component={NotFound} />
       </Switch>
       
