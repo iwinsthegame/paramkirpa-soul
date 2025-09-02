@@ -325,48 +325,172 @@ export function PoojaDetailPage() {
                   <div className="space-y-6">
                     {selectedType === 'adhyaya' ? (
                       // Special display for Adhyaya chapters
-                      (<div className="grid gap-4">
-                        <div className="text-center mb-6">
-                          <h2 className="text-2xl font-bold text-foreground mb-2">
-                            दुर्गा सप्तशती - 13 अध्याय
-                          </h2>
-                          <p className="text-muted-foreground">
-                            Sacred chapters of Goddess Durga's divine glory
-                          </p>
-                        </div>
-                        <div className="grid gap-3">
-                          {content
-                            .sort((a: any, b: any) => (a.adhyaya || 0) - (b.adhyaya || 0))
-                            .map((item: PoojaContent, index: number) => (
-                            <motion.div
-                              key={item.id}
-                              initial={{ opacity: 0, y: 20 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ delay: index * 0.05 }}
-                              className="glass-card rounded-xl p-4 cursor-pointer hover:bg-accent/20 transition-colors"
-                              data-testid={`adhyaya-${(item as any).adhyaya}`}
-                              onClick={() => setSelectedContentId(item.id)}
-                            >
-                              <div className="flex items-start justify-between">
-                                <div className="flex-1">
-                                  <div className="flex items-center gap-3 mb-2">
-                                    <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
-                                      अध्याय {(item as any).adhyaya || index + 1}
-                                    </span>
+                      selectedContentId ? (
+                        // Show selected Adhyaya content with view options
+                        (() => {
+                          const selectedItem = content.find(item => item.id === selectedContentId);
+                          if (!selectedItem) return null;
+                          
+                          const currentView = selectedView[selectedItem.id] || 'hindi';
+                          
+                          const getViewOptions = () => {
+                            const options = [];
+                            if (selectedItem.textHindi) options.push({ value: 'hindi', label: 'Hindi Text' });
+                            if (selectedItem.textHindi) options.push({ value: 'sanskrit', label: 'Sanskrit Text' });
+                            if (selectedItem.textEnglish) options.push({ value: 'english', label: 'English Transliteration' });
+                            if (selectedItem.translation) options.push({ value: 'translation', label: 'Translation & Meaning' });
+                            return options;
+                          };
+                          
+                          const renderContent = () => {
+                            const formatHindiContent = (text: string) => {
+                              const lines = text.split('\n');
+                              return lines.map((line, index) => {
+                                const isSanskrit = /[॥।]/.test(line) || 
+                                                 /^[ॐ]/.test(line) || 
+                                                 /॥\d+॥$/.test(line) ||
+                                                 /^[प्रअअसनयतमकगदशहरजभवलसिचएवध]/.test(line) ||
+                                                 /[्]/.test(line) && !/[है|की|में|से|को|का|के|और|तथा|जो|वह|यह|इस|उस|एक]/.test(line);
+                                
+                                if (isSanskrit) {
+                                  return (
+                                    <div key={index} className="font-medium leading-relaxed mb-1" style={{ color: '#ffffff' }}>
+                                      {line}
+                                    </div>
+                                  );
+                                } else {
+                                  return (
+                                    <div key={index} className="leading-relaxed mb-1" style={{ color: '#ffffff' }}>
+                                      {line}
+                                    </div>
+                                  );
+                                }
+                              });
+                            };
+
+                            switch (currentView) {
+                              case 'hindi':
+                                return selectedItem.textHindi ? (
+                                  <div className="text-lg">
+                                    {formatHindiContent(selectedItem.textHindi)}
                                   </div>
-                                  <h3 className="text-lg font-semibold text-foreground mb-2">
-                                    {item.title}
+                                ) : null;
+                              case 'sanskrit':
+                                return selectedItem.textHindi ? (
+                                  <div className="text-lg">
+                                    {selectedItem.textHindi.split('\n').map((line, index) => (
+                                      <div key={index} className="font-medium leading-relaxed mb-1" style={{ color: '#ffffff' }}>
+                                        {line}
+                                      </div>
+                                    ))}
+                                  </div>
+                                ) : null;
+                              case 'english':
+                                return selectedItem.textEnglish ? (
+                                  <div className="leading-relaxed whitespace-pre-line text-lg" style={{ fontFamily: 'Open Sans, sans-serif', color: '#ffffff' }}>
+                                    {selectedItem.textEnglish}
+                                  </div>
+                                ) : null;
+                              case 'translation':
+                                return selectedItem.translation ? (
+                                  <div className="p-4 bg-muted/50 rounded-lg border border-border">
+                                    <p className="text-base" style={{ fontFamily: 'Open Sans, sans-serif', color: '#ffffff' }}>{selectedItem.translation}</p>
+                                  </div>
+                                ) : null;
+                              default:
+                                return null;
+                            }
+                          };
+                          
+                          return (
+                            <Card className="glass-card border-purple-400/30">
+                              <CardContent className="p-6">
+                                {/* Back button */}
+                                <button
+                                  onClick={() => setSelectedContentId(null)}
+                                  className="mb-4 flex items-center text-muted-foreground hover:text-foreground transition-colors"
+                                >
+                                  <ArrowLeft className="h-4 w-4 mr-2" />
+                                  Back to Chapters
+                                </button>
+                                
+                                <div className="text-center mb-6">
+                                  <h3 className="text-xl font-semibold text-foreground mb-4">
+                                    {selectedItem.title}
                                   </h3>
-                                  <p className="text-muted-foreground text-sm leading-relaxed">
-                                    {item.translation}
-                                  </p>
+                                  
+                                  {/* Content Type Selector */}
+                                  <div className="flex justify-center mb-4">
+                                    <Select
+                                      value={currentView}
+                                      onValueChange={(value) => 
+                                        setSelectedView(prev => ({ ...prev, [selectedItem.id]: value }))
+                                      }
+                                      data-testid={`content-selector-${selectedItem.id}`}
+                                    >
+                                      <SelectTrigger className="w-64">
+                                        <SelectValue placeholder="Select content type" />
+                                      </SelectTrigger>
+                                      <SelectContent>
+                                        {getViewOptions().map((option) => (
+                                          <SelectItem key={option.value} value={option.value}>
+                                            {option.label}
+                                          </SelectItem>
+                                        ))}
+                                      </SelectContent>
+                                    </Select>
+                                  </div>
                                 </div>
-                                <ChevronRight className="h-5 w-5 text-muted-foreground" />
-                              </div>
-                            </motion.div>
-                          ))}
+                                
+                                <div className="prose prose-invert max-w-none text-center">
+                                  {renderContent()}
+                                </div>
+                              </CardContent>
+                            </Card>
+                          );
+                        })()
+                      ) : (
+                        // Show chapter list
+                        <div className="grid gap-4">
+                          <div className="text-center mb-6">
+                            <h2 className="text-2xl font-bold text-foreground mb-2">
+                              दुर्गा सप्तशती - 13 अध्याय
+                            </h2>
+                            <p className="text-muted-foreground">
+                              Sacred chapters of Goddess Durga's divine glory
+                            </p>
+                          </div>
+                          <div className="grid gap-3">
+                            {content
+                              .sort((a: any, b: any) => (a.adhyaya || 0) - (b.adhyaya || 0))
+                              .map((item: PoojaContent, index: number) => (
+                              <motion.div
+                                key={item.id}
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                className="glass-card rounded-xl p-4 cursor-pointer hover:bg-accent/20 transition-colors"
+                                data-testid={`adhyaya-${(item as any).adhyaya}`}
+                                onClick={() => setSelectedContentId(item.id)}
+                              >
+                                <div className="flex items-start justify-between">
+                                  <div className="flex-1">
+                                    <div className="flex items-center gap-3 mb-2">
+                                      <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+                                        अध्याय {(item as any).adhyaya || index + 1}
+                                      </span>
+                                    </div>
+                                    <h3 className="text-lg font-semibold text-foreground mb-2">
+                                      {item.title}
+                                    </h3>
+                                  </div>
+                                  <ChevronRight className="h-5 w-5 text-muted-foreground" />
+                                </div>
+                              </motion.div>
+                            ))}
+                          </div>
                         </div>
-                      </div>)
+                      )
                     ) : (
                       // Regular display for other content types
                       (content.map((item: PoojaContent, index: number) => {
