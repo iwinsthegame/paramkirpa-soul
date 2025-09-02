@@ -82,7 +82,7 @@ export function DevotionalGame() {
   const [coins, setCoins] = useState<Coin[]>([]);
   const [particles, setParticles] = useState<Particle[]>([]);
   const [ripples, setRipples] = useState<Ripple[]>([]);
-  const [targetPosition] = useState({ x: 400, y: 300 });
+  const [targetPosition, setTargetPosition] = useState({ x: 400, y: 300 });
   const [targetSize] = useState(35); // Smaller target for more difficulty
   const [gameStarted, setGameStarted] = useState(false);
   
@@ -193,8 +193,8 @@ export function DevotionalGame() {
     const dx = coin.x - targetX;
     const dy = coin.y - targetY;
     const distance = Math.sqrt(dx * dx + dy * dy);
-    // Make hit detection more generous
-    const hitRadius = targetRadius * 1.2; // 20% larger hit area
+    // Make hit detection much more generous
+    const hitRadius = targetRadius * 2; // 100% larger hit area
     return distance < hitRadius;
   }, []);
 
@@ -243,11 +243,18 @@ export function DevotionalGame() {
     // Clear canvas
     ctx.clearRect(0, 0, width, height);
 
+    // Update target position to center of canvas
+    const centerX = width / 2;
+    const centerY = height / 2;
+    if (targetPosition.x !== centerX || targetPosition.y !== centerY) {
+      setTargetPosition({ x: centerX, y: centerY });
+    }
+
     // Draw water surface
     drawWaterSurface(ctx, width, height);
 
-    // Draw charan paduka
-    drawCharanPaduka(ctx, targetPosition.x, targetPosition.y, targetSize);
+    // Draw charan paduka at center
+    drawCharanPaduka(ctx, centerX, centerY, targetSize);
 
     // Update and draw ripples with enhanced water reflection
     setRipples(prev => prev.map(ripple => ({
