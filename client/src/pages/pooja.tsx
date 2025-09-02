@@ -237,6 +237,7 @@ export function PoojaDetailPage() {
         { id: 'chalisa', label: 'Chalisa', icon: '📿' },
         { id: 'mantra', label: 'Mantra', icon: '🕉️' },
         { id: 'kavach', label: 'Kavach', icon: '🛡️' },
+        { id: 'naam', label: '108 Names', icon: '🌺' },
         { id: 'siddhi', label: 'Siddhi', icon: '✨' },
         { id: 'kunjika', label: 'Kunjika', icon: '🔑' },
         { id: 'adhyaya', label: 'Adhyaya', icon: '📖' },
