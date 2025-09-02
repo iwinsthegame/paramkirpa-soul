@@ -304,29 +304,11 @@ export function DevotionalGame() {
           return null; // Remove coin
         }
 
-        // Check if coin hits water (inside rectangular pond boundary)
-        const pondX = 10;
-        const pondY = 10;
-        const pondWidth = width - 20;
-        const pondHeight = height - 20;
-        
-        if (coin.x >= pondX && coin.x <= pondX + pondWidth && 
-            coin.y >= pondY && coin.y <= pondY + pondHeight) {
+        // Only remove coin if it goes off screen or hits bottom
+        if (coin.y > height + 50) {
           // Create water splash particles
           createParticles(coin.x, coin.y, false);
-          
-          // Create multiple ripple effects for realism
           createRipple(coin.x, coin.y);
-          
-          // Add secondary ripples for water reflection effect
-          setTimeout(() => {
-            createRipple(coin.x + (Math.random() - 0.5) * 20, coin.y + (Math.random() - 0.5) * 10);
-          }, 100);
-          
-          setTimeout(() => {
-            createRipple(coin.x + (Math.random() - 0.5) * 30, coin.y + (Math.random() - 0.5) * 15);
-          }, 200);
-          
           return null; // Remove coin
         }
 
@@ -436,7 +418,7 @@ export function DevotionalGame() {
       vx: (dx / distance) * baseVelocity + windX * 0.2,
       vy: Math.max(2, (dy / distance) * baseVelocity) + windY * 0.15,
       rotation: Math.random() * Math.PI * 2,
-      size: 10 + Math.random() * 4, // Varied coin sizes
+      size: 20, // Make coin bigger and more visible
       targetX: scaledX,
       targetY: scaledY,
       scale: 0.8 + Math.random() * 0.4,
