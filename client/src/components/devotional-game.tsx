@@ -599,7 +599,7 @@ export function DevotionalGame() {
               alt="Cherry Blossom Lake" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent"></div>
+            
             <div className="absolute bottom-4 left-4">
               <p className="text-white text-sm bg-black/50 px-3 py-1 rounded backdrop-blur-sm">
                 🌸 Sacred waters flow into the eternal cherry blossom lake 🌸
