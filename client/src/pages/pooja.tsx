@@ -636,8 +636,8 @@ export function PoojaDetailPage() {
           </>
         )}
       </div>
-      {/* Content Viewer Modal */}
-      {selectedContentId && (
+      {/* Content Viewer Modal - only for non-adhyaya content */}
+      {selectedContentId && selectedType !== 'adhyaya' && (
         <ContentViewer
           contentId={selectedContentId}
           onClose={() => setSelectedContentId(null)}
