@@ -19,9 +19,14 @@ export function CommunityPage() {
   return (
     <div className="min-h-screen spiritual-gradient pb-20">
       <div className="pt-8 px-4">
-        <h1 className="text-3xl font-bold text-white text-center mb-8">
-          🤝 Community 🤝
-        </h1>
+        <div className="text-center mb-8">
+          <img 
+            src="/attached_assets/Pray Blossom Wellness Brand Logo (1)_1756773472230.png" 
+            alt="Pray Blossom Community" 
+            className="mx-auto w-24 h-24 mb-4"
+          />
+          <h1 className="text-3xl font-bold text-white">Community</h1>
+        </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="max-w-4xl mx-auto">
           <TabsList className="grid w-full grid-cols-2 glass-card border-purple-400/30">
