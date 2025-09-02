@@ -20,6 +20,7 @@ import { StorePage } from "@/pages/store";
 import DevotionalGamePage from "@/pages/devotional-game";
 import DigitalMalaPage from "@/pages/digital-mala";
 import TempleDiyaPage from "@/pages/temple-diya";
+import MantraMemoryPage from "@/pages/mantra-memory";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -38,6 +39,7 @@ function Router() {
         <Route path="/game" component={DevotionalGamePage} />
         <Route path="/mala" component={DigitalMalaPage} />
         <Route path="/temple" component={TempleDiyaPage} />
+        <Route path="/memory" component={MantraMemoryPage} />
         <Route component={NotFound} />
       </Switch>
       
