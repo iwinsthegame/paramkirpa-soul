@@ -130,15 +130,13 @@ export function DevotionalGame() {
 
   // Game physics and rendering
   const drawWaterSurface = useCallback((ctx: CanvasRenderingContext2D, width: number, height: number) => {
-    // Draw simple rectangular pond
-    const centerX = width / 2;
-    const centerY = height / 2;
-    const pondWidth = width * 0.6;
-    const pondHeight = height * 0.5;
-    const pondX = centerX - pondWidth / 2;
-    const pondY = centerY - pondHeight / 2;
+    // Draw full-size rectangular pond
+    const pondX = 10;
+    const pondY = 10;
+    const pondWidth = width - 20;
+    const pondHeight = height - 20;
     
-    // Draw rectangle pond
+    // Draw rectangle pond (full canvas size with small margin)
     ctx.fillStyle = 'rgba(100, 149, 237, 0.8)'; // Simple blue water
     ctx.fillRect(pondX, pondY, pondWidth, pondHeight);
     
@@ -299,16 +297,14 @@ export function DevotionalGame() {
           return null; // Remove coin
         }
 
-        // Check if coin hits water (inside oval pond boundary)
-        const pondCenterX = width / 2;
-        const pondCenterY = height / 2;
-        const pondRadiusX = width * 0.4;
-        const pondRadiusY = height * 0.35;
-        const pondDx = (coin.x - pondCenterX) / pondRadiusX;
-        const pondDy = (coin.y - pondCenterY) / pondRadiusY;
-        const pondDistance = Math.sqrt(pondDx * pondDx + pondDy * pondDy);
+        // Check if coin hits water (inside rectangular pond boundary)
+        const pondX = 10;
+        const pondY = 10;
+        const pondWidth = width - 20;
+        const pondHeight = height - 20;
         
-        if (pondDistance >= 0.95) {
+        if (coin.x >= pondX && coin.x <= pondX + pondWidth && 
+            coin.y >= pondY && coin.y <= pondY + pondHeight) {
           // Create water splash particles
           createParticles(coin.x, coin.y, false);
           
