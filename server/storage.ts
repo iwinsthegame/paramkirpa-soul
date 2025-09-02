@@ -1542,7 +1542,51 @@ Mahan raudrarup, atyant ghor parakram, mahan bal aur mahan utsah wali devi tum m
         poojaId: "durga-pooja",
         type: "adhyaya",
         title: "प्रथम अध्याय - मधु-कैटभ वध",
-        textHindi: "ॐ ऋषिरुवाच\nसुते श्रुत्वा हरेर्निद्रां कुतूहलमुपागतम्\nकस्मिन् काले हरिर्निद्रां कृते कासां च का निद्रा\n\nमैत्रेय उवाच\nस्रष्टुं सृष्टिमुपादत्ते सृष्टिसर्गादि चिन्तयन्\nविष्णोर्निद्रामुपागच्छत् किम् चित्र तत्र यत्प्रभुः\n\nजगन्निद्रामयस्तस्य निद्रायोगेन चाव्ययः\nक्षीरार्णवशयो भूत्वा निद्रामगमत् प्रभुः\n\nस्वप्ने मधुकैटभानां युद्धकाले स्वमायया\nमोहितो हरिर्भूत्वा नयनद्वयमीलिते\n\nमध्वादिभिर्नवभूतैः सृष्टिरूपेण चिन्तयन्\nसुषुप्तं निद्रितं भाति यत्प्रभावात् सदाशिवः",
+        textHindi: `ऋषि मार्कण्डेय कहते हैं –
+
+प्राचीन काल में महाप्रलय के समय जब सारी पृथ्वी जल में डूबी हुई थी और विष्णु भगवान क्षीरसागर में शेषनाग की शैय्या पर शयन कर रहे थे, तब उनके कानों की मैल से मधु और कैटभ नामक दो महादैत्य उत्पन्न हुए।
+
+वे दोनों जल में खेलते-कूदते ब्रह्माजी की ओर बढ़े, जो उस समय कमल पर विराजमान होकर सृष्टि-चिन्तन कर रहे थे।
+ब्रह्मा जी को देखकर वे दोनों असुर उन्हें मार डालने के लिए तैयार हुए।
+
+ब्रह्मा जी की प्रार्थना
+
+उस संकट की घड़ी में ब्रह्माजी ने योगनिद्रा देवी की स्तुति की, जो विष्णु भगवान की पलकों पर विराजमान थीं और उन्हें गहन निद्रा में लीन किये हुए थीं।
+
+ब्रह्माजी ने कहा :
+
+"हे जगन्माता! आप ही विष्णु भगवान् की निद्रा हैं।
+आप ही शक्ति रूप से सबको आच्छादित करती हैं।
+कृपा करके विष्णु को जगाइए, जिससे वे इन महादैत्यों का संहार करें।"
+
+देवी का प्रभाव
+
+ब्रह्मा जी की स्तुति सुनकर योगनिद्रा देवी विष्णु भगवान की देह से निकल गईं।
+तभी भगवान विष्णु जागे और उन्होंने दोनों असुरों से भयंकर युद्ध करना शुरू किया।
+
+मधु और कैटभ का वध
+
+पाँच हज़ार वर्षों तक युद्ध होता रहा।
+अन्त में भगवान विष्णु ने देवी की प्रेरणा से उन्हें मोहित कर लिया।
+
+विष्णु भगवान ने कहा :
+"तुम दोनों दैत्य वर माँगो।"
+
+दैत्य बोले :
+"यदि आप हमें वर देना ही चाहते हैं, तो हमारी मृत्यु हो।"
+
+भगवान बोले :
+"मेरे वचनों में असत्य नहीं होता। बताओ, किस स्थान पर मरना चाहते हो?"
+
+दैत्य बोले :
+"जहाँ जल न हो।"
+
+तब भगवान ने उन्हें अपनी जाँघों पर रखकर मार डाला, क्योंकि चारों ओर तो जल ही जल था।
+इस प्रकार मधु और कैटभ का वध हुआ।
+
+✨ फलश्रुति
+
+जो भक्त इस प्रथम अध्याय का पाठ करता है, उसके जीवन से सभी विघ्न-बाधाएँ दूर होती हैं और उसे शत्रुओं पर विजय प्राप्त होती है।`,
         textEnglish: "Om Rishir Uvacha\nSute Shrutva Harer Nidram Kutuhalam Upagatam\nKasmin Kale Harir Nidram Krte Kasam Cha Ka Nidra\n\nMaitreya Uvacha\nSrashtum Srishtim Upadatte Srishti Sargadi Chintayan\nVishnor Nidram Upagacchhat Kim Chitra Tatra Yat Prabhuh\n\nJagan Nidramyas Tasya Nidrayogen Chavyayah\nKshirarnava Shayo Bhutva Nidram Agamat Prabhuh\n\nSwapne Madhu Kaitabhanam Yuddha Kale Sva Mayaya\nMohito Harir Bhutva Nayana Dvayam Ilite\n\nMadhvadibhir Navabhutaih Srishtirupena Chintayan\nSusuptam Nidritam Bhati Yat Prabhavat Sadashivah",
         translation: "Chapter 1 - The Slaying of Madhu and Kaitabha: This chapter describes how Lord Vishnu entered into cosmic sleep on the ocean of milk, and how the demons Madhu and Kaitabha emerged from his ears. The Rishi asks about the nature of this divine sleep and the circumstances surrounding it.",
         adhyaya: 1,
