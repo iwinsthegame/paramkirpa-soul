@@ -1740,8 +1740,45 @@ Mahan raudrarup, atyant ghor parakram, mahan bal aur mahan utsah wali devi tum m
         id: "durga-adhyaya-4",
         poojaId: "durga-pooja",
         type: "adhyaya",
-        title: "चतुर्थ अध्याय - शुंभ-निशुंभ वध",
-        textHindi: "शुम्भनिशुम्भौ दैत्येन्द्रौ त्रैलोक्यमधिगम्य च\nसुरगणान् निर्जित्य सर्वान् दिव्यभोगान् उपास्महे\n\nइन्द्रस्य स्थानमधिकृत्य वरुणस्य च वाहिनीम्\nकुबेरस्य धनं सर्वं यमस्य च महाबलम्\n\nअग्नेर्बलं तथा सोमस्य किरणान् भुवनेश्वराः\nवायोर्बलं सुरैर्युक्तं सर्वमेतदधीयताम्",
+        title: "चतुर्थ अध्याय - देवी स्तुति",
+        textHindi: `प्रसंग
+
+जब माँ दुर्गा ने महिषासुर का वध किया और देवताओं को उनका स्थान वापस दिलाया, तब सारे देवता अत्यन्त प्रसन्न हुए। वे सब मिलकर आद्या शक्ति माँ की स्तुति करने लगे।
+
+देवताओं की स्तुति (भावार्थ में)
+
+देवताओं ने कहा:
+"हे जगन्माता! हे जगदम्बे! हम आपको बार-बार प्रणाम करते हैं।
+आप ही विश्व की आदिशक्ति, सृष्टि की उत्पत्ति, पालन और संहार करने वाली हैं।
+
+आप ही बुद्धि, नींद, क्षुधा, तृष्णा, छाया, शक्ति, श्रद्धा, लक्ष्मी, करुणा, स्मृति और दया के रूप में विराजमान हैं।
+
+आप ही संहार में काली, पालन में लक्ष्मी और ज्ञान देने में सरस्वती हैं।
+
+आप सब रूपों से विश्व को आवृत करती हैं और भक्तों का पालन करती हैं।
+
+जब आप रौद्र रूप धारण करती हैं, तब दुष्टों का नाश होता है।
+
+जब आप सौम्य रूप धारण करती हैं, तब भक्तों को सुख, ऐश्वर्य और समृद्धि मिलती है।
+
+आपकी कृपा से हमें पुत्र, धन, सुख, समृद्धि और विजय प्राप्त होती है।
+
+आपके बिना यह संसार निरर्थक है।"
+
+देवी का उत्तर
+
+देवी ने प्रसन्न होकर कहा:
+
+"हे देवताओं! जब-जब संसार में असुरों का अत्याचार बढ़ेगा, तब-तब मैं अनेक रूपों में प्रकट होकर धर्म की रक्षा करूंगी और दुष्टों का नाश करूंगी।
+तुम्हें भय नहीं होना चाहिए।"
+
+✨ फलश्रुति
+
+इस अध्याय का पाठ करने से संपूर्ण मनोकामनाएँ पूरी होती हैं।
+
+संकट और शत्रु दूर होते हैं।
+
+यह अध्याय विशेषकर स्तुति, पूजा और आराधना में गाया-पढ़ा जाता है।`,
         textEnglish: "Shumbha Nishumbhau Daityendrau Trailokyam Adhigamya Cha\nSura Ganan Nirjitya Sarvan Divya Bhogan Upasmaha\n\nIndrasya Sthanam Adhikritya Varunasya Cha Vahinim\nKuberasya Dhanam Sarvam Yamasya Cha Mahabalam\n\nAgner Balam Tatha Somasya Kiranan Bhuvaneshvarah\nVayor Balam Suraih Yuktam Sarvam Etad Adhiyatam",
         translation: "Chapter 4 - The Slaying of Shumbha and Nishumbha: The demon kings Shumbha and Nishumbha conquered the three worlds and defeated all the gods. They usurped Indra's position, Varuna's army, Kubera's wealth, Yama's power, Agni's energy, the Moon's rays, and the Wind's strength.",
         adhyaya: 4,
