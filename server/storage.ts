@@ -1681,7 +1681,55 @@ Mahan raudrarup, atyant ghor parakram, mahan bal aur mahan utsah wali devi tum m
         poojaId: "durga-pooja",
         type: "adhyaya",
         title: "तृतीय अध्याय - महिषासुर वध (जारी)",
-        textHindi: "महिषस्य वधे प्राप्ते देवगणा हर्षमाददुः\nगन्धर्वाः किन्नरा यक्षा वादयन्ति महातले\n\nमृदंगशंखभेर्याणां नादो दिव्यो महाप्रभुः\nदेवदुन्दुभिनादेन पूर्यते गगनं तदा\n\nयुधि स्थित्वा महाशूरा त्रिशूलेन निपातिता\nमहिषासुरमुद्यम्य चक्रेणाप्यच्छिनद्गलम्\n\nसा देवी हर्षयुक्ता च स्वरूपं दर्शयन्नुमा\nनृत्यमाना जगत्सर्वं हर्षयामास वेगतः",
+        textHindi: `युद्ध का प्रारम्भ
+
+जब माँ दुर्गा सिंह पर आरूढ़ होकर असुरों के सामने प्रकट हुईं, तो उनका रूप देखकर सम्पूर्ण आकाश हिल उठा।
+उनकी गरज सुनकर असुरों की सेना काँप उठी।
+महिषासुर ने असुरों की विशाल सेना के साथ देवी पर आक्रमण किया।
+
+देवासुर संग्राम
+
+देवी ने अपने त्रिशूल से असंख्य असुरों का संहार किया।
+
+उनका सिंह भी असुरों को चीरता-फाड़ता हुआ मारने लगा।
+
+माँ ने धनुष से बाण चलाकर और चक्र घुमाकर असुरों का वध किया।
+
+देवी के तेज से आकाश प्रकाशित हो गया और असुर भयभीत होकर भागने लगे।
+
+असुरों के सेनापति का वध
+
+महिषासुर के सेनापति—चिक्षुर, चामर आदि वीर असुर देवी के साथ युद्ध करते हुए मारे गए।
+हजारों रथी, अश्वारोही और गजराज असुर सेना देवी के प्रहार से नष्ट हो गए।
+
+महिषासुर का रूप-परिवर्तन
+
+अन्त में महिषासुर स्वयं रणभूमि में आया।
+उसने कभी भैंस (महिष) का, कभी सिंह, कभी गजराज, कभी पुरुष का रूप धारण करके देवी से युद्ध किया।
+देवी ने उसके प्रत्येक रूप का नाश किया और फिर वह पुनः भैंस का रूप धारण कर गर्जना करने लगा।
+
+देवी का क्रोध
+
+देवी ने अपने त्रिशूल से महिषासुर की छाती भेद दी।
+उस समय देवी ने कहा –
+
+"हे दुष्ट! अब तेरा अंत निश्चित है।"
+
+त्रिशूल से आहत होकर जब वह असुर असली रूप में प्रकट हुआ, तभी देवी ने उसे अपने पाँव से दबाकर गले में तलवार भोंक दी और उसका वध कर दिया।
+
+देवताओं की स्तुति
+
+महिषासुर के वध से सम्पूर्ण देवता प्रसन्न हुए।
+उन्होंने माँ दुर्गा की स्तुति करते हुए कहा –
+
+"हे जगदम्बे! आपने हमारे लिए महिषासुर का वध कर स्वर्गलोक वापस दिलाया।
+हे जगदम्बे! हम सब आपका आभार मानते हैं और बार-बार प्रणाम करते हैं।"
+
+✨ फलश्रुति
+
+इस अध्याय का पाठ करने से शत्रु नाश, साहस की वृद्धि और कठिन परिस्थितियों पर विजय प्राप्त होती है।
+
+साधक को धन, ऐश्वर्य और बल मिलता है तथा संकटों से रक्षा होती है।`,
         textEnglish: "Mahishasya Vadhe Prapte Deva Gana Harsham Adaduh\nGandharvaḥ Kinnara Yaksha Vadayanti Mahatale\n\nMridanga Shankha Bheryanaṃ Nado Divyo Mahaprabhuḥ\nDeva Dundubhi Nadena Puryate Gaganam Tada\n\nYudhi Sthitva Mahasura Trishulena Nipatita\nMahishasuram Udyamya Chakrenapi Acchinad Galam\n\nSa Devi Harsha Yukta Cha Svarupam Darshayan Numa\nNrityamana Jagat Sarvam Harshayamasa Vegatah",
         translation: "Chapter 3 - The Slaying of Mahishasura (Continued): When Mahishasura was slain, all the gods rejoiced. Gandharvas, Kinnaras, and Yakshas played divine music. The sound of drums, conches, and kettledrums filled the sky. The Goddess, having defeated the demon with her trident and discus, danced with joy, delighting the entire universe.",
         adhyaya: 3,
